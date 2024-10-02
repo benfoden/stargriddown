@@ -1,0 +1,137 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id             String   @id @default(uuid())
+  name           String
+  email          String   @unique
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @default(now())
+  friends        User[]   @relation("UserFriends")
+  friendOf       User[]   @relation("UserFriends")
+  player1Matches Match[]  @relation("Player1Matches")
+  player2Matches Match[]  @relation("Player2Matches")
+  winnerMatches  Match[]  @relation("WinnerMatches")
+}
+
+model Deck {
+  id                   String   @id @default(uuid())
+  name                 String
+  desc                 String?
+  shortDesc            String?
+  image                String?
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @default(now())
+  cards                Card[]
+  player1StartMatches  Match[]  @relation("Player1StartDeck")
+  player2StartMatches  Match[]  @relation("Player2StartDeck")
+  player1MarketMatches Match[]  @relation("Player1MarketDeck")
+  player2MarketMatches Match[]  @relation("Player2MarketDeck")
+}
+
+model Card {
+  id        String  @id @default(uuid())
+  name      String
+  desc      String?
+  shortDesc String?
+  flavor    String?
+  yen       Int?
+  attack    Int?
+  datab     Int?
+  defense   Int?
+  mw        Int?
+  lag       Int?
+  costYen   Int?
+  costDatab Int?
+  costMw    Int?
+  costLag   Int?
+
+  deckId        String?
+  image         String?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @default(now())
+  abilities     Json?
+  deck          Deck?         @relation(fields: [deckId], references: [id], onDelete: Cascade)
+  cardAbilities CardAbility[]
+}
+
+model Ability {
+  id            String        @id @default(uuid())
+  name          String
+  variant       String
+  shortDesc     String?
+  isUsable      Boolean?
+  desc          String?
+  attack        Int?
+  defense       Int?
+  yen           Int?
+  lag           Int?
+  datab         Int?
+  mw            Int?
+  logic         String?
+  costYen       Int?
+  costDatab     Int?
+  costMw        Int?
+  costLag       Int?
+  image         String?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @default(now())
+  cardAbilities CardAbility[]
+}
+
+model CardAbility {
+  id        String   @id @default(uuid())
+  cardId    String
+  abilityId String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+  card      Card     @relation(fields: [cardId], references: [id], onDelete: Cascade)
+  ability   Ability  @relation(fields: [abilityId], references: [id], onDelete: Cascade)
+
+  @@index([cardId, abilityId])
+}
+
+model Match {
+  id                  String       @id @default(uuid())
+  player1Id           String?
+  player2Id           String?
+  player1StartDeckId  String?
+  player2StartDeckId  String?
+  player1MarketDeckId String?
+  player2MarketDeckId String?
+  gameMode            String?
+  gameType            String?
+  statuses            String
+  createdAt           DateTime     @default(now())
+  updatedAt           DateTime     @default(now())
+  winnerId            String?
+  rounds              Int?
+  matchState          Json?
+  matchStates         MatchState[] // Add this line to create the opposite relation field
+  startedAt           DateTime?
+  endedAt             DateTime?
+
+  player1           User? @relation("Player1Matches", fields: [player1Id], references: [id])
+  player2           User? @relation("Player2Matches", fields: [player2Id], references: [id])
+  player1StartDeck  Deck? @relation("Player1StartDeck", fields: [player1StartDeckId], references: [id])
+  player2StartDeck  Deck? @relation("Player2StartDeck", fields: [player2StartDeckId], references: [id])
+  player1MarketDeck Deck? @relation("Player1MarketDeck", fields: [player1MarketDeckId], references: [id])
+  player2MarketDeck Deck? @relation("Player2MarketDeck", fields: [player2MarketDeckId], references: [id])
+  winner            User? @relation("WinnerMatches", fields: [winnerId], references: [id])
+}
+
+model MatchState {
+  id      String @id @default(uuid())
+  state   Json
+  matchId String
+  match   Match  @relation(fields: [matchId], references: [id])
+}

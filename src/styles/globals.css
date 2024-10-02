@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html,
+  body {
+    @apply bg-[#1C1C1E] text-white;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-light;
+  }
+
+  .debug {
+    @apply border border-green-400;
+  }
+
+  .bg-primary {
+    @apply bg-white/[.12];
+  }
+
+  .text-primary {
+    @apply text-white;
+  }
+
+  .text-secondary {
+    @apply text-[#a8a7ad];
+  }
+
+  .border-primary {
+    @apply border-white;
+  }
+
+  .theme-icon-dark {
+    @apply block opacity-100;
+  }
+  .theme-icon-light {
+    @apply hidden opacity-0;
+  }
+
+  #blog {
+    a {
+      @apply text-blue-400 hover:text-blue-500;
+    }
+    p {
+      @apply mb-8;
+    }
+
+    h1,
+    h2,
+    h3 {
+      @apply mb-4 text-2xl;
+    }
+    h4,
+    h5,
+    h6 {
+      @apply mb-4 text-xl;
+    }
+
+    ul {
+      @apply mb-4;
+      li {
+        @apply ml-6 list-disc;
+      }
+    }
+
+    ol {
+      @apply mb-4;
+      li {
+        @apply ml-6 list-decimal;
+      }
+    }
+    img {
+      @apply w-full rounded-sm opacity-60 md:max-w-[768px];
+    }
+  }
+
+  .text-link {
+    @apply text-blue-300 hover:text-blue-500;
+  }
+
+  /* a:not(:has(*)) {
+    @apply text-blue-300 hover:text-blue-500;
+  } */
+}
