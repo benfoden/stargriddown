@@ -24,6 +24,7 @@ export async function PublicNav() {
           </Link>
         </div>
       </div>
+
       {/* <div className="hidden items-center gap-4 md:flex md:pr-4">
         {!session ? (
           <>
