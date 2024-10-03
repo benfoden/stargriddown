@@ -114,7 +114,7 @@ export default function Input({
         >
           <span>
             {props.required && label?.length && (
-              <span className="text-blue-600 dark:text-blue-400">∗</span>
+              <span className="text-red-500">∗</span>
             )}{" "}
             <span>{label}</span>
           </span>

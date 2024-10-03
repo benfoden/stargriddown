@@ -4,12 +4,14 @@ function generateRandomHexagons(hexagonCount: number) {
   const hexagons = [];
   // emerald 500 and red 500
   const colors = ["#10b981", "#ef4444"];
+  const blurClasses = ["blur-sm", "blur-sm", "blur-sm", "blur-md", "blur-lg"];
   for (let i = 0; i < hexagonCount; i++) {
     const xPadding = Math.random() * 100 + "%";
     const yPadding = Math.random() * 100 + "%";
-    const opacity = Math.random() * 0.5 + 0.1;
     const fillColor = colors[Math.floor(Math.random() * colors.length)];
     const size = i % 117 === 0 ? 128 : i % 42 === 0 ? 96 : 64; // Set 1 in every 117 hexagons to 30px and 1 in every 42 hexagons to 20px
+    const blurClass =
+      blurClasses[Math.floor(Math.random() * blurClasses.length)];
 
     const hexagonPoints = `
       ${size / 2},0 
@@ -23,13 +25,14 @@ function generateRandomHexagons(hexagonCount: number) {
     hexagons.push(
       <svg
         key={i}
+        className={`${blurClass} opacity-0`}
         style={{
           position: "absolute",
           width: `${size}px`,
           height: `${size}px`,
           left: xPadding,
           top: yPadding,
-          opacity: opacity,
+          transition: "opacity 6s ease-in-out",
         }}
       >
         <polygon points={hexagonPoints} fill={fillColor} />
@@ -61,8 +64,18 @@ export default function HexagonBackground({ hidden }: { hidden: boolean }) {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  useEffect(() => {
+    const hexagons = document.querySelectorAll("svg");
+    hexagons.forEach((hexagon) => {
+      hexagon.style.opacity = "0";
+      setTimeout(() => {
+        hexagon.style.opacity = "0.3";
+      }, 0);
+    });
+  }, [hexagonCount]);
+
   if (hidden) {
     return null;
   }
-  return <>{generateRandomHexagons(hexagonCount)}</>;
+  return <div>{generateRandomHexagons(hexagonCount)}</div>;
 }
