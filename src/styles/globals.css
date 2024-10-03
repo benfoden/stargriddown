@@ -9,7 +9,7 @@
 
   html,
   body {
-    @apply bg-[#1C1C1E] text-white;
+    @apply bg-[#1C1C1E] font-mono text-white;
   }
 
   h1,
@@ -88,6 +88,10 @@
   .text-link {
     @apply text-blue-300 hover:text-blue-500;
   }
+
+  /*
+https://tailwindcss.com/docs/customizing-colors#color-object-syntax 
+*/
 
   /* a:not(:has(*)) {
     @apply text-blue-300 hover:text-blue-500;

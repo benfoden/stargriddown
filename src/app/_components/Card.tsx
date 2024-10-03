@@ -8,7 +8,8 @@ export const cardColors = (
     | "hero"
     | "comment"
     | "transparent"
-    | "prompt",
+    | "prompt"
+    | "play",
 ) =>
   ` bg-white/30 dark:bg-white/10 ${variant === "form" ? "shadow-xl dark:shadow-black" : ""}`;
 export function Card({
@@ -27,7 +28,8 @@ export function Card({
     | "hero"
     | "comment"
     | "transparent"
-    | "prompt";
+    | "prompt"
+    | "play";
 }) {
   if (variant === "form") isButton = false;
 
@@ -37,7 +39,7 @@ export function Card({
   const DefaultCard = () => (
     <div
       className={
-        ` w-full min-w-64 rounded-xl px-8 py-6 ${isButton ? sharedHover : ""} ` +
+        `w-full min-w-64 rounded-xl px-8 py-6 ${isButton ? sharedHover : ""} ` +
         cardColors(variant)
       }
     >
@@ -104,9 +106,9 @@ export function Card({
     case "hero":
       return (
         <div
-          className={`flex h-fit w-fit flex-col gap-2 rounded-full bg-white/30 px-6 py-4 dark:bg-white/10 ${isButton && sharedHover} shadow-xl dark:shadow-black `}
+          className={`flex h-fit w-fit flex-col gap-2 rounded-md bg-amber-500/10 px-6 py-4 ${isButton && sharedHover} border-4 border-amber-500 shadow-black backdrop-blur-sm`}
         >
-          <div className="flex flex-col items-start justify-between gap-2 px-16 py-8">
+          <div className="flex flex-col items-center justify-center gap-2 px-16 py-8">
             {children}
           </div>
         </div>
@@ -134,6 +136,15 @@ export function Card({
       return (
         <div
           className={`flex w-full flex-col items-start justify-between gap-2 rounded-full bg-white/30 px-3 py-1 dark:bg-white/10 ${isButton && sharedHover} `}
+        >
+          {children}
+        </div>
+      );
+
+    case "play":
+      return (
+        <div
+          className={`flex aspect-[1/1.618] w-full max-w-xs flex-col items-center justify-center gap-2 rounded-xl bg-white/10 ${isButton && sharedHover} border border-white/10 drop-shadow-sm backdrop-blur-sm`}
         >
           {children}
         </div>

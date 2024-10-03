@@ -1,26 +1,20 @@
 import Link from "next/link";
 import Button from "../_components/Button";
 import DropDownMenu from "../_components/DropDown";
+import StargridDownIcon from "../_components/StargridDownIcon";
 
 export async function PublicNav() {
   return (
     <nav className="z-100 flex h-16 w-full flex-wrap items-center justify-between bg-transparent pl-4 pt-4 sm:pr-4 sm:pt-0">
       <div className="flex items-center">
         <h1>
-          <Link
-            href="/"
-            className="rounded-full px-4 py-2 text-xl font-light no-underline"
-            aria-label="stargrid down"
-          >
-            stargrid down
+          <Link href="/" className="no-underline" aria-label="stargrid down">
+            <StargridDownIcon />
           </Link>
         </h1>
         <div className="hidden md:block">
-          <Link
-            href="/"
-            className="rounded-full px-4 py-2 no-underline transition hover:bg-white/30"
-          >
-            Home
+          <Link href="/">
+            <Button variant="nav">Home</Button>
           </Link>
         </div>
       </div>

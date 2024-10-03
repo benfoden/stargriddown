@@ -33,7 +33,7 @@ export default function Button({
     " flex items-center justify-between px-4 py-2 gap-4 rounded-full text-decoration-none transition ";
   const sharedColors = " bg-white/[.12] hover:bg-white/[.24] ";
 
-  const specialColors = " bg-blue-800 hover:bg-blue-700 ";
+  const specialColors = " bg-emerald-500 hover:bg-emerald-700 ";
 
   if (isDisabled) {
     buttonClass += " animate-pulse opacity-40 transition cursor-not-allowed";
@@ -44,44 +44,47 @@ export default function Button({
       buttonClass += defaults + sharedColors;
       break;
     case "text":
-      buttonClass += defaults + "hover:bg-white/[.24]";
+      buttonClass += defaults + "hover:bg-amber-500/[.24]";
       break;
     case "menuElement":
       buttonClass +=
-        " flex px-6 py-3 sm:px-4 sm:py-2 items-center justify-between gap-4 w-full rounded text-decoration-none transition " +
-        (isSpecial ? specialColors : " hover:bg-white/[.24] ");
+        " flex px-6 py-3 sm:px-4 sm:py-2 items-center justify-between gap-4 w-full rounded-md text-decoration-none transition " +
+        (isSpecial ? specialColors : " hover:bg-amber-500/[.24] ");
       break;
     case "cta":
       buttonClass +=
-        " flex px-6 py-3 sm:px-4 sm:py-2 items-center justify-between gap-4 rounded-full text-decoration-none transition " +
-        (isSpecial ? specialColors : " bg-white/[.18] hover:bg-white/[.36] ");
+        " z-10 rounded-full border-8 border-emerald-500 px-8 py-3 text-lg font-black uppercase text-emerald-400 shadow-lg transition hover:bg-emerald-500/40 ";
       break;
     case "chip":
       buttonClass +=
-        " flex px-2 py-1 w-fit items-center justify-between gap-4 rounded-full text-decoration-none transition text-xs font-medium " +
-        (isSpecial ? specialColors : " bg-white/[.08] hover:bg-white/[.16] ");
+        " flex px-2 py-1 w-fit items-center justify-between gap-4 rounded-md text-decoration-none transition text-xs font-medium " +
+        (isSpecial
+          ? specialColors
+          : " bg-amber-500/[.08] hover:bg-amber-500/[.16] ");
       break;
     case "submit":
       buttonClass +=
         " mt-2 flex h-12 w-full text-base items-center justify-center space-x-2 rounded-lg px-4 transition text-decoration-none " +
         (isSpecial
           ? specialColors
-          : " bg-white/[.16] hover:bg-white/[.32] active:bg-white/[.35] ");
+          : " bg-white/[.16] hover:bg-amber-500/[.32] active:bg-amber-500/[.35] ");
       break;
     case "nav":
       buttonClass +=
-        " flex px-6 py-3 sm:px-4 sm:py-2 items-center justify-between gap-1 rounded-full text-decoration-none transition " +
-        (isSpecial ? specialColors : " hover:bg-white/[.16] ");
+        " flex px-6 py-3 sm:px-4 sm:py-2 items-center justify-between gap-1 rounded-md text-decoration-none lowercase transition " +
+        (isSpecial ? specialColors : " hover:bg-amber-500/[.16] ");
       break;
     case "dropdownToggle":
       buttonClass +=
-        " flex p-2 w-fit items-center justify-between rounded-full text-decoration-none transition text-xs " +
-        (isSpecial ? specialColors : " hover:bg-white/[.24] ");
+        " flex p-2 w-fit items-center justify-between rounded-sm text-decoration-none transition text-xs text-amber-500 " +
+        (isSpecial ? specialColors : " hover:bg-amber-500/[.24] ");
       break;
     case "listItem":
       buttonClass +=
         " flex py-2 px-4 w-48 gap-2 flex-row wrap:no-wrap items-center justify-start rounded-lg text-sm " +
-        (isSpecial ? specialColors : " bg-white/[.08] hover:bg-white/[.16] ");
+        (isSpecial
+          ? specialColors
+          : " bg-amber-500/[.08] hover:bg-amber-500/[.16] ");
       break;
     default:
       buttonClass += defaults + sharedColors;

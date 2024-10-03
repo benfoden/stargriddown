@@ -60,12 +60,12 @@ const DropDownMenu = ({
           />
         )}
         {isUserMenu && !userProfileIconUrl && (
-          <HamburgerMenuIcon className="h-6 w-6" />
+          <HamburgerMenuIcon className="h-6 w-6 text-amber-500" />
         )}
         {isEntryMenu && <DotsHorizontalIcon className="h-6 w-6" />}
         {isTopMenu && <HamburgerMenuIcon className="h-6 w-6" />}
         {!isUserMenu && !isEntryMenu && !isTopMenu && (
-          <DotsVerticalIcon className="h-6 w-6" />
+          <DotsVerticalIcon className="h-6 w-6 text-amber-500" />
         )}
       </Button>
       {open && (
