@@ -16,6 +16,7 @@ export default function Button({
     | "submit"
     | "nav"
     | "dropdownToggle"
+    | "action"
     | "listItem";
   isServerSideForm?: boolean;
   children: React.ReactNode;
@@ -30,8 +31,8 @@ export default function Button({
 
   let buttonClass = "";
   const defaults =
-    " flex items-center justify-between px-4 py-2 gap-4 rounded-full text-decoration-none transition ";
-  const sharedColors = " bg-white/[.12] hover:bg-white/[.24] ";
+    " flex items-center justify-between px-4 py-2 gap-4 rounded-md text-decoration-none transition ";
+  const sharedColors = " bg-amber-500/[.12] hover:bg-amber-500/[.24] ";
 
   const specialColors = " bg-emerald-500 hover:bg-emerald-700 ";
 
@@ -78,6 +79,10 @@ export default function Button({
       buttonClass +=
         " flex p-2 w-fit items-center justify-between rounded-sm text-decoration-none transition text-xs text-amber-500 " +
         (isSpecial ? specialColors : " hover:bg-amber-500/[.24] ");
+      break;
+    case "action":
+      buttonClass +=
+        " sharp-md rounded-sm hover:pulsating-glow z-10 bg-amber-500 px-8 py-3 text-lg font-bold uppercase text-black transition hover:bg-amber-600 border-left border-top border-amber-300/30 hover:text-yellow-300 ";
       break;
     case "listItem":
       buttonClass +=

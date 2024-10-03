@@ -27,7 +27,7 @@ export default function Signup({ searchParams }: { searchParams: Message }) {
           Already have an account?
           <br />
           <Link className="text-primary font-medium underline" href="/log-in">
-            Sign in
+            Log in
           </Link>
         </p>
         <div className="my-8 flex flex-col gap-4">
