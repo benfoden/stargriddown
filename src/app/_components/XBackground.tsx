@@ -1,4 +1,4 @@
-import { Cross1Icon } from "@radix-ui/react-icons"; // Assuming Cross1Icon is imported from this package
+import { Cross2Icon } from "@radix-ui/react-icons"; // Assuming Cross1Icon is imported from this package
 import { useEffect, useState } from "react";
 
 function generateRandomCrosses(crossCount: number) {
@@ -9,7 +9,7 @@ function generateRandomCrosses(crossCount: number) {
     const opacity = Math.random() * 0.5 + 0.1;
 
     crosses.push(
-      <Cross1Icon
+      <Cross2Icon
         key={i}
         className="h-8 w-8 rounded-full text-amber-500"
         style={{

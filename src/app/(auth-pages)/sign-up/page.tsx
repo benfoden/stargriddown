@@ -24,12 +24,13 @@ export default function Signup({ searchParams }: { searchParams: Message }) {
       >
         <h1 className="text-2xl font-medium">Sign up</h1>
         <p className="text text-foreground text-sm">
-          Already have an account?{" "}
-          <Link className="text-primary font-medium underline" href="/sign-in">
+          Already have an account?
+          <br />
+          <Link className="text-primary font-medium underline" href="/log-in">
             Sign in
           </Link>
         </p>
-        <div className="mt-8 flex flex-col gap-2 [&>input]:mb-3">
+        <div className="my-8 flex flex-col gap-4">
           <Input
             name="email"
             label="Email"
@@ -52,10 +53,10 @@ export default function Signup({ searchParams }: { searchParams: Message }) {
             minLength={12}
             required
           />
-
-          <FormButton>Sign up</FormButton>
-          <FormMessage message={searchParams} />
         </div>
+
+        <FormButton variant="cta">Sign up</FormButton>
+        <FormMessage message={searchParams} />
       </form>
     </>
   );

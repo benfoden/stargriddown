@@ -7,7 +7,7 @@ import { TRPCReactProvider } from "~/trpc/react";
 import { HydrateClient } from "~/trpc/server";
 
 export const metadata: Metadata = {
-  title: "Stargrid Down",
+  title: "Stargrid",
   description: "Created by ben",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };

@@ -1,7 +1,8 @@
+import Link from "next/link";
 import Button from "../_components/Button";
 import { Card } from "../_components/Card";
-import ClientBgWrapper from "../_components/ClientBgWrapper";
-import StargridDownIcon from "../_components/StargridDownIcon";
+import StargridIcon from "../_components/StargridIcon";
+import TopPageBackground from "../_components/TopPageBackground";
 
 export default async function Top() {
   return (
@@ -10,9 +11,9 @@ export default async function Top() {
         <div className="flex w-fit flex-col items-center justify-between gap-2">
           <Card variant="hero" isButton={false}>
             <div className="flex w-full flex-col items-center justify-between gap-8 md:px-16 md:py-8">
-              <StargridDownIcon h={16} w={16} />
+              <StargridIcon size={24} />
               <h1 className="z-10 text-5xl font-extrabold uppercase tracking-tight text-amber-500 sm:text-[5rem]">
-                Stargrid Down
+                Stargrid
               </h1>
               <p className="z-10 text-lg uppercase">
                 A new Strategy Card Game with Rapid Deck-Building
@@ -20,10 +21,12 @@ export default async function Top() {
               <p className="z-10 text-lg uppercase">
                 Fast to start and challenging to master.
               </p>
-              <Button variant="cta">Play Now</Button>
+              <Link href={"/sign-up"}>
+                <Button variant="cta">Play for Free</Button>
+              </Link>
             </div>
           </Card>
-          <ClientBgWrapper />
+          <TopPageBackground />
         </div>
       </div>
     </div>

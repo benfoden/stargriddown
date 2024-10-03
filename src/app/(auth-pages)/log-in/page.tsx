@@ -13,20 +13,30 @@ export default function Login({ searchParams }: { searchParams: Message }) {
         await signInAction(formData);
       }}
     >
-      <h1 className="text-2xl font-medium">Sign in</h1>
+      <h1 className="text-2xl font-medium">Log in</h1>
       <p className="text-foreground text-sm">
         Dont have an account?{" "}
         <Link className="text-foreground font-medium underline" href="/sign-up">
           Sign up
         </Link>
       </p>
-      <div className="mt-8 flex flex-col gap-2 [&>input]:mb-3">
+      <div className="my-8 flex flex-col gap-4">
         <Input
           name="email"
           label="Email"
           placeholder="you@example.com"
           required
         />
+
+        <Input
+          type="password"
+          name="password"
+          label="Password"
+          placeholder="Your password"
+          required
+        />
+
+        <FormButton variant="cta">Log in</FormButton>
         <div className="flex items-center justify-between">
           <Link
             className="text-foreground text-xs underline"
@@ -35,14 +45,6 @@ export default function Login({ searchParams }: { searchParams: Message }) {
             Forgot Password?
           </Link>
         </div>
-        <Input
-          type="password"
-          name="password"
-          label="Password"
-          placeholder="Your password"
-          required
-        />
-        <FormButton>Sign in</FormButton>
         <FormMessage message={searchParams} />
       </div>
     </form>

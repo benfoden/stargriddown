@@ -4,7 +4,7 @@ import HexagonBackground from "./HexagonBackground";
 import StarsBackground from "./StarsBackground";
 import CrossBackground from "./XBackground";
 
-export default function ClientBgWrapper() {
+export default function TopPageBackground() {
   return (
     <>
       <StarsBackground hidden={false} />
