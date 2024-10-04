@@ -1,5 +1,6 @@
 import { postRouter } from "~/server/api/routers/post";
 import { createCallerFactory, createTRPCRouter } from "~/server/api/trpc";
+import { abilityRouter } from "./routers/ability";
 import { cardRouter } from "./routers/card";
 import { deckRouter } from "./routers/deck";
 import { matchRouter } from "./routers/match";
@@ -13,6 +14,7 @@ import { userRouter } from "./routers/user";
 export const appRouter = createTRPCRouter({
   post: postRouter,
   card: cardRouter,
+  ability: abilityRouter,
   deck: deckRouter,
   match: matchRouter,
   user: userRouter,

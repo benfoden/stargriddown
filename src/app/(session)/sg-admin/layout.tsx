@@ -8,12 +8,15 @@ export default function AdminLayout({
 }) {
   return (
     <>
-      <div className="flex flex-row">
+      <div className="flex flex-row gap-4">
         <Button>
           <Link href="/sg-admin">Dashboard</Link>
         </Button>
         <Button>
           <Link href="/sg-admin/cards">Cards</Link>
+        </Button>
+        <Button>
+          <Link href="/sg-admin/abilities">Abilities</Link>
         </Button>
       </div>
       {children}

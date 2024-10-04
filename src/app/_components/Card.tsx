@@ -144,7 +144,7 @@ export function Card({
     case "play":
       return (
         <div
-          className={`flex aspect-[1/1.618] w-full max-w-xs flex-col items-center justify-center gap-2 rounded-xl bg-white/10 ${isButton && sharedHover} border border-white/10 drop-shadow-sm backdrop-blur-sm`}
+          className={`flex max-h-[390px] w-full max-w-[241px] flex-col items-center justify-center gap-2 rounded-xl bg-white/5 ${isButton && "hover:cursor-pointer hover:bg-white/10"} border border-white/10 drop-shadow-sm backdrop-blur-sm`}
         >
           {children}
         </div>
