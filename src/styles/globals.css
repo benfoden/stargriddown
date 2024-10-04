@@ -141,6 +141,7 @@
       content: "";
       position: absolute;
       inset: 0;
+      background: rgba(253, 224, 71, 0.1);
       clip-path: polygon(
         0 8px,
         8px 0,
@@ -215,26 +216,6 @@
     }
   }
 
-  .pulsating-glow {
-    animation: pulsate 1s infinite;
-  }
-
-  @keyframes pulsate {
-    0%,
-    100% {
-      text-shadow:
-        0 0 10px rgba(253, 224, 71, 0.5),
-        0 0 20px rgba(253, 224, 71, 0.3),
-        0 0 30px rgba(253, 224, 71, 0.2);
-    }
-    50% {
-      text-shadow:
-        0 0 20px rgba(253, 224, 71, 0.7),
-        0 0 30px rgba(253, 224, 71, 0.5),
-        0 0 40px rgba(253, 224, 71, 0.3);
-    }
-  }
-
   .b-sharp-xl {
     .box {
       position: relative;
@@ -259,6 +240,26 @@
         calc(64px + 6.63px) 16px,
         16px calc(64px + 6.63px)
       );
+    }
+  }
+
+  .pulsating-glow {
+    animation: pulsate 1s infinite;
+  }
+
+  @keyframes pulsate {
+    0%,
+    100% {
+      text-shadow:
+        0 0 10px rgba(253, 224, 71, 0.5),
+        0 0 20px rgba(253, 224, 71, 0.3),
+        0 0 30px rgba(253, 224, 71, 0.2);
+    }
+    50% {
+      text-shadow:
+        0 0 20px rgba(253, 224, 71, 0.7),
+        0 0 30px rgba(253, 224, 71, 0.5),
+        0 0 40px rgba(253, 224, 71, 0.3);
     }
   }
 

@@ -82,7 +82,7 @@ export default function Button({
       break;
     case "action":
       buttonClass +=
-        " sharp-md rounded-sm hover:pulsating-glow z-10 bg-amber-500 px-8 py-3 text-lg font-bold uppercase text-black transition hover:bg-amber-600 border-left border-top border-amber-300/30 hover:text-yellow-300 ";
+        " rounded-xl hover:pulsating-glow z-10 bg-amber-500/10 px-8 py-3 text-lg font-bold uppercase text-amber-500 transition hover:bg-amber-600/60 border-4 border-amber-500/60 hover:border-yellow-500 hover:text-yellow-300 backdrop-blur-sm ";
       break;
     case "listItem":
       buttonClass +=

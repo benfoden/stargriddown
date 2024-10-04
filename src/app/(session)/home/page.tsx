@@ -9,7 +9,7 @@ export default async function Home({
   searchParams: Message;
 }) {
   return (
-    <div className="flex w-full flex-1 flex-col items-center gap-12">
+    <div className="flex w-full max-w-5xl flex-1 flex-col items-center gap-12">
       <FormMessage message={searchParams} />
       <Card variant="form" isButton={false}>
         <div className="flex h-full flex-col items-start justify-start gap-8 py-16">
