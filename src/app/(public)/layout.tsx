@@ -8,7 +8,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <>
+    <div className="mx-auto flex w-full flex-col">
       <PublicNav />
       <main className="flex min-h-screen w-full flex-col items-start justify-start px-2 sm:px-8">
         <div className="my-8 flex w-full flex-col items-center justify-start gap-2">
@@ -16,6 +16,6 @@ export default async function RootLayout({
         </div>
       </main>
       <PublicFooter />
-    </>
+    </div>
   );
 }

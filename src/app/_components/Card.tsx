@@ -106,9 +106,9 @@ export function Card({
     case "hero":
       return (
         <div
-          className={`flex h-fit w-fit flex-col gap-2 rounded-md bg-amber-500/10 px-6 py-4 ${isButton && sharedHover} border-4 border-amber-500 shadow-black backdrop-blur-sm`}
+          className={`flex h-fit w-fit flex-col gap-2 rounded-md bg-amber-500/10 px-2 py-8 md:px-6 md:py-4 ${isButton && sharedHover} border-4 border-amber-500 shadow-black backdrop-blur-sm`}
         >
-          <div className="flex flex-col items-center justify-center gap-2 px-16 py-8">
+          <div className="flex flex-col items-center justify-center gap-2 px-4 py-8 md:px-16">
             {children}
           </div>
         </div>

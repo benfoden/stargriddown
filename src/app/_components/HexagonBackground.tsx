@@ -40,7 +40,7 @@ function generateRandomHexagons(hexagonCount: number) {
     );
   }
   return (
-    <div className="absolute inset-0 left-0 top-[-80px] z-[-10] block min-h-screen w-full">
+    <div className="absolute inset-0 left-0 top-[-80px] z-[-10] block min-h-screen w-full max-w-[80%]">
       {hexagons}
     </div>
   );

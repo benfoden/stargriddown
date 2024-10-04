@@ -6,10 +6,10 @@ import CrossBackground from "./XBackground";
 
 export default function TopPageBackground() {
   return (
-    <>
+    <div className="overflow-clip">
       <StarsBackground hidden={false} />
       <HexagonBackground hidden={false} />
       <CrossBackground hidden={false} />
-    </>
+    </div>
   );
 }

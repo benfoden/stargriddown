@@ -16,13 +16,13 @@ export default function Signup({ searchParams }: { searchParams: Message }) {
   return (
     <>
       <form
-        className="mx-auto flex min-w-64 max-w-64 flex-col"
+        className="flex w-full min-w-64 flex-1 flex-col rounded-md border border-yellow-500 bg-amber-500/10 px-8 py-8 backdrop-blur-md md:w-[380px] md:px-8 md:py-16"
         action={async (formData) => {
           "use server";
           await signUpAction(formData);
         }}
       >
-        <h1 className="text-2xl font-medium">Sign up</h1>
+        <h1 className="text-2xl font-medium">Sign up to Stargrid</h1>
         <p className="text text-foreground text-sm">
           Already have an account?
           <br />

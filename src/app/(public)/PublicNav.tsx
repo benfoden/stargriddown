@@ -5,36 +5,22 @@ import StargridIcon from "../_components/StargridIcon";
 
 export async function PublicNav() {
   return (
-    <nav className="z-100 flex h-16 w-full flex-wrap items-center justify-between bg-transparent pl-4 pt-4 sm:pr-4 sm:pt-0">
-      <div className="flex items-center">
-        <h1>
-          <Link href="/" className="no-underline" aria-label="stargrid">
-            <StargridIcon />
-          </Link>
-        </h1>
-        <div className="hidden md:block">
-          <Link href="/">
-            <Button variant="nav">Home</Button>
-          </Link>
+    <nav className="fixed z-40 w-full px-2 pt-2 md:px-4">
+      <div className="flex h-16 w-full flex-row items-center justify-between rounded-md border border-yellow-500 bg-amber-500/10 px-2 backdrop-blur-lg md:px-8">
+        <div className="flex items-center">
+          <h1>
+            <Link href="/" className="no-underline" aria-label="stargrid">
+              <StargridIcon />
+            </Link>
+          </h1>
+          <div className="hidden md:block">
+            <Link href="/">
+              <Button variant="nav">Home</Button>
+            </Link>
+          </div>
         </div>
-      </div>
 
-      <div className="hidden items-center gap-4 md:flex md:pr-4">
-        <Link href={"/log-in"}>
-          <Button variant="menuElement">Log in</Button>
-        </Link>
-        <Link href={"/sign-up"}>
-          <Button variant="menuElement" isSpecial>
-            Sign up
-          </Button>
-        </Link>
-      </div>
-      <div className="block pr-6 md:hidden">
-        <DropDownMenu isTopMenu>
-          <Link href={"/home"}>
-            <Button variant="menuElement">Home</Button>
-          </Link>
-
+        <div className="hidden items-center gap-4 md:flex md:pr-4">
           <Link href={"/log-in"}>
             <Button variant="menuElement">Log in</Button>
           </Link>
@@ -43,8 +29,23 @@ export async function PublicNav() {
               Sign up
             </Button>
           </Link>
-        </DropDownMenu>
-        {/* <DropDownMenu isTopMenu>
+        </div>
+        <div className="relative z-50 block md:hidden">
+          <DropDownMenu isTopMenu>
+            <Link href={"/home"}>
+              <Button variant="menuElement">Home</Button>
+            </Link>
+
+            <Link href={"/log-in"}>
+              <Button variant="menuElement">Log in</Button>
+            </Link>
+            <Link href={"/sign-up"}>
+              <Button variant="menuElement" isSpecial>
+                Sign up
+              </Button>
+            </Link>
+          </DropDownMenu>
+          {/* <DropDownMenu isTopMenu>
           {session && (
             <Link href={"/home"}>
               <Button variant="menuElement">{t("nav.userHome")}</Button>
@@ -74,6 +75,7 @@ export async function PublicNav() {
             </Button>
           </Link>
         </DropDownMenu> */}
+        </div>
       </div>
     </nav>
   );

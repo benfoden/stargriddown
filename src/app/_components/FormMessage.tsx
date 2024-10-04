@@ -12,12 +12,12 @@ export function FormMessage({ message }: { message: Message }) {
         </div>
       )}
       {"error" in message && (
-        <div className="text-foreground border-foreground flex flex-col items-start justify-center rounded-sm border-2 border-red-600 px-4 py-2 text-red-500">
+        <div className="sharp-sm flex flex-col items-start justify-center border-l-8 border-red-600 bg-red-600/20 px-4 py-2 text-red-500">
           {message.error}
         </div>
       )}
       {"message" in message && (
-        <div className="text-foreground border-foreground flex flex-col items-start justify-center rounded-sm border-2 border-amber-600 px-4 py-2 text-amber-500">
+        <div className="sharp-sm flex flex-col items-start justify-center border-l-8 border-amber-600 bg-amber-600/20 px-4 py-2 text-amber-500">
           {message.message}
         </div>
       )}

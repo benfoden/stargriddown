@@ -19,7 +19,7 @@ export default async function SessionLayout({
           <GearIcon className="h-4 w-4" />
         </Link>
       </SessionNav>
-      <div className="flex w-full flex-1 flex-col items-center gap-12">
+      <div className="flex w-full flex-1 flex-col items-center gap-12 px-2 md:px-16">
         <div className="w-full max-w-2xl">
           <h1 className="text-2xl font-medium">Session</h1>
           {children}
