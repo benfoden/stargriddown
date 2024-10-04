@@ -1,10 +1,5 @@
-import {
-  CaretUpIcon,
-  GearIcon,
-  HomeIcon,
-  InfoCircledIcon,
-} from "@radix-ui/react-icons";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { type ReactNode } from "react";
 import { getUser } from "~/utils/supabase/getUser";
 import Button from "../_components/Button";
@@ -18,6 +13,7 @@ export default async function SessionLayout({
   children: ReactNode;
 }) {
   const user = await getUser();
+  if (!user) redirect("/log-in");
   return (
     <>
       <SessionNav>
@@ -26,27 +22,24 @@ export default async function SessionLayout({
         </Link>
         <DropDownMenu isUserMenu userName={user.name}>
           <Link href="/home">
-            <Button variant="menuElement">
-              <HomeIcon className="h-6 w-6 text-amber-500" /> Home
-            </Button>
+            <Button variant="menuElement">Home</Button>
           </Link>
           <Link href="/settings">
-            <Button variant="menuElement">
-              <GearIcon className="h-6 w-6 text-amber-500" /> Settings
-            </Button>
+            <Button variant="menuElement">Settings</Button>
+          </Link>
+          <Link href="/about">
+            <Button variant="menuElement">About</Button>
           </Link>
           <Link href="/">
-            <Button variant="menuElement">
-              <InfoCircledIcon className="h-6 w-6 text-amber-500" /> About
-            </Button>
-          </Link>
-          <Link href="/">
-            <Button variant="menuElement">
-              <CaretUpIcon className="h-6 w-6 text-amber-500" /> Top page
-            </Button>
+            <Button variant="menuElement">Top page</Button>
           </Link>
         </DropDownMenu>
       </SessionNav>
+      {user.email === "ben.foden@gmail.com" && (
+        <Link href="/sg-admin">
+          <Button variant="menuElement">SG Admin</Button>
+        </Link>
+      )}
       <div className="flex w-full flex-1 flex-col items-center gap-12 px-2 md:px-16">
         {children}
       </div>

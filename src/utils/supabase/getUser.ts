@@ -6,22 +6,24 @@ export type AuthUser = User & {
   name: string;
 };
 
-export const getUser = async (): Promise<AuthUser> => {
+export const getUser = async (): Promise<AuthUser | null> => {
   const supabase = createClient();
 
   try {
     const {
       data: { user },
     } = await supabase.auth.getUser();
-    if (!user) return {} as AuthUser;
+
+    if (!user) {
+      return null;
+    }
 
     const userData = await api.user.read();
-    if (!userData) return user as AuthUser;
 
-    const { name } = userData;
-    return { ...user, name: name ?? "" } as AuthUser;
+    const { name } = userData!;
+    return { ...user, name: name ?? "" };
   } catch (error) {
     console.error(error);
+    return null;
   }
-  return {} as AuthUser;
 };

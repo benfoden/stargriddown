@@ -10,7 +10,7 @@ export async function PublicNav() {
 
   return (
     <nav className="fixed z-40 w-full px-2 pt-2 md:px-4">
-      <div className="flex h-16 w-full flex-row items-center justify-between rounded-md border border-yellow-500 bg-amber-500/10 px-2 backdrop-blur-lg md:px-8">
+      <div className="flex h-16 w-full flex-row items-center justify-between rounded-md border border-b-black/20 border-l-amber-500/20 border-r-black/20 border-t-amber-500/20 bg-amber-500/10 px-2 backdrop-blur-lg md:px-8">
         <div className="flex items-center">
           <h1>
             <Link href="/" className="no-underline" aria-label="stargrid">
@@ -39,21 +39,17 @@ export async function PublicNav() {
           ) : (
             <>
               <DropDownMenu isUserMenu userName={user.name}>
-                <Link href="/">
-                  <Button variant="menuElement">
-                    <CaretUpIcon className="h-6 w-6 text-amber-500" /> Top
-                  </Button>
-                </Link>
                 <Link href="/home">
-                  <Button variant="menuElement">
-                    <HomeIcon className="h-6 w-6 text-amber-500" /> Home
-                  </Button>
+                  <Button variant="menuElement">Home</Button>
                 </Link>
                 <Link href="/settings">
-                  <Button variant="menuElement">
-                    <GearIcon className="h-6 w-6 text-amber-500" />
-                    Settings
-                  </Button>
+                  <Button variant="menuElement">Settings</Button>
+                </Link>
+                <Link href="/about">
+                  <Button variant="menuElement">About</Button>
+                </Link>
+                <Link href="/">
+                  <Button variant="menuElement">Top page</Button>
                 </Link>
               </DropDownMenu>
             </>

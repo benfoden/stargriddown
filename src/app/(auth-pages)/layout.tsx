@@ -2,6 +2,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import "~/styles/globals.css";
 import { getUser } from "~/utils/supabase/getUser";
+import { Card } from "../_components/Card";
 import StargridIcon from "../_components/StargridIcon";
 
 export default async function RootLayout({
@@ -28,7 +29,7 @@ export default async function RootLayout({
       </nav>
       <main className="flex min-h-screen w-full flex-col items-start justify-start px-2 sm:px-8">
         <div className="my-8 flex w-full flex-col items-center justify-start gap-2">
-          {children}
+          <Card variant="form">{children}</Card>
         </div>
       </main>
     </>

@@ -30,13 +30,17 @@ export const cardRouter = createTRPCRouter({
       });
     }),
 
-  read: publicProcedure
+  get: publicProcedure
     .input(z.object({ id: z.string() }))
     .query(async ({ ctx, input }) => {
       return ctx.db.card.findUnique({
         where: { id: input.id },
       });
     }),
+
+  getAll: publicProcedure.query(async ({ ctx }) => {
+    return ctx.db.card.findMany();
+  }),
 
   update: publicProcedure
     .input(

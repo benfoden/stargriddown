@@ -11,7 +11,7 @@ export const cardColors = (
     | "prompt"
     | "play",
 ) =>
-  ` bg-white/30 dark:bg-white/10 ${variant === "form" ? "shadow-xl dark:shadow-black" : ""}`;
+  ` bg-amber-500/10 ${variant === "form" ? "shadow-xl dark:shadow-black" : ""}`;
 export function Card({
   children,
   isButton = true,
@@ -82,7 +82,7 @@ export function Card({
       return (
         <div
           className={
-            `flex w-full flex-col gap-2 rounded-xl bg-white/50 px-8 py-6 shadow-lg dark:bg-white/10 ${isButton && sharedHover} ` +
+            `flex h-fit w-fit flex-col gap-2 rounded-md px-2 py-8 md:px-8 md:py-8 ${isButton && sharedHover} border border-b-black/20 border-l-amber-500/20 border-r-black/20 border-t-amber-500/20 shadow-black backdrop-blur-sm ` +
             cardColors(variant)
           }
         >
@@ -106,7 +106,7 @@ export function Card({
     case "hero":
       return (
         <div
-          className={`flex h-fit w-fit flex-col gap-2 rounded-md bg-amber-500/10 px-2 py-8 md:px-6 md:py-4 ${isButton && sharedHover} border-2 border-amber-500 shadow-black backdrop-blur-sm`}
+          className={`flex h-fit w-fit flex-col gap-2 rounded-lg bg-amber-500/10 px-2 py-8 md:px-6 md:py-4 ${isButton && sharedHover} border border-b-black/20 border-l-amber-500/20 border-r-black/20 border-t-amber-500/20 shadow-black backdrop-blur-sm`}
         >
           <div className="flex flex-col items-center justify-center gap-2 px-4 py-8 md:px-16">
             {children}
