@@ -98,6 +98,7 @@ export default async function AbilitesPage() {
               label="Variant (passive, active, beginningOfTurn, endOfTurn):"
               required
             />
+            <Input type="textarea" id="desc" name="desc" label="Description:" />
 
             <Input
               type="textarea"
@@ -112,8 +113,6 @@ export default async function AbilitesPage() {
               name="isUsable"
               label="Is Usable:"
             />
-
-            <Input type="textarea" id="desc" name="desc" label="Description:" />
 
             <Input type="number" id="attack" name="attack" label="Attack:" />
 
