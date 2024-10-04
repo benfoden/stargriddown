@@ -15,10 +15,10 @@ export default async function Top() {
                   Stargrid
                 </h1>
                 <p className="z-10 text-lg uppercase">
-                  A new Strategy Card Game with Rapid Deck-Building
+                  A cyberpunk Deck-building Card Game with rapid-fire strategy
                 </p>
                 <p className="z-10 text-lg uppercase">
-                  Fast to start and challenging to master.
+                  Easy to learn, a blast to play, and challenging to master.
                 </p>
                 <Link href={"/sign-up"}>
                   <Button variant="cta">Play for Free</Button>

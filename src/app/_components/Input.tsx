@@ -153,7 +153,7 @@ export default function Input({
               type={type}
               {...props}
               value={inputValue}
-              className={`w-full rounded-md px-5 py-3 text-base outline-none transition placeholder:text-sm placeholder:font-light placeholder:text-black/60 placeholder:dark:text-white/80 ${isActive && "bg-white/80 transition dark:bg-white/[.18]"} bg-primary ${props.disabled && "opacity-60"}`}
+              className={`w-full rounded-md px-5 py-3 text-base outline-none transition placeholder:text-sm placeholder:font-light placeholder:text-white/60 ${isActive && "bg-amber-500/80 transition dark:bg-amber-500/[.18]"} bg-primary ${props.disabled && "opacity-60"}`}
               ref={ref as React.RefObject<HTMLInputElement>}
               onFocus={handleFocus}
               onChange={(e) => {
@@ -171,7 +171,7 @@ export default function Input({
             type={showPassword ? "text" : "password"}
             {...props}
             value={inputValue}
-            className={`w-full rounded-md px-5 py-3 text-base outline-none transition placeholder:text-sm placeholder:font-light placeholder:text-black/60 placeholder:dark:text-white/80 ${isActive && "bg-white/80 transition dark:bg-white/[.18]"} bg-primary`}
+            className={`w-full rounded-md px-5 py-3 text-base outline-none transition placeholder:text-sm placeholder:font-light placeholder:text-white/60 ${isActive && "bg-amber-500/80 transition dark:bg-amber-500/[.18]"} bg-primary`}
             ref={ref as React.RefObject<HTMLInputElement>}
             onFocus={handleFocus}
             onChange={(e) => {
@@ -213,7 +213,7 @@ export default function Input({
               <label
                 key={index}
                 htmlFor={option.id}
-                className={`w-full cursor-pointer rounded-md px-4 py-2 text-center transition-opacity duration-200 ease-in-out hover:bg-white/80 hover:opacity-100 dark:bg-white/10 dark:hover:bg-white/30 ${!option.checked ? "opacity-60" : "bg-white/80 dark:bg-white/30"}`}
+                className={`w-full cursor-pointer rounded-md px-4 py-2 text-center transition-opacity duration-200 ease-in-out hover:bg-amber-500/80 hover:opacity-100 dark:bg-amber-500/10 dark:hover:bg-amber-500/30 ${!option.checked ? "opacity-60" : "bg-amber-500/80 dark:bg-amber-500/30"}`}
               >
                 <input
                   type="radio"
@@ -246,7 +246,7 @@ export default function Input({
         <>
           <textarea
             {...(props as React.TextareaHTMLAttributes<HTMLTextAreaElement>)}
-            className={`w-full rounded-md py-4 pl-5 pr-10 outline-none transition placeholder:text-sm placeholder:font-light ${isActive && "bg-white/80 dark:bg-white/[.18]"} bg-primary`}
+            className={`w-full rounded-md py-4 pl-5 pr-10 outline-none transition placeholder:text-sm placeholder:font-light ${isActive && "bg-amber-500/[.18]"} bg-primary`}
             ref={ref as React.RefObject<HTMLTextAreaElement>}
             onFocus={handleFocus}
             onChange={handleChange}
@@ -272,7 +272,7 @@ export default function Input({
         />
       )}
       {type === "file" && (
-        <label className="bg-primary w-full cursor-pointer rounded-md bg-white/60 py-4 pl-5 pr-10 text-center text-sm outline-none transition placeholder:text-sm placeholder:font-light hover:bg-white/90 dark:bg-white/20 dark:hover:bg-white/30">
+        <label className="bg-primary w-full cursor-pointer rounded-md bg-amber-500/60 py-4 pl-5 pr-10 text-center text-sm outline-none transition placeholder:text-sm placeholder:font-light hover:bg-amber-500/90 dark:bg-amber-500/20 dark:hover:bg-amber-500/30">
           <input
             type="file"
             {...props}

@@ -1,4 +1,9 @@
-import { GearIcon } from "@radix-ui/react-icons";
+import {
+  CaretUpIcon,
+  GearIcon,
+  HomeIcon,
+  InfoCircledIcon,
+} from "@radix-ui/react-icons";
 import Link from "next/link";
 import { type ReactNode } from "react";
 import Button from "../_components/Button";
@@ -17,10 +22,25 @@ export default async function SessionLayout({
         <Link href="/home">
           <StargridIcon />
         </Link>
-        <DropDownMenu>
+        <DropDownMenu isUserMenu>
+          <Link href="/home">
+            <Button variant="menuElement">
+              <HomeIcon className="h-6 w-6 text-amber-500" /> Home
+            </Button>
+          </Link>
           <Link href="/settings">
             <Button variant="menuElement">
               <GearIcon className="h-6 w-6 text-amber-500" /> Settings
+            </Button>
+          </Link>
+          <Link href="/">
+            <Button variant="menuElement">
+              <InfoCircledIcon className="h-6 w-6 text-amber-500" /> About
+            </Button>
+          </Link>
+          <Link href="/">
+            <Button variant="menuElement">
+              <CaretUpIcon className="h-6 w-6 text-amber-500" /> Top page
             </Button>
           </Link>
         </DropDownMenu>

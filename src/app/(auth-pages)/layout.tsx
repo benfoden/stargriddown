@@ -1,5 +1,7 @@
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import "~/styles/globals.css";
+import { getUser } from "~/utils/supabase/getUser";
 import StargridIcon from "../_components/StargridIcon";
 
 export default async function RootLayout({
@@ -7,6 +9,12 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const user = await getUser();
+
+  if (user) {
+    redirect("/home");
+  }
+
   return (
     <>
       <nav className="z-100 flex h-16 w-full flex-wrap items-center justify-between bg-transparent pl-4 pt-4 sm:pr-4 sm:pt-0">

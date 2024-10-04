@@ -72,7 +72,7 @@ export default function Button({
       break;
     case "nav":
       buttonClass +=
-        " flex px-6 py-3 sm:px-4 sm:py-2 items-center justify-between gap-1 rounded-md text-decoration-none lowercase transition " +
+        " flex px-6 py-3 sm:px-4 sm:py-2 items-center justify-between gap-1 rounded-md text-decoration-none transition " +
         (isSpecial ? specialColors : " hover:bg-amber-500/[.16] ");
       break;
     case "dropdownToggle":

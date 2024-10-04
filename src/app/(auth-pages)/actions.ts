@@ -3,6 +3,7 @@
 import { headers } from "next/headers";
 
 import { redirect } from "next/navigation";
+import { api } from "~/trpc/server";
 import { encodedRedirect } from "~/utils/misc";
 import { createClient } from "~/utils/supabase/server";
 
@@ -33,8 +34,27 @@ export const signUpAction = async (formData: FormData) => {
     console.error(error.code + " " + error.message);
     return encodedRedirect("error", "/sign-up", error.message);
   } else {
-    return encodedRedirect("success", "/home", "Thanks for signing up!");
+    return redirect("/welcome");
   }
+};
+
+export const welcomeAction = async (formData: FormData) => {
+  const name = formData.get("name") as string;
+
+  try {
+    await api.user.create({ name });
+  } catch (error) {
+    if (error instanceof Error && error.message) {
+      return encodedRedirect("error", "/welcome", error.message);
+    }
+    return encodedRedirect(
+      "error",
+      "/welcome",
+      "An unknown error occurred. Please try again or contact us.",
+    );
+  }
+
+  return redirect("/home");
 };
 
 export const signInAction = async (formData: FormData) => {
