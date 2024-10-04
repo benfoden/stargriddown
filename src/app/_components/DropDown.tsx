@@ -1,5 +1,6 @@
 "use client";
 import {
+  AvatarIcon,
   DotsHorizontalIcon,
   DotsVerticalIcon,
   HamburgerMenuIcon,
@@ -16,12 +17,14 @@ const DropDownMenu = ({
   isEntryMenu = false,
   isTopMenu = false,
   userProfileIconUrl,
+  userName,
 }: {
   children: React.ReactNode;
   isUserMenu?: boolean;
   isEntryMenu?: boolean;
   isTopMenu?: boolean;
   userProfileIconUrl?: string;
+  userName?: string;
 }) => {
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -52,6 +55,7 @@ const DropDownMenu = ({
       className={`relative flex flex-col items-end ${open ? "open" : ""} ${isUserMenu && "mr-4"}`}
     >
       <Button variant="dropdownToggle" onClick={toggleDropdown}>
+        <p className="hidden pr-2 md:block">{userName}</p>
         {isUserMenu && userProfileIconUrl && (
           <Avatar
             src={userProfileIconUrl}
@@ -60,7 +64,7 @@ const DropDownMenu = ({
           />
         )}
         {isUserMenu && !userProfileIconUrl && (
-          <HamburgerMenuIcon className="h-6 w-6 text-amber-500" />
+          <AvatarIcon className="h-6 w-6 text-amber-500" />
         )}
         {isEntryMenu && (
           <DotsHorizontalIcon className="h-6 w-6 text-amber-500" />

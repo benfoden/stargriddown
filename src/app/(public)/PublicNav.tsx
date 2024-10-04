@@ -38,26 +38,29 @@ export async function PublicNav() {
             </>
           ) : (
             <>
-              <Link href="/">
-                <Button variant="menuElement">
-                  <CaretUpIcon className="h-6 w-6 text-amber-500" /> Top
-                </Button>
-              </Link>
-              <Link href="/home">
-                <Button variant="menuElement">
-                  <HomeIcon className="h-6 w-6 text-amber-500" /> Home
-                </Button>
-              </Link>
-              <Link href="/settings">
-                <Button variant="menuElement">
-                  <GearIcon className="h-6 w-6 text-amber-500" /> Settings
-                </Button>
-              </Link>
+              <DropDownMenu isUserMenu userName={user.name}>
+                <Link href="/">
+                  <Button variant="menuElement">
+                    <CaretUpIcon className="h-6 w-6 text-amber-500" /> Top
+                  </Button>
+                </Link>
+                <Link href="/home">
+                  <Button variant="menuElement">
+                    <HomeIcon className="h-6 w-6 text-amber-500" /> Home
+                  </Button>
+                </Link>
+                <Link href="/settings">
+                  <Button variant="menuElement">
+                    <GearIcon className="h-6 w-6 text-amber-500" />
+                    Settings
+                  </Button>
+                </Link>
+              </DropDownMenu>
             </>
           )}
         </div>
 
-        <div className="relative z-50 block md:hidden">
+        <div className="relative block md:hidden">
           <DropDownMenu isUserMenu>
             <Link href="/">
               <Button variant="menuElement">

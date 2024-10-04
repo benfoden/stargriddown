@@ -6,6 +6,7 @@ import {
 } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { type ReactNode } from "react";
+import { getUser } from "~/utils/supabase/getUser";
 import Button from "../_components/Button";
 import DropDownMenu from "../_components/DropDown";
 import { SessionNav } from "../_components/SessionNav";
@@ -16,13 +17,14 @@ export default async function SessionLayout({
 }: {
   children: ReactNode;
 }) {
+  const user = await getUser();
   return (
     <>
       <SessionNav>
         <Link href="/home">
           <StargridIcon />
         </Link>
-        <DropDownMenu isUserMenu>
+        <DropDownMenu isUserMenu userName={user.name}>
           <Link href="/home">
             <Button variant="menuElement">
               <HomeIcon className="h-6 w-6 text-amber-500" /> Home

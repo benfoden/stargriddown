@@ -12,6 +12,7 @@ export const userRouter = createTRPCRouter({
     .mutation(async ({ ctx, input }) => {
       const { name } = input;
       const { id, email } = ctx.user;
+
       return ctx.db.user.create({
         data: {
           id,
@@ -21,13 +22,11 @@ export const userRouter = createTRPCRouter({
       });
     }),
 
-  read: protectedProcedure
-    .input(z.object({ id: z.string() }))
-    .query(async ({ ctx, input }) => {
-      return await ctx.db.user.findUnique({
-        where: { id: input.id },
-      });
-    }),
+  read: protectedProcedure.query(async ({ ctx }) => {
+    return await ctx.db.user.findUnique({
+      where: { id: ctx.user.id },
+    });
+  }),
 
   update: protectedProcedure
     .input(

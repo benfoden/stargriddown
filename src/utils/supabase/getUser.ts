@@ -15,10 +15,11 @@ export const getUser = async (): Promise<AuthUser> => {
     } = await supabase.auth.getUser();
     if (!user) return {} as AuthUser;
 
-    const userData = await api.user.read({ id: user.id });
-    console.log("userData", userData);
+    const userData = await api.user.read();
+    if (!userData) return user as AuthUser;
 
-    return user as AuthUser;
+    const { name } = userData;
+    return { ...user, name: name ?? "" } as AuthUser;
   } catch (error) {
     console.error(error);
   }
