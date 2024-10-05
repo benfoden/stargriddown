@@ -1,7 +1,6 @@
 "use client";
 import { type Card as CardType } from "@prisma/client";
 import { CircleIcon, SquareIcon, VercelLogoIcon } from "@radix-ui/react-icons";
-import Image from "next/image";
 import { CARDTYPES } from "~/gameConfig/constants";
 import { Card } from "./Card";
 
@@ -23,7 +22,7 @@ export default function MatchCard({ card }: { card: CardType }) {
 
         <div className="flex h-full w-full items-center justify-center rounded border border-black/40 bg-black/20">
           {card.image ? (
-            <Image src={card.image} alt={card.name} className="h-auto w-full" />
+            "todo: style images"
           ) : card.type === CARDTYPES.funds ? (
             <span className="text-8xl">💴</span>
           ) : card.type === CARDTYPES.operator ? (

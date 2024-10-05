@@ -19,6 +19,7 @@ export default async function CardPage({ params }: { params: { id: string } }) {
         <MatchCard card={card} />
         <Card variant="form">
           <form
+            className="flex flex-col gap-2"
             action={async (formData: FormData) => {
               "use server";
 
@@ -80,21 +81,14 @@ export default async function CardPage({ params }: { params: { id: string } }) {
               id="type"
               name="type"
               label="Type:"
+              initialValue={card.type}
               radioOptions={Object.values(CARDTYPES).map((type) => ({
                 id: type,
                 label: type,
                 value: type,
-                checked: card.type === type,
               }))}
             />
-            <details className="text-xs">
-              <summary>Types</summary>
-              <div className="flex flex-row flex-wrap gap-2">
-                {Object.values(CARDTYPES).map((type) => (
-                  <span key={type}>{type}</span>
-                ))}
-              </div>
-            </details>
+
             <Input
               type="text"
               id="rarity"

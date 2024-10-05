@@ -198,24 +198,47 @@ export default function Input({
       )}
       {type === "radio" && (
         <fieldset className="flex w-full flex-col">
-          <legend
-            className={`text-secondary flex w-full flex-row items-center gap-2 px-5 py-1 text-sm`}
-          >
-            <span>
-              {props.required && label?.length && (
-                <span className="text-blue-600 dark:text-blue-400">∗</span>
-              )}{" "}
-              <span>{label}</span>
-            </span>
+          <legend className="text-secondary flex w-full flex-row items-center gap-2 px-5 py-1 text-sm">
+            {props.required && label && (
+              <span className="text-blue-600 dark:text-blue-400">∗</span>
+            )}
+            <span>{label}</span>
           </legend>
           <div className="flex flex-row flex-wrap gap-2 text-sm">
-            {radioChoices?.map((option, index) => (
+            {radioChoices?.map((option) => (
+              <label
+                key={option.id}
+                className="bg-primary flex w-full flex-row items-center gap-2 rounded-md border-2 border-transparent px-4 py-2 text-center transition-opacity duration-200 ease-in-out hover:border-amber-500/80 hover:opacity-100"
+              >
+                <input
+                  type="radio"
+                  id={option.id}
+                  {...props}
+                  ref={ref as React.RefObject<HTMLInputElement>}
+                  onFocus={handleFocus}
+                  value={option.value}
+                  checked={
+                    option.value === inputValue || option.value === initialValue
+                  }
+                  onChange={(e) => {
+                    if (props.onChange) {
+                      props.onChange(e);
+                    }
+                    handleChange(e);
+                  }}
+                />
+                {option.label}
+              </label>
+            ))}
+          </div>
+        </fieldset>
+      )}
+      {/* {radioChoices?.map((option, index) => (
               <label
                 key={index}
                 htmlFor={option.id}
                 className={`w-full cursor-pointer rounded-md bg-amber-500/10 px-4 py-2 text-center transition-opacity duration-200 ease-in-out hover:bg-amber-500/30 hover:opacity-100 ${!option.checked ? "opacity-60" : "bg-amber-500/60"}`}
               >
-                {option.checked && "checked"}
                 <input
                   type="radio"
                   id={option.id}
@@ -237,10 +260,7 @@ export default function Input({
                 />
                 <span className="text-white">{option.label}</span>
               </label>
-            ))}
-          </div>
-        </fieldset>
-      )}
+            ))} */}
       {type === "textarea" && (
         <>
           <textarea
