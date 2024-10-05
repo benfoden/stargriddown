@@ -1,19 +1,40 @@
-export const GAME_MODES = ["normal", "tournament", "private"];
-export const GAME_TYPES = ["normal", "tournament", "private"];
-export const STATUSES = ["started", "ended"];
+export const GAME_MODES = {
+  normal: "normal",
+  tournament: "tournament",
+  private: "private",
+};
 
-export const CARDTYPES = [
-  "operator",
-  "install",
-  "asset",
-  "coin",
-  "mod",
-  "contract",
-  "command",
-  "leader",
-  "hq",
-];
+export const GAME_TYPES = {
+  normal: "normal",
+  tournament: "tournament",
+  private: "private",
+};
 
-export const RARITIES = ["c", "b", "a", "s", "s+"];
+export const STATUSES = {
+  started: "started",
+  ended: "ended",
+};
 
-export const DECKTYPES = ["starting", "market"];
+export const CARDTYPES = {
+  operator: "operator",
+  install: "install",
+  asset: "asset",
+  funds: "funds",
+  mod: "mod",
+  contract: "contract",
+  command: "command",
+  leader: "leader",
+  hq: "hq",
+};
+
+export const RARITIES = {
+  c: "c",
+  b: "b",
+  a: "a",
+  s: "s",
+};
+
+export const DECKTYPES = {
+  starting: "starting",
+  market: "market",
+};

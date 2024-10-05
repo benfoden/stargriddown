@@ -1,7 +1,7 @@
 "use client";
 import { useFormStatus } from "react-dom";
 import Button from "./Button";
-import ButtonSpinner from "./ButtonSpinner";
+import Spinner from "./Spinner";
 
 export default function FormButton({
   variant = "primary",
@@ -28,7 +28,7 @@ export default function FormButton({
       isSpecial={isSpecial}
       {...props}
     >
-      {pending ? <ButtonSpinner /> : children}
+      {pending ? <Spinner /> : children}
     </Button>
   );
 }

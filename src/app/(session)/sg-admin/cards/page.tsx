@@ -1,3 +1,4 @@
+import { type Card as CardType } from "@prisma/client";
 import Link from "next/link";
 import Button from "~/app/_components/Button";
 import { Card } from "~/app/_components/Card";
@@ -6,7 +7,10 @@ import Input from "~/app/_components/Input";
 import { api } from "~/trpc/server";
 
 export default async function CardsPage() {
-  const cards = await api.card.getAll();
+  const [cards, decks] = await Promise.all([
+    api.card.getAll(),
+    api.deck.getAll(),
+  ]);
 
   return (
     <div>
@@ -22,12 +26,9 @@ export default async function CardsPage() {
                 const cardJsonArray = formData.get("cardJsonArray") as string;
 
                 console.log("cardJsonArray", cardJsonArray);
-
-                type CardType = Card[];
-
-                const cards: CardType = JSON.parse(cardJsonArray) as CardType;
-
-                console.log("cards", cards);
+                const cards: CardType[] = JSON.parse(
+                  cardJsonArray,
+                ) as CardType[];
 
                 for (const card of cards) {
                   const {
@@ -68,7 +69,6 @@ export default async function CardsPage() {
                     abilities: abilities ?? undefined,
                   });
                 }
-
               }}
             >
               <Input
@@ -143,6 +143,17 @@ export default async function CardsPage() {
             <Input type="text" id="type" name="type" label="Type:" />
             <Input type="text" id="rarity" name="rarity" label="Rarity:" />
             <Input type="text" id="deckId" name="deckId" label="Deck ID:" />
+
+            <details>
+              <summary>decks</summary>
+              <div className="flex flex-col gap-1">
+                {decks.map((deck) => (
+                  <p className="text-xs" key={deck.id}>
+                    {deck.name}: {deck.id}
+                  </p>
+                ))}
+              </div>
+            </details>
 
             <Input
               type="textarea"

@@ -37,7 +37,7 @@ export default function Button({
   const specialColors = " bg-emerald-500 hover:bg-emerald-700 ";
 
   if (isDisabled) {
-    buttonClass += " animate-pulse opacity-40 transition cursor-not-allowed";
+    buttonClass += " animate-pulse opacity-60 transition cursor-not-allowed";
   }
 
   switch (variant) {
@@ -68,7 +68,7 @@ export default function Button({
         " mt-2 flex h-12 w-full text-base items-center justify-center space-x-2 rounded-lg px-4 transition text-decoration-none " +
         (isSpecial
           ? specialColors
-          : " bg-white/[.16] hover:bg-amber-500/[.32] active:bg-amber-500/[.35] ");
+          : " bg-amber-500/[.16] hover:bg-amber-500/[.32] active:bg-amber-500/[.35] ");
       break;
     case "nav":
       buttonClass +=

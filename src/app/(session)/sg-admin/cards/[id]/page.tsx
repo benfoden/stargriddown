@@ -6,7 +6,10 @@ import { CARDTYPES } from "~/gameConfig/constants";
 import { api } from "~/trpc/server";
 
 export default async function CardPage({ params }: { params: { id: string } }) {
-  const card = await api.card.get({ id: params.id });
+  const [card, decks] = await Promise.all([
+    api.card.get({ id: params.id }),
+    api.deck.getAll(),
+  ]);
   if (!card) {
     throw new Error("Card not found");
   }
@@ -82,7 +85,7 @@ export default async function CardPage({ params }: { params: { id: string } }) {
             <details className="text-xs">
               <summary>Types</summary>
               <div className="flex flex-row flex-wrap gap-2">
-                {CARDTYPES.map((type) => (
+                {Object.values(CARDTYPES).map((type) => (
                   <span key={type}>{type}</span>
                 ))}
               </div>
@@ -101,6 +104,16 @@ export default async function CardPage({ params }: { params: { id: string } }) {
               label="Deck ID:"
               initialValue={card.deckId ?? ""}
             />
+            <details>
+              <summary>decks</summary>
+              <div className="flex flex-col gap-1">
+                {decks.map((deck) => (
+                  <p className="text-xs" key={deck.id}>
+                    {deck.name}: {deck.id}
+                  </p>
+                ))}
+              </div>
+            </details>
 
             <Input
               type="text"

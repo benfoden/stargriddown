@@ -3,7 +3,7 @@ import { CheckIcon, Cross1Icon } from "@radix-ui/react-icons";
 import { useEffect, useState } from "react";
 import { useFormStatus } from "react-dom";
 import Button from "./Button";
-import ButtonSpinner from "./ButtonSpinner";
+import Spinner from "./Spinner";
 
 export default function FormDeleteButton({
   hasText = true,
@@ -51,7 +51,7 @@ export default function FormDeleteButton({
       {pending ? (
         <>
           <span>Deleting...</span>
-          <ButtonSpinner />
+          <Spinner />
         </>
       ) : confirmDelete ? (
         <>
