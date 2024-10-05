@@ -9,6 +9,7 @@ export const deckRouter = createTRPCRouter({
         name: z.string().min(1),
         desc: z.string().optional(),
         shortDesc: z.string().optional(),
+        type: z.string().optional(),
         image: z.string().optional(),
       }),
     )
@@ -18,13 +19,17 @@ export const deckRouter = createTRPCRouter({
       });
     }),
 
-  read: publicProcedure
+  get: publicProcedure
     .input(z.object({ id: z.string() }))
     .query(async ({ ctx, input }) => {
       return ctx.db.deck.findUnique({
         where: { id: input.id },
       });
     }),
+
+  getAll: publicProcedure.query(async ({ ctx }) => {
+    return ctx.db.deck.findMany();
+  }),
 
   update: publicProcedure
     .input(
@@ -33,6 +38,8 @@ export const deckRouter = createTRPCRouter({
         name: z.string().min(1).optional(),
         desc: z.string().optional(),
         shortDesc: z.string().optional(),
+        type: z.string().optional(),
+        image: z.string().optional(),
       }),
     )
     .mutation(async ({ ctx, input }) => {

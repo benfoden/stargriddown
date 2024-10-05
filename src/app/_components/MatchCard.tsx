@@ -14,15 +14,17 @@ export default function MatchCard({ card }: { card: CardType }) {
   return (
     <Card variant="play">
       <div className="flex h-full w-full flex-col items-center justify-between gap-2 p-2 font-sans">
-        {card.costYen ?? card.costDatab ?? card.costMw ?? (
+        <div className="flex flex-col items-center">
           <div className="flex w-full flex-row justify-between">
-            {card.costYen && (
+            {!!card.costYen && (
               <div className="flex flex-col items-center text-lg font-medium">
                 ¥ {card.costYen}
               </div>
             )}
           </div>
-        )}
+          <p className="text-xs opacity-60">{card.type}</p>
+        </div>
+
         <div className="flex h-full w-full items-center justify-center rounded border border-black/40 bg-black/20">
           {card.image ? (
             <Image src={card.image} alt={card.name} className="h-auto w-full" />

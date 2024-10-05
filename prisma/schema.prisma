@@ -32,6 +32,7 @@ model Deck {
   image                String?
   createdAt            DateTime @default(now())
   updatedAt            DateTime @default(now())
+  type                 String? 
   cards                Card[]
   player1StartMatches  Match[]  @relation("Player1StartDeck")
   player2StartMatches  Match[]  @relation("Player2StartDeck")
@@ -42,6 +43,7 @@ model Deck {
 model Card {
   id        String  @id @default(uuid())
   name      String
+  type      String  @default("operator")
   desc      String?
   shortDesc String?
   flavor    String?
@@ -55,7 +57,7 @@ model Card {
   costDatab Int?
   costMw    Int?
   costLag   Int?
-
+  rarity    String?
   deckId        String?
   image         String?
   createdAt     DateTime      @default(now())
@@ -71,6 +73,7 @@ model Ability {
   variant       String
   shortDesc     String?
   isUsable      Boolean?
+  targetType    String?
   desc          String?
   attack        Int?
   defense       Int?

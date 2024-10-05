@@ -27,6 +27,9 @@ export default async function CardsPage() {
 
               const name = formData.get("name") as string;
               const desc = formData.get("desc") as string;
+              const type = formData.get("type") as string;
+              const rarity = formData.get("rarity") as string;
+              const deckId = formData.get("deckId") as string;
               const shortDesc = formData.get("shortDesc") as string;
               const flavor = formData.get("flavor") as string;
               const yen = parseFloat(formData.get("yen") as string);
@@ -44,6 +47,9 @@ export default async function CardsPage() {
 
               await api.card.create({
                 name,
+                type,
+                rarity,
+                deckId,
                 desc,
                 shortDesc,
                 flavor,
@@ -65,6 +71,10 @@ export default async function CardsPage() {
             <Input type="text" id="name" name="name" label="Name:" required />
 
             <Input type="textarea" id="desc" name="desc" label="Description:" />
+
+            <Input type="text" id="type" name="type" label="Type:" />
+            <Input type="text" id="rarity" name="rarity" label="Rarity:" />
+            <Input type="text" id="deckId" name="deckId" label="Deck ID:" />
 
             <Input
               type="textarea"

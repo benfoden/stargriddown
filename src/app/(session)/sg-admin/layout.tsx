@@ -18,6 +18,9 @@ export default function AdminLayout({
         <Button>
           <Link href="/sg-admin/abilities">Abilities</Link>
         </Button>
+        <Button>
+          <Link href="/sg-admin/decks">Decks</Link>
+        </Button>
       </div>
       {children}
     </>

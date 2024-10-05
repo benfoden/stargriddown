@@ -22,6 +22,9 @@ export const cardRouter = createTRPCRouter({
         costLag: z.number().optional(),
         image: z.string().optional(),
         abilities: z.any().optional(),
+        rarity: z.string().optional(),
+        type: z.string().optional(),
+        deckId: z.string().optional(),
       }),
     )
     .mutation(async ({ ctx, input }) => {
@@ -62,6 +65,9 @@ export const cardRouter = createTRPCRouter({
         costLag: z.number().optional(),
         image: z.string().optional(),
         abilities: z.any().optional(),
+        rarity: z.string().optional(),
+        type: z.string().optional(),
+        deckId: z.string().optional(),
       }),
     )
     .mutation(async ({ ctx, input }) => {

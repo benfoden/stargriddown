@@ -23,7 +23,7 @@ export default function RootLayout({
     >
       <body>
         <div className="relative min-h-screen w-full">
-          <div className="absolute inset-0 z-[-20] min-h-full w-full bg-gradient-to-b from-[#07090a] to-[#171727]" />
+          <div className="absolute inset-0 z-[-20] min-h-full w-full bg-gradient-to-b from-[#07090a] from-65% via-[#18203a] to-[#234e5c]" />
           <div className="relative z-0 flex w-full flex-col">
             <TRPCReactProvider>
               <HydrateClient>{children}</HydrateClient>
