@@ -4,6 +4,7 @@ import Button from "~/app/_components/Button";
 import { Card } from "~/app/_components/Card";
 import FormButton from "~/app/_components/FormButton";
 import Input from "~/app/_components/Input";
+import { CARDTYPES } from "~/gameConfig/constants";
 import { api } from "~/trpc/server";
 
 export default async function CardsPage() {
@@ -140,7 +141,18 @@ export default async function CardsPage() {
 
             <Input type="textarea" id="desc" name="desc" label="Description:" />
 
-            <Input type="text" id="type" name="type" label="Type:" />
+            <Input
+              type="radio"
+              id="type"
+              name="type"
+              label="Type:"
+              radioOptions={Object.values(CARDTYPES).map((type) => ({
+                id: type,
+                label: type,
+                value: type,
+              }))}
+            />
+
             <Input type="text" id="rarity" name="rarity" label="Rarity:" />
             <Input type="text" id="deckId" name="deckId" label="Deck ID:" />
 

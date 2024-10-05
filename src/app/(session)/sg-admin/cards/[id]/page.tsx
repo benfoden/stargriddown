@@ -74,13 +74,18 @@ export default async function CardPage({ params }: { params: { id: string } }) {
               initialValue={card.name}
               required
             />
+
             <Input
-              type="text"
+              type="radio"
               id="type"
               name="type"
               label="Type:"
-              initialValue={card.type ?? ""}
-              required
+              radioOptions={Object.values(CARDTYPES).map((type) => ({
+                id: type,
+                label: type,
+                value: type,
+                checked: card.type === type,
+              }))}
             />
             <details className="text-xs">
               <summary>Types</summary>

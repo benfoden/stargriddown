@@ -213,8 +213,9 @@ export default function Input({
               <label
                 key={index}
                 htmlFor={option.id}
-                className={`w-full cursor-pointer rounded-md px-4 py-2 text-center transition-opacity duration-200 ease-in-out hover:bg-amber-500/80 hover:opacity-100 dark:bg-amber-500/10 dark:hover:bg-amber-500/30 ${!option.checked ? "opacity-60" : "bg-amber-500/80 dark:bg-amber-500/30"}`}
+                className={`w-full cursor-pointer rounded-md bg-amber-500/10 px-4 py-2 text-center transition-opacity duration-200 ease-in-out hover:bg-amber-500/30 hover:opacity-100 ${!option.checked ? "opacity-60" : "bg-amber-500/60"}`}
               >
+                {option.checked && "checked"}
                 <input
                   type="radio"
                   id={option.id}
@@ -234,9 +235,7 @@ export default function Input({
                     );
                   }}
                 />
-                <span className="text-black dark:text-white">
-                  {option.label}
-                </span>
+                <span className="text-white">{option.label}</span>
               </label>
             ))}
           </div>
