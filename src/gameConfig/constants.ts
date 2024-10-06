@@ -16,15 +16,49 @@ export const STATUSES = {
 };
 
 export const CARDTYPES = {
-  operator: "operator",
-  install: "install",
-  asset: "asset",
-  funds: "funds",
-  mod: "mod",
-  contract: "contract",
-  command: "command",
-  leader: "leader",
-  hq: "hq",
+  operator: {
+    name: "operator",
+    variants: ["human", "animal", "program", "robot", "drone", "vehicle"],
+  },
+  install: {
+    name: "install",
+    variants: ["infrastructure", "program", "drone", "wall", "trap", "turret"],
+  },
+  asset: {
+    name: "asset",
+    variants: [
+      "infrastructure",
+      "program",
+      "AI",
+      "decoy",
+      "investment",
+      "trap",
+    ],
+  },
+  funds: {
+    name: "funds",
+    variants: [],
+  },
+  mod: {
+    name: "mod",
+    variants: ["training", "program", "drone", "gear", "bionic", "chemical"],
+  },
+  contract: {
+    name: "contract",
+    variants: [],
+  },
+  command: {
+    name: "command",
+    variants: [],
+  },
+  leader: {
+    name: "leader",
+    variants: [],
+  },
+  hq: {
+    name: "hq",
+    variants: [],
+  },
 };
 
 export const RARITIES = {

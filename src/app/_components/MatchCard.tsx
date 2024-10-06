@@ -15,53 +15,62 @@ export default function MatchCard({ card }: { card: CardType }) {
                 ¥ {card.costYen}
               </div>
             )}
-            {card.type === CARDTYPES.funds && <span>{card.name}</span>}
+            {card.type === CARDTYPES.funds.name && <span>{card.name}</span>}
           </div>
-          <p className="text-xs opacity-60">{card.type}</p>
+          <p className="text-xs opacity-60">
+            {card.type}
+            {card.variant ? ` - ${card.variant}` : ""}
+          </p>
         </div>
 
         <div className="flex h-full w-full items-center justify-center rounded border border-black/40 bg-black/20">
           {card.image ? (
             "todo: style images"
-          ) : card.type === CARDTYPES.funds ? (
+          ) : card.type === CARDTYPES.funds.name ? (
             <span className="text-8xl">💴</span>
-          ) : card.type === CARDTYPES.operator ? (
+          ) : card.type === CARDTYPES.operator.name ? (
             <span className="text-8xl">💪</span>
-          ) : card.type === CARDTYPES.asset ? (
+          ) : card.type === CARDTYPES.asset.name ? (
             <span className="text-8xl">💰</span>
-          ) : card.type === CARDTYPES.install ? (
+          ) : card.type === CARDTYPES.install.name ? (
             <span className="text-8xl">🧱</span>
-          ) : card.type === CARDTYPES.mod ? (
+          ) : card.type === CARDTYPES.mod.name ? (
             <span className="text-8xl">💥</span>
-          ) : card.type === CARDTYPES.leader ? (
+          ) : card.type === CARDTYPES.leader.name ? (
             <span className="text-8xl">👑</span>
-          ) : card.type === CARDTYPES.contract ? (
+          ) : card.type === CARDTYPES.contract.name ? (
             <span className="text-8xl">📜</span>
-          ) : card.type === CARDTYPES.command ? (
+          ) : card.type === CARDTYPES.command.name ? (
             <span className="text-8xl">👉</span>
           ) : null}
         </div>
         <div className="flex w-full flex-col items-center rounded bg-black/20 px-2 py-1">
-          {card.type !== CARDTYPES.funds && (
+          {card.type !== CARDTYPES.funds.name && (
             <h2 className="text-xl font-bold">{card.name}</h2>
           )}
           <p className="pt-4 text-sm">{card.shortDesc}</p>
 
-          <div className="flex w-full flex-row justify-between pt-4">
-            {card.type !== CARDTYPES.funds ? (
+          <div className="flex h-16 w-full flex-row justify-between pt-4">
+            {card.type !== CARDTYPES.funds.name ? (
               <>
-                <div className="flex flex-col items-center text-lg font-bold text-emerald-500">
-                  <VercelLogoIcon className="h-6 w-6 text-emerald-500" />
-                  {card.attack}
-                </div>
-                <div className="flex flex-col items-center text-lg font-bold text-amber-500">
-                  <CircleIcon className="h-6 w-6 text-amber-500" />
-                  {card.datab}
-                </div>
-                <div className="flex flex-col items-center text-lg font-bold text-red-500">
-                  <SquareIcon className="h-6 w-6 text-red-500" />
-                  {card.defense}
-                </div>
+                {card.attack !== 0 && (
+                  <div className="flex flex-col items-center text-lg font-bold text-emerald-500">
+                    <VercelLogoIcon className="h-6 w-6 text-emerald-500" />
+                    {card.attack}
+                  </div>
+                )}
+                {card.datab !== 0 && (
+                  <div className="flex flex-col items-center text-lg font-bold text-amber-500">
+                    <CircleIcon className="h-6 w-6 text-amber-500" />
+                    {card.datab}
+                  </div>
+                )}
+                {card.defense !== 0 && (
+                  <div className="flex flex-col items-center text-lg font-bold text-red-500">
+                    <SquareIcon className="h-6 w-6 text-red-500" />
+                    {card.defense}
+                  </div>
+                )}
               </>
             ) : (
               <div className="flex w-full flex-col items-center text-lg font-bold text-white">

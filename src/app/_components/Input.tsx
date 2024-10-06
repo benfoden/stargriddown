@@ -199,9 +199,7 @@ export default function Input({
       {type === "radio" && (
         <fieldset className="flex w-full flex-col">
           <legend className="text-secondary flex w-full flex-row items-center gap-2 px-5 py-1 text-sm">
-            {props.required && label && (
-              <span className="text-blue-600 dark:text-blue-400">∗</span>
-            )}
+            {props.required && label && <span className="text-red-500">∗</span>}
             <span>{label}</span>
           </legend>
           <div className="flex flex-row flex-wrap gap-2 text-sm">

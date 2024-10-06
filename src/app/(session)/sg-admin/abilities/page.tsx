@@ -11,6 +11,12 @@ export default async function AbilitesPage() {
   return (
     <div>
       abilities
+      <details>
+        <summary>All abilities</summary>
+        <code>
+          <pre>{JSON.stringify(abilities, null, 2)}</pre>
+        </code>
+      </details>
       <div className="flex w-full flex-row items-start justify-center gap-4">
         <aside className="flex flex-col gap-2">
           {abilities.map((ability) => (

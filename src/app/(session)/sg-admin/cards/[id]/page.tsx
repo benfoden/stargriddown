@@ -6,13 +6,16 @@ import { CARDTYPES } from "~/gameConfig/constants";
 import { api } from "~/trpc/server";
 
 export default async function CardPage({ params }: { params: { id: string } }) {
-  const [card, decks] = await Promise.all([
+  const [card, decks, abilities] = await Promise.all([
     api.card.get({ id: params.id }),
     api.deck.getAll(),
+    api.ability.getAll(),
   ]);
   if (!card) {
     throw new Error("Card not found");
   }
+
+  console.log("the card", card);
   return (
     <div className="container mx-auto flex w-full flex-1 flex-col items-center gap-12">
       <div className="flex flex-row gap-4">
@@ -25,6 +28,7 @@ export default async function CardPage({ params }: { params: { id: string } }) {
 
               const name = formData.get("name") as string;
               const type = formData.get("type") as string;
+              const variant = formData.get("variant") as string;
               const rarity = formData.get("rarity") as string;
               const deckId = formData.get("deckId") as string;
               const desc = formData.get("desc") as string;
@@ -41,13 +45,17 @@ export default async function CardPage({ params }: { params: { id: string } }) {
               const costMw = parseFloat(formData.get("costMw") as string);
               const costLag = parseFloat(formData.get("costLag") as string);
               const image = formData.get("image") as string;
-              const abilities = formData.get("abilities") as string;
+              const might = parseFloat(formData.get("might") as string);
+              const abilities = JSON.parse(
+                formData.get("cardAbilities") as string,
+              ) as string;
 
               await api.card.update({
                 id: params.id,
                 name,
                 desc,
                 type,
+                variant,
                 deckId,
                 rarity,
                 shortDesc,
@@ -64,6 +72,7 @@ export default async function CardPage({ params }: { params: { id: string } }) {
                 costLag,
                 image,
                 abilities,
+                might,
               });
             }}
           >
@@ -75,19 +84,50 @@ export default async function CardPage({ params }: { params: { id: string } }) {
               initialValue={card.name}
               required
             />
+            <Input
+              type="radio"
+              id="deckId"
+              name="deckId"
+              label="Deck:"
+              initialValue={card.deckId ?? ""}
+              required
+              radioOptions={decks.map((deck) => ({
+                id: deck.id,
+                label: deck.name,
+                value: deck.id,
+              }))}
+            />
 
             <Input
               type="radio"
               id="type"
               name="type"
               label="Type:"
-              initialValue={card.type}
+              initialValue={card.type ?? ""}
               radioOptions={Object.values(CARDTYPES).map((type) => ({
-                id: type,
-                label: type,
-                value: type,
+                id: type.name,
+                label: type.name,
+                value: type.name,
               }))}
             />
+
+            <Input
+              type="text"
+              id="variant"
+              name="variant"
+              label="Variant:"
+              initialValue={card.variant ?? ""}
+            />
+            {Object.values(CARDTYPES).map((type) => (
+              <details key={type.name}>
+                <summary>{type.name}</summary>
+                <ul>
+                  {type.variants.map((variant) => (
+                    <li key={variant}>{variant}</li>
+                  ))}
+                </ul>
+              </details>
+            ))}
 
             <Input
               type="text"
@@ -96,23 +136,6 @@ export default async function CardPage({ params }: { params: { id: string } }) {
               label="Rarity:"
               initialValue={card.rarity ?? ""}
             />
-            <Input
-              type="text"
-              id="deckId"
-              name="deckId"
-              label="Deck ID:"
-              initialValue={card.deckId ?? ""}
-            />
-            <details>
-              <summary>decks</summary>
-              <div className="flex flex-col gap-1">
-                {decks.map((deck) => (
-                  <p className="text-xs" key={deck.id}>
-                    {deck.name}: {deck.id}
-                  </p>
-                ))}
-              </div>
-            </details>
 
             <Input
               type="text"
@@ -203,6 +226,14 @@ export default async function CardPage({ params }: { params: { id: string } }) {
             />
 
             <Input
+              type="number"
+              id="might"
+              name="might"
+              label="Might:"
+              initialValue={card.might ?? 0}
+            />
+
+            <Input
               type="text"
               id="image"
               name="image"
@@ -211,12 +242,17 @@ export default async function CardPage({ params }: { params: { id: string } }) {
             />
 
             <Input
-              type="textarea"
+              type="text"
               id="abilities"
               name="abilities"
               label="Abilities:"
-              initialValue={JSON.stringify(card.abilities) ?? ""}
             />
+            {abilities.map((ability) => (
+              <details key={ability.name}>
+                <summary>{ability.name}</summary>
+                <code>{`{"id": "${ability.id}", "name": "${ability.name}", "variant": "${ability.variant}", "shortDesc": "${ability.shortDesc}", "desc": "${ability.desc}"}`}</code>
+              </details>
+            ))}
 
             <Input
               type="text"
@@ -233,6 +269,7 @@ export default async function CardPage({ params }: { params: { id: string } }) {
               label="Flavor:"
               initialValue={card.flavor ?? ""}
             />
+
             <FormButton variant="submit">Update Card</FormButton>
           </form>
         </Card>

@@ -8,9 +8,10 @@ import { CARDTYPES } from "~/gameConfig/constants";
 import { api } from "~/trpc/server";
 
 export default async function CardsPage() {
-  const [cards, decks] = await Promise.all([
+  const [cards, decks, abilities] = await Promise.all([
     api.card.getAll(),
     api.deck.getAll(),
+    api.ability.getAll(),
   ]);
 
   return (
@@ -35,6 +36,8 @@ export default async function CardsPage() {
                   const {
                     name,
                     desc,
+                    type,
+                    variant,
                     shortDesc,
                     flavor,
                     yen,
@@ -49,12 +52,15 @@ export default async function CardsPage() {
                     costLag,
                     image,
                     abilities,
+                    might,
                   } = card;
 
                   await api.card.create({
                     name: name ?? undefined,
                     desc: desc ?? undefined,
                     shortDesc: shortDesc ?? undefined,
+                    type: type ?? undefined,
+                    variant: variant ?? undefined,
                     flavor: flavor ?? undefined,
                     yen: yen ?? undefined,
                     attack: attack ?? undefined,
@@ -68,6 +74,7 @@ export default async function CardsPage() {
                     costLag: costLag ?? undefined,
                     image: image ?? undefined,
                     abilities: abilities ?? undefined,
+                    might: might ?? undefined,
                   });
                 }
               }}
@@ -97,6 +104,7 @@ export default async function CardsPage() {
               const name = formData.get("name") as string;
               const desc = formData.get("desc") as string;
               const type = formData.get("type") as string;
+              const variant = formData.get("variant") as string;
               const rarity = formData.get("rarity") as string;
               const deckId = formData.get("deckId") as string;
               const shortDesc = formData.get("shortDesc") as string;
@@ -112,11 +120,14 @@ export default async function CardsPage() {
               const costMw = parseFloat(formData.get("costMw") as string);
               const costLag = parseFloat(formData.get("costLag") as string);
               const image = formData.get("image") as string;
-              const abilities = formData.get("abilities") as string;
+              const abilities = JSON.parse(
+                formData.get("abilities") as string,
+              ) as string;
 
               await api.card.create({
                 name,
                 type,
+                variant,
                 rarity,
                 deckId,
                 desc,
@@ -138,7 +149,18 @@ export default async function CardsPage() {
             }}
           >
             <Input type="text" id="name" name="name" label="Name:" required />
-
+            <Input
+              type="radio"
+              id="deckId"
+              name="deckId"
+              label="Deck:"
+              required
+              radioOptions={decks.map((deck) => ({
+                id: deck.id,
+                label: deck.name,
+                value: deck.id,
+              }))}
+            />
             <Input type="textarea" id="desc" name="desc" label="Description:" />
 
             <Input
@@ -147,25 +169,25 @@ export default async function CardsPage() {
               name="type"
               label="Type:"
               radioOptions={Object.values(CARDTYPES).map((type) => ({
-                id: type,
-                label: type,
-                value: type,
+                id: type.name,
+                label: type.name,
+                value: type.name,
               }))}
             />
 
-            <Input type="text" id="rarity" name="rarity" label="Rarity:" />
-            <Input type="text" id="deckId" name="deckId" label="Deck ID:" />
+            <Input type="text" id="variant" name="variant" label="Variant:" />
+            {Object.values(CARDTYPES).map((type) => (
+              <details key={type.name}>
+                <summary>{type.name}</summary>
+                <ul>
+                  {type.variants.map((variant) => (
+                    <li key={variant}>{variant}</li>
+                  ))}
+                </ul>
+              </details>
+            ))}
 
-            <details>
-              <summary>decks</summary>
-              <div className="flex flex-col gap-1">
-                {decks.map((deck) => (
-                  <p className="text-xs" key={deck.id}>
-                    {deck.name}: {deck.id}
-                  </p>
-                ))}
-              </div>
-            </details>
+            <Input type="text" id="rarity" name="rarity" label="Rarity:" />
 
             <Input
               type="textarea"
@@ -187,6 +209,8 @@ export default async function CardsPage() {
             <Input type="number" id="mw" name="mw" label="MW:" />
 
             <Input type="number" id="lag" name="lag" label="Lag:" />
+
+            <Input type="number" id="might" name="might" label="Might:" />
 
             <Input
               type="number"
@@ -219,6 +243,16 @@ export default async function CardsPage() {
               name="abilities"
               label="Abilities:"
             />
+            {abilities.map((ability) => (
+              <details key={ability.name}>
+                <summary>{ability.name}</summary>
+                <p>{ability.id}</p>
+                <p>{ability.shortName}</p>
+                <p>{ability.variant}</p>
+                <p>{ability.shortDesc}</p>
+                <code>{`{"id": "${ability.id}", "name": "${ability.name}", "variant": "${ability.variant}", "shortDesc": "${ability.shortDesc}"}`}</code>
+              </details>
+            ))}
 
             <FormButton variant="cta">Create Card</FormButton>
           </form>
