@@ -14,7 +14,7 @@ export default async function Home({
     <div className="flex w-full max-w-5xl flex-1 flex-col items-center gap-12">
       <FormMessage message={searchParams} />
       <Card variant="hero" isButton={false}>
-        <h1>Welcome home {user.name}</h1>
+        <h1>Welcome home {user?.name}</h1>
         <div className="flex h-full flex-col items-start justify-start gap-8 py-16">
           <Button variant="action">
             <span className="flex w-32 justify-center">Create game</span>

@@ -23,7 +23,7 @@ export const cardRouter = createTRPCRouter({
         costMw: z.number().optional(),
         costLag: z.number().optional(),
         image: z.string().optional(),
-        abilities: z.any().optional(),
+        abilities: z.any().optional().nullable(),
         rarity: z.string().optional(),
         deckId: z.string().optional(),
         might: z.number().optional(),
@@ -46,6 +46,14 @@ export const cardRouter = createTRPCRouter({
   getAll: publicProcedure.query(async ({ ctx }) => {
     return ctx.db.card.findMany();
   }),
+
+  getByDeckId: publicProcedure
+    .input(z.object({ deckId: z.string() }))
+    .query(async ({ ctx, input }) => {
+      return ctx.db.card.findMany({
+        where: { deckId: input.deckId },
+      });
+    }),
 
   update: publicProcedure
     .input(

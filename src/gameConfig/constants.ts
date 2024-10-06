@@ -53,11 +53,11 @@ export const CARDTYPES = {
   },
   leader: {
     name: "leader",
-    variants: [],
+    variants: ["human"],
   },
   hq: {
     name: "hq",
-    variants: [],
+    variants: ["citadel", "outpost", "bunker"],
   },
 };
 
