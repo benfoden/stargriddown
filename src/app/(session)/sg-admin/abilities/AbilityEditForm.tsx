@@ -14,9 +14,11 @@ export default function AbilityEditForm({ ability }: { ability?: Ability }) {
           "use server";
 
           const name = formData.get("name") as string;
+          const shortName = formData.get("shortName") as string | null;
           const variant = formData.get("variant") as string;
           const shortDesc = formData.get("shortDesc") as string | null;
           const isUsable = formData.get("isUsable") === "true";
+          const targetType = formData.get("targetType") as string | null;
           const desc = formData.get("desc") as string | null;
           const attack = formData.get("attack")
             ? parseFloat(formData.get("attack") as string)
@@ -54,8 +56,10 @@ export default function AbilityEditForm({ ability }: { ability?: Ability }) {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           const abilityData = {
             name,
+            shortName: shortName ?? undefined,
             variant,
             isUsable,
+            targetType: targetType ?? undefined,
             shortDesc: shortDesc ?? undefined,
             desc: desc ?? undefined,
             attack: attack ?? undefined,
@@ -95,6 +99,13 @@ export default function AbilityEditForm({ ability }: { ability?: Ability }) {
         />
         <Input
           type="text"
+          id="shortName"
+          name="shortName"
+          label="Short Name:"
+          initialValue={ability?.shortName ?? ""}
+        />
+        <Input
+          type="text"
           id="variant"
           name="variant"
           label="Variant (passive, active, beginningOfTurn, endOfTurn):"
@@ -110,12 +121,18 @@ export default function AbilityEditForm({ ability }: { ability?: Ability }) {
         />
         <Input
           type="text"
+          id="targetType"
+          name="targetType"
+          label="Target Type:"
+          initialValue={ability?.targetType ?? ""}
+        />
+        <Input
+          type="text"
           id="desc"
           name="desc"
           label="Description:"
           initialValue={ability?.desc ?? ""}
         />
-
         <Input
           type="text"
           id="shortDesc"
@@ -123,7 +140,6 @@ export default function AbilityEditForm({ ability }: { ability?: Ability }) {
           label="Short Description:"
           initialValue={ability?.shortDesc ?? ""}
         />
-
         <Input
           type="number"
           id="yen"
@@ -131,7 +147,6 @@ export default function AbilityEditForm({ ability }: { ability?: Ability }) {
           label="Yen:"
           initialValue={ability?.yen ?? 0}
         />
-
         <Input
           type="number"
           id="attack"
@@ -139,7 +154,6 @@ export default function AbilityEditForm({ ability }: { ability?: Ability }) {
           label="Attack:"
           initialValue={ability?.attack ?? 0}
         />
-
         <Input
           type="number"
           id="datab"
@@ -147,7 +161,6 @@ export default function AbilityEditForm({ ability }: { ability?: Ability }) {
           label="Datab:"
           initialValue={ability?.datab ?? 0}
         />
-
         <Input
           type="number"
           id="defense"
@@ -155,7 +168,6 @@ export default function AbilityEditForm({ ability }: { ability?: Ability }) {
           label="Defense:"
           initialValue={ability?.defense ?? 0}
         />
-
         <Input
           type="number"
           id="mw"
@@ -163,7 +175,6 @@ export default function AbilityEditForm({ ability }: { ability?: Ability }) {
           label="MW:"
           initialValue={ability?.mw ?? 0}
         />
-
         <Input
           type="number"
           id="lag"
@@ -171,7 +182,6 @@ export default function AbilityEditForm({ ability }: { ability?: Ability }) {
           label="Lag:"
           initialValue={ability?.lag ?? 0}
         />
-
         <Input
           type="number"
           id="costYen"
@@ -179,7 +189,6 @@ export default function AbilityEditForm({ ability }: { ability?: Ability }) {
           label="Cost Yen:"
           initialValue={ability?.costYen ?? 0}
         />
-
         <Input
           type="number"
           id="costDatab"
@@ -187,7 +196,6 @@ export default function AbilityEditForm({ ability }: { ability?: Ability }) {
           label="Cost Datab:"
           initialValue={ability?.costDatab ?? 0}
         />
-
         <Input
           type="number"
           id="costMw"
@@ -195,7 +203,6 @@ export default function AbilityEditForm({ ability }: { ability?: Ability }) {
           label="Cost MW:"
           initialValue={ability?.costMw ?? 0}
         />
-
         <Input
           type="number"
           id="costLag"
@@ -203,7 +210,13 @@ export default function AbilityEditForm({ ability }: { ability?: Ability }) {
           label="Cost Lag:"
           initialValue={ability?.costLag ?? 0}
         />
-
+        <Input
+          type="text"
+          id="logic"
+          name="logic"
+          label="Logic:"
+          initialValue={ability?.logic ?? ""}
+        />
         <Input
           type="text"
           id="image"
@@ -211,7 +224,6 @@ export default function AbilityEditForm({ ability }: { ability?: Ability }) {
           label="Image URL:"
           initialValue={ability?.image ?? ""}
         />
-
         <FormButton variant="submit">
           {ability?.id ? "Update" : "Create"} ability
         </FormButton>

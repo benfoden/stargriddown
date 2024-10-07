@@ -23,28 +23,55 @@ export const cardRouter = createTRPCRouter({
         costMw: z.number().optional(),
         costLag: z.number().optional(),
         image: z.string().optional(),
-        abilities: z.any().optional().nullable(),
+        abilityIds: z.array(z.string()).optional(), // Expecting an array of ability IDs
         rarity: z.string().optional(),
         deckId: z.string().optional(),
         might: z.number().optional(),
       }),
     )
     .mutation(async ({ ctx, input }) => {
-      return ctx.db.card.create({
-        data: input,
-      });
-    }),
+      const { abilityIds, ...cardData } = input;
 
+      const createdCard = await ctx.db.card.create({
+        data: {
+          ...cardData,
+          cardAbilities: {
+            create: abilityIds?.map((abilityId) => ({
+              ability: {
+                connect: { id: abilityId },
+              },
+            })),
+          },
+        },
+      });
+
+      return createdCard;
+    }),
   get: publicProcedure
     .input(z.object({ id: z.string() }))
     .query(async ({ ctx, input }) => {
       return ctx.db.card.findUnique({
         where: { id: input.id },
+        include: {
+          cardAbilities: {
+            include: {
+              ability: true,
+            },
+          },
+        },
       });
     }),
 
   getAll: publicProcedure.query(async ({ ctx }) => {
-    return ctx.db.card.findMany();
+    return await ctx.db.card.findMany({
+      include: {
+        cardAbilities: {
+          include: {
+            ability: true,
+          },
+        },
+      },
+    });
   }),
 
   getByDeckId: publicProcedure
@@ -52,6 +79,13 @@ export const cardRouter = createTRPCRouter({
     .query(async ({ ctx, input }) => {
       return ctx.db.card.findMany({
         where: { deckId: input.deckId },
+        include: {
+          cardAbilities: {
+            include: {
+              ability: true,
+            },
+          },
+        },
       });
     }),
 
@@ -76,18 +110,34 @@ export const cardRouter = createTRPCRouter({
         costMw: z.number().optional(),
         costLag: z.number().optional(),
         image: z.string().optional(),
-        abilities: z.any().optional(),
+        abilityIds: z.array(z.string()).optional(),
         rarity: z.string().optional(),
         deckId: z.string().optional(),
         might: z.number().optional(),
       }),
     )
     .mutation(async ({ ctx, input }) => {
-      const { id, ...data } = input;
-      return ctx.db.card.update({
+      const { id, abilityIds, ...data } = input;
+
+      const updatedCard = await ctx.db.card.update({
         where: { id },
         data,
       });
+
+      if (abilityIds) {
+        await ctx.db.cardAbility.deleteMany({
+          where: { cardId: id },
+        });
+
+        await ctx.db.cardAbility.createMany({
+          data: abilityIds.map((abilityId) => ({
+            cardId: id,
+            abilityId,
+          })),
+        });
+      }
+
+      return updatedCard;
     }),
 
   delete: publicProcedure

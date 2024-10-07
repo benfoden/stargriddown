@@ -35,7 +35,7 @@ export default async function SessionLayout({
           </Link>
         </DropDownMenu>
       </SessionNav>
-      {user.email === "ben.foden@gmail.com" && (
+      {user.email === "ben.foden+sgadmin@gmail.com" && (
         <Link href="/sg-admin">
           <Button variant="menuElement">SG Admin</Button>
         </Link>

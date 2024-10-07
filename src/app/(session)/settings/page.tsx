@@ -1,4 +1,6 @@
+import Link from "next/link";
 import { redirect } from "next/navigation";
+import Button from "~/app/_components/Button";
 import { Card } from "~/app/_components/Card";
 import { getUser } from "~/utils/supabase/getUser";
 
@@ -18,6 +20,9 @@ export default async function SettingsPage() {
           <br />
           email: {user.email}
         </Card>
+        <Link href="/settings/reset-password">
+          <Button variant="primary">Reset Password</Button>
+        </Link>
       </div>
     </div>
   );

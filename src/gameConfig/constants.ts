@@ -15,7 +15,46 @@ export const STATUSES = {
   ended: "ended",
 };
 
-export const CARDTYPES = {
+export type CardTypeName =
+  | "operator"
+  | "install"
+  | "asset"
+  | "funds"
+  | "mod"
+  | "contract"
+  | "command"
+  | "leader"
+  | "hq";
+
+export type CardVariant =
+  | "human"
+  | "animal"
+  | "program"
+  | "robot"
+  | "drone"
+  | "vehicle"
+  | "infrastructure"
+  | "wall"
+  | "trap"
+  | "turret"
+  | "AI"
+  | "decoy"
+  | "investment"
+  | "training"
+  | "gear"
+  | "bionic"
+  | "chemical"
+  | "tower"
+  | "camp"
+  | "bunker"
+  | "barge";
+
+export type CardType = {
+  name: CardTypeName;
+  variants: CardVariant[];
+};
+
+export const CARDTYPES: Record<CardTypeName, CardType> = {
   operator: {
     name: "operator",
     variants: ["human", "animal", "program", "robot", "drone", "vehicle"],
@@ -57,7 +96,7 @@ export const CARDTYPES = {
   },
   hq: {
     name: "hq",
-    variants: ["citadel", "outpost", "bunker"],
+    variants: ["tower", "camp", "bunker", "barge"],
   },
 };
 

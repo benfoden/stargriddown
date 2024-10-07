@@ -1,10 +1,10 @@
-import { type Card as CardType } from "@prisma/client";
 import Link from "next/link";
 import Button from "~/app/_components/Button";
 import FormButton from "~/app/_components/FormButton";
 import { FormMessage } from "~/app/_components/FormMessage";
 import Input from "~/app/_components/Input";
 import { api } from "~/trpc/server";
+import { type CardWithAbilities } from "~/utils/types";
 import CardEditForm from "./CardEditForm";
 
 export default async function CardsPage({
@@ -32,10 +32,9 @@ export default async function CardsPage({
                 "use server";
                 const cardJsonArray = formData.get("cardJsonArray") as string;
 
-                console.log("cardJsonArray", cardJsonArray);
-                const cards: CardType[] = JSON.parse(
+                const cards: CardWithAbilities[] = JSON.parse(
                   cardJsonArray,
-                ) as CardType[];
+                ) as CardWithAbilities[];
 
                 for (const card of cards) {
                   const {
@@ -56,7 +55,7 @@ export default async function CardsPage({
                     costMw,
                     costLag,
                     image,
-                    abilities,
+                    cardAbilities,
                     might,
                   } = card;
 
@@ -78,7 +77,9 @@ export default async function CardsPage({
                     costMw: costMw ?? undefined,
                     costLag: costLag ?? undefined,
                     image: image ?? undefined,
-                    abilities: abilities ?? undefined,
+                    abilityIds: cardAbilities
+                      ? cardAbilities.map(({ ability }) => ability.id)
+                      : undefined,
                     might: might ?? undefined,
                   });
                 }

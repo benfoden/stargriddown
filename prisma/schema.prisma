@@ -6,8 +6,8 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
   directUrl = env("DIRECT_URL")
 }
 
@@ -32,7 +32,7 @@ model Deck {
   image                String?
   createdAt            DateTime @default(now())
   updatedAt            DateTime @default(now())
-  type                 String? 
+  type                 String?
   cards                Card[]
   player1StartMatches  Match[]  @relation("Player1StartDeck")
   player2StartMatches  Match[]  @relation("Player2StartDeck")
@@ -41,25 +41,25 @@ model Deck {
 }
 
 model Card {
-  id        String  @id @default(uuid())
-  name      String
-  type      String  @default("operator")
-  variant   String?
-  desc      String?
-  shortDesc String?
-  flavor    String?
-  yen       Int?
-  attack    Int?
-  datab     Int?
-  defense   Int?
-  mw        Int?
-  lag       Int?
-  might     Int?
-  costYen   Int?
-  costDatab Int?
-  costMw    Int?
-  costLag   Int?
-  rarity    String?
+  id            String        @id @default(uuid())
+  name          String
+  type          String        @default("operator")
+  variant       String?
+  desc          String?
+  shortDesc     String?
+  flavor        String?
+  yen           Int?
+  attack        Int?
+  datab         Int?
+  defense       Int?
+  mw            Int?
+  lag           Int?
+  might         Int?
+  costYen       Int?
+  costDatab     Int?
+  costMw        Int?
+  costLag       Int?
+  rarity        String?
   deckId        String?
   image         String?
   createdAt     DateTime      @default(now())
@@ -98,12 +98,10 @@ model CardAbility {
   id        String   @id @default(uuid())
   cardId    String
   abilityId String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @default(now())
   card      Card     @relation(fields: [cardId], references: [id], onDelete: Cascade)
   ability   Ability  @relation(fields: [abilityId], references: [id], onDelete: Cascade)
-
-  @@index([cardId, abilityId])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
 }
 
 model Match {

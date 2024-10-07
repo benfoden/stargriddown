@@ -53,10 +53,12 @@ export async function getResponseFromChatMessages({
   messages,
   userId,
   model = "gpt-4o",
+  returnJson = false,
 }: {
   messages: { id: string | undefined | null; content: string }[];
   userId: string;
   model?: string;
+  returnJson?: boolean;
 }) {
   try {
     const completion = await openai.chat.completions.create({
@@ -70,6 +72,7 @@ export async function getResponseFromChatMessages({
         content: message.content,
       })),
       model,
+      response_format: { type: returnJson ? "json_object" : "text" },
     });
 
     return {

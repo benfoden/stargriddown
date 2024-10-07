@@ -22,6 +22,8 @@ export default function ChatThread({
 
     const chatInput =
       e.currentTarget.querySelector<HTMLInputElement>("#chatInput");
+    const returnJson =
+      e.currentTarget.querySelector<HTMLInputElement>("#returnJson");
     const currentContent = chatInput?.value ?? "";
 
     if (!currentContent || currentContent.length === 0) return;
@@ -37,6 +39,7 @@ export default function ChatThread({
         body: JSON.stringify({
           messages: [...messages, { id: "user", content: currentContent }],
           userId: user?.id,
+          returnJson: returnJson?.checked ?? false,
         }),
       });
 
@@ -83,6 +86,7 @@ export default function ChatThread({
             className="flex w-full flex-col"
           >
             <Input type="textarea" id="chatInput" initialValue={""} />
+            <Input type="checkbox" id="returnJson" label="Return JSON" />
             <FormButton isDisabled={isLoading} variant="submit">
               enter
             </FormButton>

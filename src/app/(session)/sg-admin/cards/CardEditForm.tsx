@@ -1,4 +1,4 @@
-import { type Ability, type Card as CardType, type Deck } from "@prisma/client";
+import { type Ability, type Deck } from "@prisma/client";
 import Link from "next/link";
 import Button from "~/app/_components/Button";
 import { Card } from "~/app/_components/Card";
@@ -7,16 +7,18 @@ import Input from "~/app/_components/Input";
 import { CARDTYPES } from "~/gameConfig/constants";
 import { api } from "~/trpc/server";
 import { encodedRedirect } from "~/utils/misc";
+import { type CardWithAbilities } from "~/utils/types";
 
 export default function CardEditForm({
   card,
   decks,
   abilities,
 }: {
-  card?: CardType;
+  card?: CardWithAbilities;
   decks: Deck[];
   abilities: Ability[];
 }) {
+  console.log("the card");
   return (
     <Card variant="form">
       <form
@@ -44,11 +46,7 @@ export default function CardEditForm({
           const costLag = parseFloat(formData.get("costLag") as string);
           const image = formData.get("image") as string;
           const might = parseFloat(formData.get("might") as string);
-          const abilitiesInput = formData.get("abilities") as string;
-          let abilities = JSON.parse("[]") as string;
-          if (abilitiesInput) {
-            abilities = JSON.parse(abilitiesInput) as string;
-          }
+          const abilityIds = formData.getAll("abilityIds") as string[];
 
           if (card?.id) {
             await api.card.update({
@@ -72,7 +70,7 @@ export default function CardEditForm({
               costMw,
               costLag,
               image,
-              abilities,
+              abilityIds,
               might,
             });
           } else {
@@ -96,7 +94,7 @@ export default function CardEditForm({
               costMw,
               costLag,
               image,
-              abilities,
+              abilityIds,
               might,
             });
           }
@@ -273,12 +271,30 @@ export default function CardEditForm({
           initialValue={card?.image ?? ""}
         />
 
+        {card?.cardAbilities?.map(({ ability }) => (
+          <li key={ability.id}>
+            <Input
+              type="checkbox"
+              id="abilities"
+              name="abilities"
+              value={ability.id}
+              initialValue={true}
+            />
+            <Link href={`/sg-admin/abilities/${ability.id}`}>
+              <Button variant="listItem">Edit Ability</Button>
+            </Link>
+          </li>
+        ))}
         <Input
           type="textarea"
           id="abilities"
           name="abilities"
           label="Abilities:"
-          initialValue={JSON.stringify(card?.abilities, null, 2)}
+          initialValue={JSON.stringify(
+            card?.cardAbilities?.map(({ ability }) => ability.id),
+            null,
+            2,
+          )}
         />
         {abilities.map((ability) => (
           <details key={ability.name}>
@@ -310,7 +326,9 @@ export default function CardEditForm({
           initialValue={card?.flavor ?? ""}
         />
 
-        <FormButton variant="submit">Update Card</FormButton>
+        <FormButton variant="submit">
+          {card?.id ? "Update Card" : "Create Card"}
+        </FormButton>
       </form>
     </Card>
   );

@@ -7,9 +7,11 @@ export const abilityRouter = createTRPCRouter({
     .input(
       z.object({
         name: z.string().min(1),
+        shortName: z.string().optional(),
         variant: z.string().min(1),
         shortDesc: z.string().optional(),
         isUsable: z.boolean().optional(),
+        targetType: z.string().optional(),
         desc: z.string().optional(),
         attack: z.number().optional(),
         defense: z.number().optional(),
@@ -42,15 +44,16 @@ export const abilityRouter = createTRPCRouter({
   getAll: publicProcedure.query(async ({ ctx }) => {
     return ctx.db.ability.findMany();
   }),
-
   update: publicProcedure
     .input(
       z.object({
         id: z.string(),
         name: z.string().min(1).optional(),
-        variant: z.string().optional(),
+        shortName: z.string().optional(),
+        variant: z.string().min(1).optional(),
         shortDesc: z.string().optional(),
         isUsable: z.boolean().optional(),
+        targetType: z.string().optional(),
         desc: z.string().optional(),
         attack: z.number().optional(),
         defense: z.number().optional(),
