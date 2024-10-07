@@ -26,7 +26,7 @@ export const cardRouter = createTRPCRouter({
         abilityIds: z.array(z.string()).optional(), // Expecting an array of ability IDs
         rarity: z.string().optional(),
         deckId: z.string().optional(),
-        might: z.number().optional(),
+        control: z.number().optional(),
       }),
     )
     .mutation(async ({ ctx, input }) => {
@@ -113,7 +113,7 @@ export const cardRouter = createTRPCRouter({
         abilityIds: z.array(z.string()).optional(),
         rarity: z.string().optional(),
         deckId: z.string().optional(),
-        might: z.number().optional(),
+        control: z.number().optional(),
       }),
     )
     .mutation(async ({ ctx, input }) => {

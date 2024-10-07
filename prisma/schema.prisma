@@ -54,7 +54,7 @@ model Card {
   defense       Int?
   mw            Int?
   lag           Int?
-  might         Int?
+  control       Int?
   costYen       Int?
   costDatab     Int?
   costMw        Int?

@@ -45,7 +45,7 @@ export default function CardEditForm({
           const costMw = parseFloat(formData.get("costMw") as string);
           const costLag = parseFloat(formData.get("costLag") as string);
           const image = formData.get("image") as string;
-          const might = parseFloat(formData.get("might") as string);
+          const control = parseFloat(formData.get("control") as string);
           const abilityIds = formData.getAll("abilityIds") as string[];
 
           if (card?.id) {
@@ -71,7 +71,7 @@ export default function CardEditForm({
               costLag,
               image,
               abilityIds,
-              might,
+              control,
             });
           } else {
             await api.card.create({
@@ -95,7 +95,7 @@ export default function CardEditForm({
               costLag,
               image,
               abilityIds,
-              might,
+              control,
             });
           }
 
@@ -257,10 +257,10 @@ export default function CardEditForm({
 
         <Input
           type="number"
-          id="might"
-          name="might"
-          label="Might:"
-          initialValue={card?.might ?? 0}
+          id="control"
+          name="control"
+          label="Control:"
+          initialValue={card?.control ?? 0}
         />
 
         <Input
