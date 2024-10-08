@@ -395,7 +395,7 @@ Passive
 - code: This can engage with and be engaged by other Code cards. (programs, AI, etc.)
 - lethal: The next card this Approaches is Disabled immediately.
 - rapid: This is ready the same turn that it is played.
-- camo: This card is Hidden until it Attacks, Defends, or uses an Active ability. 
+- camo: Hidden until this Attacks, Defends, or uses an Active ability. 
 - alert: The first instance of Damage done to this card by an Active ability is negated.
 - shielding: This can’t be targeted by opponent abilities as long as you have Datab.
 - siphon: Add +X Yen to your Account when this Overcomes an opponent Card.
@@ -407,7 +407,7 @@ Passive
 - steal: After this overcomes an Asset, a Race is run, and if this player wins, then the Asset is stolen.
 - trap: If this isn’t disarmed by using Points or Abilities a negative effect is activated.
 - link: Gain X of Y points when you control two or more cards with Link. When overcome, all Linked cards you control in the Arena are revealed.
-- analytics: Gain X Datab when Y Yen is generated.
+- analytics: Gain X Datab per turn.
 - enhance: When an opponent Install or Asset is revealed, reveal a card in their hand.
 - emergency: Draw +X Cards if this is the first Card you drew.
 

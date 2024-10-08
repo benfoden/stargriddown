@@ -3,6 +3,7 @@ import Link from "next/link";
 import Button from "~/app/_components/Button";
 import { Card } from "~/app/_components/Card";
 import FormButton from "~/app/_components/FormButton";
+import FormDeleteButton from "~/app/_components/FormDeleteButton";
 import Input from "~/app/_components/Input";
 import { CARDTYPES } from "~/gameConfig/constants";
 import { api } from "~/trpc/server";
@@ -106,6 +107,9 @@ export default function CardEditForm({
           );
         }}
       >
+        <FormButton variant="submit">
+          {card?.id ? "Update Card" : "Create Card"}
+        </FormButton>
         <Input
           type="text"
           id="name"
@@ -330,6 +334,18 @@ export default function CardEditForm({
           {card?.id ? "Update Card" : "Create Card"}
         </FormButton>
       </form>
+      {card?.id && (
+        <form
+          className="flex flex-col gap-2"
+          action={async () => {
+            "use server";
+            await api.card.delete({ id: card?.id });
+            encodedRedirect("success", `/sg-admin/cards/`, `Deleted card`);
+          }}
+        >
+          <FormDeleteButton>Delete card</FormDeleteButton>
+        </form>
+      )}
     </Card>
   );
 }
