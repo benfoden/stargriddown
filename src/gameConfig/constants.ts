@@ -19,7 +19,7 @@ export type CardTypeName =
   | "operator"
   | "install"
   | "asset"
-  | "funds"
+  | "cash"
   | "mod"
   | "contract"
   | "command"
@@ -47,7 +47,10 @@ export type CardVariant =
   | "tower"
   | "camp"
   | "bunker"
-  | "barge";
+  | "barge"
+  | "¥1"
+  | "¥2"
+  | "¥3";
 
 export type CardType = {
   name: CardTypeName;
@@ -74,9 +77,9 @@ export const CARDTYPES: Record<CardTypeName, CardType> = {
       "trap",
     ],
   },
-  funds: {
-    name: "funds",
-    variants: [],
+  cash: {
+    name: "cash",
+    variants: ["¥1", "¥2", "¥3"],
   },
   mod: {
     name: "mod",

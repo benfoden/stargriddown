@@ -56,7 +56,7 @@ export default async function CardsPage({
                     costLag,
                     image,
                     cardAbilities,
-                    might,
+                    control,
                   } = card;
 
                   await api.card.create({
@@ -80,7 +80,7 @@ export default async function CardsPage({
                     abilityIds: cardAbilities
                       ? cardAbilities.map(({ ability }) => ability.id)
                       : undefined,
-                    might: might ?? undefined,
+                    control: control ?? undefined,
                   });
                 }
               }}
