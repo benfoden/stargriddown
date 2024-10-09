@@ -1,3 +1,4 @@
+import { ChevronLeftIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { type ReactNode } from "react";
 import { getUser } from "~/utils/supabase/getUser";
@@ -15,6 +16,14 @@ export default async function SessionLayout({
   return (
     <>
       <SessionNav>
+        <Link href="/home">
+          <Button variant="nav">
+            <div className="flex flex-row items-center text-amber-500">
+              <ChevronLeftIcon className="h-4 w-4" />
+              Home
+            </div>
+          </Button>
+        </Link>
         <Link href="/home">
           <StargridIcon />
         </Link>

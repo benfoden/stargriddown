@@ -8,13 +8,22 @@ export const matchRouter = createTRPCRouter({
       player1Id: ctx.user?.id,
       gameMode: "standard",
       gameType: "unranked",
-      statuses: '["created"]',
+      statuses: '["created", "active"]',
       rounds: 0,
     };
 
-    return ctx.db.match.create({
+    const match = await ctx.db.match.create({
       data,
     });
+
+    await ctx.db.matchState.create({
+      data: {
+        matchId: match.id,
+        state: {}, // Assuming 'state' is a required field and setting a default value
+      },
+    });
+
+    return match;
   }),
 
   get: publicProcedure
@@ -22,6 +31,39 @@ export const matchRouter = createTRPCRouter({
     .query(async ({ ctx, input }) => {
       return ctx.db.match.findUnique({
         where: { id: input.id },
+      });
+    }),
+  getInitialMatchState: publicProcedure
+    .input(z.object({ matchId: z.string() }))
+    .query(async ({ ctx, input }) => {
+      return ctx.db.matchState.findFirst({
+        where: { matchId: input.matchId },
+      });
+    }),
+
+  getAllUserMatches: publicProcedure.query(async ({ ctx }) => {
+    const userId = ctx.user?.id;
+
+    return ctx.db.match.findMany({
+      where: {
+        OR: [{ player1Id: userId }, { player2Id: userId }],
+      },
+    });
+  }),
+
+  updateState: publicProcedure
+    .input(
+      z.object({
+        state: z.object({ hello: z.string() }),
+        id: z.string(),
+      }),
+    )
+    .mutation(async ({ ctx, input }) => {
+      const { state, id } = input;
+
+      return ctx.db.matchState.update({
+        where: { id },
+        data: { state },
       });
     }),
 

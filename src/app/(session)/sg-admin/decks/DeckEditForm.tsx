@@ -2,8 +2,8 @@ import { type Deck } from "@prisma/client";
 import { Card } from "~/app/_components/Card";
 import FormButton from "~/app/_components/FormButton";
 import Input from "~/app/_components/Input";
-import { DECKTYPES } from "~/gameConfig/constants";
 import { api } from "~/trpc/server";
+import { DECKTYPES } from "~/utils/gameConfig/constants";
 import { encodedRedirect } from "~/utils/misc";
 
 export default function DeckEditForm({ deck }: { deck?: Deck }) {

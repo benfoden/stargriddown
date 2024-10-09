@@ -1,4 +1,5 @@
 import { type Metadata } from "next";
+import { api } from "~/trpc/server";
 import { getUser } from "~/utils/supabase/getUser";
 import MatchPage from "./page";
 
@@ -15,10 +16,17 @@ export default async function MatchLayout({
   searchParams: { message: string };
 }) {
   const user = await getUser();
+
+  const match = await api.match.getInitialMatchState({ matchId: params.id });
+
+  if (!match) {
+    throw new Error("Error loading match. Please try again");
+  }
   return (
     <>
       <div className="flex w-full flex-1 flex-col items-center justify-center gap-12">
         <MatchPage
+          initialMatch={match}
           user={user ?? undefined}
           params={params}
           searchParams={searchParams}
