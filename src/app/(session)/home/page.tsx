@@ -3,6 +3,7 @@ import { Card } from "~/app/_components/Card";
 import { FormMessage, type Message } from "~/app/_components/FormMessage";
 import StarsBackgroundClient from "~/app/_components/StarsBackgroundClient";
 import { getUser } from "~/utils/supabase/getUser";
+import NewMatchButton from "./NewMatchButton";
 
 export default async function Home({
   searchParams,
@@ -16,9 +17,7 @@ export default async function Home({
       <Card variant="hero" isButton={false}>
         <h1>Welcome home {user?.name}</h1>
         <div className="flex h-full flex-col items-start justify-start gap-8 py-16">
-          <Button variant="action">
-            <span className="flex w-32 justify-center">Create game</span>
-          </Button>
+          <NewMatchButton />
           <Button variant="action">
             <span className="flex w-32 justify-center">Join game</span>
           </Button>

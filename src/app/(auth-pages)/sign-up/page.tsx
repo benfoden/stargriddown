@@ -4,7 +4,11 @@ import { FormMessage, type Message } from "~/app/_components/FormMessage";
 import Input from "~/app/_components/Input";
 import { signUpAction } from "../actions";
 
-export default function Signup({ searchParams }: { searchParams: Message }) {
+export default function Signup({
+  searchParams,
+}: {
+  searchParams: Message & { match?: string };
+}) {
   if ("message" in searchParams) {
     return (
       <div className="flex h-screen w-full flex-1 items-center justify-center gap-2 p-4 sm:max-w-md">
@@ -12,6 +16,8 @@ export default function Signup({ searchParams }: { searchParams: Message }) {
       </div>
     );
   }
+
+  const { match } = searchParams;
 
   return (
     <>
@@ -30,6 +36,8 @@ export default function Signup({ searchParams }: { searchParams: Message }) {
           </Link>
         </p>
         <div className="my-8 flex flex-col gap-4">
+          <FormMessage message={searchParams} />
+          <Input name="match" initialValue={match} hidden />
           <Input
             name="email"
             label="Email"
@@ -55,7 +63,6 @@ export default function Signup({ searchParams }: { searchParams: Message }) {
         </div>
 
         <FormButton variant="cta">Sign up</FormButton>
-        <FormMessage message={searchParams} />
       </form>
     </>
   );

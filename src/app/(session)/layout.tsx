@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { redirect } from "next/navigation";
 import { type ReactNode } from "react";
 import { getUser } from "~/utils/supabase/getUser";
 import Button from "../_components/Button";
@@ -13,29 +12,30 @@ export default async function SessionLayout({
   children: ReactNode;
 }) {
   const user = await getUser();
-  if (!user) redirect("/log-in");
   return (
     <>
       <SessionNav>
         <Link href="/home">
           <StargridIcon />
         </Link>
-        <DropDownMenu isUserMenu userName={user.name}>
-          <Link href="/home">
-            <Button variant="menuElement">Home</Button>
-          </Link>
-          <Link href="/settings">
-            <Button variant="menuElement">Settings</Button>
-          </Link>
-          <Link href="/about">
-            <Button variant="menuElement">About</Button>
-          </Link>
-          <Link href="/">
-            <Button variant="menuElement">Top page</Button>
-          </Link>
-        </DropDownMenu>
+        {user && (
+          <DropDownMenu isUserMenu userName={user?.name ?? "Guest"}>
+            <Link href="/home">
+              <Button variant="menuElement">Home</Button>
+            </Link>
+            <Link href="/settings">
+              <Button variant="menuElement">Settings</Button>
+            </Link>
+            <Link href="/about">
+              <Button variant="menuElement">About</Button>
+            </Link>
+            <Link href="/">
+              <Button variant="menuElement">Top page</Button>
+            </Link>
+          </DropDownMenu>
+        )}
       </SessionNav>
-      {user.email === "ben.foden+sgadmin@gmail.com" && (
+      {user?.email === "ben.foden+sgadmin@gmail.com" && (
         <Link href="/sg-admin">
           <Button variant="menuElement">SG Admin</Button>
         </Link>

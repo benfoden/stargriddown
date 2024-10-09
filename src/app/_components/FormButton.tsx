@@ -11,7 +11,14 @@ export default function FormButton({
   onClick,
   isSpecial,
 }: {
-  variant?: "primary" | "menuElement" | "cta" | "chip" | "text" | "submit";
+  variant?:
+    | "primary"
+    | "menuElement"
+    | "cta"
+    | "chip"
+    | "text"
+    | "submit"
+    | "action";
   isDisabled?: boolean;
   children: React.ReactNode;
   props?: React.ButtonHTMLAttributes<HTMLButtonElement>;

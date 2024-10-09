@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import { Card } from "~/app/_components/Card";
+import StargridIcon from "~/app/_components/StargridIcon";
 import "~/styles/globals.css";
 import { getUser } from "~/utils/supabase/getUser";
-import { Card } from "../_components/Card";
-import StargridIcon from "../_components/StargridIcon";
 
 export default async function RootLayout({
   children,

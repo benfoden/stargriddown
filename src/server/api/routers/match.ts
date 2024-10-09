@@ -3,31 +3,21 @@ import { z } from "zod";
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 
 export const matchRouter = createTRPCRouter({
-  create: publicProcedure
-    .input(
-      z.object({
-        player1Id: z.string().optional(),
-        player2Id: z.string().optional(),
-        player1StartDeckId: z.string().optional(),
-        player2StartDeckId: z.string().optional(),
-        player1MarketDeckId: z.string().optional(),
-        player2MarketDeckId: z.string().optional(),
-        gameMode: z.string().optional(),
-        gameType: z.string().optional(),
-        statuses: z.string(),
-        rounds: z.number().optional(),
-        matchState: z.any().optional(),
-        startedAt: z.date().optional(),
-        endedAt: z.date().optional(),
-      }),
-    )
-    .mutation(async ({ ctx, input }) => {
-      return ctx.db.match.create({
-        data: input,
-      });
-    }),
+  create: publicProcedure.mutation(async ({ ctx }) => {
+    const data = {
+      player1Id: ctx.user?.id,
+      gameMode: "standard",
+      gameType: "unranked",
+      statuses: '["created"]',
+      rounds: 0,
+    };
 
-  read: publicProcedure
+    return ctx.db.match.create({
+      data,
+    });
+  }),
+
+  get: publicProcedure
     .input(z.object({ id: z.string() }))
     .query(async ({ ctx, input }) => {
       return ctx.db.match.findUnique({

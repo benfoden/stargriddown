@@ -3,7 +3,11 @@ export type Message =
   | { error: string }
   | { message: string };
 
-export function FormMessage({ message }: { message: Message }) {
+export function FormMessage({ message }: { message?: Message }) {
+  if (!message) {
+    return null;
+  }
+
   return (
     <div className="flex w-full max-w-md flex-col text-sm">
       {"success" in message && (

@@ -11,6 +11,7 @@ export const signUpAction = async (formData: FormData) => {
   const email = formData.get("email")?.toString();
   const password = formData.get("password")?.toString();
   const confirmPassword = formData.get("confirmPassword") as string;
+  const match = formData.get("match") as string;
 
   const supabase = createClient();
   const origin = headers().get("origin");
@@ -22,7 +23,7 @@ export const signUpAction = async (formData: FormData) => {
   if (password !== confirmPassword) {
     return { error: "Passwords do not match" };
   }
-  const { error } = await supabase.auth.signUp({
+  const { error, data } = await supabase.auth.signUp({
     email,
     password,
     options: {
@@ -33,6 +34,9 @@ export const signUpAction = async (formData: FormData) => {
   if (error) {
     console.error(error.code + " " + error.message);
     return encodedRedirect("error", "/sign-up", error.message);
+  } else if (!error && data && match) {
+    await api.match.update({ id: match, player2Id: data.user?.id });
+    return redirect(`/match/${match}`);
   } else {
     return redirect("/welcome");
   }
