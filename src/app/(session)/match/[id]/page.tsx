@@ -42,6 +42,7 @@ export default function MatchPage({
     );
   }
 
+  //  investigate using RLS: https://github.com/supabase/supabase-flutter/issues/954
   useEffect(() => {
     console.log(
       "Setting up Supabase channel for match updates on:",
