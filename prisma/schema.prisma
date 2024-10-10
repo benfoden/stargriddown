@@ -130,4 +130,5 @@ model Match {
   player1MarketDeck Deck? @relation("Player1MarketDeck", fields: [player1MarketDeckId], references: [id])
   player2MarketDeck Deck? @relation("Player2MarketDeck", fields: [player2MarketDeckId], references: [id])
   winner            User? @relation("WinnerMatches", fields: [winnerId], references: [id])
+  @@index([id])
 }
