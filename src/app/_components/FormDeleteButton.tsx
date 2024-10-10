@@ -9,10 +9,12 @@ export default function FormDeleteButton({
   hasText = true,
   children,
   isDisabled,
+  isCancel,
 }: {
   hasText?: boolean;
   children?: React.ReactNode;
   isDisabled?: boolean;
+  isCancel?: boolean;
 }) {
   const { pending }: { pending: boolean } = useFormStatus();
   const [confirmDelete, setConfirmDelete] = useState(false);
@@ -51,16 +53,17 @@ export default function FormDeleteButton({
       {pending ? (
         <>
           <span>Deleting...</span>
-          <Spinner />
+          <Spinner tall={false} />
         </>
       ) : confirmDelete ? (
         <>
-          {(hasText || children) && "Delete?"} <CheckIcon className="h-5 w-5" />{" "}
+          {(hasText || children) && isCancel ? "Cancel?" : "Delete?"}{" "}
+          <CheckIcon className="h-5 w-5" />{" "}
         </>
       ) : (
         <>
           <Cross1Icon className="h-5 w-5" />{" "}
-          {hasText && !children ? "Delete" : children}
+          {hasText && !children ? (isCancel ? "Cancel?" : "Delete?") : children}
         </>
       )}
     </Button>

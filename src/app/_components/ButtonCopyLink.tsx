@@ -16,7 +16,7 @@ export default function ButtonCopyLink() {
 
   return (
     <div>
-      <Button onClick={handleCopy} variant="action">
+      <Button onClick={handleCopy} variant="cta">
         {copied ? "Copied!" : "Copy invite link"}
       </Button>
     </div>

@@ -5,7 +5,6 @@ import { getUser } from "~/utils/supabase/getUser";
 import Button from "../_components/Button";
 import DropDownMenu from "../_components/DropDown";
 import { SessionNav } from "../_components/SessionNav";
-import StargridIcon from "../_components/StargridIcon";
 
 export default async function SessionLayout({
   children,
@@ -24,9 +23,7 @@ export default async function SessionLayout({
             </div>
           </Button>
         </Link>
-        <Link href="/home">
-          <StargridIcon />
-        </Link>
+
         {user && (
           <DropDownMenu isUserMenu userName={user?.name ?? "Guest"}>
             <Link href="/home">

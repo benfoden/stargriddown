@@ -35,7 +35,9 @@ export default function FormButton({
       isSpecial={isSpecial}
       {...props}
     >
-      {pending ? <Spinner /> : children}
+      <div className="flex w-full flex-row justify-center">
+        {pending ? <Spinner size="sm" /> : children}
+      </div>
     </Button>
   );
 }

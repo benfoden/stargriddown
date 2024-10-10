@@ -55,7 +55,7 @@ const DropDownMenu = ({
       className={`relative flex flex-col items-end ${open ? "open" : ""} ${isUserMenu && "mr-4"}`}
     >
       <Button variant="dropdownToggle" onClick={toggleDropdown}>
-        <p className="hidden pr-2 md:block">{userName}</p>
+        {isUserMenu && <p className="hidden pr-2 md:block">{userName}</p>}
         {isUserMenu && userProfileIconUrl && (
           <Avatar
             src={userProfileIconUrl}

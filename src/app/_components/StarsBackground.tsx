@@ -31,7 +31,7 @@ function generateRandomPixels(pixelCount: number) {
     );
   }
   return (
-    <div className="absolute inset-0 left-0 top-[-80px] z-[-10] block min-h-screen w-full">
+    <div className="absolute inset-0 left-0 top-0 z-[-10] block min-h-screen w-full overflow-clip">
       {pixels}
     </div>
   );

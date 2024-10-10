@@ -5,6 +5,7 @@ import { type Metadata } from "next";
 
 import { TRPCReactProvider } from "~/trpc/react";
 import { HydrateClient } from "~/trpc/server";
+import StarsBackgroundClient from "./_components/StarsBackgroundClient";
 
 export const metadata: Metadata = {
   title: "Stargrid",
@@ -28,6 +29,8 @@ export default function RootLayout({
             <TRPCReactProvider>
               <HydrateClient>{children}</HydrateClient>
             </TRPCReactProvider>
+
+            <StarsBackgroundClient />
           </div>
         </div>
       </body>

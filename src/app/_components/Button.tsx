@@ -54,7 +54,7 @@ export default function Button({
       break;
     case "cta":
       buttonClass +=
-        " z-10 rounded-full border-8 border-emerald-500 px-8 py-3 text-lg font-black uppercase text-emerald-400 shadow-lg transition hover:bg-emerald-500/40 ";
+        " z-10 rounded-full border-8 border-emerald-500 px-8 py-3 text-lg font-black uppercase text-emerald-400 shadow-lg transition hover:bg-emerald-500/40 bg-emerald-500/20 backdrop-blur-sm ";
       break;
     case "chip":
       buttonClass +=
@@ -82,7 +82,7 @@ export default function Button({
       break;
     case "action":
       buttonClass +=
-        " rounded-xl hover:pulsating-glow z-10 bg-amber-500/10 px-8 py-3 text-lg font-bold uppercase text-amber-500 transition hover:bg-amber-600/60 border-4 border-amber-500/60 hover:border-yellow-500 hover:text-yellow-300 backdrop-blur-sm ";
+        " rounded-lg w-52 h-12 hover:pulsating-glow z-10 bg-amber-500/10 px-8 text-lg font-bold uppercase text-amber-500 transition hover:bg-amber-600/60 border-4 border-amber-500/60 hover:border-yellow-500 hover:text-yellow-300 backdrop-blur-sm ";
       break;
     case "listItem":
       buttonClass +=
