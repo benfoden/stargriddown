@@ -17,7 +17,8 @@ export default async function MatchLayout({
 }) {
   const user = await getUser();
 
-  const match = await api.match.getInitialMatchState({ matchId: params.id });
+  const { id } = params;
+  const match = await api.match.get({ id });
 
   if (!match) {
     throw new Error("Error loading match. Please try again");

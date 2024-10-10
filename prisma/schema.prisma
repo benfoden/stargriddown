@@ -120,7 +120,6 @@ model Match {
   winnerId            String?
   rounds              Int?
   matchState          Json?
-  matchStates         MatchState[] // Add this line to create the opposite relation field
   startedAt           DateTime?
   endedAt             DateTime?
 
@@ -131,13 +130,4 @@ model Match {
   player1MarketDeck Deck? @relation("Player1MarketDeck", fields: [player1MarketDeckId], references: [id])
   player2MarketDeck Deck? @relation("Player2MarketDeck", fields: [player2MarketDeckId], references: [id])
   winner            User? @relation("WinnerMatches", fields: [winnerId], references: [id])
-}
-
-model MatchState {
-  id      String @id @default(uuid())
-  state   Json
-  matchId String
-  match   Match  @relation(fields: [matchId], references: [id])
-  player1Id String
-  player2Id String?
 }

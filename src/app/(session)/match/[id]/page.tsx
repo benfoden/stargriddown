@@ -1,6 +1,6 @@
 "use client";
 
-import { type MatchState } from "@prisma/client";
+import { type Match } from "@prisma/client";
 import { useEffect, useState } from "react";
 import Button from "~/app/_components/Button";
 import ButtonCopyLink from "~/app/_components/ButtonCopyLink";
@@ -18,7 +18,7 @@ export default function MatchPage({
   params,
   searchParams,
 }: {
-  initialMatch: MatchState;
+  initialMatch: Match;
   user?: AuthUser;
   params: { id: string };
   searchParams: { message: string };
@@ -27,18 +27,18 @@ export default function MatchPage({
     throw new Error("no match found!");
   }
   const supabase = createClient();
-  const { id } = params;
 
-  const [state, setState] = useState<MatchState["state"]>(initialMatch.state);
-
-  const update = api.match.updateState.useMutation();
+  const [state, setState] = useState<Match["matchState"]>(
+    initialMatch.matchState,
+  );
+  const update = api.match.update.useMutation();
 
   if (!user) {
     encodedRedirect(
       "success",
       `/sign-up`,
       "Please sign up to join your match.",
-      id,
+      initialMatch.id,
     );
   }
 
@@ -55,16 +55,13 @@ export default function MatchPage({
         {
           event: "UPDATE",
           schema: "public",
-          table: "MatchState",
-          filter: `id=eq.${initialMatch.id}`,
+          table: "Match",
         },
         (payload) => {
-          console.log("Received payload from Supabase:", payload);
-
           const updatedState = payload.new;
           if (updatedState) {
-            console.log("Updating state with new data:", updatedState.state);
-            setState(updatedState.state);
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+            setState(updatedState.matchState);
           } else {
             console.error("Invalid payload structure", payload);
           }
@@ -73,7 +70,6 @@ export default function MatchPage({
       .subscribe();
 
     return () => {
-      console.log("Cleaning up Supabase channel");
       void supabase.removeChannel(channel);
     };
   }, [initialMatch.id, supabase]);
@@ -81,12 +77,12 @@ export default function MatchPage({
   return (
     <div className="container mx-auto flex w-full flex-1 flex-col items-center gap-12">
       <FormMessage message={searchParams} />
-      <div>Match {id}</div>
+      <div>match-{initialMatch.id}</div>
       <nav className="flex flex-row items-center justify-between gap-4">
         <ButtonCopyLink />
         <form
           action={async () => {
-            await deleteMatchAction({ id });
+            await deleteMatchAction({ id: initialMatch.id });
           }}
         >
           <FormDeleteButton>Cancel match</FormDeleteButton>
@@ -98,16 +94,15 @@ export default function MatchPage({
         Starting match...5
       </div>
       <button
-        onClick={() => {
+        onClick={async () => {
           update.mutate({
             id: initialMatch.id,
-            state: { hello: `1` },
+            matchState: { hello: `${Math.random()}` },
           });
         }}
       >
         Change State
       </button>
-      {initialMatch.id}
       <div>
         <pre>{JSON.stringify(state, null, 2)}</pre>
       </div>

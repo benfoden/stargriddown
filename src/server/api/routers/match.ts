@@ -12,18 +12,9 @@ export const matchRouter = createTRPCRouter({
       rounds: 0,
     };
 
-    const match = await ctx.db.match.create({
+    return await ctx.db.match.create({
       data,
     });
-
-    await ctx.db.matchState.create({
-      data: {
-        matchId: match.id,
-        state: {}, // Assuming 'state' is a required field and setting a default value
-      },
-    });
-
-    return match;
   }),
 
   get: publicProcedure
@@ -31,13 +22,6 @@ export const matchRouter = createTRPCRouter({
     .query(async ({ ctx, input }) => {
       return ctx.db.match.findUnique({
         where: { id: input.id },
-      });
-    }),
-  getInitialMatchState: publicProcedure
-    .input(z.object({ matchId: z.string() }))
-    .query(async ({ ctx, input }) => {
-      return ctx.db.matchState.findFirst({
-        where: { matchId: input.matchId },
       });
     }),
 
@@ -50,22 +34,6 @@ export const matchRouter = createTRPCRouter({
       },
     });
   }),
-
-  updateState: publicProcedure
-    .input(
-      z.object({
-        state: z.object({ hello: z.string() }),
-        id: z.string(),
-      }),
-    )
-    .mutation(async ({ ctx, input }) => {
-      const { state, id } = input;
-
-      return ctx.db.matchState.update({
-        where: { id },
-        data: { state },
-      });
-    }),
 
   update: publicProcedure
     .input(
