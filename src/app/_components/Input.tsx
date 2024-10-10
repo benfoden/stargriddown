@@ -47,7 +47,7 @@ export default function Input({
   const [isActive, setIsActive] = useState(false);
   const [valueLength, setValueLength] = useState<number | null>(null);
   const [isChecked, setIsChecked] = useState(defaultChecked ?? false);
-  const [radioChoices, setRadioChoices] = useState<
+  const [radioChoices] = useState<
     { id: string; label: string; value: string | number; checked?: boolean }[]
   >(radioOptions ?? []);
   const [showPassword, setShowPassword] = useState(false);

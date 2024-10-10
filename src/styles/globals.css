@@ -10,6 +10,12 @@
   html,
   body {
     @apply bg-[#1C1C1E] font-mono text-white;
+    ::selection {
+      background: #fbbe2480;
+    }
+    ::-moz-selection {
+      background: #fbbf2480;
+    }
   }
 
   h1,

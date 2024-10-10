@@ -19,7 +19,7 @@ export default async function MatchLayout({
   searchParams,
 }: {
   params: { id: string };
-  searchParams: { message: string };
+  searchParams: { message: string }; // Changed message type to string
 }) {
   const user = await getUser();
 
