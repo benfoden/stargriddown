@@ -71,7 +71,7 @@ See visibility, Stacks, and Teams sections for more details.
 
 ### Visibility
 
-- Player HP, Bank, Dataase, HQ card, and hand size are invisible to the other player unless their HQ is accessed by the other player, or special abilities are used that reveal these values (then they are only visible for the duration of the turn).
+- Player Control, Bank, Dataase, HQ card, and hand size are invisible to the other player unless their HQ is accessed by the other player, or special abilities are used that reveal these values (then they are only visible for the duration of the turn).
     
 - Stacks are invisible until approached by a Team or revealed by a card ability. When approached, only the first Install or Asset is visible.
     
@@ -217,18 +217,18 @@ See visibility, Stacks, and Teams sections for more details.
 
 - Teams progress linearly through a stack, approaching and accessing or bypassing all Installs and Assets in the order the Defending player selected previously.
     
-- When a Team accesses and overcomes an Install or Asset, that card’s Attack and Defense points are subtracted from the Team’s Defense and Attack points, including any effects or modifiers.
-    
+- When a Team accesses and overcomes an Install or Asset, the Operators in the Team attacks in order from left to right.
+- The Operator's attack points are subtracted from the Target's defense, after applying any effects or modifiers.
 
-- When accessed, an Install must be overcome before the attack can proceed. Even if an Install has 0 Defense, any effects and Traps are still applied.
+- When accessed, an Install must be Overcome (defense reduced to zero) before the attack can proceed. Even if an Install has 0 Defense, any effects and Traps are still applied.
+
+- Damage points on Installs and Assets are dealt to the current Operator's Defense points. 
+
+- If a Team has less Attack points than the card it is accessing, the attack fails. If the Team would have exactly 0 Attack points after accessing the card, a race is run to determine if the card is overcome.
     
-- If a Team loses all Attack points before reaching the HQ, then the attack fails and all Operators in the Team are discarded.
+- If a Team has 0 Attack Points when it reaches the HQ, a race is run again to determine if the attack is successful.
     
-- If a Team has less Attack points than the card it is accessing, the attack fails. If it would have 0 Attack points after accessing the card, a race is run to determine if the card is overcome.
-    
-- If a Team has 0 Attack Points when it reaches the HQ, a race is run to determine if the attack is successful.
-    
-- If a Team takes more Attack damage from Installs than its total remaining Defense points, then a Counter Strike is successful and 1 HP damage is dealt to the attacking player. The Team may proceed despite this, and an additional 1 HP damage is applied each time there is another Counter Strike.
+- If a Team takes more Attack damage from Installs and Assets than its total remaining Defense points, then a Counter Strike is successful and the attacking player loses 1 Control. The Team may proceed its attack despite this, but an additional loss of 1 control is applied each time there is another Counter Strike.
     
 
 - A defending player can choose to activate an Install when it is approached by a Team, otherwise it is bypassed by the Team without being revealed or accessed. 
@@ -240,21 +240,21 @@ See visibility, Stacks, and Teams sections for more details.
 - Assets are always accessible when approached, and immediately turned over if face down.
     
 
-- When assets are overcome, the attacking player gains any stated value. 
+- When assets are overcome, the attacking player gains any stated value (depends on the card). 
     
 - After being overcome, If the Team has an Operator with the Thief ability then the Asset may be stolen, in which case it goes to the attacking player’s discard pile.
     
 
 - Installs remain in the arena unless discarded or trashed, even when overcome.
     
-- When there is a successful attack, 6 HP is removed from the player attacked.
+- When there is a successful attack, 6 Control is removed from the player that was attacked.
     
 
-- For each successful attack after the first, an additional 1 HP is removed.
+- For each successful attack after the first, an additional 1 Control is removed.
     
 - If there are Contracts or Commands stored in the HQ, these are revealed to the attacker.
     
-- If a Team accesses three or more cards in a row without the attacking player losing HP, then they may choose to deal 3 HP damage without accessing the opponent HQ, and the Team is immediately discarded.
+- If a Team accesses three or more cards in a row without a Counter Strike, then they may choose to remove 3 Control without Accessing the opponent HQ, and the Team is immediately discarded.
     
 
   
@@ -304,6 +304,7 @@ Mods may be training, programs, AI, drones, gear, and bionics.
 ### Contracts
 
 Can be played during the current player’s turn in the initial or active phase for immediate effect, and are discarded after having that effect. They may only be played during the current player’s turn. They may be stored at the HQ for later use.
+
 
 ### Commands
 
@@ -368,6 +369,56 @@ Certain Cards have a MW (energy) cost, limiting the number a player can deploy a
 
 
 
+## Card types and variants
+
+
+{
+  operator: {
+    name: "operator",
+    variants: ["human", "animal", "program", "robot", "drone", "vehicle"],
+  },
+  install: {
+    name: "install",
+    variants: ["infrastructure", "program", "drone", "wall", "sensor", "turret"],
+  },
+  asset: {
+    name: "asset",
+    variants: [
+      "infrastructure",
+      "program",
+      "AI",
+      "decoy",
+      "investment",
+      "trap",
+    ],
+  },
+  cash: {
+    name: "cash",
+    variants: ["¥1", "¥2", "¥3"],
+  },
+  mod: {
+    name: "mod",
+    variants: ["training", "program", "drone", "gear", "bionic", "substance"],
+  },
+  contract: {
+    name: "contract",
+    variants: ["code", "],
+  },
+  command: {
+    name: "command",
+    variants: ["code"],
+  },
+  leader: {
+    name: "leader",
+    variants: ["human"],
+  },
+  hq: {
+    name: "hq",
+    variants: ["tower", "camp", "bunker", "barge"],
+  },
+}
+
+
 ## Card statuses and abilities
 
 
@@ -378,7 +429,8 @@ Status
 - staged: This card can't join an Attack.
 - boosted: This card has +X of Y points.
 - armed: This card's Trap ability is ready.
-- disabled: This card can't be Activated.
+- disabled: This card can't be activated.
+- disrupted: This card can't use abilties or points.
 - locked: This card can't be Engaged or Activated until a Key is used on it.
 - engaged: This card is engaged by another card or cards.
 
@@ -402,6 +454,7 @@ Passive
 - harvest: Add +X Datab to your Database when this Overcomes an opponent Card.
 - overkill: Add +X to the next instance of Damage to the HQ this turn.
 - intimidate: When this Overcomes a card, the next card you Engage this turn has -X Attack.
+- piercing: Deal +X damage when this attacks a target.
 - durable: This card can't be Discarded or Erased by the opponent.
 - renewable: When this is Discarded, it moves to the bottom of its Owner’s deck.
 - steal: After this overcomes an Asset, a Race is run, and if this player wins, then the Asset is stolen.
@@ -416,6 +469,7 @@ Active (Actives may Costs W points of Z resource to use)
 - hack: Send the top X Cards of your opponent’s deck to their Discard pile.
 - erase: Permanently remove a card from the game.
 - disarm: Deactivate a Trap without triggering it.
+- disrupt: Target card is disabled for the remainder of the turn.
 - procedure: Use X Datab in your Database to add Datab to target card.
 - boost: Modify X points of Y type on target card.
 - virus: All cards in target Stack or Team lose 1 Datab.
@@ -428,16 +482,15 @@ Active (Actives may Costs W points of Z resource to use)
 - reuse: Pay X Yen or Y Datab to return this to your hand.
 
 
-  
-
 Maybe later (disregard for now)
   - Upgrade: When this card is played, choose an upgrade from a set of options.
   - Meme: Your next Datab generating effect triggers twice.
   - Clone: When played, a copy of this card is played at the same target.
-- strike: This deals Damage before cards without Strike.
-- aerial: This can only be defended or attacked by other Aerial cards or those with Anti-Air.
-- anti-air: This can defend or attack Aerial cards.
-- underground: This can't be Engaged by Aerial cards.
-- jack: This Operator, Install, or Asset may be powered (Attack, Datab, or Defense). Lose equivalent Control if it is Overcome.
-- airgap: This can only target or be targeted while Engaged. Only for Code cards.
+  - strike: This deals Damage before cards without Strike.
+  - aerial: This can only be defended or attacked by other Aerial cards or those with Anti-Air.
+  - anti-air: This can defend or attack Aerial cards.
+  - underground: This can't be Engaged by Aerial cards.
+  - jack: This Operator, Install, or Asset may be powered (Attack, Datab, or Defense). Lose equivalent Control if it is Overcome.
+  - airgap: This can only target or be targeted while Engaged. Only for Code cards.
+
 

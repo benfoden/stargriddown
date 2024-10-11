@@ -1,0 +1,92 @@
+Passive:
+  - name: code
+    desc: This can engage with and be engaged by other Code cards. (programs, AI, etc.)
+  - name: lethal
+    desc: The next card this Approaches is Disabled immediately.
+  - name: rapid
+    desc: This is ready the same turn that it is played.
+  - name: camo
+    desc: Hidden until this Attacks, Defends, or uses an Active ability.
+  - name: alert
+    desc: The first instance of Damage done to this card by an Active ability is negated.
+  - name: shielding
+    desc: This can't be targeted by opponent abilities as long as you have Datab.
+  - name: siphon
+    desc: Add +X Yen to your Account when this Overcomes an opponent Card.
+  - name: harvest
+    desc: Add +X Datab to your Database when this Overcomes an opponent Card.
+  - name: overkill
+    desc: Add +X to the next instance of Damage to the HQ this turn.
+  - name: intimidate
+    desc: When this Overcomes a card, the next card you Engage this turn has -X Attack.
+  - name: piercing
+    desc: Deal +X damage when this attacks a target.
+  - name: durable
+    desc: This card can't be Discarded or Erased by the opponent.
+  - name: renewable
+    desc: When this is Discarded, it moves to the bottom of its Owner's deck.
+  - name: steal
+    desc: After this overcomes an Asset, a Race is run, and if this player wins, then the Asset is stolen.
+  - name: trap
+    desc: If this isn't disarmed by using Points or Abilities a negative effect is activated.
+  - name: link
+    desc: Gain X of Y points when you control two or more cards with Link. When overcome, all Linked cards you control in the Arena are revealed.
+  - name: analytics
+    desc: Gain X Datab per turn.
+  - name: enhance
+    desc: When an opponent Install or Asset is revealed, reveal a card in their hand.
+  - name: emergency
+    desc: Draw +X Cards if this is the first Card you drew.
+
+Active:
+  - name: scan
+    desc: Look at the top 3 Cards in your deck. Add 1 to your hand and place the other 2 on the bottom.
+  - name: hack
+    desc: Send the top X Cards of your opponent's deck to their Discard pile.
+  - name: erase
+    desc: Permanently remove a card from the game.
+  - name: disarm
+    desc: Deactivate a Trap without triggering it.
+  - name: disrupt
+    desc: Target card is disabled for the remainder of the turn.
+  - name: procedure
+    desc: Use X Datab in your Database to add Datab to target card.
+  - name: boost
+    desc: Modify X points of Y type on target card.
+  - name: virus
+    desc: All cards in target Stack or Team lose 1 Datab.
+  - name: decrypt
+    desc: Remove all Statuses and Mods on target Card.
+  - name: brute
+    desc: Win the next Race.
+  - name: message
+    desc: Draw +X Cards.
+  - name: key
+    desc: Unlock target Locked card.
+  - name: lock
+    desc: Lock target card.
+  - name: hide
+    desc: Make target card Hidden.
+  - name: reuse
+    desc: Pay X Yen or Y Datab to return this to your hand.
+
+unreleased:
+desc: these abilities are NOT in the game. they are just here for reference
+  - name: Upgrade
+    desc: When this card is played, choose an upgrade from a set of options.
+  - name: Meme
+    desc: Your next Datab generating effect triggers twice.
+  - name: Clone
+    desc: When played, a copy of this card is played at the same target.
+  - name: strike
+    desc: This deals Damage before cards without Strike.
+  - name: aerial
+    desc: This can only be defended or attacked by other Aerial cards or those with Anti-Air.
+  - name: anti-air
+    desc: This can defend or attack Aerial cards.
+  - name: underground
+    desc: This can't be Engaged by Aerial cards.
+  - name: jack
+    desc: This Operator, Install, or Asset may be powered (Attack, Datab, or Defense). Lose equivalent Control if it is Overcome.
+  - name: airgap
+    desc: This can only target or be targeted while Engaged. Only for Code cards.

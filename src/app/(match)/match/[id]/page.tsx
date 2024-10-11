@@ -121,8 +121,7 @@ export default function MatchPage({
           ) : (
             <div className="flex flex-col items-center justify-center gap-2">
               <Spinner size="md" />
-
-              <p>Waiting for player 2</p>
+              {present.length === 1 && <p>Loaded, waiting for player 2</p>}
             </div>
           )}
           {present.length < 2 && <ButtonCopyLink />}

@@ -29,6 +29,8 @@ export type CardTypeName =
 export type CardVariant =
   | "human"
   | "animal"
+  | "sensor"
+  | "code"
   | "program"
   | "robot"
   | "drone"
@@ -43,7 +45,7 @@ export type CardVariant =
   | "training"
   | "gear"
   | "bionic"
-  | "chemical"
+  | "substance"
   | "tower"
   | "camp"
   | "bunker"
@@ -64,7 +66,14 @@ export const CARDTYPES: Record<CardTypeName, CardType> = {
   },
   install: {
     name: "install",
-    variants: ["infrastructure", "program", "drone", "wall", "trap", "turret"],
+    variants: [
+      "infrastructure",
+      "program",
+      "drone",
+      "wall",
+      "sensor",
+      "turret",
+    ],
   },
   asset: {
     name: "asset",
@@ -83,15 +92,15 @@ export const CARDTYPES: Record<CardTypeName, CardType> = {
   },
   mod: {
     name: "mod",
-    variants: ["training", "program", "drone", "gear", "bionic", "chemical"],
+    variants: ["training", "program", "drone", "gear", "bionic", "substance"],
   },
   contract: {
     name: "contract",
-    variants: [],
+    variants: ["code"],
   },
   command: {
     name: "command",
-    variants: [],
+    variants: ["code"],
   },
   leader: {
     name: "leader",

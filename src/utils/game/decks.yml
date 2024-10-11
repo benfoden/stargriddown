@@ -1,0 +1,1124 @@
+villedge:
+  description: independent, bio-focused, rebellious
+  cards:
+    - name: Metaphore
+      type: contract
+      costYen: 8
+      shortDesc: Your non-code cards may interact with AI, Program, Drone, and Robot cards.
+    - name: Venus
+      type: asset
+      variant: trap
+      costYen: 2
+      attack: 1
+      defense: 1
+      yen: 1
+      shortDesc: trap - Steal 2 yen from enemy.
+      abilities:
+        - trap
+    - name: Quantum Fog
+      type: install
+      variant: program
+      costYen: 1
+      costDatab: 3
+      datab: 3
+      shortDesc: Prevent enemy from adding Datab to a Team attacking this stack.
+    - name: Dogzilla
+      type: operator
+      variant: animal
+      costYen: 7
+      attack: 2
+      defense: 4
+      abilities:
+        - alert
+    - name: Ecoship
+      type: asset
+      variant: infrastructure
+      costYen: 1
+      defense: 2
+      abilities:
+        - renewable
+      yen: 3
+    - name: Subdermals
+      type: mod
+      variant: bionic
+      costYen: 1
+      shortDesc: This card can access Code cards.
+    - name: RAM Radio
+      type: command
+      variant: code
+      costYen: 2
+      shortDesc: Target Code card can be accessed by non-Code cards this turn.
+    - name: Greypicking
+      type: mod
+      variant: training
+      costYen: 4
+      shortDesc: Give target Operator Disarm.
+      ability:
+        - disarm
+    - name: Fan Jacket
+      type: mod
+      variant: gear
+      costYen: 1
+      defense: 2
+    - name: Green Dragon Vase
+      type: asset
+      variant: investment
+      costYen: 8
+      ability: The first asset you buy each turn costs 2 less.
+      yen: 6
+    - name: The Barber
+      type: operator
+      variant: human
+      costYen: 5
+      attack: 3
+      defense: 2
+      abilities:
+        - intimidate
+    - name: Spinal Battery
+      type: mod
+      variant: bionic
+      costYen: 2
+      attack: 1
+      defense: 1
+      abilities:
+        - enhance
+    - name: LoRadio
+      type: mod
+      variant: bionic
+      costYen: 1
+      abilities:
+        - analytics
+    - name: Microthopter
+      type: operator
+      variant: drone
+      costYen: 3
+      attack: 1
+      defense: 2
+      abilities:
+        - aerial
+    - name: Dronedar
+      type: asset
+      variant: infrastructure
+      costYen: 4
+      defense: 2
+      abilities:
+        - analytics
+      yen: 2
+    - name: Nano reactor
+      type: asset
+      variant: infrastructure
+      costYen: 5
+      defense: 3
+      abilities:
+        - renewable
+      yen: 3
+    - name: Super Caps
+      type: mod
+      variant: gear
+      costYen: 2
+      attack: 1
+      defense: 1
+      abilities:
+        - boost
+    - name: Hovercraft
+      type: mod
+      variant: vehicle
+      costYen: 3
+      attack: 1
+      defense: 2
+      abilities:
+        - rapid
+    - name: CF Bicycle
+      type: mod
+      variant: vehicle
+      costYen: 2
+      attack: 1
+      defense: 1
+      abilities:
+        - rapid
+    - name: Anti-drone Hawk
+      type: operator
+      variant: animal
+      costYen: 5
+      attack: 3
+      defense: 2
+      abilities:
+        - anti-air
+    - name: Sat Beacon
+      type: asset
+      variant: trap
+      costYen: 2
+      attack: 1
+      defense: 1
+      abilities:
+        - trap
+    - name: NV Goggles
+      type: mod
+      variant: gear
+      costYen: 1
+      abilities:
+        - camo
+    - name: Turbine Array
+      type: asset
+      variant: infrastructure
+      costYen: 4
+      defense: 2
+      abilities:
+        - renewable
+      yen: 2
+    - name: Aeroponic Tunnel
+      type: asset
+      variant: infrastructure
+      costYen: 4
+      defense: 2
+      abilities:
+        - renewable
+      yen: 2
+    - name: Beehive
+      type: install
+      variant: drone
+      costYen: 3
+      attack: 1
+      defense: 2
+      abilities:
+        - aerial
+    - name: Jonny
+      type: operator
+      variant: human
+      costYen: 5
+      attack: 3
+      defense: 2
+      abilities:
+        - rapid
+    - name: Amia
+      type: operator
+      variant: human
+      costYen: 5
+      attack: 3
+      defense: 2
+      abilities:
+        - rapid
+    - name: Mizuno
+      type: operator
+      variant: human
+      costYen: 5
+      attack: 3
+      defense: 2
+      abilities:
+        - rapid
+    - name: Kingfisher
+      type: operator
+      variant: animal
+      costYen: 5
+      attack: 2
+      defense: 3
+      abilities:
+        - aerial
+    - name: Farmscraper
+      type: asset
+      variant: infrastructure
+      costYen: 5
+      defense: 3
+      abilities:
+        - renewable
+      yen: 3
+    - name: Bioslip Fab
+      type: asset
+      variant: infrastructure
+      costYen: 5
+      defense: 3
+      abilities:
+        - renewable
+      yen: 3
+    - name: Snapteria
+      type: mod
+      variant: substance
+      costYen: 1
+      abilities:
+        - enhance
+    - name: Forlorn
+      type: mod
+      variant: bionic
+      costYen: 2
+      attack: 1
+      defense: 1
+      abilities:
+        - durable
+    - name: Mycofiber
+      type: mod
+      variant: substance
+      costYen: 1
+      abilities:
+        - enhance
+    - name: Auroch
+      type: operator
+      variant: animal
+      costYen: 8
+      attack: 4
+      defense: 4
+      abilities:
+        - durable
+    - name: BioFab Lab
+      type: asset
+      variant: infrastructure
+      costYen: 5
+      defense: 3
+      abilities:
+        - renewable
+      yen: 3
+    - name: Neotherm
+      type: asset
+      variant: investment
+      costYen: 3
+      defense: 2
+      abilities:
+        - siphon
+      yen: 2
+    - name: Ontractor
+      type: asset
+      variant: infrastructure
+      costYen: 4
+      defense: 2
+      abilities:
+        - renewable
+      yen: 2
+    - name: Wind engine
+      type: asset
+      variant: infrastructure
+      costYen: 4
+      defense: 2
+      abilities:
+        - renewable
+      yen: 2
+    - name: Microhydro
+      type: asset
+      variant: infrastructure
+      costYen: 4
+      defense: 2
+      abilities:
+        - renewable
+      yen: 2
+    - name: Overgrown Grotto
+      type: install
+      variant: infrastructure
+      costYen: 3
+      attack: 1
+      defense: 2
+      abilities:
+        - renewable
+    - name: Proteolytic
+      type: mod
+      variant: substance
+      costYen: 1
+      abilities:
+        - enhance
+    - name: Sheet Forest
+      type: install
+      variant: wall
+      costYen: 2
+      attack: 1
+      defense: 1
+      abilities:
+        - durable
+    - name: Clanger
+      type: install
+      variant: wall
+      costYen: 2
+      attack: 1
+      defense: 1
+      desc: makes a frightening noise and grabs attention
+      abilities:
+        - intimidate
+    - name: Skiff
+      type: install
+      variant: drone
+      costYen: 3
+      attack: 1
+      defense: 2
+      desc: patrols around
+      abilities:
+        - aerial
+    - name: Sleeve
+      type: mod
+      variant: gear
+      costYen: 1
+      abilities:
+        - rapid
+    - name: Emerald Tea Farm
+      type: asset
+      variant: investment
+      costYen: 3
+      defense: 2
+      abilities:
+        - siphon
+      yen: 2
+    - name: Static Harvester
+      type: asset
+      variant: trap
+      costYen: 2
+      attack: 1
+      defense: 1
+      abilities:
+        - trap
+    - name: Microlace
+      type: install
+      variant: sensor
+      costYen: 2
+      attack: 1
+      defense: 1
+      abilities:
+        - analytics
+    - name: Crowbar
+      type: operator
+      variant: robot
+      costYen: 6
+      attack: 3
+      defense: 3
+      abilities:
+        - durable
+    - name: Halcyon Days
+      type: contract
+      abilities:
+        - enhance
+    - name: Tactical EMP
+      type: command
+      variant: code
+      abilities:
+        - erase
+    - name: .30 Shovel
+      type: mod
+      variant: gear
+      costYen: 2
+      attack: 1
+      defense: 1
+      desc: rifle with armor-piercing rounds
+      abilities:
+        - overkill
+    - name: Turbo Quad
+      type: operator
+      variant: vehicle
+      costYen: 1
+      desc: fast 4x4 for one
+      abilities:
+        - rapid
+    - name: Thermocomposter
+      type: asset
+      variant: infrastructure
+      costYen: 4
+      defense: 2
+      shortDesc: Gain 2 yen every other turn after this is played.
+      abilities:
+        - renewable
+      yen: 2
+    - name: Pelletal
+      type: install
+      variant: turret
+      costYen: 1
+      attack: 1
+      flavor: "100 pellets per second starts to sting after a few seconds."
+    - name: Hiveline
+      type: asset
+      variant: infrastructure
+      costYen: 4
+      defense: 2
+      shortDesc: Links stuff together
+      abilities:
+        - link
+      yen: 2
+    - name: Regenerator
+      type: asset
+      variant: decoy
+      costYen: 2
+      attack: 1
+      defense: 1
+      shortDesc: gain one more yen if you gain yen passively at the end of turn
+    - name: Pine Needle
+      type: command
+      variant: code
+      desc: anti-ai code
+    - name: General Holography
+      type: contract
+      variant: Code
+    - name: Sentient Colony
+      type: asset
+      variant: AI
+      costYen: 4
+      defense: 2
+      yen: 2
+    - name: Razor Bramble
+      type: install
+      variant: wall
+      costYen: 2
+      attack: 1
+      defense: 1
+    - name: Spydar
+      type: install
+      variant: sensor
+      costYen: 3
+    - name: Adapanel Array
+      type: asset
+      variant: infrastructure
+      costYen: 2
+      shortDesc: generate 1 yen per turn
+      yen: 2
+
+neonclave:
+  description: centralized, deep tech, normative
+  cards:
+    - name: Scamspiracy
+      type: contract
+      variant: code
+    - name: Space Cat
+      type: operator
+      variant: drone
+      costYen: 5
+      attack: 3
+      defense: 2
+      desc: Mammalian data trained AI powered bot
+      abilities:
+        - camo
+    - name: Audiophore
+      type: install
+      variant: drone
+      costYen: 3
+      attack: 1
+      defense: 2
+      abilities:
+        - aerial
+    - name: NV Eagle
+      type: install
+      variant: drone
+      costYen: 3
+      attack: 1
+      defense: 2
+      abilities:
+        - aerial
+    - name: Auto Response
+      type: asset
+      variant: decoy
+      costYen: 2
+      attack: 1
+      defense: 1
+      abilities:
+        - trap
+    - name: Quantum Key
+      type: mod
+      variant: gear
+      costYen: 2
+      attack: 1
+      defense: 1
+      desc: unlock all
+      abilities:
+        - key
+    - name: Eavesdroplet
+      type: install
+      variant: drone
+      costYen: 3
+      attack: 1
+      defense: 2
+      abilities:
+        - aerial
+    - name: Tech Support
+      type: asset
+      variant: program
+      costYen: 3
+      defense: 2
+      abilities:
+        - analytics
+      yen: 2
+    - name: Drone Dome
+      type: install
+      variant: drone
+      costYen: 3
+      attack: 1
+      defense: 2
+      abilities:
+        - aerial
+    - name: Code Poncho
+      type: install
+      variant: program
+      costYen: 2
+      attack: 1
+      defense: 1
+      abilities:
+        - camo
+    - name: Inverse engineering
+      type: contract
+      variant: code
+      abilities:
+        - decrypt
+    - name: Overflow
+      type: operator
+      variant: program
+      costYen: 5
+      attack: 3
+      defense: 2
+      abilities:
+        - siphon
+    - name: Carbon Jacket
+      type: install
+      variant: wall
+      costYen: 2
+      attack: 1
+      defense: 1
+      abilities:
+        - durable
+    - name: Red Dot
+      type: operator
+      variant: drone
+      costYen: 5
+      attack: 3
+      defense: 2
+      abilities:
+        - aerial
+    - name: Smoke Screen
+      type: install
+      variant: wall
+      costYen: 2
+      attack: 1
+      defense: 1
+      abilities:
+        - camo
+    - name: Fire drill
+      type: command
+      desc: Pen test
+      abilities:
+        - scan
+    - name: Signal detection
+      type: install
+      variant: program
+      costYen: 2
+      attack: 1
+      defense: 1
+      abilities:
+        - analytics
+    - name: Slammer
+      type: operator
+      variant: program
+      costYen: 5
+      attack: 3
+      defense: 2
+      desc: Jams and slams
+      abilities:
+        - hack
+    - name: Drone drop
+      type: command
+      abilities:
+        - scan
+    - name: Loiterer
+      type: install
+      variant: drone
+      costYen: 3
+      attack: 1
+      defense: 2
+      abilities:
+        - aerial
+    - name: Splint
+      type: command
+      abilities:
+        - lock
+    - name: Snap Decision
+      type: command
+      variant: code
+      abilities:
+        - message
+    - name: Suitcase Rifle
+      type: mod
+      variant: gear
+      costYen: 2
+      attack: 1
+      defense: 1
+      abilities:
+        - overkill
+    - name: Buried Clause
+      type: contract
+      abilities:
+        - hide
+    - name: Buried Claws
+      type: asset
+      variant: trap
+      costYen: 2
+      attack: 1
+      defense: 1
+      abilities:
+        - trap
+    - name: The Flute
+      type: asset
+      variant: decoy
+      costYen: 2
+      attack: 1
+      defense: 1
+      abilities:
+        - trap
+    - name: Chute Him
+      type: command
+      abilities:
+        - strike
+    - name: C-Beam
+      type: install
+      variant: turret
+      costYen: 3
+      attack: 1
+      defense: 2
+      abilities:
+        - overkill
+    - name: Schema Drifter
+      type: operator
+      variant: program
+      costYen: 5
+      attack: 3
+      defense: 2
+      abilities:
+        - siphon
+    - name: Codetalk
+      type: contract
+      variant: code
+      abilities:
+        - decrypt
+    - name: Repeater
+      type: asset
+      variant: infrastructure
+      costYen: 4
+      defense: 2
+      abilities:
+        - renewable
+      yen: 2
+    - name: Rock
+      type: mod
+      variant: gear
+      costYen: 1
+      abilities:
+        - durable
+    - name: Laser Pod
+      type: install
+      variant: turret
+      costYen: 3
+      attack: 1
+      defense: 2
+      abilities:
+        - overkill
+    - name: Thermal Cloak
+      type: asset
+      variant: decoy
+      costYen: 2
+      attack: 1
+      defense: 1
+      abilities:
+        - trap
+    - name: X-Ocular
+      type: mod
+      variant: bionic
+      costYen: 2
+      attack: 1
+      defense: 1
+      abilities:
+        - enhance
+    - name: Yok.ai
+      type: asset
+      variant: AI
+      costYen: 4
+      defense: 2
+      abilities:
+        - analytics
+      yen: 2
+    - name: Siveria Securities
+      type: asset
+      variant: investment
+      costYen: 3
+      defense: 2
+      abilities:
+        - siphon
+      yen: 2
+    - name: Siverian Silence
+      type: mod
+      variant: training
+      costYen: 1
+      abilities:
+        - camo
+    - name: Shuriken
+      type: mod
+      variant: gear
+      costYen: 1
+      abilities:
+        - rapid
+    - name: Raptor
+      type: operator
+      variant: drone
+      costYen: 5
+      attack: 3
+      defense: 2
+      abilities:
+        - aerial
+    - name: Holo Wall
+      type: install
+      variant: wall
+      costYen: 2
+      attack: 1
+      defense: 1
+      abilities:
+        - durable
+    - name: Titanium Bollards
+      type: install
+      variant: wall
+      costYen: 2
+      attack: 1
+      defense: 1
+      abilities:
+        - durable
+    - name: Shimem
+      type: install
+      variant: program
+      costYen: 2
+      attack: 1
+      defense: 1
+      abilities:
+        - camo
+    - name: Small Drive
+      type: asset
+      variant: decoy
+      costYen: 2
+      attack: 1
+      defense: 1
+      abilities:
+        - trap
+    - name: Kozaic
+      type: asset
+      variant: AI
+      costYen: 4
+      defense: 2
+      abilities:
+        - analytics
+      yen: 2
+    - name: Hemm 868
+      type: mod
+      variant: gear
+      costYen: 1
+      abilities:
+        - rapid
+    - name: m8
+      type: operator
+      variant: robot
+      costYen: 6
+      attack: 3
+      defense: 3
+      abilities:
+        - durable
+    - name: Slimblade
+      type: operator
+      variant: drone
+      costYen: 5
+      attack: 3
+      defense: 2
+      abilities:
+        - aerial
+    - name: Root Particle
+      type: contract
+      variant: code
+      desc: tracking capability
+      abilities:
+        - decrypt
+    - name: Antiviral
+      type: command
+      variant: code
+      abilities:
+        - erase
+    - name: Hard reset
+      type: contract
+      variant: code
+      abilities:
+        - erase
+    - name: Silenced PPK
+      type: mod
+      variant: gear
+      costYen: 2
+      attack: 1
+      defense: 1
+      abilities:
+        - camo
+    - name: NOC
+      type: asset
+      variant: infrastructure
+      costYen: 4
+      defense: 2
+      abilities:
+        - renewable
+      yen: 2
+    - name: Vuln-37
+      type: command
+      variant: code
+      abilities:
+        - decrypt
+    - name: Role Escalator
+      type: operator
+      variant: program
+      costYen: 5
+      attack: 3
+      defense: 2
+      abilities:
+        - siphon
+    - name: Skyhook
+      type: asset
+      variant: infrastructure
+      costYen: 4
+      defense: 2
+      abilities:
+        - renewable
+      yen: 2
+    - name: Yacht
+      type: asset
+      variant: program
+      costYen: 3
+      defense: 2
+      abilities:
+        - analytics
+      yen: 2
+    - name: Nanotube Plates
+      type: mod
+      variant: gear
+      costYen: 2
+      attack: 1
+      defense: 1
+      desc: armor
+      abilities:
+        - durable
+    - name: Mole
+      type: install
+      variant: drone
+      costYen: 3
+      attack: 1
+      defense: 2
+      desc: goes underground
+      abilities:
+        - underground
+    - name: Netanya
+      type: operator
+      variant: human
+      costYen: 5
+      attack: 3
+      defense: 2
+      abilities:
+        - rapid
+    - name: Visical
+      type: program
+      costYen: 3
+      attack: 1
+      defense: 2
+      desc: defense analyzer
+      abilities:
+        - analytics
+    - name: Hyper Wipe
+      type: command
+      desc: removes all data
+      abilities:
+        - erase
+    - name: Deck Tailor
+      type: contract
+      desc: customizes and optimizes decks for specific missions.
+      abilities:
+        - enhance
+    - name: Obscura
+      type: install
+      variant: program
+      costYen: 2
+      attack: 1
+      defense: 1
+      desc: Stealth technology that conceals digital assets.
+      abilities:
+        - camo
+    - name: Paradime
+      type: install
+      variant: sensor
+      costYen: 2
+      attack: 1
+      defense: 1
+      desc: does something cool and dramatic
+      abilities:
+        - analytics
+    - name: Netwell
+      type: asset
+      variant: program
+      costYen: 3
+      defense: 2
+      desc: Provides intrusion detection and generates data
+      abilities:
+        - analytics
+      yen: 2
+    - name: Autotaxi
+      type: operator
+      variant: vehicle
+      costYen: 5
+      attack: 3
+      defense: 2
+      abilities:
+        - rapid
+    - name: Minilounge
+      type: operator
+      variant: vehicle
+      costYen: 5
+      attack: 3
+      defense: 2
+      desc: an autonomous minivan
+      abilities:
+        - rapid
+    - name: Conrad
+      type: operator
+      variant: human
+      costYen: 5
+      attack: 3
+      defense: 2
+      abilities:
+        - rapid
+    - name: Polyglot
+      type: operator
+      variant: program
+      costYen: 5
+      attack: 3
+      defense: 2
+      abilities:
+        - siphon
+    - name: Corpion Assistant
+      type: operator
+      variant: robot
+      costYen: 6
+      attack: 3
+      defense: 3
+      abilities:
+        - durable
+    - name: Geothermal Matrix
+      type: asset
+      variant: infrastructure
+      costYen: 4
+      defense: 2
+      abilities:
+        - renewable
+      yen: 2
+    - name: Solace
+      type: asset
+      variant: investment
+      costYen: 3
+      defense: 2
+      abilities:
+        - siphon
+      yen: 2
+    - name: Fog Harvester
+      type: asset
+      variant: infrastructure
+      costYen: 4
+      defense: 2
+      abilities:
+        - renewable
+      yen: 2
+    - name: Cloudian
+      type: asset
+      variant: program
+      costYen: 3
+      defense: 2
+      desc: defends against Code contracts and commands, enables others
+      abilities:
+        - analytics
+      yen: 2
+    - name: Reconfig
+      type: command
+      variant: code
+      abilities:
+        - decrypt
+    - name: Vsports League
+      type: asset
+      variant: investment
+      costYen: 3
+      defense: 2
+      abilities:
+        - siphon
+      yen: 2
+    - name: Quantum Mic
+      type: install
+      variant: sensor
+      costYen: 2
+      attack: 1
+      defense: 1
+      abilities:
+        - analytics
+    - name: Solarsleeve
+      type: contract
+      abilities:
+        - enhance
+    - name: G.H.O.S.T.
+      type: asset
+      variant: program
+      costYen: 3
+      defense: 2
+      desc: Great Horned Owl Security Technologies
+      abilities:
+        - analytics
+      yen: 2
+    - name: Faraday Fence
+      type: install
+      variant: wall
+      costYen: 2
+      attack: 1
+      defense: 1
+      abilities:
+        - durable
+    - name: Delphi
+      type: install
+      variant: sensor
+      costYen: 2
+      attack: 1
+      defense: 1
+      abilities:
+        - analytics
+    - name: Polymerite
+      type: mod
+      variant: substance
+      costYen: 1
+      abilities:
+        - enhance
+    - name: Fireflask
+      type: asset
+      variant: decoy
+      costYen: 2
+      attack: 1
+      defense: 1
+      abilities:
+        - trap
+    - name: Moon tower
+      type: asset
+      variant: decoy
+      costYen: 2
+      attack: 1
+      defense: 1
+      abilities:
+        - trap
+    - name: Somascan
+      type: install
+      variant: sensor
+      costYen: 2
+      attack: 1
+      defense: 1
+      abilities:
+        - analytics
+    - name: Octobot
+      type: operator
+      variant: robot
+      costYen: 6
+      attack: 3
+      defense: 3
+      abilities:
+        - durable
+    - name: Sequence Bank
+      type: asset
+      variant: program
+      costYen: 3
+      defense: 2
+      abilities:
+        - analytics
+      yen: 2
+    - name: Autorail
+      type: asset
+      variant: investment
+      costYen: 3
+      defense: 2
+      desc: monorail-like highwire delivery network
+      abilities:
+        - siphon
+      yen: 2

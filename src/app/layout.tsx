@@ -8,8 +8,8 @@ import { HydrateClient } from "~/trpc/server";
 import StarsBackgroundClient from "./_components/StarsBackgroundClient";
 
 export const metadata: Metadata = {
-  title: "Stargrid",
-  description: "Created by ben",
+  title: "Stargrid Down",
+  description: "Created by Keyjump",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
