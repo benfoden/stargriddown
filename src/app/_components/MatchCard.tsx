@@ -1,7 +1,7 @@
 "use client";
 import { type Card as CardType } from "@prisma/client";
 import { CircleIcon, SquareIcon, VercelLogoIcon } from "@radix-ui/react-icons";
-import { CARDTYPES } from "~/utils/game/constants";
+import { CARDTYPES } from "~/game/constants";
 import { Card } from "./Card";
 
 export default function MatchCard({

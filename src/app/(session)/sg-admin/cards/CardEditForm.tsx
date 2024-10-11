@@ -5,8 +5,8 @@ import { Card } from "~/app/_components/Card";
 import FormButton from "~/app/_components/FormButton";
 import FormDeleteButton from "~/app/_components/FormDeleteButton";
 import Input from "~/app/_components/Input";
+import { CARDTYPES } from "~/game/constants";
 import { api } from "~/trpc/server";
-import { CARDTYPES } from "~/utils/game/constants";
 import { encodedRedirect } from "~/utils/misc";
 import { type CardWithAbilities } from "~/utils/types";
 

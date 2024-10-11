@@ -32,13 +32,17 @@ Passive:
   - name: link
     desc: Gain X of Y points when you control two or more cards with Link. When overcome, all Linked cards you control in the Arena are revealed.
   - name: analytics
-    desc: Gain X Datab per turn.
+    desc: Gain X Datab per turn when you have gained Yen.
   - name: enhance
     desc: When an opponent Install or Asset is revealed, reveal a card in their hand.
   - name: emergency
     desc: Draw +X Cards if this is the first Card you drew.
+  - name: preprod
+    desc: Enable this card's abilities X turns after it was played.
 
 Active:
+  - name: leak
+    desc: Pay X of Y points and target card is revealed.
   - name: scan
     desc: Look at the top 3 Cards in your deck. Add 1 to your hand and place the other 2 on the bottom.
   - name: hack
@@ -52,7 +56,9 @@ Active:
   - name: procedure
     desc: Use X Datab in your Database to add Datab to target card.
   - name: boost
-    desc: Modify X points of Y type on target card.
+    desc: Add X points of Y type on target card.
+  - name: drain
+    desc: Remove X points of Y type on target card.
   - name: virus
     desc: All cards in target Stack or Team lose 1 Datab.
   - name: decrypt
@@ -69,6 +75,8 @@ Active:
     desc: Make target card Hidden.
   - name: reuse
     desc: Pay X Yen or Y Datab to return this to your hand.
+  - name: ravage
+    desc: Target card is discarded.
 
 unreleased:
 desc: these abilities are NOT in the game. they are just here for reference
