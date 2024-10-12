@@ -26,89 +26,251 @@ export type CardTypeName =
   | "leader"
   | "hq";
 
-export type CardVariant =
+export type OperatorVariant =
   | "human"
   | "animal"
-  | "sensor"
-  | "code"
   | "program"
   | "robot"
   | "drone"
-  | "vehicle"
+  | "vehicle";
+export type InstallVariant =
   | "infrastructure"
+  | "program"
+  | "drone"
   | "wall"
-  | "trap"
-  | "turret"
+  | "sensor"
+  | "turret";
+export type AssetVariant =
+  | "infrastructure"
+  | "program"
   | "AI"
   | "decoy"
   | "investment"
+  | "trap";
+export type CashVariant = "¥1" | "¥2" | "¥3";
+export type ModVariant =
   | "training"
+  | "program"
+  | "upgrade"
   | "gear"
   | "bionic"
-  | "substance"
-  | "tower"
-  | "camp"
-  | "bunker"
-  | "barge"
-  | "¥1"
-  | "¥2"
-  | "¥3";
+  | "substance";
+export type ContractVariant =
+  | "hit"
+  | "tag"
+  | "recall"
+  | "delta"
+  | "knowledge"
+  | "bolster";
+export type CommandVariant =
+  | "hit"
+  | "tag"
+  | "recall"
+  | "delta"
+  | "knowledge"
+  | "bolster";
+export type LeaderVariant = "human";
+export type HQVariant = "tower" | "camp" | "bunker" | "barge";
 
-export type CardType = {
-  name: CardTypeName;
-  variants: CardVariant[];
+export type CardVariant =
+  | OperatorVariant
+  | InstallVariant
+  | AssetVariant
+  | CashVariant
+  | ModVariant
+  | ContractVariant
+  | CommandVariant
+  | LeaderVariant
+  | HQVariant;
+
+export type CardSlots =
+  | "installSlot"
+  | "assetSlot"
+  | "cashSlot"
+  | "modSlot"
+  | "contractSlot"
+  | "commandSlot"
+  | "leaderSlot"
+  | "hqSlot"
+  | "stagingSlot";
+
+type VariantAttributes = {
+  isOrganic?: boolean;
+  isCommunicator?: boolean;
+  isDigital?: boolean;
+  targetVariants?: string[];
 };
 
-export const CARDTYPES: Record<CardTypeName, CardType> = {
+type CardType = {
+  variants: Record<string, VariantAttributes>;
+  playsTo?: string[];
+};
+
+export const CARDS: Record<string, CardType> = {
   operator: {
-    name: "operator",
-    variants: ["human", "animal", "program", "robot", "drone", "vehicle"],
+    variants: {
+      human: {
+        isOrganic: true,
+        isCommunicator: true,
+      },
+      animal: {
+        isOrganic: true,
+      },
+      program: {
+        isDigital: true,
+      },
+      robot: {
+        isDigital: true,
+        isCommunicator: true,
+      },
+      drone: {
+        isDigital: true,
+      },
+      vehicle: {
+        isDigital: true,
+      },
+    },
+    playsTo: ["stagingSlot"],
   },
   install: {
-    name: "install",
-    variants: [
-      "infrastructure",
-      "program",
-      "drone",
-      "wall",
-      "sensor",
-      "turret",
-    ],
+    variants: {
+      infrastructure: {
+        isDigital: true,
+      },
+      wall: {},
+      program: {
+        isDigital: true,
+      },
+      drone: {
+        isDigital: true,
+      },
+      sensor: {
+        isDigital: true,
+      },
+      turret: {},
+    },
+    playsTo: ["installSlot"],
   },
   asset: {
-    name: "asset",
-    variants: [
-      "infrastructure",
-      "program",
-      "AI",
-      "decoy",
-      "investment",
-      "trap",
-    ],
+    variants: {
+      infrastructure: {},
+      program: {
+        isDigital: true,
+      },
+      AI: {
+        isDigital: true,
+        isCommunicator: true,
+      },
+      decoy: {},
+      investment: {},
+      trap: {},
+    },
+    playsTo: ["assetSlot"],
   },
   cash: {
-    name: "cash",
-    variants: ["¥1", "¥2", "¥3"],
+    variants: {
+      "¥1": {},
+      "¥2": {},
+      "¥3": {},
+    },
+    playsTo: ["cashSlot"],
   },
   mod: {
-    name: "mod",
-    variants: ["training", "program", "drone", "gear", "bionic", "substance"],
+    variants: {
+      training: {
+        targetVariants: ["human", "animal", "AI", "investment"],
+      },
+      program: {
+        targetVariants: ["program", "robot", "drone", "sensor", "AI"],
+      },
+      upgrade: {
+        targetVariants: [
+          "robot",
+          "drone",
+          "vehicle",
+          "turret",
+          "infrastructure",
+        ],
+      },
+      gear: {
+        targetVariants: ["human", "animal", "robot"],
+      },
+      bionic: {
+        targetVariants: ["human", "animal"],
+      },
+      substance: {
+        targetVariants: ["human", "animal"],
+      },
+    },
   },
   contract: {
-    name: "contract",
-    variants: ["code"],
+    variants: {
+      hit: {
+        targetVariants: ["human", "animal", "AI"],
+      },
+      tag: {},
+      recall: {
+        targetVariants: ["drone", "robot", "vehicle", "program"],
+      },
+      delta: {
+        targetVariants: ["infrastructure", "program", "AI"],
+      },
+      knowledge: {
+        targetVariants: ["AI", "human", "animal"],
+      },
+      bolster: {
+        targetVariants: [
+          "wall",
+          "trap",
+          "decoy",
+          "infrastructure",
+          "vehicle",
+          "turret",
+        ],
+      },
+    },
   },
   command: {
-    name: "command",
-    variants: ["code"],
+    variants: {
+      hit: {
+        targetVariants: ["human", "animal", "AI"],
+      },
+      tag: {},
+      recall: {
+        targetVariants: ["drone", "robot", "vehicle", "program"],
+      },
+      delta: {
+        targetVariants: ["infrastructure", "program", "AI"],
+      },
+      knowledge: {
+        targetVariants: ["AI", "human", "animal"],
+      },
+      bolster: {
+        targetVariants: [
+          "wall",
+          "trap",
+          "decoy",
+          "infrastructure",
+          "vehicle",
+          "turret",
+        ],
+      },
+    },
   },
   leader: {
-    name: "leader",
-    variants: ["human"],
+    variants: {
+      human: {
+        isOrganic: true,
+      },
+    },
   },
   hq: {
-    name: "hq",
-    variants: ["tower", "camp", "bunker", "barge"],
+    variants: {
+      tower: {},
+      camp: {},
+      bunker: {},
+      barge: {},
+    },
   },
 };
 

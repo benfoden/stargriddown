@@ -250,14 +250,12 @@ villedge:
       defense: 2
       abilities:
         - aerial
-    - name: Overgrown Grotto
+    - name: Overgrown Tetrapods
       type: install
-      variant: infrastructure
+      variant: wall
       costYen: 3
       attack: 1
       defense: 2
-      abilities:
-        - renewable
     - name: Sheet Forest
       type: install
       variant: wall
@@ -397,14 +395,14 @@ villedge:
       desc: fast 4x4 for one
       abilities:
         - rapid
-    - name: Subdermals
+    - name: Subdermal IC
       type: mod
       variant: bionic
       costYen: 1
       shortDesc: Target card can access Code cards.
-    - name: Goo Picking
+    - name: Goop Pick
       type: mod
-      variant: training
+      variant: substance
       costYen: 4
       shortDesc: Give target card Disarm.
       ability:
@@ -429,15 +427,15 @@ villedge:
         - Link
     - name: Super Caps
       type: mod
-      variant: gear
+      variant: upgrade
       costYen: 2
       costMw: -1
     - name: Hovercraft
-      type: mod
+      type: operator
       variant: vehicle
       costYen: 3
       attack: 1
-      defense: 2
+      defense: 4
       abilities:
         - rapid
     - name: Signal fuse
@@ -451,7 +449,7 @@ villedge:
         - harvest
     - name: NV Goggles
       type: mod
-      variant: gear
+      variant: bionic
       costYen: 1
       abilities:
         - camo
@@ -463,7 +461,7 @@ villedge:
         - enhance
     - name: Forlorn
       type: mod
-      variant: bionic
+      variant: substance
       costYen: 2
       attack: 1
       defense: 1
@@ -500,6 +498,14 @@ villedge:
 neonclave:
   description: centralized, deep tech, normative
   cards:
+    - name: Technic Lee
+      type: operator
+      variant: human
+      costYen: 5
+      attack: 5
+      defense: 3
+      abilities:
+        - camo
     - name: Scamspiracy
       type: contract
       variant: code
