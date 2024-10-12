@@ -184,240 +184,277 @@ villedge:
         - renewable
       yen: 3
     - name: Hiveline
+      costYen: 4
       type: asset
       variant: infrastructure
-      costYen: 4
       defense: 2
       shortDesc: Link - 2 datab.
       abilities:
         - link
       yen: 2
     - name: Regenerator
+      costYen: 1
       type: asset
       variant: decoy
-      costYen: 1
       attack: 0
       defense: 2
       abilities:
-        - shielding
+        - shielded
     - name: Sentient Colony
+      costYen: 4
       type: asset
       variant: AI
-      costYen: 4
       defense: 2
       yen: 2
       shortDesc: Give target card 2 datab.
     - name: Emerald Tea Farm
+      costYen: 8
       type: asset
       variant: investment
-      costYen: 8
       defense: 2
       shortDesc: Preprod 1 - The first Human or Animal card you acquire each turn has -2 costYen.
       yen: 2
     - name: Static Harvester
+      costYen: 2
       type: asset
       variant: trap
-      costYen: 2
       attack: 1
       defense: 1
       abilities:
         - trap
     - name: Adapanel Array
+      costYen: 2
       type: asset
       variant: infrastructure
-      costYen: 2
       shortDesc: generate 1 yen per turn
       yen: 2
     - name: Quantum Fog
-      type: install
-      variant: program
       costYen: 3
+      type: contract
+      variant: program
       costDatab: 3
       datab: 2
-      shortDesc: Prevent enemy from adding Datab to Teams on this stack.
+      shortDesc: Prevent enemy from adding Datab to their Team on this stack.
     - name: Dronedar
+      costYen: 4
       type: install
       variant: turret
-      costYen: 4
       defense: 1
       attack: 5
-      shortDesc: Can only engage drones.
+      shortDesc: Niche - Drone
+      abilities:
+        - niche
     - name: Beehive
+      costYen: 3
       type: install
       variant: drone
-      costYen: 3
-      attack: 1
-      defense: 2
-      abilities:
-        - aerial
-    - name: Overgrown Tetrapods
-      type: install
-      variant: wall
-      costYen: 3
-      attack: 1
-      defense: 2
-    - name: Sheet Forest
-      type: install
-      variant: wall
-      costYen: 2
-      attack: 1
+      attack: 2
       defense: 1
+      shortDesc: Shard - 3 Bees
+      abilities:
+        - shard
+    - name: Bee
+      costYen: 1
+      type: mod
+      variant: upgrade
+      attack: 2
+      defense: 1
+      shortDesc: Niche - This can only be played on  Beehive.
+      ability:
+        - niche
+    - name: Overgrown Tetrapods
+      costYen: 3
+      costMw: 0
+      type: install
+      variant: wall
+      attack: 1
+      defense: 5
+    - name: Living Wall
+      costYen: 2
+      type: install
+      variant: wall
+      attack: 1
+      defense: 3
       abilities:
         - durable
-    - name: Clanger
-      type: install
-      variant: wall
+    - name: Clang Bang
       costYen: 2
-      attack: 1
-      defense: 1
-      desc: makes a frightening noise and grabs attention
+      type: install
+      variant: trap
+      shortDesc: Trap - Attack -2, Intimidate -2
       abilities:
+        - trap
         - intimidate
-    - name: Skiff
+    - name: Stealth Skiff
+      costYen: 3
       type: install
       variant: drone
-      costYen: 3
-      attack: 1
-      defense: 2
-      desc: patrols around
+      attack: 3
+      defense: 3
       abilities:
-        - aerial
+        - camo
     - name: Pelletal
+      costYen: 1
       type: install
       variant: turret
-      costYen: 1
-      attack: 1
-      flavor: "100 pellets per second starts to sting after a few seconds."
-    - name: Microlace
-      type: install
-      variant: sensor
-      costYen: 2
-      attack: 1
-      defense: 1
+      attack: 2
+      flavor: "100 darts per second stings in milliseconds."
+      shortDesc: Preprod -1, Intimidate -1
       abilities:
-        - analytics
-    - name: Spydar
+        - initimidate
+        - preprod
+    - name: Microlace
+      costYen: 4
       type: install
       variant: sensor
+      defense: 1
+      costDatab: 1
+      datab: 2
+      shortDesc: Use 1 Datab - Decrypt the card that accesses this.
+      abilities:
+        - decrypt
+    - name: Spydar
       costYen: 3
+      type: install
+      variant: sensor
+      shortDesc: Alert, Track
+      abilities:
+        - alert
+        - track
     - name: Dogzilla
       type: operator
       variant: animal
       costYen: 4
       attack: 3
       defense: 3
+      shortDesc: Alert
       abilities:
         - alert
     - name: The Barber
+      costYen: 5
       type: operator
       variant: human
-      costYen: 5
       attack: 6
       defense: 3
+      shortDesc: Intimidate -2
       abilities:
         - intimidate 2
     - name: Microthopter
+      costYen: 2
       type: operator
       variant: drone
-      costYen: 3
       attack: 2
-      defense: 0
+      defense: 1
+      shortDesc: Enhance
       abilities:
-        - aerial
         - enhance
     - name: Bicycle
       type: operator
       variant: vehicle
       costYen: 1
       attack: 1
+      datab: 1
+      defense: 1
+      shortDesc: Rapid
       abilities:
         - rapid
     - name: Anti-drone Hawk
       type: operator
       variant: animal
-      costYen: 5
+      costYen: 3
       attack: 3
-      defense: 2
+      defense: 3
+      shortDesc: Niche - Drone
       abilities:
-        - anti-air
+        - niche
     - name: Jonny
       type: operator
       variant: human
       costYen: 5
-      attack: 3
-      defense: 2
-      abilities:
-        - rapid
+      attack: 5
+      defense: 5
     - name: Amia
+      costYen: 6
       type: operator
       variant: human
-      costYen: 5
-      attack: 3
-      defense: 2
-      abilities:
-        - rapid
-    - name: Mizuno
-      type: operator
-      variant: human
-      costYen: 5
-      attack: 3
-      defense: 2
-      abilities:
-        - rapid
-    - name: Kingfisher
-      type: operator
-      variant: animal
-      costYen: 5
       attack: 2
-      defense: 3
+      defense: 6
+      shortDesc: Harvest 2
       abilities:
-        - aerial
-    - name: Auroch
+        - harvest
+    - name: Mizuno
+      costYen: 4
+      type: operator
+      variant: human
+      attack: 4
+      defense: 2
+      shortDesc: Siphon 2
+      abilities:
+        - siphon
+    - name: Empressfisher
       type: operator
       variant: animal
       costYen: 8
       attack: 4
-      defense: 4
+      defense: 1
+      shortDesc: Rapid, Overkill 2
       abilities:
+        - rapid
+        - overkill
+    - name: Oroch
+      type: operator
+      variant: animal
+      costYen: 7
+      attack: 4
+      defense: 6
+      shortDesc: Alert, Durable
+      flavor: Orochs are hardy animals.
+      abilities:
+        - alert
         - durable
-    - name: Crowbar
+    - name: Crobar
       type: operator
       variant: robot
       costYen: 6
-      attack: 3
-      defense: 3
-      abilities:
-        - durable
+      attack: 8
+      defense: 4
     - name: Turbo Quad
+      costYen: 4
+      attack: 2
+      defense: 4
       type: operator
       variant: vehicle
-      costYen: 1
-      desc: fast 4x4 for one
+      shortDesc: Emergency, Lateral
       abilities:
-        - rapid
+        - emergency
+        - lateral
     - name: Subdermal IC
+      costYen: 1
       type: mod
       variant: bionic
-      costYen: 1
-      shortDesc: Target card can access Code cards.
-    - name: Goop Pick
+      shortDesc: Unlock 1
+      costDatab: 1
+      abilities:
+        - unlock
+    - name: Grey Goop
+      costYen: 5
       type: mod
       variant: substance
-      costYen: 4
-      shortDesc: Give target card Disarm.
+      datab: 1
+      shortDesc: Give target card Disarm 1.
       ability:
         - disarm
     - name: Fan Jacket
+      costYen: 1
       type: mod
       variant: gear
-      costYen: 1
       defense: 1
       lag: -1
     - name: Spinal Battery
+      costYen: 2
       type: mod
       variant: bionic
-      costYen: 2
-      shortDesc: Target Human or Animal card has -1 costMw.
+      costMw: -1
     - name: LoRadio
       type: mod
       variant: bionic
@@ -425,23 +462,25 @@ villedge:
       shortDesc: Link - 1 Datab.
       abilities:
         - Link
-    - name: Super Caps
+    - name: Hyper Caps
+      costYen: 2
       type: mod
       variant: upgrade
-      costYen: 2
+      flavor: "You'll get a kick out of this."
       costMw: -1
-    - name: Hovercraft
+    - name: Hoversled
       type: operator
       variant: vehicle
       costYen: 3
-      attack: 1
+      attack: 2
       defense: 4
+      shortDesc: Rapid
       abilities:
         - rapid
     - name: Signal fuse
       type: mod
       variant: gear
-      costYen: 2
+      costYen: 3
       attack: 1
       defense: 1
       shortDesc: Harvest - 2
@@ -450,48 +489,56 @@ villedge:
     - name: NV Goggles
       type: mod
       variant: bionic
-      costYen: 1
+      costYen: 2
+      shortDesc: Alert
       abilities:
-        - camo
-    - name: Snapteria
+        - alert
+    - name: Synapteria
       type: mod
       variant: substance
-      costYen: 1
+      costYen: 3
+      defense: 1
+      shortDesc: Disrupt
       abilities:
-        - enhance
+        - disrupt
     - name: Forlorn
       type: mod
       variant: substance
       costYen: 2
-      attack: 1
-      defense: 1
+      defense: 2
       abilities:
         - durable
     - name: Mycofiber
       type: mod
       variant: substance
-      costYen: 1
+      costYen: 4
+      defense: 1
+      shortDesc: Renewable
       abilities:
-        - enhance
-    - name: Proteolytic
+        - renewable
+    - name: Nanitea
       type: mod
       variant: substance
-      costYen: 1
+      costYen: 6
+      shortDesc: Camo, Niche - Sensor, Drone
       abilities:
-        - enhance
-    - name: Sleeve
+        - piercing
+        - niche
+        - camo
+    - name: Sleve
       type: mod
       variant: gear
-      costYen: 1
+      costYen: 6
+      shortDesc: Rapid, Renewable
       abilities:
         - rapid
-    - name: .30 Shovel
+        - renewable
+    - name: DU Shovel
       type: mod
       variant: gear
-      costYen: 2
-      attack: 1
-      defense: 1
-      desc: rifle with armor-piercing rounds
+      costYen: 4
+      attack: 5
+      shortDesc: Overkill 1
       abilities:
         - overkill
 

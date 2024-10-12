@@ -4,23 +4,23 @@ Passive:
   - name: lethal
     desc: The next card this Approaches is Disabled immediately.
   - name: rapid
-    desc: This is ready the same turn that it is played.
+    desc: This Operator is ready the same turn that it is played.
   - name: camo
     desc: Hidden until this Attacks, Defends, or uses an Active ability.
+  - name: shielded
+    desc: The first instance of Attack damage that would be done to this card is negated.
   - name: alert
-    desc: The first instance of Damage done to this card by an Active ability is negated.
-  - name: shielding
-    desc: This can't be targeted by opponent abilities as long as you have Datab.
+    desc: This can't be targeted by opponent Contracts, Commands, or Actives as long as you have more than 1 Mw available.
   - name: siphon
     desc: Add +X Yen to your Account when this Overcomes an opponent Card.
   - name: harvest
-    desc: Add +X Datab to your Database when this Overcomes an opponent Card.
+    desc: Add +X Datab to your Database when this Overcomes an opponent Card with X Datab available.
   - name: overkill
     desc: Add +X to the next instance of Damage to the HQ this turn.
   - name: intimidate
     desc: When this Overcomes a card, the next card you Engage this turn has -X Attack.
   - name: piercing
-    desc: Deal +X damage when this attacks a target.
+    desc: Deal +X damage when this begins to Engage a card.
   - name: durable
     desc: This card can't be Discarded or Erased by the opponent.
   - name: renewable
@@ -28,17 +28,25 @@ Passive:
   - name: steal
     desc: After this overcomes an Asset, a Race is run, and if this player wins, then the Asset is stolen.
   - name: trap
-    desc: If this isn't disarmed by using Points or Abilities a negative effect is activated.
+    desc: If this isn't disarmed by using Points or Abilities then X of Y points change or Z effect is applied to target card.
   - name: link
     desc: Gain X of Y points when you control two or more cards with Link. When overcome, all Linked cards you control in the Arena are revealed.
   - name: analytics
-    desc: Gain X Datab per turn when you have gained Yen.
+    desc: Gain X Datab at end of turn when you have gained 1 or more Yen that turn.
   - name: enhance
     desc: When an opponent Install or Asset is revealed, reveal a card in their hand.
   - name: emergency
     desc: Draw +X Cards if this is the first Card you drew.
   - name: preprod
     desc: Enable this card's abilities X turns after it was played.
+  - name: niche
+    desc: This card can only engage X card variant, type, or specific card.
+  - name: shard
+    desc: Add card X to your hand at start of your next Y turns, 
+  - name: host
+    desc: This card can have mods of type X installed on it.
+  - name: lateral
+    desc: This Operator may move to a neighboring stack after Overcoming a card.
 
 Active:
   - name: leak
@@ -50,7 +58,7 @@ Active:
   - name: erase
     desc: Permanently remove a card from the game.
   - name: disarm
-    desc: Deactivate a Trap without triggering it.
+    desc: Deactivate a Trap without triggering it. (By paying X datab)
   - name: disrupt
     desc: Target card is disabled for the remainder of the turn.
   - name: procedure
@@ -68,15 +76,17 @@ Active:
   - name: message
     desc: Draw +X Cards.
   - name: key
-    desc: Unlock target Locked card.
+    desc: Unlock target Locked card. (By paying X Datab)
   - name: lock
-    desc: Lock target card.
+    desc: Lock target card. (By paying X Datab)
   - name: hide
     desc: Make target card Hidden.
   - name: reuse
     desc: Pay X Yen or Y Datab to return this to your hand.
   - name: ravage
     desc: Target card is discarded.
+  - name: track
+    desc: If target card has its Defense reduced to 0 or loses a race this turn, it's discarded immediately.
 
 unreleased:
 desc: these abilities are NOT in the game. they are just here for reference

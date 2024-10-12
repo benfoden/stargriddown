@@ -106,7 +106,7 @@ type CardType = {
   playsTo?: string[];
 };
 
-export const CARDS: Record<string, CardType> = {
+export const CARDS: Record<CardTypeName, CardType> = {
   operator: {
     variants: {
       human: {
@@ -193,7 +193,7 @@ export const CARDS: Record<string, CardType> = {
         ],
       },
       gear: {
-        targetVariants: ["human", "animal", "robot"],
+        targetVariants: ["human", "robot", "vehicle"],
       },
       bionic: {
         targetVariants: ["human", "animal"],
