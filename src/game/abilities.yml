@@ -1,6 +1,42 @@
-Passive:
-  - name: code
-    desc: This can engage with and be engaged by other Code cards. (programs, AI, etc.)
+
+# Card statuses (represented as abilities in code, but actually distinct in the ame)
+status:
+  - name: hidden
+    desc: This card can't be seen by the opponent.
+  - name: shielded
+    desc: This card can't be targeted.
+  - name: staged
+    desc: This card can't join an Attack.
+  - name: boosted
+    desc: This card has +X of Y points.
+  - name: armed
+    desc: This card's Trap ability is ready.
+  - name: disabled
+    desc: This card can't be activated.
+  - name: disrupted
+    desc: This card can't use abilities or points.
+  - name: locked
+    desc: This card can't be Engaged or Activated until a Key is used on it.
+  - name: engaged
+    desc: This card is engaged by another card or cards.
+
+
+# Ability timing types (represented as values of an ability)
+timing:
+- name: beginning
+  desc: An effect that happens at the beginning of the card owner's turn.
+- name: end
+  desc: An effect that happens at the end of the opponent's turn.
+- name: reactive
+  desc: An effect that happens reactively, based on some condition.
+- name: active
+  desc: A specific effect that happens when a card is played or a card is triggered (such as in an Engagement or Bypass)
+
+
+# Passive abilities. May be beginning, end, or reactive timing
+passive:
+  - name: digital
+    desc: This can engage with and be engaged by other Digital cards. (programs, AI, drones, etc.)
   - name: lethal
     desc: The next card this Approaches is Disabled immediately.
   - name: rapid
@@ -48,6 +84,7 @@ Passive:
   - name: lateral
     desc: This Operator may move to a neighboring stack after Overcoming a card.
 
+# Active abilities. Only happen when player does the action to trigger them.
 Active:
   - name: leak
     desc: Pay X of Y points and target card is revealed.
@@ -69,8 +106,8 @@ Active:
     desc: Remove X points of Y type on target card.
   - name: virus
     desc: All cards in target Stack or Team lose 1 Datab.
-  - name: decrypt
-    desc: Remove all Statuses and Mods on target Card.
+  - name: flash
+    desc: Remove all Statuses and Digital Mods on target Card.
   - name: brute
     desc: Win the next Race.
   - name: message
@@ -88,8 +125,8 @@ Active:
   - name: track
     desc: If target card has its Defense reduced to 0 or loses a race this turn, it's discarded immediately.
 
+# Note: disregard this list, it is only for here as a scratchpad
 unreleased:
-desc: these abilities are NOT in the game. they are just here for reference
   - name: Upgrade
     desc: When this card is played, choose an upgrade from a set of options.
   - name: Meme
@@ -107,4 +144,6 @@ desc: these abilities are NOT in the game. they are just here for reference
   - name: jack
     desc: This Operator, Install, or Asset may be powered (Attack, Datab, or Defense). Lose equivalent Control if it is Overcome.
   - name: airgap
-    desc: This can only target or be targeted while Engaged. Only for Code cards.
+    desc: This can only target or be targeted while Engaged. Only for digital cards.
+ - name: decrypt
+    desc: Remove all Statuses on target Card.

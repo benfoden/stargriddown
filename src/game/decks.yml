@@ -1,37 +1,234 @@
 villedge:
-  description: independent, bio-focused, rebellious
-
+  description: >
+    A deck focused on low-cost, rapid deployment with a focus on renewable 
+    and rapid abilities.
+  totalCount: 50
   cards:
+    - name: Jonny
+      type: operator
+      variant: human
+      costYen: 5
+      attack: 5
+      defense: 5
+      cardCount: 1
+    - name: Taro
+      type: operator
+      variant: human
+      costYen: 3
+      attack: 4
+      defense: 2
+      cardCount: 1
+    - name: Fatima
+      type: operator
+      variant: robot
+      costYen: 2
+      attack: 1
+      defense: 2
+      shortDesc: Scan
+      abilities:
+        - scan
+      cardCount: 3
     - name: RAM Radio
       costYen: 2
       type: command
       variant: code
       shortDesc: Target Code card can be accessed by non-Code cards this turn.
+      cardCount: 2
+    - name: Pine Needle
+      costYen: 3
+      type: command
+      variant: code
+      shortDesc: Drain - 4 Datab
+      abilities:
+        - drain
+      cardCount: 2
+    - name: Ecoship
+      costYen: 1
+      type: asset
+      variant: infrastructure
+      defense: 2
+      costMw: 0
+      abilities:
+        - renewable
+      yen: 3
+      cardCount: 3
+    - name: Microhydro
+      costYen: 3
+      type: asset
+      variant: infrastructure
+      defense: 1
+      shortDesc: Preprod 1 Boost - 1 Mw start of turn.
+      mw: 1
+      yen: 2
+      abilities:
+        - preprod
+        - boost
+      cardCount: 2
+    - name: Bicycle
+      type: operator
+      variant: vehicle
+      costYen: 1
+      attack: 1
+      datab: 1
+      defense: 1
+      shortDesc: Rapid
+      abilities:
+        - rapid
+      cardCount: 3
+    - name: Hoversled
+      type: operator
+      variant: vehicle
+      costYen: 4
+      attack: 2
+      defense: 4
+      shortDesc: Rapid
+      abilities:
+        - rapid
+      cardCount: 3
+    - name: Subdermal IC
+      costYen: 1
+      type: mod
+      variant: bionic
+      shortDesc: Unlock 1
+      costDatab: 1
+      abilities:
+        - unlock
+      cardCount: 2
+    - name: Mycofiber Router
+      type: mod
+      variant: substance
+      costYen: 4
+      defense: 1
+      shortDesc: Renewable
+      abilities:
+        - renewable
+      cardCount: 2
+    - name: Polytunnel
+      costYen: 3
+      type: asset
+      variant: infrastructure
+      costMw: 0
+      shortDesc: Boost - 1 yen end of turn
+      abilities:
+        - renewable
+        - boost
+      yen: 2
+      cardCount: 3
+    - name: Adapanel Array
+      costYen: 2
+      type: asset
+      variant: infrastructure
+      shortDesc: Boost - 1 yen end of turn
+      yen: 2
+      cardCount: 3
+    - name: Spydar
+      costYen: 3
+      type: install
+      variant: sensor
+      shortDesc: Alert, Track
+      abilities:
+        - alert
+        - track
+      cardCount: 3
+    - name: Stealth Skiff
+      costYen: 3
+      type: install
+      variant: drone
+      attack: 3
+      defense: 3
+      abilities:
+        - camo
+      cardCount: 3
+    - name: NV Goggles
+      type: mod
+      variant: bionic
+      costYen: 2
+      shortDesc: Alert
+      abilities:
+        - alert
+      cardCount: 3
+    - name: Silsleeve
+      type: mod
+      variant: gear
+      costYen: 6
+      shortDesc: Rapid, Renewable
+      abilities:
+        - rapid
+        - renewable
+      cardCount: 1
+
+wicket:
+  description: >
+    A deck with a focus on high-impact, strategic plays with a mix of traps and high-cost cards.
+
+  cards:
     - name: Tactical EMP
       costYen: 4
       type: command
       variant: code
       abilities:
         - ravage
-    - name: Pine Needle
-      costYen: 2
-      type: command
-      variant: code
-      shortDesc: Drain - 4 Datab
-      abilities:
-        - drain
-    - name: Sat Beacon
-        costYen: 2
-        type: command
-        variant: code
-        shortDesc: Leak - 1 yen and Reveal the next card in a Stack as it is approached.
-        abilities:
-          - leak
     - name: Metaphore
       costYen: 6
       type: contract
-      shortDesc: Pay 2 Datab: All of your cards may interact with Code cards this turn.
+      shortDesc: Pay 2 Datab- All of your cards may interact with Code cards this turn.
       costDatab: 2
+    - name: Green Dragon Vase
+      costYen: 8
+      type: asset
+      variant: investment
+      costMw: 2
+      ability: Preprod 1 - Acquire one Asset of cost 4 yen or less each turn.
+      yen: 6
+      abilities:
+        - preprod
+    - name: Venus
+      costYen: 2
+      type: asset
+      variant: trap
+      attack: 1
+      defense: 1
+      shortDesc: Trap - +2 attack.
+      costMw: 0
+      abilities:
+        - trap
+    - name: Clang Bang
+      costYen: 2
+      type: install
+      variant: trap
+      shortDesc: Trap - Target Attack -2, Intimidate -2
+      abilities:
+        - trap
+        - intimidate
+    - name: Thermocomposter
+      costYen: 6
+      type: asset
+      variant: infrastructure
+      defense: 2
+      shortDesc: Preprod 2 - Boost 2 yen start of turn.
+      abilities:
+        - renewable
+        - boost
+        - preprod
+      yen: 3
+    - name: Empressfisher
+      type: operator
+      variant: animal
+      costYen: 8
+      attack: 4
+      defense: 1
+      shortDesc: Rapid, Overkill 2
+      abilities:
+        - rapid
+        - overkill
+    - name: DU Shovel
+      type: mod
+      variant: gear
+      costYen: 4
+      attack: 5
+      shortDesc: Overkill 1
+      abilities:
+        - overkill
     - name: Halcyon Days
       costYen: 1
       type: contract
@@ -44,45 +241,8 @@ villedge:
       type: contract
       shortDesc: Leak 2 datab - The next card you approach this turn is revealed.
       costDatab: 2
-      abilities: 
+      abilities:
         - leak
-    - name: Venus
-      costYen: 2
-      type: asset
-      variant: trap
-      attack: 1
-      defense: 1
-      shortDesc: Trap - +2 attack.
-      costMw: 0
-      abilities:
-        - trap
-    - name: Ecoship
-      costYen: 1
-      type: asset
-      variant: infrastructure
-      defense: 2
-      costMw: 0
-      abilities:
-        - renewable
-      yen: 3
-    - name: Green Dragon Vase
-      costYen: 8
-      type: asset
-      variant: investment
-      costMw: 2
-      ability: Preprod 1 - Acquire one Asset of cost 4 yen or less each turn.
-      yen: 6
-      abilities:
-        - preprod
-    - name: Nano reactor
-      costYen: 4
-      type: asset
-      variant: infrastructure
-      defense: 2
-      shortDesc: Boost - 1 Mw startofturn.
-      abilities:
-        - renewable
-      yen: 3
     - name: Turbine Array
       costYen: 6
       type: asset
@@ -92,16 +252,67 @@ villedge:
       abilities:
         - boost
       yen: 2
-    - name: Polytunnel
-      costYen: 3
+    - name: Microlace
+      costYen: 4
+      type: install
+      variant: sensor
+      defense: 1
+      costDatab: 1
+      datab: 2
+      shortDesc: Use 1 Datab - Decrypt the card that accesses this.
+      abilities:
+        - decrypt
+    - name: The Barber
+      costYen: 5
+      type: operator
+      variant: human
+      attack: 6
+      defense: 3
+      shortDesc: Intimidate -2
+      abilities:
+        - intimidate 2
+    - name: Mizuno
+      costYen: 4
+      type: operator
+      variant: human
+      attack: 4
+      defense: 2
+      shortDesc: Siphon 2
+      abilities:
+        - siphon
+    - name: Oroch
+      type: operator
+      variant: animal
+      costYen: 7
+      attack: 4
+      defense: 6
+      shortDesc: Alert, Durable
+      flavor: Orochs are hardy animals.
+      abilities:
+        - alert
+        - durable
+
+newdeck:
+  description: >
+    A collection of unique cards not found in other decks.
+
+  cards:
+    - name: Sat Beacon
+      costYen: 2
+      type: command
+      variant: code
+      shortDesc: Leak - 1 yen and Reveal the next card in a Stack as it is approached.
+      abilities:
+        - leak
+    - name: Nano reactor
+      costYen: 4
       type: asset
       variant: infrastructure
-      costMw: 0
-      shortDesc: boost - 1 yen endofturn
+      defense: 2
+      shortDesc: Boost - 1 Mw startofturn.
       abilities:
         - renewable
-        - boost
-      yen: 2
+      yen: 3
     - name: Farmscraper
       costYen: 5
       type: asset
@@ -163,26 +374,6 @@ villedge:
         - renewable
         - boost
       yen: 2
-    - name: Microhydro
-      costYen: 3
-      type: asset
-      variant: infrastructure
-      defense: 1
-      shortDesc: Preprod 1 Boost - 1 Mw start of turn.
-      mw: 1
-      yen: 2
-      abilities:
-        - preprod
-        - boost
-    - name: Thermocomposter
-      costYen: 6
-      type: asset
-      variant: infrastructure
-      defense: 2
-      shortDesc: Preprod 2 - Boost 2 yen start of turn.
-      abilities:
-        - renewable
-      yen: 3
     - name: Hiveline
       costYen: 4
       type: asset
@@ -222,12 +413,6 @@ villedge:
       defense: 1
       abilities:
         - trap
-    - name: Adapanel Array
-      costYen: 2
-      type: asset
-      variant: infrastructure
-      shortDesc: generate 1 yen per turn
-      yen: 2
     - name: Quantum Fog
       costYen: 3
       type: contract
@@ -277,22 +462,6 @@ villedge:
       defense: 3
       abilities:
         - durable
-    - name: Clang Bang
-      costYen: 2
-      type: install
-      variant: trap
-      shortDesc: Trap - Attack -2, Intimidate -2
-      abilities:
-        - trap
-        - intimidate
-    - name: Stealth Skiff
-      costYen: 3
-      type: install
-      variant: drone
-      attack: 3
-      defense: 3
-      abilities:
-        - camo
     - name: Pelletal
       costYen: 1
       type: install
@@ -303,24 +472,6 @@ villedge:
       abilities:
         - initimidate
         - preprod
-    - name: Microlace
-      costYen: 4
-      type: install
-      variant: sensor
-      defense: 1
-      costDatab: 1
-      datab: 2
-      shortDesc: Use 1 Datab - Decrypt the card that accesses this.
-      abilities:
-        - decrypt
-    - name: Spydar
-      costYen: 3
-      type: install
-      variant: sensor
-      shortDesc: Alert, Track
-      abilities:
-        - alert
-        - track
     - name: Dogzilla
       type: operator
       variant: animal
@@ -330,15 +481,6 @@ villedge:
       shortDesc: Alert
       abilities:
         - alert
-    - name: The Barber
-      costYen: 5
-      type: operator
-      variant: human
-      attack: 6
-      defense: 3
-      shortDesc: Intimidate -2
-      abilities:
-        - intimidate 2
     - name: Microthopter
       costYen: 2
       type: operator
@@ -348,16 +490,6 @@ villedge:
       shortDesc: Enhance
       abilities:
         - enhance
-    - name: Bicycle
-      type: operator
-      variant: vehicle
-      costYen: 1
-      attack: 1
-      datab: 1
-      defense: 1
-      shortDesc: Rapid
-      abilities:
-        - rapid
     - name: Anti-drone Hawk
       type: operator
       variant: animal
@@ -367,12 +499,6 @@ villedge:
       shortDesc: Niche - Drone
       abilities:
         - niche
-    - name: Jonny
-      type: operator
-      variant: human
-      costYen: 5
-      attack: 5
-      defense: 5
     - name: Amia
       costYen: 6
       type: operator
@@ -382,36 +508,6 @@ villedge:
       shortDesc: Harvest 2
       abilities:
         - harvest
-    - name: Mizuno
-      costYen: 4
-      type: operator
-      variant: human
-      attack: 4
-      defense: 2
-      shortDesc: Siphon 2
-      abilities:
-        - siphon
-    - name: Empressfisher
-      type: operator
-      variant: animal
-      costYen: 8
-      attack: 4
-      defense: 1
-      shortDesc: Rapid, Overkill 2
-      abilities:
-        - rapid
-        - overkill
-    - name: Oroch
-      type: operator
-      variant: animal
-      costYen: 7
-      attack: 4
-      defense: 6
-      shortDesc: Alert, Durable
-      flavor: Orochs are hardy animals.
-      abilities:
-        - alert
-        - durable
     - name: Crobar
       type: operator
       variant: robot
@@ -428,14 +524,6 @@ villedge:
       abilities:
         - emergency
         - lateral
-    - name: Subdermal IC
-      costYen: 1
-      type: mod
-      variant: bionic
-      shortDesc: Unlock 1
-      costDatab: 1
-      abilities:
-        - unlock
     - name: Grey Goop
       costYen: 5
       type: mod
@@ -468,15 +556,6 @@ villedge:
       variant: upgrade
       flavor: "You'll get a kick out of this."
       costMw: -1
-    - name: Hoversled
-      type: operator
-      variant: vehicle
-      costYen: 3
-      attack: 2
-      defense: 4
-      shortDesc: Rapid
-      abilities:
-        - rapid
     - name: Signal fuse
       type: mod
       variant: gear
@@ -486,13 +565,6 @@ villedge:
       shortDesc: Harvest - 2
       ability:
         - harvest
-    - name: NV Goggles
-      type: mod
-      variant: bionic
-      costYen: 2
-      shortDesc: Alert
-      abilities:
-        - alert
     - name: Synapteria
       type: mod
       variant: substance
@@ -533,14 +605,6 @@ villedge:
       abilities:
         - rapid
         - renewable
-    - name: DU Shovel
-      type: mod
-      variant: gear
-      costYen: 4
-      attack: 5
-      shortDesc: Overkill 1
-      abilities:
-        - overkill
 
 neonclave:
   description: centralized, deep tech, normative
@@ -555,7 +619,58 @@ neonclave:
         - camo
     - name: Scamspiracy
       type: contract
-      variant: code
+      variant: trap
+    - name: Space Cat
+      type: operator
+      variant: drone
+      costYen: 5
+      attack: 3
+      defense: 2
+      desc: Mammalian data trained AI powered bot
+      abilities:
+        - camo
+    - name: Audiophore
+      type: install
+      variant: drone
+      costYen: 3
+      attack: 1
+      defense: 2
+      abilities:
+        - aerial
+    - name: NV Eagle
+      type: install
+      variant: drone
+      costYen: 3
+      attack: 1
+      defense: 2
+      abilities:
+        - aerial
+    - name: Auto Response
+      type: asset
+      variant: decoy
+      costYen: 2
+      attack: 1
+      defense: 1
+      abilities:
+        - trap
+    - name: Quantum Key
+# ...
+
+
+neonclave:
+  description: centralized, deep tech, normative
+  cards:
+    - name: Technic Lee
+      type: operator
+      variant: human
+      costYen: 5
+      attack: 5
+      defense: 3
+      abilities:
+        - camo
+    - name: Scamspiracy
+      type: contract
+      variant: trap
     - name: Space Cat
       type: operator
       variant: drone
@@ -632,7 +747,7 @@ neonclave:
         - camo
     - name: Inverse engineering
       type: contract
-      variant: code
+      variant: program
       abilities:
         - decrypt
     - name: Overflow
@@ -707,7 +822,7 @@ neonclave:
         - lock
     - name: Snap Decision
       type: command
-      variant: code
+      variant: program
       abilities:
         - message
     - name: Suitcase Rifle
@@ -760,7 +875,7 @@ neonclave:
         - siphon
     - name: Codetalk
       type: contract
-      variant: code
+      variant: program
       abilities:
         - decrypt
     - name: Repeater
@@ -901,18 +1016,18 @@ neonclave:
         - aerial
     - name: Root Particle
       type: contract
-      variant: code
+      variant: program
       desc: tracking capability
       abilities:
         - decrypt
     - name: Antiviral
       type: command
-      variant: code
+      variant: program
       abilities:
         - erase
     - name: Hard reset
       type: contract
-      variant: code
+      variant: program
       abilities:
         - erase
     - name: Silenced PPK
@@ -933,7 +1048,7 @@ neonclave:
       yen: 2
     - name: Vuln-37
       type: command
-      variant: code
+      variant: program
       abilities:
         - decrypt
     - name: Role Escalator
@@ -1107,7 +1222,7 @@ neonclave:
       yen: 2
     - name: Reconfig
       type: command
-      variant: code
+      variant: program
       abilities:
         - decrypt
     - name: Vsports League

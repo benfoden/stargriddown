@@ -422,25 +422,26 @@ Certain Cards have a MW (energy) cost, limiting the number a player can deploy a
 ## Card statuses and abilities
 
 
+statuses:
+  - name: hidden
+    desc: This card can't be seen by the opponent.
+  - name: shielded
+    desc: This card can't be targeted.
+  - name: staged
+    desc: This card can't join an Attack.
+  - name: boosted
+    desc: This card has +X of Y points.
+  - name: armed
+    desc: This card's Trap ability is ready.
+  - name: disabled
+    desc: This card can't be activated.
+  - name: disrupted
+    desc: This card can't use abilities or points.
+  - name: locked
+    desc: This card can't be Engaged or Activated until a Key is used on it.
+  - name: engaged
+    desc: This card is engaged by another card or cards.
 
-Status
-- hidden: This card can't be seen by the opponent.
-- shielded: This card can't be targeted.
-- staged: This card can't join an Attack.
-- boosted: This card has +X of Y points.
-- armed: This card's Trap ability is ready.
-- disabled: This card can't be activated.
-- disrupted: This card can't use abilties or points.
-- locked: This card can't be Engaged or Activated until a Key is used on it.
-- engaged: This card is engaged by another card or cards.
-
-
-Ability variants
-- beginning: An effect that happens at the beginning of the card owner's turn.
-- end: An effect that happens at the end of the opponent's turn.
-- passive: An effect that happens passively, based on some condition.
-- active: A specific effect that happens when a card is played or a card is triggered (such as in an Engagement or Bypass)
-- status: A positive or negative effect. It is always the result of another Ability.
 
 
 Passive

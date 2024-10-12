@@ -182,6 +182,7 @@ export const CARDS: Record<CardTypeName, CardType> = {
       },
       program: {
         targetVariants: ["program", "robot", "drone", "sensor", "AI"],
+        isDigital: true,
       },
       upgrade: {
         targetVariants: [
@@ -191,12 +192,14 @@ export const CARDS: Record<CardTypeName, CardType> = {
           "turret",
           "infrastructure",
         ],
+        isDigital: true,
       },
       gear: {
         targetVariants: ["human", "robot", "vehicle"],
       },
       bionic: {
         targetVariants: ["human", "animal"],
+        isDigital: true,
       },
       substance: {
         targetVariants: ["human", "animal"],
