@@ -311,14 +311,16 @@ export const StatusAbilities = [
 ] as const;
 export type StatusAbility = (typeof StatusAbilities)[number];
 
+// ---- v 0.1 Abilities
 export const ABILITIES = {
   lethal: {
-    desc: "The next card this Approaches is Disabled immediately.",
+    desc: "The first card this Approaches is Disabled immediately.",
     abilityType: "passive",
   },
   rapid: {
     desc: "This Operator is ready the same turn that it is played.",
     abilityType: "passive",
+    targetType: "operator",
   },
   camo: {
     desc: "Hidden until this Attacks, Defends, or uses an Active ability.",
@@ -340,7 +342,7 @@ export const ABILITIES = {
     yen: 0,
   },
   harvest: {
-    desc: "Add X Datab to your Database when this Overcomes an opponent Card with X Datab available.",
+    desc: "Add X Datab to your Database when this Overcomes an opponent Card with Datab, up to X as available.",
     abilityType: "passive",
     datab: 0,
   },
@@ -360,7 +362,7 @@ export const ABILITIES = {
     attack: 0,
   },
   durable: {
-    desc: "This card can't be Discarded or Erased by the opponent.",
+    desc: "This card can't be Disabled, Discarded, or Erased by the opponent.",
     abilityType: "passive",
   },
   renewable: {
@@ -368,8 +370,9 @@ export const ABILITIES = {
     abilityType: "passive",
   },
   steal: {
-    desc: "After this overcomes an Asset, a Race is run, and if you win the Asset moves to your Discard pile.",
+    desc: "After this overcomes an Asset a Race is run and if you win then the Asset moves to your Discard pile.",
     abilityType: "passive",
+    targetType: "operator",
   },
   trap: {
     desc: "If this isn't disarmed by using Points or Abilities then X of Y points change or Z effect is applied to target card.",
@@ -390,12 +393,12 @@ export const ABILITIES = {
     abilityType: "active",
   },
   brute: {
-    desc: "Win the next Race. (pay X datab)",
+    desc: "Target card wins the next Race. (pay X datab)",
     abilityType: "active",
     datab: 0,
   },
   exploit: {
-    desc: "Lose the next Race. (pay X datab)",
+    desc: "Target card loses the next Race. (pay X datab)",
     abilityType: "active",
     datab: 0,
   },
@@ -431,7 +434,7 @@ export const ABILITIES = {
     abilityType: "status",
   },
   disabled: {
-    desc: "This card can't be activated.",
+    desc: "This card can't be activated (flipped over).",
     abilityType: "status",
   },
   disrupted: {
@@ -467,7 +470,18 @@ export const ABILITIES = {
     desc: "Convert X points into Y points.",
     abilityType: "active",
   },
+  preprod: {
+    desc: "This card's abilities are enabled X turns after it becomes active.",
+    abilityType: "passive",
+    turns: 0,
+  },
+  decrypt: {
+    desc: "Remove all Statuses on target Card.",
+    abilityType: "active",
+  },
 };
+
+// --- -1 UNRELEASEDABILITIES
 
 export const UNRELEASEDABILITIES = {
   link: {
@@ -484,11 +498,6 @@ export const UNRELEASEDABILITIES = {
     desc: "Draw X Cards if this is the first Card you drew.",
     abilityType: "passive",
     cards: 0,
-    ruleSet: "-1",
-  },
-  preprod: {
-    desc: "Enable this card's abilities X turns after it was played.",
-    abilityType: "passive",
     ruleSet: "-1",
   },
   niche: {
@@ -595,17 +604,17 @@ export const UNRELEASEDABILITIES = {
     abilityType: "status",
     ruleset: "-1",
   },
-  Upgrade: {
+  upgrade: {
     desc: "When this card is played, choose an upgrade from a set of options.",
     abilityType: "unreleased",
     ruleSet: "-1",
   },
-  Meme: {
+  meme: {
     desc: "Your next Datab generating effect triggers twice.",
     abilityType: "unreleased",
     ruleSet: "-1",
   },
-  Clone: {
+  clone: {
     desc: "When played, a copy of this card is played at the same target.",
     abilityType: "unreleased",
     ruleSet: "-1",
@@ -637,11 +646,6 @@ export const UNRELEASEDABILITIES = {
   },
   airgap: {
     desc: "This can only target or be targeted while Engaged. Only for digital cards.",
-    abilityType: "unreleased",
-    ruleSet: "-1",
-  },
-  decrypt: {
-    desc: "Remove all Statuses on target Card.",
     abilityType: "unreleased",
     ruleSet: "-1",
   },

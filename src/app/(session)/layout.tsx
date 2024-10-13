@@ -17,9 +17,9 @@ export default async function SessionLayout({
       <SessionNav>
         <Link href="/home">
           <Button variant="nav">
-            <div className="flex flex-row items-center text-amber-500">
+            <div className="flex flex-row items-center text-sm text-amber-500">
               <ChevronLeftIcon className="h-4 w-4" />
-              Home
+              HOME
             </div>
           </Button>
         </Link>

@@ -257,6 +257,14 @@ villedge:
       abilities:
         - alert
       ruleSet: "0.1"
+    - name: Fire Drill Bit
+      costYen: 4
+      type: command
+      desc: Pen test
+      abilities: Hack 2, Boost 2 Defense
+      shortDesc:
+        - hack
+        - boost
 
 wicket:
   description: >
@@ -660,14 +668,13 @@ neonclave:
 
   cards:
     - name: Lee Tecnich
+      costYen: 5
       type: operator
       variant: human
-      costYen: 5
       attack: 5
       defense: 3
-      shortDesc: Camo, Harvest 1
+      shortDesc: Harvest 1
       abilities:
-        - camo
         - harvest
     - name: Scamspiracy
       costYen: 5
@@ -678,126 +685,136 @@ neonclave:
         - track
         - exploit
     - name: Space Cat
+      costYen: 3
       type: operator
-      variant: drone
-      costYen: 5
-      attack: 3
-      defense: 2
-      desc: Mammalian data trained AI powered bot
+      variant: animal
+      attack: 2
+      defense: 1
+      shortDesc: Preprod 1, Camo, Lethal
       abilities:
         - camo
+        - lethal
+        - preprod
     - name: Audiophore
+      costYen: 4
       type: install
       variant: drone
-      costYen: 3
       attack: 1
-      defense: 2
+      defense: 3
+      shortDesc: Message 1 - Draw 1 card when this is accessed.
       abilities:
-        - aerial
+        - message
     - name: NV Eagle
+      costYen: 4
       type: install
       variant: drone
-      costYen: 3
-      attack: 1
-      defense: 2
+      attack: 2
+      defense: 4
+      shortDesc: Alert, Piercing 2
       abilities:
-        - aerial
+        - alert
+        - piercing
     - name: Phishing Net
+      costYen: 2
       type: asset
       variant: trap
-      costYen: 2
-      attack: 1
-      defense: 1
+      defense: 2
+      shortDesc: Trap - Attack 2 Harvest 2
       abilities:
         - trap
-    - name: Quantum Key
+    - name: Quantum Keywallet
+      costYen: 8
       type: mod
-      variant: gear
-      costYen: 2
-      attack: 1
-      defense: 1
-      desc: unlock all
+      variant: program
+      datab: 3
+      shortDesc: Disarm 1, Key 1
       abilities:
         - key
+        - disarm
     - name: Eavesdroplet
-      type: install
-      variant: drone
       costYen: 3
-      attack: 1
-      defense: 2
+      type: install
+      variant: sensor
+      attack: 2
+      defense: 3
+      shortDesc: Alert, Siphon 1
       abilities:
-        - aerial
-    - name: Tech Support
+        - alert
+        - siphon
+    - name: Success Desk
       type: asset
       variant: program
-      costYen: 3
-      defense: 2
-      shortDesc: Analytics - 1 Datab
+      costYen: 4
+      defense: 1
+      shortDesc: Analytics 2
       abilities:
         - analytics
       yen: 2
     - name: Drone Dome
       type: install
       variant: drone
+      costYen: 6
+      attack: 2
+      defense: 6
+      shortDesc: Shield 4
+      abilities:
+        - shield
+    - name: Code Poncho
+      type: Asset
+      variant: trap
       costYen: 3
       attack: 1
       defense: 2
-      abilities:
-        - aerial
-    - name: Code Poncho
-      type: install
-      variant: program
-      costYen: 2
-      attack: 1
-      defense: 1
+      shortDesc: Camo, Trap - Attack 1 Defense 1
       abilities:
         - camo
+        - trap
     - name: Inverse engineering
+      costYen: 2
       type: contract
       variant: program
+      shortDesc: Decrypt
       abilities:
         - decrypt
-    - name: Overflow
+    - name: Overflow Stator
       type: operator
       variant: program
-      costYen: 5
-      attack: 3
-      defense: 2
+      costYen: 7
+      attack: 5
+      defense: 3
+      datab: 2
+      shortDesc: Brute 2, Overkill 2
       abilities:
-        - siphon
+        - brute
+        - overkill
     - name: Carbon Jacket
-      type: install
-      variant: wall
+      type: mod
+      variant: gear
       costYen: 2
-      attack: 1
-      defense: 1
+      defense: 2
+      shortDesc: Durable
       abilities:
         - durable
-    - name: Red Dot
-      type: operator
-      variant: drone
-      costYen: 5
-      attack: 3
-      defense: 2
+    - name: Red Triangle
+      type: mod
+      variant: gear
+      costYen: 4
+      attack: 5
+      shortDesc: Piercing 2
       abilities:
-        - aerial
+        - piercing
     - name: Smoke Screen
       type: install
       variant: wall
-      costYen: 2
-      attack: 1
-      defense: 1
+      costYen: 1
+      defense: 2
+      shortDesc: Durable
       abilities:
-        - camo
-    - name: Fire drill
-      type: command
-      desc: Pen test
-      abilities:
-        - scan
+        - durable
     - name: Signal detection
+      costYen: 2
       type: install
       variant: program
-      costYen: 2
       attack: 1
       defense: 1
       shortDesc: Analytics - 1 Datab

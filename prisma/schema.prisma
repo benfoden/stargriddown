@@ -64,6 +64,7 @@ model Card {
   costDatab     Int?
   costMw        Int?
   costLag       Int?
+  turns         Int?
   logic         String?
   rarity        String?
   deckId        String?

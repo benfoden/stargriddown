@@ -9,7 +9,7 @@
 
   html,
   body {
-    @apply bg-[#1C1C1E] font-mono text-white;
+    @apply bg-[#1C1C1E] font-medium text-blue-50;
     ::selection {
       background: #fbbe2480;
     }

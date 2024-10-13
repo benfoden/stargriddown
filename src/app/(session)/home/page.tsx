@@ -4,7 +4,6 @@ import { Card } from "~/app/_components/Card";
 import FormButton from "~/app/_components/FormButton";
 import { FormMessage, type Message } from "~/app/_components/FormMessage";
 import { api } from "~/trpc/server";
-import { getUser } from "~/utils/supabase/getUser";
 import { createMatchAction } from "../../(match)/match/actions";
 
 export default async function Home({
@@ -12,7 +11,6 @@ export default async function Home({
 }: {
   searchParams: Message;
 }) {
-  const user = await getUser();
   const matches = await api.match.getAllUserMatches();
 
   return (
@@ -20,7 +18,6 @@ export default async function Home({
       <FormMessage message={searchParams} />
 
       <Card variant="hero" isButton={false}>
-        <h1>Welcome home {user?.name}</h1>
         <div className="flex h-full flex-col items-start justify-start gap-8 py-16">
           <form
             className="flex flex-col gap-2"
