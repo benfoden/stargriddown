@@ -32,6 +32,7 @@ model Deck {
   image                String?
   createdAt            DateTime @default(now())
   updatedAt            DateTime @default(now())
+  ruleSet              String?
   type                 String?
   cards                Card[]
   player1StartMatches  Match[]  @relation("Player1StartDeck")
@@ -44,7 +45,11 @@ model Card {
   id            String        @id @default(uuid())
   name          String
   type          String        @default("operator")
-  variant       String?
+  variant       String        @default("digital")
+  attributes    String?
+  targetAttributes String?
+  targetType       String?
+  targetVariants   String?
   desc          String?
   shortDesc     String?
   flavor        String?
@@ -59,9 +64,11 @@ model Card {
   costDatab     Int?
   costMw        Int?
   costLag       Int?
+  logic         String?
   rarity        String?
   deckId        String?
   image         String?
+  ruleSet       String?
   createdAt     DateTime      @default(now())
   updatedAt     DateTime      @default(now())
   deck          Deck?         @relation(fields: [deckId], references: [id], onDelete: Cascade)
@@ -69,29 +76,32 @@ model Card {
 }
 
 model Ability {
-  id            String        @id @default(uuid())
-  name          String
-  shortName     String?
-  variant       String
-  shortDesc     String?
-  isUsable      Boolean?
-  targetType    String?
-  desc          String?
-  attack        Int?
-  defense       Int?
-  yen           Int?
-  lag           Int?
-  datab         Int?
-  mw            Int?
-  logic         String?
-  costYen       Int?
-  costDatab     Int?
-  costMw        Int?
-  costLag       Int?
-  image         String?
-  createdAt     DateTime      @default(now())
-  updatedAt     DateTime      @default(now())
-  cardAbilities CardAbility[]
+  id               String        @id @default(uuid())
+  name             String
+  type             String
+  shortDesc        String?
+  targetAttributes String?
+  targetType       String?
+  targetVariants   String?
+  desc             String?
+  attack           Int?
+  defense          Int?
+  yen              Int?
+  lag              Int?
+  datab            Int?
+  mw               Int?
+  control          Int?
+  cardCount        Int?
+  logic            String?
+  costYen          Int?
+  costDatab        Int?
+  costMw           Int?
+  costLag          Int?
+  ruleSet          String?
+  image            String?
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @default(now())
+  cardAbilities    CardAbility[]
 }
 
 model CardAbility {
@@ -105,7 +115,7 @@ model CardAbility {
 }
 
 model Match {
-  id                  String       @id @default(uuid())
+  id                  String    @id @default(uuid())
   player1Id           String?
   player2Id           String?
   player1StartDeckId  String?
@@ -115,13 +125,14 @@ model Match {
   gameMode            String?
   gameType            String?
   statuses            String
-  createdAt           DateTime     @default(now())
-  updatedAt           DateTime     @default(now())
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @default(now())
   winnerId            String?
   rounds              Int?
   matchState          Json?
   startedAt           DateTime?
   endedAt             DateTime?
+  ruleSet             String?
 
   player1           User? @relation("Player1Matches", fields: [player1Id], references: [id])
   player2           User? @relation("Player2Matches", fields: [player2Id], references: [id])
@@ -130,5 +141,6 @@ model Match {
   player1MarketDeck Deck? @relation("Player1MarketDeck", fields: [player1MarketDeckId], references: [id])
   player2MarketDeck Deck? @relation("Player2MarketDeck", fields: [player2MarketDeckId], references: [id])
   winner            User? @relation("WinnerMatches", fields: [winnerId], references: [id])
+
   @@index([id])
 }

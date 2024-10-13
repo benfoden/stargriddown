@@ -11,6 +11,7 @@ villedge:
       attack: 5
       defense: 5
       cardCount: 1
+      ruleSet: "0.1"
     - name: Momo
       type: operator
       variant: human
@@ -18,6 +19,7 @@ villedge:
       attack: 4
       defense: 2
       cardCount: 1
+      ruleSet: "0.1"
     - name: Fatima
       type: operator
       variant: robot
@@ -28,12 +30,14 @@ villedge:
       abilities:
         - scan
       cardCount: 3
+      ruleSet: "0.1"
     - name: RAM Radio
       costYen: 2
       type: command
       variant: code
       shortDesc: Target Code card can be accessed by non-Code cards this turn.
       cardCount: 2
+      ruleSet: "0.1"
     - name: Pine Needle
       costYen: 3
       type: command
@@ -42,6 +46,7 @@ villedge:
       abilities:
         - drain
       cardCount: 2
+      ruleSet: "0.1"
     - name: Ecoship
       costYen: 1
       type: asset
@@ -52,6 +57,7 @@ villedge:
         - renewable
       yen: 3
       cardCount: 3
+      ruleSet: "0.1"
     - name: Microhydro
       costYen: 3
       type: asset
@@ -64,6 +70,7 @@ villedge:
         - preprod
         - boost
       cardCount: 2
+      ruleSet: "0.1"
     - name: Bicycle
       type: operator
       variant: vehicle
@@ -75,6 +82,7 @@ villedge:
       abilities:
         - rapid
       cardCount: 3
+      ruleSet: "0.1"
     - name: Hoversled
       type: operator
       variant: vehicle
@@ -85,6 +93,7 @@ villedge:
       abilities:
         - rapid
       cardCount: 3
+      ruleSet: "0.1"
     - name: Subdermal IC
       costYen: 1
       type: mod
@@ -94,6 +103,7 @@ villedge:
       abilities:
         - unlock
       cardCount: 2
+      ruleSet: "0.1"
     - name: Mycofiber Router
       type: mod
       variant: substance
@@ -103,6 +113,7 @@ villedge:
       abilities:
         - renewable
       cardCount: 2
+      ruleSet: "0.1"
     - name: Polytunnel
       costYen: 3
       type: asset
@@ -114,6 +125,7 @@ villedge:
         - boost
       yen: 2
       cardCount: 3
+      ruleSet: "0.1"
     - name: Adapanel Array
       costYen: 2
       type: asset
@@ -121,6 +133,7 @@ villedge:
       shortDesc: Boost - 1 yen end of turn
       yen: 2
       cardCount: 3
+      ruleSet: "0.1"
     - name: Spydar
       costYen: 3
       type: install
@@ -130,6 +143,7 @@ villedge:
         - alert
         - track
       cardCount: 3
+      ruleSet: "0.1"
     - name: Stealth Skiff
       costYen: 3
       type: install
@@ -139,6 +153,7 @@ villedge:
       abilities:
         - camo
       cardCount: 3
+      ruleSet: "0.1"
     - name: NV Goggles
       type: mod
       variant: bionic
@@ -147,6 +162,7 @@ villedge:
       abilities:
         - alert
       cardCount: 3
+      ruleSet: "0.1"
     - name: Cellsleeve
       type: mod
       variant: gear
@@ -156,6 +172,7 @@ villedge:
         - rapid
         - renewable
       cardCount: 1
+      ruleSet: "0.1"
     - name: Turbine Megakite
       costYen: 8
       type: asset
@@ -166,6 +183,7 @@ villedge:
         - renewable
         - boost
       yen: 4
+      ruleSet: "0.1"
     - name: Hiveline
       costYen: 4
       type: asset
@@ -182,6 +200,7 @@ villedge:
       defense: 2
       shortDesc: Preprod 1 - The first Human or Animal card you acquire each turn has -2 costYen.
       yen: 2
+      ruleSet: "0.1"
     - name: Beehive
       costYen: 3
       type: install
@@ -207,6 +226,7 @@ villedge:
       variant: wall
       attack: 1
       defense: 5
+      ruleSet: "0.1"
     - name: Living Wall
       costYen: 2
       type: install
@@ -215,6 +235,7 @@ villedge:
       defense: 3
       abilities:
         - durable
+      ruleSet: "0.1"
     - name: Pelletal
       costYen: 1
       type: install
@@ -225,6 +246,7 @@ villedge:
       abilities:
         - initimidate
         - preprod
+      ruleSet: "0.1"
     - name: Dogzilla
       type: operator
       variant: animal
@@ -234,6 +256,7 @@ villedge:
       shortDesc: Alert
       abilities:
         - alert
+      ruleSet: "0.1"
 
 wicket:
   description: >
@@ -246,11 +269,13 @@ wicket:
       variant: code
       abilities:
         - ravage
+      ruleSet: "0.1"
     - name: Metaphore
       costYen: 6
       type: contract
       shortDesc: Pay 2 Datab- All of your cards may interact with Code cards this turn.
       costDatab: 2
+      ruleSet: "0.1"
     - name: Green Dragon Vase
       costYen: 8
       type: asset
@@ -271,6 +296,7 @@ wicket:
       costMw: 0
       abilities:
         - trap
+      ruleSet: "0.1"
     - name: Clang Bang
       costYen: 2
       type: install
@@ -279,7 +305,7 @@ wicket:
       abilities:
         - trap
         - intimidate
-
+      ruleSet: "0.1"
     - name: Empressfisher
       type: operator
       variant: animal
@@ -290,6 +316,7 @@ wicket:
       abilities:
         - rapid
         - overkill
+      ruleSet: "0.1"
     - name: DU Shovel
       type: mod
       variant: gear
@@ -298,6 +325,7 @@ wicket:
       shortDesc: Overkill 1
       abilities:
         - overkill
+      ruleSet: "0.1"
     - name: Halcyon Days
       costYen: 1
       type: contract
@@ -305,6 +333,7 @@ wicket:
       costDatab: 2
       abilities:
         - enhance
+      ruleSet: "0.1"
     - name: Industrial Holography
       costYen: 4
       type: contract
@@ -312,6 +341,7 @@ wicket:
       costDatab: 2
       abilities:
         - leak
+      ruleSet: "0.1"
     - name: Solar Screw Field
       costYen: 3
       type: asset
@@ -321,6 +351,7 @@ wicket:
       abilities:
         - boost
       yen: 2
+      ruleSet: "0.1"
     - name: Microlace
       costYen: 4
       type: install
@@ -331,6 +362,7 @@ wicket:
       shortDesc: Use 1 Datab - Decrypt the card that accesses this.
       abilities:
         - decrypt
+      ruleSet: "0.1"
     - name: The Barber
       costYen: 5
       type: operator
@@ -340,6 +372,7 @@ wicket:
       shortDesc: Intimidate -2
       abilities:
         - intimidate 2
+      ruleSet: "0.1"
     - name: Mizuno
       costYen: 4
       type: operator
@@ -349,17 +382,20 @@ wicket:
       shortDesc: Siphon 2
       abilities:
         - siphon
-    - name: Oroch
+      ruleSet: "0.1"
+    - name: Rezzed Auroch
       type: operator
       variant: animal
       costYen: 7
       attack: 4
       defense: 6
-      shortDesc: Alert, Durable
-      flavor: Orochs are hardy animals.
+      shortDesc: Alert, Durable, Shield - 2 Attack
+      flavor: Aurochs are hardy animals.
       abilities:
         - alert
         - durable
+        - shield
+      ruleSet: "0.1"
     - name: Static Harvester
       costYen: 2
       type: asset
@@ -368,6 +404,7 @@ wicket:
       defense: 1
       abilities:
         - trap
+      ruleSet: "0.1"
     - name: Quantum Fog
       costYen: 3
       type: contract
@@ -375,6 +412,7 @@ wicket:
       costDatab: 3
       datab: 2
       shortDesc: Prevent enemy from adding Datab to their Team on this stack.
+      ruleSet: "0.1"
     - name: Dronedar
       costYen: 4
       type: install
@@ -384,6 +422,7 @@ wicket:
       shortDesc: Niche - Drone
       abilities:
         - niche
+      ruleSet: "0.1"
     - name: Microthopter
       costYen: 2
       type: operator
@@ -393,6 +432,7 @@ wicket:
       shortDesc: Enhance
       abilities:
         - enhance
+      ruleSet: "0.1"
     - name: Anti-drone Hawk
       type: operator
       variant: animal
@@ -402,6 +442,7 @@ wicket:
       shortDesc: Niche - Drone
       abilities:
         - niche
+      ruleSet: "0.1"
     - name: Amia
       costYen: 6
       type: operator
@@ -411,12 +452,14 @@ wicket:
       shortDesc: Harvest 2
       abilities:
         - harvest
+      ruleSet: "0.1"
     - name: Crobar
       type: operator
       variant: robot
       costYen: 6
       attack: 8
       defense: 4
+      ruleSet: "0.1"
     - name: Turbo Quad
       costYen: 4
       attack: 2
@@ -427,6 +470,7 @@ wicket:
       abilities:
         - emergency
         - lateral
+      ruleSet: "0.1"
     - name: Grey Goop
       costYen: 5
       type: mod
@@ -435,17 +479,20 @@ wicket:
       shortDesc: Give target card Disarm 1.
       ability:
         - disarm
+      ruleSet: "0.1"
     - name: Fan Jacket
       costYen: 1
       type: mod
       variant: gear
       defense: 1
       lag: -1
+      ruleSet: "0.1"
     - name: Spinal Battery
       costYen: 2
       type: mod
       variant: bionic
       costMw: -1
+      ruleSet: "0.1"
     - name: LoRadio
       type: mod
       variant: bionic
@@ -453,12 +500,14 @@ wicket:
       shortDesc: Link - 1 Datab.
       abilities:
         - Link
+      ruleSet: "0.1"
     - name: Hyper Caps
       costYen: 2
       type: mod
       variant: upgrade
       flavor: "You'll get a kick out of this."
       costMw: -1
+      ruleSet: "0.1"
     - name: Signal fuse
       type: mod
       variant: gear
@@ -468,6 +517,7 @@ wicket:
       shortDesc: Harvest - 2
       ability:
         - harvest
+      ruleSet: "0.1"
     - name: Synapteria
       type: mod
       variant: substance
@@ -476,6 +526,7 @@ wicket:
       shortDesc: Disrupt
       abilities:
         - disrupt
+      ruleSet: "0.1"
     - name: Forlorn
       type: mod
       variant: substance
@@ -483,6 +534,7 @@ wicket:
       defense: 2
       abilities:
         - durable
+      ruleSet: "0.1"
 
 scali:
   description: >
@@ -573,8 +625,9 @@ scali:
       variant: production
       attack: 0
       defense: 2
+      shortDesc: Shield - 2 Attack
       abilities:
-        - shielded
+        - shield
     - name: Sentient Colony
       costYen: 4
       type: asset
@@ -669,6 +722,7 @@ neonclave:
       variant: program
       costYen: 3
       defense: 2
+      shortDesc: Analytics - 1 Datab
       abilities:
         - analytics
       yen: 2
@@ -736,6 +790,7 @@ neonclave:
       costYen: 2
       attack: 1
       defense: 1
+      shortDesc: Analytics - 1 Datab
       abilities:
         - analytics
     - name: Slammer
@@ -862,6 +917,7 @@ neonclave:
       variant: AI
       costYen: 4
       defense: 2
+      shortDesc: Analytics - 2 Datab
       abilities:
         - analytics
       yen: 2
@@ -930,6 +986,7 @@ neonclave:
       variant: AI
       costYen: 4
       defense: 2
+      shortDesc: Analytics - 2 Datab
       abilities:
         - analytics
       yen: 2
@@ -1013,8 +1070,6 @@ neonclave:
       variant: program
       costYen: 3
       defense: 2
-      abilities:
-        - analytics
       yen: 2
     - name: Nanotube Plates
       type: mod
@@ -1047,10 +1102,7 @@ neonclave:
       costYen: 3
       attack: 1
       defense: 2
-      desc: defense analyzer
-      abilities:
-        - analytics
-    - name: Hyper Wipe
+    - name: Hyper Viper
       type: command
       desc: removes all data
       abilities:
@@ -1076,6 +1128,7 @@ neonclave:
       attack: 1
       defense: 1
       desc: does something cool and dramatic
+      shortDesc: Analytics - 1 Datab
       abilities:
         - analytics
     - name: Netwell
@@ -1084,6 +1137,7 @@ neonclave:
       costYen: 3
       defense: 2
       desc: Provides intrusion detection and generates data
+      shortDesc: Analytics - 2 Datab
       abilities:
         - analytics
       yen: 2
@@ -1155,9 +1209,11 @@ neonclave:
     - name: Cloudian
       type: asset
       variant: program
-      costYen: 3
-      defense: 2
+      costYen: 6
+      defense: 4
+      datab: 2
       desc: defends against Code contracts and commands, enables others
+      shortDesc: Analytics - 2 datab
       abilities:
         - analytics
       yen: 2
@@ -1180,6 +1236,7 @@ neonclave:
       costYen: 2
       attack: 1
       defense: 1
+      shortDesc: Analytics - 1 Datab
       abilities:
         - analytics
     - name: Solarscrew
@@ -1191,9 +1248,10 @@ neonclave:
       variant: program
       costYen: 3
       defense: 2
-      desc: Great Horned Owl Security Technologies
+      flavor: "Great Horned Owl Security Technologies, Inc."
+      shortDesc: Track - 1 Datab
       abilities:
-        - analytics
+        - track
       yen: 2
     - name: Faraday Fence
       type: install
