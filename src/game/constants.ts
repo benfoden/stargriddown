@@ -368,12 +368,17 @@ export const ABILITIES = {
     abilityType: "passive",
   },
   steal: {
-    desc: "After this overcomes an Asset, a Race is run, and if this player wins, then the Asset is stolen.",
+    desc: "After this overcomes an Asset, a Race is run, and if you win the Asset moves to your Discard pile.",
     abilityType: "passive",
   },
   trap: {
     desc: "If this isn't disarmed by using Points or Abilities then X of Y points change or Z effect is applied to target card.",
     abilityType: "passive",
+  },
+  disarm: {
+    desc: "Deactivate a Trap without triggering it. (By paying X datab)",
+    abilityType: "active",
+    datab: 0,
   },
   analytics: {
     desc: "Gain X Datab at end of turn.",
@@ -385,8 +390,14 @@ export const ABILITIES = {
     abilityType: "active",
   },
   brute: {
-    desc: "Win the next Race.",
+    desc: "Win the next Race. (pay X datab)",
     abilityType: "active",
+    datab: 0,
+  },
+  exploit: {
+    desc: "Lose the next Race. (pay X datab)",
+    abilityType: "active",
+    datab: 0,
   },
   message: {
     desc: "Draw X Cards.",
@@ -528,12 +539,6 @@ export const UNRELEASEDABILITIES = {
   erase: {
     desc: "Permanently remove a card from the game.",
     abilityType: "active",
-    ruleSet: "-1",
-  },
-  disarm: {
-    desc: "Deactivate a Trap without triggering it. (By paying X datab)",
-    abilityType: "active",
-    datab: 0,
     ruleSet: "-1",
   },
   disrupt: {

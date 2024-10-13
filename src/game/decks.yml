@@ -654,19 +654,29 @@ scali:
         - camo
 
 neonclave:
-  description: centralized, deep tech, normative
+  description: >
+    centralized, deep tech, neo-normative
+    focuses on advanced AI, nanotech, and quantum computing.
+
   cards:
-    - name: Technic Lee
+    - name: Lee Tecnich
       type: operator
       variant: human
       costYen: 5
       attack: 5
       defense: 3
+      shortDesc: Camo, Harvest 1
       abilities:
         - camo
+        - harvest
     - name: Scamspiracy
+      costYen: 5
       type: contract
-      variant: trap
+      variant: tag
+      shortDesc: Track, Exploit 2
+      abilities:
+        - track
+        - exploit
     - name: Space Cat
       type: operator
       variant: drone
