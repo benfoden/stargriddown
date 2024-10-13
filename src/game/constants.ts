@@ -34,17 +34,17 @@ export type OperatorVariant =
   | "drone"
   | "vehicle";
 export type InstallVariant =
-  | "infrastructure"
+  | "production"
   | "program"
   | "drone"
   | "wall"
   | "sensor"
   | "turret";
 export type AssetVariant =
-  | "infrastructure"
+  | "production"
   | "program"
   | "AI"
-  | "decoy"
+  | "datacenter"
   | "investment"
   | "trap";
 export type CashVariant = "¥1" | "¥2" | "¥3";
@@ -134,7 +134,7 @@ export const CARDS: Record<CardTypeName, CardType> = {
   },
   install: {
     variants: {
-      infrastructure: {
+      gateway: {
         isDigital: true,
       },
       wall: {},
@@ -153,7 +153,7 @@ export const CARDS: Record<CardTypeName, CardType> = {
   },
   asset: {
     variants: {
-      infrastructure: {},
+      production: {},
       program: {
         isDigital: true,
       },
@@ -161,7 +161,9 @@ export const CARDS: Record<CardTypeName, CardType> = {
         isDigital: true,
         isCommunicator: true,
       },
-      decoy: {},
+      datacenter: {
+        isDigital: true,
+      },
       investment: {},
       trap: {},
     },
@@ -181,17 +183,18 @@ export const CARDS: Record<CardTypeName, CardType> = {
         targetVariants: ["human", "animal", "AI", "investment"],
       },
       program: {
-        targetVariants: ["program", "robot", "drone", "sensor", "AI"],
+        targetVariants: [
+          "program",
+          "robot",
+          "drone",
+          "sensor",
+          "AI",
+          "gateway",
+        ],
         isDigital: true,
       },
       upgrade: {
-        targetVariants: [
-          "robot",
-          "drone",
-          "vehicle",
-          "turret",
-          "infrastructure",
-        ],
+        targetVariants: ["robot", "drone", "vehicle", "turret", "production"],
         isDigital: true,
       },
       gear: {
@@ -213,22 +216,28 @@ export const CARDS: Record<CardTypeName, CardType> = {
       },
       tag: {},
       recall: {
-        targetVariants: ["drone", "robot", "vehicle", "program"],
+        targetVariants: ["drone", "robot", "vehicle", "program", "datacenter"],
       },
       delta: {
-        targetVariants: ["infrastructure", "program", "AI"],
+        targetVariants: [
+          "production",
+          "program",
+          "AI",
+          "datacenter",
+          "gateway",
+        ],
       },
       knowledge: {
-        targetVariants: ["AI", "human", "animal"],
+        targetVariants: ["AI", "human", "animal", "gateway"],
       },
       bolster: {
         targetVariants: [
           "wall",
           "trap",
-          "decoy",
-          "infrastructure",
+          "production",
           "vehicle",
           "turret",
+          "gateway",
         ],
       },
     },
@@ -240,22 +249,28 @@ export const CARDS: Record<CardTypeName, CardType> = {
       },
       tag: {},
       recall: {
-        targetVariants: ["drone", "robot", "vehicle", "program"],
+        targetVariants: ["drone", "robot", "vehicle", "program", "datacenter"],
       },
       delta: {
-        targetVariants: ["infrastructure", "program", "AI"],
+        targetVariants: [
+          "production",
+          "program",
+          "AI",
+          "datacenter",
+          "gateway",
+        ],
       },
       knowledge: {
-        targetVariants: ["AI", "human", "animal"],
+        targetVariants: ["AI", "human", "animal", "gateway"],
       },
       bolster: {
         targetVariants: [
           "wall",
           "trap",
-          "decoy",
-          "infrastructure",
+          "production",
           "vehicle",
           "turret",
+          "gateway",
         ],
       },
     },

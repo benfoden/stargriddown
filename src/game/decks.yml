@@ -11,7 +11,7 @@ villedge:
       attack: 5
       defense: 5
       cardCount: 1
-    - name: Taro
+    - name: Momo
       type: operator
       variant: human
       costYen: 3
@@ -45,7 +45,7 @@ villedge:
     - name: Ecoship
       costYen: 1
       type: asset
-      variant: infrastructure
+      variant: production
       defense: 2
       costMw: 0
       abilities:
@@ -55,7 +55,7 @@ villedge:
     - name: Microhydro
       costYen: 3
       type: asset
-      variant: infrastructure
+      variant: production
       defense: 1
       shortDesc: Preprod 1 Boost - 1 Mw start of turn.
       mw: 1
@@ -106,7 +106,7 @@ villedge:
     - name: Polytunnel
       costYen: 3
       type: asset
-      variant: infrastructure
+      variant: production
       costMw: 0
       shortDesc: Boost - 1 yen end of turn
       abilities:
@@ -117,7 +117,7 @@ villedge:
     - name: Adapanel Array
       costYen: 2
       type: asset
-      variant: infrastructure
+      variant: production
       shortDesc: Boost - 1 yen end of turn
       yen: 2
       cardCount: 3
@@ -147,7 +147,7 @@ villedge:
       abilities:
         - alert
       cardCount: 3
-    - name: Silsleeve
+    - name: Cellsleeve
       type: mod
       variant: gear
       costYen: 6
@@ -156,6 +156,84 @@ villedge:
         - rapid
         - renewable
       cardCount: 1
+    - name: Turbine Megakite
+      costYen: 8
+      type: asset
+      variant: production
+      shortDesc: Boost - 2Mw start of turn.
+      mw: 2
+      abilities:
+        - renewable
+        - boost
+      yen: 4
+    - name: Hiveline
+      costYen: 4
+      type: asset
+      variant: datacenter
+      defense: 2
+      shortDesc: Link - 2 datab.
+      abilities:
+        - link
+      yen: 2
+    - name: Emerald Tea Farm
+      costYen: 8
+      type: asset
+      variant: production
+      defense: 2
+      shortDesc: Preprod 1 - The first Human or Animal card you acquire each turn has -2 costYen.
+      yen: 2
+    - name: Beehive
+      costYen: 3
+      type: install
+      variant: drone
+      attack: 2
+      defense: 1
+      shortDesc: Shard - 3 Bees
+      abilities:
+        - shard
+    - name: Bee
+      costYen: 1
+      type: mod
+      variant: upgrade
+      attack: 2
+      defense: 1
+      shortDesc: Niche - This can only be played on  Beehive.
+      ability:
+        - niche
+    - name: Overgrown Tetrapods
+      costYen: 3
+      costMw: 0
+      type: install
+      variant: wall
+      attack: 1
+      defense: 5
+    - name: Living Wall
+      costYen: 2
+      type: install
+      variant: wall
+      attack: 1
+      defense: 3
+      abilities:
+        - durable
+    - name: Pelletal
+      costYen: 1
+      type: install
+      variant: turret
+      attack: 2
+      flavor: "Stings in 10 milliseconds, and every 10 milliseconds after that."
+      shortDesc: Preprod -1, Intimidate -1
+      abilities:
+        - initimidate
+        - preprod
+    - name: Dogzilla
+      type: operator
+      variant: animal
+      costYen: 4
+      attack: 3
+      defense: 3
+      shortDesc: Alert
+      abilities:
+        - alert
 
 wicket:
   description: >
@@ -178,10 +256,11 @@ wicket:
       type: asset
       variant: investment
       costMw: 2
-      ability: Preprod 1 - Acquire one Asset of cost 4 yen or less each turn.
+      ability: Preprod 1, Asset Clout - 4.
       yen: 6
       abilities:
         - preprod
+        - clout
     - name: Venus
       costYen: 2
       type: asset
@@ -200,17 +279,7 @@ wicket:
       abilities:
         - trap
         - intimidate
-    - name: Thermocomposter
-      costYen: 6
-      type: asset
-      variant: infrastructure
-      defense: 2
-      shortDesc: Preprod 2 - Boost 2 yen start of turn.
-      abilities:
-        - renewable
-        - boost
-        - preprod
-      yen: 3
+
     - name: Empressfisher
       type: operator
       variant: animal
@@ -243,12 +312,12 @@ wicket:
       costDatab: 2
       abilities:
         - leak
-    - name: Turbine Array
-      costYen: 6
+    - name: Solar Screw Field
+      costYen: 3
       type: asset
-      variant: infrastructure
-      defense: 2
-      shortDesc: Boost - 2 Mw startofturn.
+      variant: production
+      defense: 1
+      shortDesc: Boost 1 Mw - Start of turn.
       abilities:
         - boost
       yen: 2
@@ -291,120 +360,6 @@ wicket:
       abilities:
         - alert
         - durable
-
-newdeck:
-  description: >
-    A collection of unique cards not found in other decks.
-
-  cards:
-    - name: Sat Beacon
-      costYen: 2
-      type: command
-      variant: code
-      shortDesc: Leak - 1 yen and Reveal the next card in a Stack as it is approached.
-      abilities:
-        - leak
-    - name: Nano reactor
-      costYen: 4
-      type: asset
-      variant: infrastructure
-      defense: 2
-      shortDesc: Boost - 1 Mw startofturn.
-      abilities:
-        - renewable
-      yen: 3
-    - name: Farmscraper
-      costYen: 5
-      type: asset
-      variant: infrastructure
-      defense: 1
-      shortDesc: boost - 2 yen endofturn
-      abilities:
-        - boost
-    - name: Biocell Fab
-      costYen: 3
-      type: asset
-      variant: infrastructure
-      defense: 1
-      shortDesc: Preprod 2, boost - 2 yen endofturn.
-      costMw: 3
-      abilities:
-        - preprod
-        - boost
-      yen: 3
-    - name: Biocell R&D
-      costYen: 5
-      type: asset
-      variant: investment
-      defense: 1
-      shortDesc: Preprod 3, boost - 2 datab startfturn
-      abilities:
-        - preprod
-        - boost
-      yen: 3
-    - name: Neothermic
-      costYen: 3
-      type: asset
-      variant: investment
-      defense: 2
-      shortDesc: Preprod 1, boost - 2 yen endofturn
-      costMw: 0
-      abilities: 
-        - boost
-        - preprod
-      yen: 2
-    - name: Ontractor
-      costYen: 3
-      type: asset
-      variant: infrastructure
-      defense: 4
-      datab: 2
-      costDatab: 2
-      shortDesc: Pay 2 datab: Boost - 2 Attack
-      abilities:
-        - renewable
-      yen: 2
-    - name: Turbine Kite Fleet
-      costYen: 6
-      type: asset
-      variant: infrastructure
-      shortDesc: Boost - 2Mw start of turn. May only be accessed by Drone.
-      mw: 2
-      abilities:
-        - renewable
-        - boost
-      yen: 2
-    - name: Hiveline
-      costYen: 4
-      type: asset
-      variant: infrastructure
-      defense: 2
-      shortDesc: Link - 2 datab.
-      abilities:
-        - link
-      yen: 2
-    - name: Regenerator
-      costYen: 1
-      type: asset
-      variant: decoy
-      attack: 0
-      defense: 2
-      abilities:
-        - shielded
-    - name: Sentient Colony
-      costYen: 4
-      type: asset
-      variant: AI
-      defense: 2
-      yen: 2
-      shortDesc: Give target card 2 datab.
-    - name: Emerald Tea Farm
-      costYen: 8
-      type: asset
-      variant: investment
-      defense: 2
-      shortDesc: Preprod 1 - The first Human or Animal card you acquire each turn has -2 costYen.
-      yen: 2
     - name: Static Harvester
       costYen: 2
       type: asset
@@ -429,58 +384,6 @@ newdeck:
       shortDesc: Niche - Drone
       abilities:
         - niche
-    - name: Beehive
-      costYen: 3
-      type: install
-      variant: drone
-      attack: 2
-      defense: 1
-      shortDesc: Shard - 3 Bees
-      abilities:
-        - shard
-    - name: Bee
-      costYen: 1
-      type: mod
-      variant: upgrade
-      attack: 2
-      defense: 1
-      shortDesc: Niche - This can only be played on  Beehive.
-      ability:
-        - niche
-    - name: Overgrown Tetrapods
-      costYen: 3
-      costMw: 0
-      type: install
-      variant: wall
-      attack: 1
-      defense: 5
-    - name: Living Wall
-      costYen: 2
-      type: install
-      variant: wall
-      attack: 1
-      defense: 3
-      abilities:
-        - durable
-    - name: Pelletal
-      costYen: 1
-      type: install
-      variant: turret
-      attack: 2
-      flavor: "100 darts per second stings in milliseconds."
-      shortDesc: Preprod -1, Intimidate -1
-      abilities:
-        - initimidate
-        - preprod
-    - name: Dogzilla
-      type: operator
-      variant: animal
-      costYen: 4
-      attack: 3
-      defense: 3
-      shortDesc: Alert
-      abilities:
-        - alert
     - name: Microthopter
       costYen: 2
       type: operator
@@ -580,6 +483,105 @@ newdeck:
       defense: 2
       abilities:
         - durable
+
+scali:
+  description: >
+    A deck focused on producing and using bionics.
+
+  cards:
+    - name: Thermocomposter
+      costYen: 6
+      type: asset
+      variant: production
+      defense: 2
+      shortDesc: Preprod 2 - Boost 2 yen start of turn.
+      abilities:
+        - renewable
+        - boost
+        - preprod
+      yen: 3
+    - name: Bio Beacon
+      costYen: 2
+      type: command
+      variant: code
+      shortDesc: Leak - 1 yen and Reveal the next card in a Stack as it is approached.
+      abilities:
+        - leak
+    - name: Nanomachine Crucible
+      costYen: 4
+      type: asset
+      variant: production
+      defense: 2
+      shortDesc: Boost - 1 Mw startofturn.
+      abilities:
+        - renewable
+      yen: 3
+    - name: Bioscraper
+      costYen: 5
+      type: asset
+      variant: production
+      defense: 1
+      shortDesc: boost - 2 yen endofturn
+      abilities:
+        - boost
+    - name: Bionics Fab
+      costYen: 3
+      type: asset
+      variant: production
+      defense: 1
+      shortDesc: Preprod 2, boost - 2 yen endofturn.
+      costMw: 3
+      abilities:
+        - preprod
+        - boost
+      yen: 3
+    - name: Bleeding-Edge Bionics
+      costYen: 5
+      type: asset
+      variant: investment
+      defense: 1
+      shortDesc: Preprod 3, boost - 2 datab startfturn
+      abilities:
+        - preprod
+        - boost
+      yen: 3
+    - name: Neothermics
+      costYen: 3
+      type: asset
+      variant: production
+      defense: 2
+      shortDesc: Preprod 1, boost - 2 yen endofturn
+      costMw: 0
+      abilities:
+        - boost
+        - preprod
+      yen: 2
+    - name: Algean Reactor
+      costYen: 3
+      type: asset
+      variant: production
+      defense: 3
+      datab: 2
+      costDatab: 2
+      shortDesc: Boost 1 Datab - +2 Attack
+      abilities:
+        - renewable
+      yen: 2
+    - name: Regeneron
+      costYen: 1
+      type: asset
+      variant: production
+      attack: 0
+      defense: 2
+      abilities:
+        - shielded
+    - name: Sentient Colony
+      costYen: 4
+      type: asset
+      variant: AI
+      defense: 2
+      yen: 2
+      shortDesc: Give target card 2 datab.
     - name: Mycofiber
       type: mod
       variant: substance
@@ -597,14 +599,6 @@ newdeck:
         - piercing
         - niche
         - camo
-    - name: Sleve
-      type: mod
-      variant: gear
-      costYen: 6
-      shortDesc: Rapid, Renewable
-      abilities:
-        - rapid
-        - renewable
 
 neonclave:
   description: centralized, deep tech, normative
@@ -645,60 +639,9 @@ neonclave:
       defense: 2
       abilities:
         - aerial
-    - name: Auto Response
+    - name: Phishing Net
       type: asset
-      variant: decoy
-      costYen: 2
-      attack: 1
-      defense: 1
-      abilities:
-        - trap
-    - name: Quantum Key
-# ...
-
-
-neonclave:
-  description: centralized, deep tech, normative
-  cards:
-    - name: Technic Lee
-      type: operator
-      variant: human
-      costYen: 5
-      attack: 5
-      defense: 3
-      abilities:
-        - camo
-    - name: Scamspiracy
-      type: contract
       variant: trap
-    - name: Space Cat
-      type: operator
-      variant: drone
-      costYen: 5
-      attack: 3
-      defense: 2
-      desc: Mammalian data trained AI powered bot
-      abilities:
-        - camo
-    - name: Audiophore
-      type: install
-      variant: drone
-      costYen: 3
-      attack: 1
-      defense: 2
-      abilities:
-        - aerial
-    - name: NV Eagle
-      type: install
-      variant: drone
-      costYen: 3
-      attack: 1
-      defense: 2
-      abilities:
-        - aerial
-    - name: Auto Response
-      type: asset
-      variant: decoy
       costYen: 2
       attack: 1
       defense: 1
@@ -845,14 +788,12 @@ neonclave:
       defense: 1
       abilities:
         - trap
-    - name: The Flute
+    - name: Flute Matrix
       type: asset
-      variant: decoy
-      costYen: 2
+      variant: datacenter
+      costYen: 3
       attack: 1
       defense: 1
-      abilities:
-        - trap
     - name: Chute Him
       type: command
       abilities:
@@ -878,9 +819,9 @@ neonclave:
       variant: program
       abilities:
         - decrypt
-    - name: Repeater
+    - name: Repetera
       type: asset
-      variant: infrastructure
+      variant: datacenter
       costYen: 4
       defense: 2
       abilities:
@@ -900,10 +841,10 @@ neonclave:
       defense: 2
       abilities:
         - overkill
-    - name: Thermal Cloak
+    - name: Thermite Queen
       type: asset
-      variant: decoy
-      costYen: 2
+      variant: trap
+      costYen: 7
       attack: 1
       defense: 1
       abilities:
@@ -978,7 +919,7 @@ neonclave:
         - camo
     - name: Small Drive
       type: asset
-      variant: decoy
+      variant: production
       costYen: 2
       attack: 1
       defense: 1
@@ -1038,9 +979,9 @@ neonclave:
       defense: 1
       abilities:
         - camo
-    - name: NOC
+    - name: Nodal Soul
       type: asset
-      variant: infrastructure
+      variant: datacenter
       costYen: 4
       defense: 2
       abilities:
@@ -1061,7 +1002,7 @@ neonclave:
         - siphon
     - name: Skyhook
       type: asset
-      variant: infrastructure
+      variant: datacenter
       costYen: 4
       defense: 2
       abilities:
@@ -1189,13 +1130,13 @@ neonclave:
         - durable
     - name: Geothermal Matrix
       type: asset
-      variant: infrastructure
+      variant: production
       costYen: 4
       defense: 2
       abilities:
         - renewable
       yen: 2
-    - name: Solace
+    - name: Solace Services
       type: asset
       variant: investment
       costYen: 3
@@ -1205,7 +1146,7 @@ neonclave:
       yen: 2
     - name: Fog Harvester
       type: asset
-      variant: infrastructure
+      variant: production
       costYen: 4
       defense: 2
       abilities:
@@ -1241,7 +1182,7 @@ neonclave:
       defense: 1
       abilities:
         - analytics
-    - name: Solarsleeve
+    - name: Solarscrew
       type: contract
       abilities:
         - enhance
@@ -1278,7 +1219,7 @@ neonclave:
         - enhance
     - name: Fireflask
       type: asset
-      variant: decoy
+      variant: datacenter
       costYen: 2
       attack: 1
       defense: 1
@@ -1286,7 +1227,7 @@ neonclave:
         - trap
     - name: Moon tower
       type: asset
-      variant: decoy
+      variant: production
       costYen: 2
       attack: 1
       defense: 1
@@ -1318,7 +1259,7 @@ neonclave:
       yen: 2
     - name: Autorail
       type: asset
-      variant: investment
+      variant: production
       costYen: 3
       defense: 2
       desc: monorail-like highwire delivery network

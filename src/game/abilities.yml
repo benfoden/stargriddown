@@ -83,6 +83,8 @@ passive:
     desc: This card can have mods of type X installed on it.
   - name: lateral
     desc: This Operator may move to a neighboring stack after Overcoming a card.
+  - name: clout
+    desc: Buy X card type from the shop for Y less Yen.
 
 # Active abilities. Only happen when player does the action to trigger them.
 Active:
@@ -101,7 +103,7 @@ Active:
   - name: procedure
     desc: Use X Datab in your Database to add Datab to target card.
   - name: boost
-    desc: Add X points of Y type on target card.
+    desc: Add X points of Y type on target card (using Z points, or passively at T timing).
   - name: drain
     desc: Remove X points of Y type on target card.
   - name: virus
