@@ -495,3 +495,65 @@ Maybe later (disregard for now)
   - airgap: This can only target or be targeted while Engaged. Only for Code cards.
 
 
+
+
+# Easy to Implement
+# message: Drawing cards is usually a straightforward operation.
+# boosted: Adding points to a card is generally simple.
+# 3. hidden: Making a card invisible to the opponent can be a simple flag.
+# locked: Preventing a card from being engaged or activated is often a simple state change.
+# 5. disabled: Disabling a card's activation is similar to locking.
+# 6. staged: Preventing a card from joining an attack is a simple rule check.
+# armed: Ready a trap ability is a state change.
+# camo: Hiding a card until it acts is a conditional visibility change.
+# 9. shielded: Negating damage once is a simple conditional check.
+# alert: Conditional targeting based on resources is a straightforward rule.
+# durable: Preventing discard or erase is a simple rule check.
+# 12. renewable: Moving a card to the bottom of a deck is a simple operation.
+# track: Discarding a card based on defense or race is a conditional check.
+# 14. piercing: Adding damage is a simple calculation.
+# intimidate: Reducing attack is a simple calculation.
+# overkill: Adding damage to HQ is a simple calculation.
+# siphon: Adding currency is a straightforward operation.
+# harvest: Adding resources is similar to siphon.
+# lethal: Disabling a card is a simple state change.
+# rapid: Making a card ready immediately is a state change.
+# brute: Winning a race is a simple rule override.
+# antiair: Allowing interaction with specific cards is a rule check.
+# underground: Preventing engagement by specific cards is a rule check.
+# aerial: Restricting engagement to specific cards is a rule check.
+# strike: Adjusting damage timing is a simple rule change.
+# Medium Complexity
+# link: Managing linked cards involves tracking multiple states.
+# trap: Conditional effects based on disarm status require more logic.
+# enhance: Revealing opponent cards involves interaction with opponent's state.
+# clout: Modifying shop prices involves economic system integration.
+# 30. lateral: Moving cards between stacks requires additional state management.
+# host: Allowing specific mods requires checking compatibility.
+# shard: Adding cards over turns involves turn tracking.
+# niche: Restricting engagement to specific types requires type checking.
+# 34. preprod: Delaying ability activation involves turn tracking.
+# emergency: Conditional card draw based on draw order involves draw tracking.
+# analytics: Conditional resource gain involves tracking multiple conditions.
+# procedure: Using resources to modify cards involves resource management.
+# 38. drain: Removing points involves state modification.
+# 39. flash: Removing statuses and mods involves state cleanup.
+# virus: Affecting multiple cards involves area of effect logic.
+# disrupt: Disabling cards involves state changes and interaction logic.
+# disarm: Deactivating traps involves interaction with opponent's state.
+# 43. erase: Permanently removing cards involves state and game logic changes.
+# hack: Sending cards to discard involves deck manipulation.
+# scan: Manipulating deck order involves deck state management.
+# leak: Revealing cards involves interaction with opponent's state.
+# 47. reuse: Returning cards involves hand and deck state management.
+# ravage: Discarding cards involves interaction with opponent's state.
+# 49. hide: Making cards hidden involves visibility state management.
+# key: Unlocking cards involves interaction with locked state.
+# Hard to Implement
+# jack: Powering cards involves complex state and resource management.
+# 52. airgap: Restricting targeting to engaged state involves complex interaction logic.
+# 53. decrypt: Removing all statuses involves comprehensive state cleanup.
+# 54. Upgrade: Choosing upgrades involves dynamic state changes and options.
+# 55. Meme: Doubling effects involves tracking and modifying multiple states.
+# Clone: Copying cards involves duplicating state and interactions.
+# This order is a general guideline and may vary based on your game's specific architecture and mechanics.

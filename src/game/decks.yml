@@ -4,12 +4,16 @@ villedge:
     and rapid abilities.
   totalCount: 50
   cards:
-    - name: Jonny
+    - name: J. Kim
       type: operator
       variant: human
       costYen: 5
       attack: 5
-      defense: 5
+      defense: 4
+      shortDesc: Resilient 1, Shield 2
+      abilities:
+        - resilient
+        - shield
       cardCount: 1
       ruleSet: "0.1"
     - name: Momo
@@ -138,7 +142,7 @@ villedge:
       costYen: 3
       type: install
       variant: sensor
-      shortDesc: Alert, Track
+      shortDesc: Alert 1, Track
       abilities:
         - alert
         - track
@@ -158,7 +162,7 @@ villedge:
       type: mod
       variant: bionic
       costYen: 2
-      shortDesc: Alert
+      shortDesc: Alert 1
       abilities:
         - alert
       cardCount: 3
@@ -253,17 +257,17 @@ villedge:
       costYen: 4
       attack: 3
       defense: 3
-      shortDesc: Alert
+      shortDesc: Alert 1
       abilities:
         - alert
       ruleSet: "0.1"
-    - name: Fire Drill Bit
+    - name: Fire Drill
       costYen: 4
       type: command
       desc: Pen test
-      abilities: Hack 2, Boost 2 Defense
+      abilities: Crack 2, Boost 2 Defense
       shortDesc:
-        - hack
+        - crack
         - boost
 
 wicket:
@@ -397,12 +401,12 @@ wicket:
       costYen: 7
       attack: 4
       defense: 6
-      shortDesc: Alert, Durable, Shield - 2 Attack
+      shortDesc: Alert 0, Shield 2, Intimidate 2
       flavor: Aurochs are hardy animals.
       abilities:
         - alert
-        - durable
         - shield
+        - intimidate
       ruleSet: "0.1"
     - name: Static Harvester
       costYen: 2
@@ -661,6 +665,8 @@ scali:
         - niche
         - camo
 
+
+
 neonclave:
   description: >
     centralized, deep tech, neo-normative
@@ -701,9 +707,9 @@ neonclave:
       variant: drone
       attack: 1
       defense: 3
-      shortDesc: Message 1 - Draw 1 card when this is accessed.
+      shortDesc: Draw 1 - Draw 1 card when this is accessed.
       abilities:
-        - message
+        - draw
     - name: NV Eagle
       costYen: 4
       type: install
@@ -811,143 +817,144 @@ neonclave:
       shortDesc: Durable
       abilities:
         - durable
-    - name: Signal detection
+    - name: Signal Snoop
       costYen: 2
       type: install
       variant: program
-      attack: 1
       defense: 1
       shortDesc: Analytics - 1 Datab
       abilities:
         - analytics
-    - name: Slammer
-      type: operator
-      variant: program
-      costYen: 5
-      attack: 3
-      defense: 2
-      desc: Jams and slams
-      abilities:
-        - hack
-    - name: Drone drop
-      type: command
-      abilities:
-        - scan
-    - name: Loiterer
+    - name: Loitering Laser
       type: install
       variant: drone
       costYen: 3
       attack: 1
-      defense: 2
+      defense: 1
+      shortDesc: Piercing 4
       abilities:
-        - aerial
-    - name: Splint
+        - piercing
+    - name: Air Splint
+      costYen: 1
       type: command
+      shortDesc: Boost 2 Defense
       abilities:
-        - lock
+      - boost
     - name: Snap Decision
+      costYen: 4
       type: command
       variant: program
+      costDatab: 2 
+      shortDesc: Draw 2
       abilities:
-        - message
+        - draw
     - name: Suitcase Rifle
       type: mod
       variant: gear
-      costYen: 2
-      attack: 1
-      defense: 1
+      costYen: 3
+      attack: 2
+      shortDesc: Overkill 1, Durable
       abilities:
         - overkill
+        - durable
     - name: Buried Clause
+      costYen: 2
       type: contract
+      variant: recall
+      variant: Hide
       abilities:
         - hide
     - name: Buried Claws
       type: asset
       variant: trap
-      costYen: 2
-      attack: 1
-      defense: 1
+      costYen: 3
+      shortDesc: Trap - Attack 3, Burn 
       abilities:
         - trap
-    - name: Flute Matrix
+    - name: Floating Forum
       type: asset
       variant: datacenter
-      costYen: 3
+      costYen: 6
       attack: 1
-      defense: 1
-    - name: Chute Him
-      type: command
+      defense: 2
+      shortDesc: Boost 1 Datab Start of turn, Clout 1 - Program
       abilities:
-        - strike
+       - boost
+       - clout
+    - name: Chute 'em
+      costYen: 5
+      type: command
+      shortDesc: Burn, Discard 1
+      abilities:
+        - burn
+        - discard
     - name: C-Beam
       type: install
       variant: turret
-      costYen: 3
-      attack: 1
+      costYen: 8
+      attack: 6
       defense: 2
+      shortDesc: Intimidate 2, Piercing 2
       abilities:
-        - overkill
+        - intimidate
+        - piercing
     - name: Schema Drifter
       type: operator
       variant: program
-      costYen: 5
-      attack: 3
-      defense: 2
-      abilities:
-        - siphon
-    - name: Codetalk
-      type: contract
-      variant: program
-      abilities:
-        - decrypt
-    - name: Repetera
-      type: asset
-      variant: datacenter
       costYen: 4
-      defense: 2
+      attack: 4
+      shortDesc: Rapid, Camo, Harvest 2
       abilities:
-        - renewable
-      yen: 2
+        - rapid
+        - harvest
+        - camo
+    - name: Codecarver
+      costYen: 7
+      type: contract
+      variant: knowledge
+      shortDesc: Flash, Harvest 2
+      abilities:
+        - flash
+        - harvest
     - name: Rock
-      type: mod
+      type: contract
       variant: gear
       costYen: 1
+      shortDesc: Renewable, 0 Disarm
       abilities:
-        - durable
+        - renewable
+        - disarm
     - name: Laser Pod
       type: install
       variant: turret
       costYen: 3
-      attack: 1
-      defense: 2
+      attack: 4
+      defense: 1
+      shortDesc: Kaizen 1
       abilities:
-        - overkill
+        - kaizen
     - name: Thermite Queen
-      type: asset
-      variant: trap
+      type: operator
+      variant: drone
       costYen: 7
-      attack: 1
-      defense: 1
+      attack: 6
+      defense: 3
+      datab: 3
+      shortDesc: 3 Exploit, Steal
       abilities:
-        - trap
-    - name: X-Ocular
-      type: mod
-      variant: bionic
-      costYen: 2
-      attack: 1
-      defense: 1
-      abilities:
-        - enhance
+        - exploit
+        - steal
     - name: Yok.ai
       type: asset
       variant: AI
-      costYen: 4
+      costYen: 6
       defense: 2
-      shortDesc: Analytics - 2 Datab
+      shortDesc: Camo, Durable, Boost 2 Yen End of Turn
       abilities:
-        - analytics
-      yen: 2
+        - boost
+        - camo
+        - durable
+      yen: 4
     - name: Siveria Securities
       type: asset
       variant: investment
@@ -1351,3 +1358,57 @@ neonclave:
       abilities:
         - siphon
       yen: 2
+    - name: Gokul
+      costYen: 7
+      type: contract
+      variant: knowledge
+      shortDesc: Scan
+      abilities:
+        - scan
+
+
+
+later:
+  description: >
+    A deck focused on the future of the game.
+
+  cards:
+    - name: XOculars
+      type: mod
+      variant: bionic
+      costYen: 2
+      shortDesc: 2 Convert 1 - 2 Datab to Attack
+      abilities:
+        - Convert
+    - name: Slammer
+        costYen: 5
+        type: operator
+        variant: program
+        attack: 3
+        defense: 2
+        shortDesc: When you overcome a card, Crack 2
+        abilities:
+          - crack
+    - name: Drone drop
+      type: command
+      abilities:
+        - scan
+    - name: Repetera
+      type: asset
+      variant: datacenter
+      costYen: 4
+      defense: 2
+      costMw: 0
+      datab: 1
+      shortDesc: Host, Shard - Blade
+      abilities:
+        - host
+        - shard
+      yen: 2
+    - name: Terablade
+      costMw: 1
+      type: mod
+      variant: gear
+      shortDesc: Boost 1 Datab End of turn
+      abilities:
+        - boost

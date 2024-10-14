@@ -288,7 +288,7 @@ export const ActiveAbilities = [
   "virus",
   "flash",
   "brute",
-  "message",
+  "draw",
   "key",
   "lock",
   "hide",
@@ -314,27 +314,32 @@ export type StatusAbility = (typeof StatusAbilities)[number];
 // ---- v 0.1 Abilities
 export const ABILITIES = {
   lethal: {
-    desc: "The first card this Approaches is Disabled immediately.",
+    desc: "The next card this Engages is Disabled immediately.",
     abilityType: "passive",
+    logic: "firstEngage",
   },
   rapid: {
     desc: "This Operator is ready the same turn that it is played.",
     abilityType: "passive",
     targetType: "operator",
+    logic: "onPlayed",
   },
   camo: {
-    desc: "Hidden until this Attacks, Defends, or uses an Active ability.",
+    desc: "Hidden until this Engages the first time this turn.",
     abilityType: "passive",
+    logic: "firstEngage",
   },
   shield: {
     desc: "The first instance of Attack damage that would be done to this card is Negated by X.",
     abilityType: "passive",
     attack: 0,
+    logic: "firstEngage",
   },
   alert: {
-    desc: "This can't be targeted by opponent Contracts, Commands, or Actives as long as you have more than 1 Mw available.",
+    desc: "This can't be targeted by opponent Contracts, Commands, or Actives, but it costs X Mw.",
     abilityType: "passive",
-    costMw: 1,
+    costMw: 0,
+    logic: "alwaysReady",
   },
   siphon: {
     desc: "Add X Yen to your Account when this Overcomes an opponent Card.",
@@ -357,12 +362,12 @@ export const ABILITIES = {
     attack: 0,
   },
   piercing: {
-    desc: "Deal X Attack when this begins to Engage a card.",
+    desc: "Deal X damage to the first Card this Operator or Install Engages each turn.",
     abilityType: "passive",
     attack: 0,
   },
   durable: {
-    desc: "This card can't be Disabled, Discarded, or Erased by the opponent.",
+    desc: "This card can't be Disabled, Discarded, or Removed by the opponent.",
     abilityType: "passive",
   },
   renewable: {
@@ -384,13 +389,24 @@ export const ABILITIES = {
     datab: 0,
   },
   analytics: {
-    desc: "Gain X Datab at end of turn.",
+    desc: "For each time this Engaged, gain 1 datab (or 1 yen) at end of turn.",
     abilityType: "passive",
     datab: 0,
+    yen: 0,
+    engages: 0,
+    logic: "endOfTurn",
   },
   boost: {
-    desc: "Add X points of Y type on target card (using Z points, or passively at T timing).",
+    desc: "Add X points of Y type on target card (using Z points, or passively at T timing logic).",
     abilityType: "active",
+    attack: 0,
+    defense: 0,
+    datab: 0,
+    costDatab: 0,
+    costMw: 0,
+    costYen: 0,
+    costLag: 0,
+    logic: null,
   },
   brute: {
     desc: "Target card wins the next Race. (pay X datab)",
@@ -402,7 +418,7 @@ export const ABILITIES = {
     abilityType: "active",
     datab: 0,
   },
-  message: {
+  draw: {
     desc: "Draw X Cards.",
     abilityType: "active",
     cards: 0,
@@ -434,7 +450,7 @@ export const ABILITIES = {
     abilityType: "status",
   },
   disabled: {
-    desc: "This card can't be activated (flipped over).",
+    desc: "This card can't be Activated.",
     abilityType: "status",
   },
   disrupted: {
@@ -479,11 +495,42 @@ export const ABILITIES = {
     desc: "Remove all Statuses on target Card.",
     abilityType: "active",
   },
+  resilient: {
+    desc: "After surviving an engagement, this card regains X Defense.",
+    abilityType: "passive",
+    defense: 0,
+  },
+  kaizen: {
+    desc: "Upon Overcoming a card, this card gains X Attack.",
+    abilityType: "passive",
+    attack: 0,
+    logic: "onOvercome",
+  },
+  crack: {
+    desc: "Target player must discard X Cards from their hand at the start of their next turn.",
+    abilityType: "active",
+    cards: 0,
+  },
+  discard: {
+    desc: "Target card is discarded immediately.",
+    abilityType: "active",
+  },
 };
 
 // --- -1 UNRELEASEDABILITIES
 
 export const UNRELEASEDABILITIES = {
+  decoy: {
+    desc: "When this Engages, the opposing card's abilities and effects are applied instantly but don't target this card.",
+    abilityType: "passive",
+    ruleSet: "-1",
+  },
+  arc: {
+    desc: "This card may engage X cards ahead of its slot.",
+    abilityType: "passive",
+    cards: 0,
+    ruleSet: "-1",
+  },
   link: {
     desc: "Gain X of Y points when you control two or more cards with Link. When overcome, all Linked cards you control in the Arena are revealed.",
     abilityType: "passive",
@@ -495,27 +542,27 @@ export const UNRELEASEDABILITIES = {
     ruleSet: "-1",
   },
   emergency: {
-    desc: "Draw X Cards if this is the first Card you drew.",
+    desc: "Draw X Cards if this is the first Card you drew this turn.",
     abilityType: "passive",
     cards: 0,
+    logic: "startOfTurn",
     ruleSet: "-1",
   },
   niche: {
     desc: "This card can only engage X card variant, type, or specific card.",
     abilityType: "passive",
     ruleSet: "-1",
-    X: "variant",
   },
   shard: {
-    desc: "Add card X to your hand at start of your next Y turns.",
+    desc: "Add card X to your hand at start of your next Y turns or when you pay Y points.",
     abilityType: "passive",
     ruleSet: "-1",
+    logic: "startOfTurn",
   },
   host: {
     desc: "This card can have mods of type X installed on it.",
     abilityType: "passive",
     ruleSet: "-1",
-    X: "mod type",
   },
   lateral: {
     desc: "This Operator may move to a neighboring stack after Overcoming a card.",
@@ -529,20 +576,15 @@ export const UNRELEASEDABILITIES = {
     ruleSet: "-1",
   },
   leak: {
-    desc: "Pay X of Y points and target card is revealed.",
+    desc: "Pay X Datab or Yen and target Asset or Install is revealed.",
     abilityType: "active",
     ruleSet: "-1",
   },
   scan: {
-    desc: "Look at the top 3 Cards in your deck. Add 1 to your hand and place the other 2 on the bottom.",
+    desc: "At start of turn, look at the top 3 Cards in your deck. Add 1 to your hand and place the other 2 on the bottom.",
     abilityType: "active",
     cards: 3,
-    ruleSet: "-1",
-  },
-  hack: {
-    desc: "Send the top X Cards of your opponent's deck to their Discard pile.",
-    abilityType: "active",
-    cards: 0,
+    logic: "startOfTurn",
     ruleSet: "-1",
   },
   erase: {
@@ -567,18 +609,23 @@ export const UNRELEASEDABILITIES = {
     ruleSet: "-1",
   },
   virus: {
-    desc: "All cards in target Stack or Team lose 1 Datab.",
+    desc: "All cards in target Stack or Team lose X Datab.",
     abilityType: "active",
     datab: 1,
     ruleSet: "-1",
   },
   flash: {
-    desc: "Remove all Statuses and Digital Mods on target Card.",
+    desc: "Remove all Statuses on target Card.",
+    abilityType: "active",
+    ruleSet: "-1",
+  },
+  burn: {
+    desc: "Remove all Mods on target Card.",
     abilityType: "active",
     ruleSet: "-1",
   },
   hide: {
-    desc: "Make target card Hidden.",
+    desc: "Make target card you control Hidden.",
     abilityType: "active",
     ruleSet: "-1",
   },
@@ -590,9 +637,10 @@ export const UNRELEASEDABILITIES = {
     ruleSet: "-1",
   },
   ravage: {
-    desc: "Target card is discarded.",
+    desc: "Target slot is disabled for X turns.",
     abilityType: "active",
     ruleSet: "-1",
+    turns: 0,
   },
   track: {
     desc: "Pay X datab to track target card. If its Defense is reduced to 0 or loses a race this turn, it's discarded immediately.",

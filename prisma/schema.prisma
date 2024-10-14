@@ -93,6 +93,8 @@ model Ability {
   mw               Int?
   control          Int?
   cardCount        Int?
+  turns            Int?
+  engages          Int?
   logic            String?
   costYen          Int?
   costDatab        Int?
