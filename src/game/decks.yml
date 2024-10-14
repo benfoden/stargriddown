@@ -690,17 +690,16 @@ neonclave:
       abilities:
         - track
         - exploit
-    - name: Space Cat
+    - name: Space Serval
       costYen: 3
       type: operator
       variant: animal
       attack: 2
       defense: 1
-      shortDesc: Preprod 1, Camo, Lethal
+      shortDesc: Camo, Lethal
       abilities:
         - camo
         - lethal
-        - preprod
     - name: Audiophore
       costYen: 4
       type: install
@@ -955,66 +954,81 @@ neonclave:
         - camo
         - durable
       yen: 4
-    - name: Siveria Securities
+    - name: Silveria Securities
       type: asset
       variant: investment
-      costYen: 3
-      defense: 2
+      costYen: 4
+      defense: 3
+      costMw: 2
+      shortDesc: 1 Preprod, Boost 1 Yen End of Turn, Durable
       abilities:
-        - siphon
-      yen: 2
-    - name: Siverian Silence
+        - preprod
+        - boost
+        - durable
+      yen: 4
+    - name: Silverian Silk
       type: mod
       variant: training
-      costYen: 1
+      costYen: 3
+      defense: 3
+      costMw: 1
       abilities:
-        - camo
-    - name: Shuriken
+        - durable
+    - name: Silverian Shuriken
       type: mod
       variant: gear
       costYen: 1
+      attack: 2
+      costMw: 1
+      shortDesc: brute
       abilities:
-        - rapid
-    - name: Raptor
+        - brute
+    - name: Mist Raptor
       type: operator
       variant: drone
       costYen: 5
-      attack: 3
-      defense: 2
+      attack: 4
+      defense: 4
+      shortDesc: Rapid, Camo, Piercing 1
       abilities:
-        - aerial
-    - name: Holo Wall
+        - rapid
+        - camo
+        - piercing
+    - name: Mist Front
       type: install
       variant: wall
-      costYen: 2
-      attack: 1
-      defense: 1
+      costYen: 4
+      defense: 3
+      shortDesc: Shield 3, Piercing 3
       abilities:
-        - durable
+        - shield
+        - piercing
     - name: Titanium Bollards
       type: install
       variant: wall
-      costYen: 2
-      attack: 1
-      defense: 1
+      costYen: 3
+      defense: 6
+      shortDesc: Preprod 2, Durable
       abilities:
         - durable
+        - preprod
     - name: Shimem
       type: install
       variant: program
       costYen: 2
       attack: 1
       defense: 1
+      shortDesc: Spike
       abilities:
-        - camo
-    - name: Small Drive
+        - spike
+    - name: Nanomesh Collector
       type: asset
       variant: production
-      costYen: 2
-      attack: 1
+      costYen: 3
       defense: 1
+      shortDesc: Boost 1 Yen End of turn.
       abilities:
-        - trap
+        - boost
     - name: Kozaic
       type: asset
       variant: AI

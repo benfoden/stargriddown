@@ -304,7 +304,7 @@ export const StatusAbilities = [
   "staged",
   "boosted",
   "armed",
-  "disabled",
+  "down",
   "disrupted",
   "locked",
   "engaged",
@@ -313,8 +313,18 @@ export type StatusAbility = (typeof StatusAbilities)[number];
 
 // ---- v 0.1 Abilities
 export const ABILITIES = {
+  disorder: {
+    desc: "The first card this Engages this turn stays Down, if Down already.",
+    abilityType: "passive",
+    logic: "firstEngage",
+  },
+  disrupt: {
+    desc: "Target card is Down this turn.",
+    abilityType: "active",
+    logic: "onTarget",
+  },
   lethal: {
-    desc: "The next card this Engages is Disabled immediately.",
+    desc: "The first card this Engages this turn is Overcome immediately.",
     abilityType: "passive",
     logic: "firstEngage",
   },
@@ -330,13 +340,13 @@ export const ABILITIES = {
     logic: "firstEngage",
   },
   shield: {
-    desc: "The first instance of Attack damage that would be done to this card is Negated by X.",
+    desc: "The first instance of Attack damage that would be done to this card this turn is reduced by X.",
     abilityType: "passive",
     attack: 0,
     logic: "firstEngage",
   },
   alert: {
-    desc: "This can't be targeted by opponent Contracts, Commands, or Actives, but it costs X Mw.",
+    desc: "This can't be targeted by opponent Contracts, Commands, or Actives. It costs X Mw.",
     abilityType: "passive",
     costMw: 0,
     logic: "alwaysReady",
@@ -362,12 +372,12 @@ export const ABILITIES = {
     attack: 0,
   },
   piercing: {
-    desc: "Deal X damage to the first Card this Operator or Install Engages each turn.",
+    desc: "Deal X damage to the first Card this Engages each turn.",
     abilityType: "passive",
     attack: 0,
   },
   durable: {
-    desc: "This card can't be Disabled, Discarded, or Removed by the opponent.",
+    desc: "This card can't be Disabled, Discarded, Removed, or Stolen by the opponent.",
     abilityType: "passive",
   },
   renewable: {
@@ -384,12 +394,12 @@ export const ABILITIES = {
     abilityType: "passive",
   },
   disarm: {
-    desc: "Deactivate a Trap without triggering it. (By paying X datab)",
+    desc: "Disrupt a Trap without triggering it. (By paying X datab)",
     abilityType: "active",
     datab: 0,
   },
   analytics: {
-    desc: "For each time this Engaged, gain 1 datab (or 1 yen) at end of turn.",
+    desc: "For each time this Engaged this turn, gain 1 datab (or 1 yen) at end of turn.",
     abilityType: "passive",
     datab: 0,
     yen: 0,
@@ -409,7 +419,7 @@ export const ABILITIES = {
     logic: null,
   },
   brute: {
-    desc: "Target card wins the next Race. (pay X datab)",
+    desc: "This card wins the next Race. (pay X datab)",
     abilityType: "active",
     datab: 0,
   },
@@ -419,12 +429,14 @@ export const ABILITIES = {
     datab: 0,
   },
   draw: {
-    desc: "Draw X Cards.",
+    desc: "Draw X Cards (paying Y Yen or Datab).",
     abilityType: "active",
     cards: 0,
+    yen: 0,
+    datab: 0,
   },
   key: {
-    desc: "Unlock target Locked card. (By paying X Datab)",
+    desc: "Unlock target Locked card. (Paying X Datab)",
     abilityType: "active",
     costDatab: 0,
   },
@@ -432,10 +444,6 @@ export const ABILITIES = {
     desc: "Lock target card. (By paying X Datab)",
     abilityType: "active",
     costDatab: 0,
-  },
-  hidden: {
-    desc: "This card can't be seen by the opponent.",
-    abilityType: "status",
   },
   staged: {
     desc: "This card can't join an Attack.",
@@ -449,24 +457,36 @@ export const ABILITIES = {
     desc: "This card's Trap ability is ready.",
     abilityType: "status",
   },
-  disabled: {
-    desc: "This card can't be Activated.",
+  hidden: {
+    desc: "This Card and/or Slot can't be seen by the opponent.",
+    abilityType: "status",
+  },
+  revealed: {
+    desc: "This Card and/or Slot can be seen by the opponent.",
+    abilityType: "status",
+  },
+  up: {
+    desc: "This card is face up (it may Engage).",
+    abilityType: "status",
+  },
+  down: {
+    desc: "This card is face down for the opponent (it may not Engage).",
     abilityType: "status",
   },
   disrupted: {
-    desc: "This card can't use abilities or points.",
+    desc: "This can't use abilities or points.",
     abilityType: "status",
   },
   locked: {
-    desc: "This card can't be Engaged or Activated until a Key is used on it.",
+    desc: "This can't be Up until a Key is used on it.",
     abilityType: "status",
   },
   engaged: {
-    desc: "This card is engaged by another card or cards.",
+    desc: "This is engaged by another card or cards.",
     abilityType: "status",
   },
   shielded: {
-    desc: "This card can't be targeted by opponent Contracts, Commands, or Actives as long as you have more than 1 Mw available.",
+    desc: "This can't be targeted by opponent Contracts, Commands, or other card Abilities as long as you have more than 1 Mw available.",
     abilityType: "status",
     costMw: 1,
   },
@@ -487,7 +507,7 @@ export const ABILITIES = {
     abilityType: "active",
   },
   preprod: {
-    desc: "This card's abilities are enabled X turns after it becomes active.",
+    desc: "This card is Disrupted until X turns after it was played.",
     abilityType: "passive",
     turns: 0,
   },
@@ -532,12 +552,12 @@ export const UNRELEASEDABILITIES = {
     ruleSet: "-1",
   },
   link: {
-    desc: "Gain X of Y points when you control two or more cards with Link. When overcome, all Linked cards you control in the Arena are revealed.",
+    desc: "Gain X of Y points when you control two or more cards with Link. When one Linked card is overcome, all Linked cards in the Arena become face Up.",
     abilityType: "passive",
     ruleSet: "-1",
   },
   enhance: {
-    desc: "When an opponent Install or Asset is revealed, reveal a card in their hand.",
+    desc: "When you reveal an opponent's Install or Asset also reveal a card in their hand.",
     abilityType: "passive",
     ruleSet: "-1",
   },
@@ -576,7 +596,7 @@ export const UNRELEASEDABILITIES = {
     ruleSet: "-1",
   },
   leak: {
-    desc: "Pay X Datab or Yen and target Asset or Install is revealed.",
+    desc: "Pay X Datab or Yen and target Slot is Revealed and if it has a card, that card is now Up.",
     abilityType: "active",
     ruleSet: "-1",
   },
@@ -593,7 +613,7 @@ export const UNRELEASEDABILITIES = {
     ruleSet: "-1",
   },
   disrupt: {
-    desc: "Target card is disabled for the remainder of the turn.",
+    desc: "Target card is down for the remainder of the turn.",
     abilityType: "active",
     ruleSet: "-1",
   },
@@ -637,7 +657,7 @@ export const UNRELEASEDABILITIES = {
     ruleSet: "-1",
   },
   ravage: {
-    desc: "Target slot is disabled for X turns.",
+    desc: "Target slot is Down for X turns.",
     abilityType: "active",
     ruleSet: "-1",
     turns: 0,
