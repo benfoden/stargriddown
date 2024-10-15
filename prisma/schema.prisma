@@ -64,6 +64,7 @@ model Card {
   costDatab     Int?
   costMw        Int?
   costLag       Int?
+  costControl   Int?
   turns         Int?
   logic         String?
   rarity        String?
@@ -97,6 +98,7 @@ model Ability {
   engages          Int?
   logic            String?
   costYen          Int?
+  costControl      Int?
   costDatab        Int?
   costMw           Int?
   costLag          Int?

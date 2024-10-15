@@ -10,10 +10,10 @@ villedge:
       costYen: 5
       attack: 5
       defense: 4
-      shortDesc: Resilient 1, Shield 2
+      shortDesc: Parry 2, Resilient 2
       abilities:
+        - parry
         - resilient
-        - shield
       cardCount: 1
       ruleSet: "0.1"
     - name: Momo
@@ -38,14 +38,14 @@ villedge:
     - name: RAM Radio
       costYen: 2
       type: command
-      variant: code
+      variant: knowledge
       shortDesc: Target Code card can be accessed by non-Code cards this turn.
       cardCount: 2
       ruleSet: "0.1"
     - name: Pine Needle
       costYen: 3
       type: command
-      variant: code
+      variant: knowledge
       shortDesc: Drain - 4 Datab
       abilities:
         - drain
@@ -220,7 +220,7 @@ villedge:
       variant: upgrade
       attack: 2
       defense: 1
-      shortDesc: Niche - This can only be played on  Beehive.
+      shortDesc: Niche Beehive.
       ability:
         - niche
     - name: Overgrown Tetrapods
@@ -264,6 +264,7 @@ villedge:
     - name: Fire Drill
       costYen: 4
       type: command
+      variant: recall
       desc: Pen test
       abilities: Crack 2, Boost 2 Defense
       shortDesc:
@@ -278,7 +279,7 @@ wicket:
     - name: Tactical EMP
       costYen: 4
       type: command
-      variant: code
+      variant: delta
       abilities:
         - ravage
       ruleSet: "0.1"
@@ -401,11 +402,11 @@ wicket:
       costYen: 7
       attack: 4
       defense: 6
-      shortDesc: Alert 0, Shield 2, Intimidate 2
+      shortDesc: 0 Alert, Parry 2, Intimidate 2
       flavor: Aurochs are hardy animals.
       abilities:
         - alert
-        - shield
+        - parry
         - intimidate
       ruleSet: "0.1"
     - name: Static Harvester
@@ -431,7 +432,7 @@ wicket:
       variant: turret
       defense: 1
       attack: 5
-      shortDesc: Niche - Drone
+      shortDesc: Niche Drone
       abilities:
         - niche
       ruleSet: "0.1"
@@ -451,7 +452,7 @@ wicket:
       costYen: 3
       attack: 3
       defense: 3
-      shortDesc: Niche - Drone
+      shortDesc: Niche Drone
       abilities:
         - niche
       ruleSet: "0.1"
@@ -459,9 +460,9 @@ wicket:
       costYen: 6
       type: operator
       variant: human
-      attack: 2
-      defense: 6
-      shortDesc: Harvest 2
+      attack: 6
+      defense: 4
+      shortDesc: Harvest 3 - Database
       abilities:
         - harvest
       ruleSet: "0.1"
@@ -520,13 +521,12 @@ wicket:
       flavor: "You'll get a kick out of this."
       costMw: -1
       ruleSet: "0.1"
-    - name: Signal fuse
+    - name: Signal Fuse
       type: mod
       variant: gear
       costYen: 3
-      attack: 1
-      defense: 1
-      shortDesc: Harvest - 2
+      datab: 1
+      shortDesc: Harvest 1 Self
       ability:
         - harvest
       ruleSet: "0.1"
@@ -564,10 +564,10 @@ scali:
         - boost
         - preprod
       yen: 3
-    - name: Bio Beacon
+    - name: Bio Mark
       costYen: 2
       type: command
-      variant: code
+      variant: hit
       shortDesc: Leak - 1 yen and Reveal the next card in a Stack as it is approached.
       abilities:
         - leak
@@ -635,11 +635,9 @@ scali:
       costYen: 1
       type: asset
       variant: production
-      attack: 0
-      defense: 2
-      shortDesc: Shield - 2 Attack
+      shortDesc: Boost 1 Mw target card.
       abilities:
-        - shield
+        - boost
     - name: Sentient Colony
       costYen: 4
       type: asset
@@ -659,7 +657,7 @@ scali:
       type: mod
       variant: substance
       costYen: 6
-      shortDesc: Camo, Niche - Sensor, Drone
+      shortDesc: Camo, Niche Sensor+Drone
       abilities:
         - piercing
         - niche
@@ -674,22 +672,24 @@ neonclave:
 
   cards:
     - name: Lee Tecnich
-      costYen: 5
+      costYen: 4
       type: operator
       variant: human
-      attack: 5
-      defense: 3
-      shortDesc: Harvest 1
+      attack: 4
+      defense: 1
+      datab: 4
+      shortDesc: Harvest 2 - Self
       abilities:
         - harvest
     - name: Scamspiracy
       costYen: 5
       type: contract
       variant: tag
-      shortDesc: Track, Exploit 2
+      datab: 2
+      shortDesc: 2 Track, 2 Hinder
       abilities:
         - track
-        - exploit
+        - hinder
     - name: Space Serval
       costYen: 3
       type: operator
@@ -719,12 +719,14 @@ neonclave:
       abilities:
         - alert
         - piercing
-    - name: Phishing Net
+    - name: Phishing Trawler
       costYen: 2
       type: asset
       variant: trap
       defense: 2
-      shortDesc: Trap - Attack 2 Harvest 2
+      attack: 2
+      datab: 2
+      shortDesc: 2 Datab Trap - Attack 2 Harvest 2
       abilities:
         - trap
     - name: Quantum Keywallet
@@ -755,13 +757,13 @@ neonclave:
       abilities:
         - analytics
       yen: 2
-    - name: Drone Dome
+    - name: Damocles Dome
       type: install
-      variant: drone
+      variant: wall
       costYen: 6
       attack: 2
       defense: 6
-      shortDesc: Shield 4
+      shortDesc: 2 Shield, Parry 2
       abilities:
         - shield
     - name: Code Poncho
@@ -836,13 +838,14 @@ neonclave:
     - name: Air Splint
       costYen: 1
       type: command
+      variant: bolster
       shortDesc: Boost 2 Defense
       abilities:
       - boost
     - name: Snap Decision
       costYen: 4
       type: command
-      variant: program
+      variant: bolster
       costDatab: 2 
       shortDesc: Draw 2
       abilities:
@@ -883,6 +886,7 @@ neonclave:
     - name: Chute 'em
       costYen: 5
       type: command
+      variant: hit
       shortDesc: Burn, Discard 1
       abilities:
         - burn
@@ -901,20 +905,21 @@ neonclave:
       type: operator
       variant: program
       costYen: 4
-      attack: 4
-      shortDesc: Rapid, Camo, Harvest 2
+      attack: 2
+      defense: 4
+      shortDesc: Rapid, Harvest 2 - Database
       abilities:
-        - rapid
         - harvest
-        - camo
+        - rapid
     - name: Codecarver
-      costYen: 7
+      costYen: 4
       type: contract
       variant: knowledge
-      shortDesc: Flash, Harvest 2
+      shortDesc: Flash, Harvest 4 - Database, Niche Owner
       abilities:
         - flash
         - harvest
+        - niche
     - name: Rock
       type: contract
       variant: gear
@@ -939,9 +944,9 @@ neonclave:
       attack: 6
       defense: 3
       datab: 3
-      shortDesc: 3 Exploit, Steal
+      shortDesc: 3 Hinder, Steal
       abilities:
-        - exploit
+        - hinder
         - steal
     - name: Yok.ai
       type: asset
@@ -994,15 +999,14 @@ neonclave:
         - rapid
         - camo
         - piercing
-    - name: Mist Front
+    - name: Mist Bank
       type: install
       variant: wall
       costYen: 4
-      defense: 3
-      shortDesc: Shield 3, Piercing 3
+      defense: 4
+      shortDesc: Parry 4
       abilities:
-        - shield
-        - piercing
+        - parry
     - name: Titanium Bollards
       type: install
       variant: wall
@@ -1024,94 +1028,115 @@ neonclave:
     - name: Nanomesh Collector
       type: asset
       variant: production
-      costYen: 3
-      defense: 1
-      shortDesc: Boost 1 Yen End of turn.
+      costYen: 4
+      shortDesc: Camo, Boost 1 Mw, start of turn.
       abilities:
+        - camo
         - boost
     - name: Kozaic
       type: asset
       variant: AI
-      costYen: 4
-      defense: 2
-      shortDesc: Analytics - 2 Datab
+      costYen: 5  
+      datab: 2
+      shortDesc: Analytics, 1 Shield
       abilities:
         - analytics
+        - shield
       yen: 2
     - name: Hemm 868
       type: mod
       variant: gear
-      costYen: 1
+      costYen: 3
+      attack: 2
+      datab: 2
+      shortDesc: 2 Neosense
       abilities:
-        - rapid
-    - name: m8
+        - Neosense
+    - name: mala X8
       type: operator
       variant: robot
-      costYen: 6
-      attack: 3
-      defense: 3
+      costYen: 8
+      attack: 6
+      defense: 4
+      datab: 4
+      shortDesc: 2 Neosense, 2 Disarm
       abilities:
-        - durable
+        - neosense
+        - disarm
     - name: Slimblade
+      costYen: 5
       type: operator
       variant: drone
-      costYen: 5
-      attack: 3
-      defense: 2
+      attack: 6
+      defense: 1
+      shortDesc: Rapid
       abilities:
-        - aerial
+        - rapid
     - name: Root Particle
+      costYen: 6
       type: contract
-      variant: program
-      desc: tracking capability
+      variant: knowledge
+      datab: 4
+      shortDesc: 4 Track, 2 Exploit 2 Defense
       abilities:
-        - decrypt
-    - name: Antiviral
+        - track
+        - exploit
+    - name: Remote Reset
+      costYen: 1
+      costControl: 1
       type: command
-      variant: program
+      variant: knowledge
+      shortDesc: 0 Flash, Niche Owner
       abilities:
-        - erase
-    - name: Hard reset
+        - flash
+        - niche
+    - name: Introspector
+      costYen: 2
       type: contract
       variant: program
-      abilities:
-        - erase
-    - name: Silenced PPK
+      shortDesc: Flash, Scan
+      abilities: 
+        - flash
+        - scan
+    - name: LuAg PP
       type: mod
       variant: gear
       costYen: 2
-      attack: 1
-      defense: 1
+      shortDesc: Piercing 4
       abilities:
-        - camo
-    - name: Nodal Soul
+        - piercing
+    - name: Nodal Souls
       type: asset
       variant: datacenter
       costYen: 4
-      defense: 2
-      abilities:
-        - renewable
-      yen: 2
-    - name: Vuln-37
+      datab: 4
+      shortDesc: 1 Alert, Boost 2 Datab Start of Turn, Transfer 2 Datab to Database End of Turn
+      yen: 4
+    - name: Vuln003-7
+      costYen: 7
       type: command
-      variant: program
+      variant: knowledge
+      shortDesc: 0 Flash, 0 Hinder, Exploit 3 Datab
       abilities:
-        - decrypt
+        - flash
+        - hinder
+        - exploit
     - name: Role Escalator
       type: operator
       variant: program
-      costYen: 5
-      attack: 3
+      costYen: 6
+      attack: 6
       defense: 2
+      shortDesc: Kaizen 2 Defense, Resilient 2, Crack 2 on Overcome
       abilities:
-        - siphon
+        - kaizen
+        - resilient
+        - crack
     - name: Skyhook
       type: asset
       variant: datacenter
       costYen: 4
       defense: 2
-      abilities:
-        - renewable
       yen: 2
     - name: Yacht
       type: asset
@@ -1395,18 +1420,22 @@ later:
       abilities:
         - Convert
     - name: Slammer
-        costYen: 5
-        type: operator
-        variant: program
-        attack: 3
-        defense: 2
-        shortDesc: When you overcome a card, Crack 2
-        abilities:
-          - crack
-    - name: Drone drop
-      type: command
+      costYen: 5
+      type: operator
+      variant: program
+      attack: 3
+      defense: 2
+      shortDesc: When you overcome a card, Crack 2
       abilities:
-        - scan
+        - crack
+    - name: Drone drop
+      costYen: 2
+      type: command
+      variant: recall
+      shortDesc: Piercing 3, Exploit 1 Defense
+      abilities: 
+        - piercing
+        - exploit
     - name: Repetera
       type: asset
       variant: datacenter

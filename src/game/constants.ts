@@ -313,6 +313,11 @@ export type StatusAbility = (typeof StatusAbilities)[number];
 
 // ---- v 0.1 Abilities
 export const ABILITIES = {
+  neosense: {
+    desc: "Reveal target slot and if it has a card, that card is now Up (ignore Camo). (Pay X datab)",
+    abilityType: "active",
+    datab: 0,
+  },
   disorder: {
     desc: "The first card this Engages this turn stays Down, if Down already.",
     abilityType: "passive",
@@ -339,42 +344,59 @@ export const ABILITIES = {
     abilityType: "passive",
     logic: "firstEngage",
   },
-  shield: {
+  exploit: {
+    desc: "Card this Engages has -X of Y points.",
+    abilityType: "active",
+    logic: "onEngage",
+  },
+  parry: {
     desc: "The first instance of Attack damage that would be done to this card this turn is reduced by X.",
     abilityType: "passive",
-    attack: 0,
+    attack: -1,
+    logic: "firstEngage",
+  },
+  shield: {
+    desc: "Use X Mw to enable Shield when this is first Engaged this turn, if available.",
+    abilityType: "passive",
+    costMw: 1,
     logic: "firstEngage",
   },
   alert: {
-    desc: "This can't be targeted by opponent Contracts, Commands, or Actives. It costs X Mw.",
+    desc: "This can't be targeted by opponent Contracts, Commands, or Actives. (It requires X Mw.)",
     abilityType: "passive",
     costMw: 0,
     logic: "alwaysReady",
   },
   siphon: {
-    desc: "Add X Yen to your Account when this Overcomes an opponent Card.",
+    desc: "Transfer X Yen from opponent's Account to your Account when this Overcomes an opponent Card.",
     abilityType: "passive",
     yen: 0,
+    logic: "onOvercome",
   },
   harvest: {
-    desc: "Add X Datab to your Database when this Overcomes an opponent Card with Datab, up to X as available.",
+    desc: "Transfer X Datab to this card or your Database from an opponent Card with Datab after this Overcomes it, up to X as available.",
     abilityType: "passive",
+    targetType: "self",
     datab: 0,
+    logic: "onOvercome",
   },
   overkill: {
     desc: "Remove X more control with the next successful attack on the HQ this turn.",
     abilityType: "passive",
     control: 0,
+    logic: "onSuccessfulAttack",
   },
   intimidate: {
     desc: "When this Overcomes a card, the next card you Engage this turn has -X Attack.",
     abilityType: "passive",
     attack: 0,
+    logic: "onOvercome",
   },
   piercing: {
     desc: "Deal X damage to the first Card this Engages each turn.",
     abilityType: "passive",
     attack: 0,
+    logic: "onFirstEngage",
   },
   durable: {
     desc: "This card can't be Disabled, Discarded, Removed, or Stolen by the opponent.",
@@ -407,7 +429,7 @@ export const ABILITIES = {
     logic: "endOfTurn",
   },
   boost: {
-    desc: "Add X points of Y type on target card (using Z points, or passively at T timing logic).",
+    desc: "Add X points of Y type on target card (using Z points passively when active, or at T timing logic).",
     abilityType: "active",
     attack: 0,
     defense: 0,
@@ -416,24 +438,25 @@ export const ABILITIES = {
     costMw: 0,
     costYen: 0,
     costLag: 0,
-    logic: null,
+    logic: "onEngage",
   },
   brute: {
     desc: "This card wins the next Race. (pay X datab)",
     abilityType: "active",
     datab: 0,
   },
-  exploit: {
+  hinder: {
     desc: "Target card loses the next Race. (pay X datab)",
     abilityType: "active",
     datab: 0,
   },
   draw: {
-    desc: "Draw X Cards (paying Y Yen or Datab).",
-    abilityType: "active",
+    desc: "Draw X Cards (paying Y Yen or Datab) at T timing.",
+    abilityType: "passive",
     cards: 0,
     yen: 0,
     datab: 0,
+    logic: "startOfTurn",
   },
   key: {
     desc: "Unlock target Locked card. (Paying X Datab)",
@@ -485,21 +508,36 @@ export const ABILITIES = {
     desc: "This is engaged by another card or cards.",
     abilityType: "status",
   },
-  shielded: {
-    desc: "This can't be targeted by opponent Contracts, Commands, or other card Abilities as long as you have more than 1 Mw available.",
+  hindered: {
+    desc: "This card loses races.",
     abilityType: "status",
-    costMw: 1,
+  },
+  optimized: {
+    desc: "This card wins races.",
+    abilityType: "status",
+  },
+  exploited: {
+    desc: "This card has -X of Y points.",
+    abilityType: "status",
+  },
+  blocked: {
+    desc: "Ignore Contracts, Commands, or Actives targeted at this card.",
+    abilityType: "status",
+  },
+  shielded: {
+    desc: "Any opponent Contracts, Commands, or other card Abilities targeted at this card are ignored.",
+    abilityType: "status",
   },
   digital: {
-    desc: "This can engage withother Digital cards. (programs, AI, drones, etc.)",
+    desc: "This can engage with other Digital cards. (programs, AI, drones, etc.)",
     abilityType: "status",
   },
   physical: {
-    desc: "This can engage with and be engaged by other Physical cards.",
+    desc: "This can engage with other Physical cards.",
     abilityType: "status",
   },
   biological: {
-    desc: "This can engage with and be engaged by other Biological cards.",
+    desc: "This can engage with other Biological cards.",
     abilityType: "status",
   },
   convert: {
@@ -507,33 +545,46 @@ export const ABILITIES = {
     abilityType: "active",
   },
   preprod: {
-    desc: "This card is Disrupted until X turns after it was played.",
+    desc: "This card is Disrupted until X turns after it is played.",
     abilityType: "passive",
     turns: 0,
   },
-  decrypt: {
-    desc: "Remove all Statuses on target Card.",
+  flash: {
+    desc: "Remove all Statuses on target Card. (paying X datab)",
     abilityType: "active",
+    datab: 0,
   },
   resilient: {
-    desc: "After surviving an engagement, this card regains X Defense.",
+    desc: "After Overcoming with 0 or more Defense, this card regains X Defense.",
     abilityType: "passive",
     defense: 0,
   },
   kaizen: {
-    desc: "Upon Overcoming a card, this card gains X Attack.",
+    desc: "Upon Overcoming a card, this card gains X of Y points.",
     abilityType: "passive",
     attack: 0,
+    defense: 0,
+    datab: 0,
     logic: "onOvercome",
   },
   crack: {
-    desc: "Target player must discard X Cards from their hand at the start of their next turn.",
+    desc: "Target player must discard X Cards from their hand at the start of their next turn (based on T timing or event.)",
     abilityType: "active",
     cards: 0,
+    logic: "onOvercome",
   },
   discard: {
     desc: "Target card is discarded immediately.",
     abilityType: "active",
+  },
+  niche: {
+    desc: "This card can only engage X card variant, type, player, or specific card.",
+    abilityType: "passive",
+  },
+  transfer: {
+    desc: "Move X points from one card to another at T timing.",
+    abilityType: "passive",
+    logic: "onEngage",
   },
 };
 
@@ -543,6 +594,11 @@ export const UNRELEASEDABILITIES = {
   decoy: {
     desc: "When this Engages, the opposing card's abilities and effects are applied instantly but don't target this card.",
     abilityType: "passive",
+    ruleSet: "-1",
+  },
+  decrypt: {
+    desc: "something strong",
+    abilityType: "active",
     ruleSet: "-1",
   },
   arc: {
@@ -566,11 +622,6 @@ export const UNRELEASEDABILITIES = {
     abilityType: "passive",
     cards: 0,
     logic: "startOfTurn",
-    ruleSet: "-1",
-  },
-  niche: {
-    desc: "This card can only engage X card variant, type, or specific card.",
-    abilityType: "passive",
     ruleSet: "-1",
   },
   shard: {
@@ -634,11 +685,6 @@ export const UNRELEASEDABILITIES = {
     datab: 1,
     ruleSet: "-1",
   },
-  flash: {
-    desc: "Remove all Statuses on target Card.",
-    abilityType: "active",
-    ruleSet: "-1",
-  },
   burn: {
     desc: "Remove all Mods on target Card.",
     abilityType: "active",
@@ -663,7 +709,7 @@ export const UNRELEASEDABILITIES = {
     turns: 0,
   },
   track: {
-    desc: "Pay X datab to track target card. If its Defense is reduced to 0 or loses a race this turn, it's discarded immediately.",
+    desc: "Pay X datab to track target card. If its Defense is 0 or loses a race this turn, it's discarded immediately.",
     abilityType: "active",
     ruleset: "-1",
   },
