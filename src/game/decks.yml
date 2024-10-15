@@ -1135,41 +1135,61 @@ neonclave:
     - name: Skyhook
       type: asset
       variant: datacenter
-      costYen: 4
+      costYen: 2
       defense: 2
+      shortDesc: Boost 1 Datab Start of Turn, 1 Datab Transfer to Database End of Turn
       yen: 2
     - name: Yacht
       type: asset
       variant: program
       costYen: 3
-      defense: 2
-      yen: 2
-    - name: Nanotube Plates
-      type: mod
-      variant: gear
-      costYen: 2
-      attack: 1
-      defense: 1
-      desc: armor
-      abilities:
-        - durable
-    - name: Mole
+      defense: 5
+      shortDesc: 2 Yen Boost 1 Yen End of Turn, Parry 
+      abilities: 
+        - boost
+        - parry
+      yen: 1
+    - name: Darwin's Bunker
       type: install
       variant: drone
       costYen: 3
-      attack: 1
-      defense: 2
-      desc: goes underground
+      attack: 3
+      defense: 3
+      datab: 3
+      shortDesc: 1 Track, 1 Alert, 1 Datab Boost 1 Attack
       abilities:
-        - underground
-    - name: Netanya
+        - track
+        - alert
+        - boost
+    - name: Biotubule Plating
+      type: mod
+      variant: gear
+      costYen: 2
+      defense: 2
+      shortDesc: Parry 2, Kaizen 1 Defense
+      abilities:
+        - parry
+        - kaizen
+    - name: Laser Mole
+      type: operator
+      variant: drone
+      costYen: 4
+      attack: 4
+      defense: 2
+      datab: 2
+      shortDesc: 2 Disarm, Exploit 2 Defense
+      abilities:
+        - disarm
+        - exploit
+    - name: Etanya
       type: operator
       variant: human
-      costYen: 5
-      attack: 3
+      costYen: 2
+      attack: 2
       defense: 2
+      shortDesc: Piercing 2
       abilities:
-        - rapid
+        - piercing
     - name: Visical
       type: program
       costYen: 3
@@ -1404,6 +1424,17 @@ neonclave:
       shortDesc: Scan
       abilities:
         - scan
+    - name: P-HEL
+      costYen: 7
+      type: mod
+      variant: gear
+      attack: 5
+      datab: 2
+      shortDesc: 2 Track, Niche Vehicle
+      abilities:
+        - niche
+        - track
+
 
 
 
