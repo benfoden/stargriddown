@@ -348,9 +348,9 @@ export const ABILITIES = {
     logic: "onEngage",
   },
   disorder: {
-    desc: "The first card this Engages this turn stays Down, if Down already.",
+    desc: "The first card this Approaches this turn stays Down, if Down already.",
     abilityType: "passive",
-    logic: "onFirstEngage",
+    logic: "onFirstApproach",
   },
   disrupt: {
     desc: "The first card this Engages is Disabled this turn (Pay X Yen).",

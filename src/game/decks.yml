@@ -13,7 +13,14 @@ scali:
   description: >
     A deck focused on producing and using bionics.
 
+
+neonclave:
+  description: >
+    centralized, deep tech, neo-normative
+    focuses on advanced AI, nanotech, and quantum computing.
+
  unsorted:
+  decription: cards that need sorting into decks.
   cards:
     - name: J. Kim
       type: operator
@@ -51,7 +58,7 @@ scali:
       type: asset
       variant: production
       defense: 1
-      shortDesc: Boost 1 yen end of turn.
+      shortDesc: Add 1 yen end of turn.
       yen: 2
     - name: Microhydro
       costYen: 3
@@ -137,7 +144,7 @@ scali:
       type: asset
       variant: production
       defense: 2
-      shortDesc: Clout 2 Human, Boost 2 Yen 2 Datab End of turn
+      shortDesc: Clout 2 Human, Add 2 Yen 2 Datab End of turn
       yen: 4
     - name: Beehive
       costYen: 3
@@ -195,7 +202,7 @@ scali:
     - name: Metaphore
       costYen: 6
       type: contract
-      shortDesc: 2 Datab Boost 6 Yen, Renewable
+      shortDesc: 2 Datab Add 6 Yen, Renewable
 
     - name: Green Dragon Vase
       costYen: 8
@@ -379,7 +386,7 @@ scali:
       costYen: 3
       datab: 0
       defense: 0
-      shortDesc: Harvest 2 Self, 2 Datab Boost 2 Defense
+      shortDesc: Harvest 2 Self, 2 Datab Add 2 Defense
     - name: Synapteria
       type: mod
       variant: substance
@@ -469,109 +476,71 @@ scali:
       costYen: 4
       defense: 1
       shortDesc: Renewable
-      abilities:
-        - renewable
     - name: Nanitea
       type: mod
       variant: substance
       costYen: 6
-      shortDesc: Camo, Niche Sensor+Drone
-      abilities:
-        - pierce
-        - niche
-        - camo
-
-neonclave:
-  description: >
-    centralized, deep tech, neo-normative
-    focuses on advanced AI, nanotech, and quantum computing.
-
-  cards:
+      shortDesc: Camo, Piercing 3
     - name: Lee Tecnich
       costYen: 4
       type: operator
       variant: human
       attack: 4
-      defense: 1
-      datab: 4
-      shortDesc: Harvest 2 - Self
-      abilities:
-        - harvest
+      defense: 2
+      datab: 2
+      shortDesc: Harvest 2 Datab to Self, 2 Disarm
     - name: Scamspiracy
       costYen: 5
       type: contract
       variant: tag
       datab: 2
       shortDesc: 2 Track, 2 Hinder
-      abilities:
-        - track
-        - hinder
-    - name: Space Serval
+    - name: Serval
       costYen: 3
       type: operator
       variant: animal
-      attack: 2
-      defense: 1
-      shortDesc: Camo, Lethal
-      abilities:
-        - camo
-        - lethal
+      attack: 3
+      defense: 2
+      flavor: "One cool cat"
+      shortDesc: Rapid, Pierce 1
     - name: Audiophore
       costYen: 4
       type: install
       variant: drone
-      attack: 1
-      defense: 3
-      shortDesc: Draw 1 - Draw 1 card when this is accessed.
-      abilities:
-        - draw
+      attack: 3
+      defense: 1
+      shortDesc: Draw 1 card on First Engage.
     - name: NV Eagle
       costYen: 4
       type: install
       variant: drone
-      attack: 2
-      defense: 4
-      shortDesc: Alert, Pierce 2
-      abilities:
-        - alert
-        - pierce
+      attack: 4
+      defense: 2
+      shortDesc: 0 Alert, Pierce 2
     - name: Phishing Trawler
       costYen: 2
       type: asset
       variant: trap
-      defense: 2
-      attack: 2
-      datab: 2
-      shortDesc: 2 Datab Trap - Attack 2 Harvest 2
-      abilities:
-        - trap
+      shortDesc: Trap - Attack 4 Harvest 2 to Database
     - name: Quantum Keywallet
       costYen: 8
       type: mod
       variant: program
       datab: 3
       shortDesc: Disarm 1, Key 1
-      abilities:
-        - key
-        - disarm
     - name: Eavesdroplet
       costYen: 3
       type: install
       variant: sensor
-      attack: 2
+      attack: 1
       defense: 3
       shortDesc: Alert, Siphon 1
-      abilities:
-        - alert
-        - siphon
-    - name: Success Desk
+    - name: Help Desk
       type: asset
       variant: program
       costYen: 4
       defense: 1
-      shortDesc: Analytics 2
-      abilities:
-        - analytics
+      shortDesc: Analytics 2 Yen
       yen: 2
     - name: Damocles Dome
       type: install
@@ -580,25 +549,24 @@ neonclave:
       attack: 2
       defense: 6
       shortDesc: 2 Shield, Parry 2
-      abilities:
-        - shield
     - name: Code Poncho
       type: Asset
       variant: trap
       costYen: 3
       attack: 1
       defense: 2
-      shortDesc: Camo, Trap - Attack 1 Defense 1
-      abilities:
-        - camo
-        - trap
-    - name: Inverse engineering
-      costYen: 2
+      shortDesc: Camo, Trap - Attack 2 Defense 1
+    - name: Inverse Injection
+      costYen: 3
       type: contract
       variant: program
-      shortDesc: Decrypt
-      abilities:
-        - decrypt
+      shortDesc: Remove 2 Datab from opponent Database and Add 2 datab to your Database.
+    - name: Phantom TB
+      type: install
+      variant: gateway
+      costYen: 4
+      defense: 2
+      shortDesc: Camo, Add 2 Datab on Approach
     - name: Overflow Stator
       type: operator
       variant: program
@@ -606,69 +574,54 @@ neonclave:
       attack: 5
       defense: 3
       datab: 2
-      shortDesc: Brute 2, Overkill 2
-      abilities:
-        - brute
-        - overkill
-    - name: Carbon Jacket
+      shortDesc: Disorder, 2 Brute
+    - name: Carbon Fiberknit
+      costYen: 2
       type: mod
       variant: gear
-      costYen: 2
-      defense: 2
+      defense: 3
       shortDesc: Durable
-      abilities:
-        - durable
+      costYen: 4
     - name: Red Triangle
       type: mod
       variant: gear
-      costYen: 4
-      attack: 5
-      shortDesc: Pierce 2
-      abilities:
-        - pierce
+      attack: 4
+      shortDesc: Lethal
     - name: Smoke Screen
-      type: install
-      variant: wall
       costYen: 1
-      defense: 2
-      shortDesc: Durable
-      abilities:
-        - durable
+      type: command
+      variant: tag
+      defense: 1
+      shortDesc: 0 Flash
     - name: Signal Snoop
       costYen: 2
       type: install
       variant: program
-      defense: 1
-      shortDesc: Analytics 1 Datab
+      shortDesc: Harvest 1 Datab to Database on Approach, Analytics 1 Yen
     - name: Loitering Laser
       type: install
       variant: drone
       costYen: 3
-      attack: 1
-      defense: 1
-      shortDesc: Pierce 4
+      attack: 4
+      defense: 2
+      shortDesc: Pierce 3
     - name: Air Splint
       costYen: 1
       type: command
       variant: bolster
       shortDesc: Gain 2 Defense
     - name: Snap Decision
-      costYen:
+      costYen: 3
+      costDatab: 3
       type: command
       variant: bolster
-      costDatab: 2
-      shortDesc: Draw 2
-      abilities:
-        - draw
+      shortDesc: Draw 3
     - name: Suitcase Rifle
       type: mod
       variant: gear
       costYen: 3
       attack: 2
       shortDesc: Overkill 1, Durable
-      abilities:
-        - overkill
-        - durable
     - name: Buried Claws
       type: asset
       variant: trap
