@@ -47,7 +47,7 @@ See visibility, Stacks, and Teams sections for more details.
     
 - Each player has a Shop with 5 cards face up at one time, drawn from their Market.
     
-- Each player starts with 30 Control in their HQ, 1 Yen in their Bank, 1 Datab in their Dataase, and 1 MW of Energy in their Grid by default, unless modified by their Leader or HQ cards.
+- Each player starts with 30 Control in their HQ, 1 Yen in their Bank, 1 Datab in their Dataase, and 1 MW in their Grid by default, unless modified by their Leader or HQ cards.
 
 - The player who takes the first turn is decided randomly.
     

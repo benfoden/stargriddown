@@ -399,7 +399,7 @@ export const ABILITIES = {
     logic: "onOvercome",
   },
   harvest: {
-    desc: "Transfer X Datab to this card or your Database from an opponent Card with Datab after this Overcomes it, up to X as available.",
+    desc: "Transfer X Datab or Mw to this card, or to your Database, or to your Grid from an opponent Card with Datab after this Overcomes it, up to X as available.",
     abilityType: "passive",
     targetType: "self",
     datab: 0,
@@ -537,8 +537,8 @@ export const ABILITIES = {
     abilityType: "passive",
     logic: "onEngage",
   },
-  skirt: {
-    desc: "Bypass the first card Engaged this turn. (pay X mw",
+  sneak: {
+    desc: "Bypass the first card Engaged this turn. (pay X mw)",
     abilityType: "passive",
     costMw: 0,
     logic: "onFirstApproach",
@@ -697,7 +697,7 @@ export const UNRELEASEDABILITIES = {
     yen: 0,
     ruleSet: "-1",
   },
-  leak: {
+  peek: {
     desc: "Pay X Datab or Yen and target Slot is Revealed and if it has a card, that card is now Up.",
     abilityType: "active",
     ruleSet: "-1",
