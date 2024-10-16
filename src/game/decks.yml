@@ -11,9 +11,6 @@ villedge:
       attack: 5
       defense: 4
       shortDesc: Parry 2, Resilient 2
-      abilities:
-        - parry
-        - resilient
       cardCount: 1
       ruleSet: "0.1"
     - name: Momo
@@ -24,15 +21,13 @@ villedge:
       defense: 2
       cardCount: 1
       ruleSet: "0.1"
-    - name: Fatima
+    - name: Takenoko
       type: operator
       variant: robot
       costYen: 2
-      attack: 1
+      attack: 2
       defense: 2
-      shortDesc: Scan
-      abilities:
-        - scan
+      shortDesc: Renewable
       cardCount: 3
       ruleSet: "0.1"
     - name: RAM Radio
@@ -43,60 +38,39 @@ villedge:
       cardCount: 2
       ruleSet: "0.1"
     - name: Pine Needle
-      costYen: 3
+      costYen: 1
       type: command
       variant: knowledge
-      shortDesc: Drain - 4 Datab
-      abilities:
-        - drain
+      shortDesc: Remove 3 Datab on Engage
       cardCount: 2
       ruleSet: "0.1"
     - name: Ecoship
-      costYen: 1
+      costYen: 2
+      costMw: 0
       type: asset
       variant: production
-      defense: 2
-      costMw: 0
-      abilities:
-        - renewable
-      yen: 3
+      defense: 1
+      shortDesc: Boost 1 yen end of turn.
+      yen: 2
       cardCount: 3
       ruleSet: "0.1"
     - name: Microhydro
       costYen: 3
       type: asset
       variant: production
-      defense: 1
-      shortDesc: Preprod 1 Boost - 1 Mw start of turn.
+      shortDesc: 1 Preprod, Gain 1 Mw start of turn.
       mw: 1
       yen: 2
-      abilities:
-        - preprod
-        - boost
-      cardCount: 2
+      cardCount: 3
       ruleSet: "0.1"
     - name: Bicycle
       type: operator
       variant: vehicle
       costYen: 1
       attack: 1
-      datab: 1
       defense: 1
       shortDesc: Rapid
-      abilities:
-        - rapid
-      cardCount: 3
-      ruleSet: "0.1"
-    - name: Hoversled
-      type: operator
-      variant: vehicle
-      costYen: 4
-      attack: 2
-      defense: 4
-      shortDesc: Rapid
-      abilities:
-        - rapid
-      cardCount: 3
+      cardCount: 2
       ruleSet: "0.1"
     - name: Subdermal IC
       costYen: 1
@@ -123,39 +97,29 @@ villedge:
       type: asset
       variant: production
       costMw: 0
-      shortDesc: Boost - 1 yen end of turn
-      abilities:
-        - renewable
-        - boost
+      shortDesc: Renewable, Gain 1 yen end of turn
       yen: 2
       cardCount: 3
       ruleSet: "0.1"
-    - name: Adapanel Array
+    - name: Adrianum Well
       costYen: 2
       type: asset
       variant: production
-      shortDesc: Boost - 1 yen end of turn
-      yen: 2
-      cardCount: 3
-      ruleSet: "0.1"
+      shortDesc: Gain 1 Datab end of turn
     - name: Spydar
       costYen: 3
       type: install
       variant: sensor
       shortDesc: Alert 1, Track
-      abilities:
-        - alert
-        - track
       cardCount: 3
       ruleSet: "0.1"
     - name: Stealth Skiff
       costYen: 3
       type: install
       variant: drone
-      attack: 3
-      defense: 3
-      abilities:
-        - camo
+      attack: 2
+      defense: 2
+      shortDesc: camo
       cardCount: 3
       ruleSet: "0.1"
     - name: NV Goggles
@@ -163,8 +127,6 @@ villedge:
       variant: bionic
       costYen: 2
       shortDesc: Alert 1
-      abilities:
-        - alert
       cardCount: 3
       ruleSet: "0.1"
     - name: Cellsleeve
@@ -172,20 +134,13 @@ villedge:
       variant: gear
       costYen: 6
       shortDesc: Rapid, Renewable
-      abilities:
-        - rapid
-        - renewable
       cardCount: 1
       ruleSet: "0.1"
-    - name: Turbine Megakite
+    - name: Turbine Fleet
       costYen: 8
       type: asset
       variant: production
-      shortDesc: Boost - 2Mw start of turn.
-      mw: 2
-      abilities:
-        - renewable
-        - boost
+      shortDesc: Gain 3Mw start of turn
       yen: 4
       ruleSet: "0.1"
     - name: Hiveline
@@ -193,17 +148,15 @@ villedge:
       type: asset
       variant: datacenter
       defense: 2
-      shortDesc: Link - 2 datab.
-      abilities:
-        - link
+      shortDesc: Link 2 datab
       yen: 2
     - name: Emerald Tea Farm
       costYen: 8
       type: asset
       variant: production
       defense: 2
-      shortDesc: Preprod 1 - The first Human or Animal card you acquire each turn has -2 costYen.
-      yen: 2
+      shortDesc: 1 Preprod, Clout 2 Human, Boost 2 Yen End of turn
+      yen: 4
       ruleSet: "0.1"
     - name: Beehive
       costYen: 3
@@ -211,18 +164,14 @@ villedge:
       variant: drone
       attack: 2
       defense: 1
-      shortDesc: Shard - 3 Bees
-      abilities:
-        - shard
+      shortDesc: Shard 3 Bees
     - name: Bee
       costYen: 1
       type: mod
       variant: upgrade
       attack: 2
       defense: 1
-      shortDesc: Niche Beehive.
-      ability:
-        - niche
+      shortDesc: Niche Beehive
     - name: Overgrown Tetrapods
       costYen: 3
       costMw: 0
@@ -236,9 +185,8 @@ villedge:
       type: install
       variant: wall
       attack: 1
-      defense: 3
-      abilities:
-        - durable
+      defense: 4
+      shortDesc: Resilient 1
       ruleSet: "0.1"
     - name: Pelletal
       costYen: 1
@@ -246,10 +194,7 @@ villedge:
       variant: turret
       attack: 2
       flavor: "Stings in 10 milliseconds, and every 10 milliseconds after that."
-      shortDesc: Preprod -1, Intimidate -1
-      abilities:
-        - initimidate
-        - preprod
+      shortDesc: 1 Preprod, Intimidate 1
       ruleSet: "0.1"
     - name: Dogzilla
       type: operator
@@ -258,18 +203,13 @@ villedge:
       attack: 3
       defense: 3
       shortDesc: Alert 1
-      abilities:
-        - alert
       ruleSet: "0.1"
     - name: Fire Drill
       costYen: 4
       type: command
       variant: recall
       desc: Pen test
-      abilities: Crack 2, Boost 2 Defense
-      shortDesc:
-        - crack
-        - boost
+      abilities: Crack 2, Gain 2 Defense on Engage
 
 wicket:
   description: >
@@ -280,25 +220,20 @@ wicket:
       costYen: 4
       type: command
       variant: delta
-      abilities:
-        - ravage
+      shortDesc: Ravage 2, Drain 4 Datab
       ruleSet: "0.1"
     - name: Metaphore
       costYen: 6
       type: contract
-      shortDesc: Pay 2 Datab- All of your cards may interact with Code cards this turn.
-      costDatab: 2
+      shortDesc: 2 Datab Boost 6 Yen, Renewable
       ruleSet: "0.1"
     - name: Green Dragon Vase
       costYen: 8
       type: asset
       variant: investment
       costMw: 2
-      ability: Preprod 1, Asset Clout - 4.
+      shortDesc: 1 Preprod, Clout 4 Asset
       yen: 6
-      abilities:
-        - preprod
-        - clout
     - name: Venus
       costYen: 2
       type: asset
@@ -323,12 +258,9 @@ wicket:
       type: operator
       variant: animal
       costYen: 8
-      attack: 4
-      defense: 1
-      shortDesc: Rapid, Overkill 2
-      abilities:
-        - rapid
-        - overkill
+      attack: 6
+      defense: 4
+      shortDesc: Rapid, Siphon 1 on Overcome
       ruleSet: "0.1"
     - name: DU Shovel
       type: mod
@@ -360,9 +292,9 @@ wicket:
       type: asset
       variant: production
       defense: 1
-      shortDesc: Boost 1 Mw - Start of turn.
+      shortDesc: Gain 1 Mw - Start of turn.
       abilities:
-        - boost
+
       yen: 2
       ruleSet: "0.1"
     - name: Microlace
@@ -490,8 +422,6 @@ wicket:
       variant: substance
       datab: 1
       shortDesc: Give target card Disarm 1.
-      ability:
-        - disarm
       ruleSet: "0.1"
     - name: Fan Jacket
       costYen: 1
@@ -525,10 +455,9 @@ wicket:
       type: mod
       variant: gear
       costYen: 3
-      datab: 1
-      shortDesc: Harvest 1 Self
-      ability:
-        - harvest
+      datab: 0
+      defense: 0
+      shortDesc: Harvest 2 To Self, 2 Datab Boost 2 Defense
       ruleSet: "0.1"
     - name: Synapteria
       type: mod
@@ -555,86 +484,65 @@ scali:
       type: asset
       variant: production
       defense: 2
-      shortDesc: Preprod 2 - Boost 2 yen start of turn.
-      abilities:
-        - renewable
-        - boost
-        - preprod
+      shortDesc: 2 Preprod, Gain 2 Yen start of turn
       yen: 3
     - name: Bio Mark
       costYen: 2
       type: command
       variant: hit
-      shortDesc: Leak - 1 yen and Reveal the next card in a Stack as it is approached.
-      abilities:
-        - leak
-    - name: Nanomachine Crucible
+      shortDesc: 2 Track
+    - name: Nanomatic Turbine
       costYen: 4
       type: asset
       variant: production
       defense: 2
-      shortDesc: Boost - 1 Mw startofturn.
-      abilities:
-        - renewable
+      shortDesc: Gain 1 Mw start of turn, Renewable
       yen: 3
     - name: Bioscraper
-      costYen: 5
+      costYen: 6
       type: asset
       variant: production
-      defense: 1
-      shortDesc: boost - 2 yen endofturn
-      abilities:
-        - boost
+      defense: 3
+      datab: 3
+      shortDesc: Gain 3 Datab end of turn
+      yen: 3
     - name: Bionics Fab
       costYen: 3
       type: asset
       variant: production
       defense: 1
-      shortDesc: Preprod 2, boost - 2 yen endofturn.
+      shortDesc: 2 Preprod, Gain 1 Yen end of turn.
       costMw: 3
-      abilities:
-        - preprod
-        - boost
       yen: 3
-    - name: Bleeding-Edge Bionics
-      costYen: 5
-      type: asset
-      variant: investment
-      defense: 1
-      shortDesc: Preprod 3, boost - 2 datab startfturn
-      abilities:
-        - preprod
-        - boost
-      yen: 3
+    - name: Bleeding Edge
+      costYen: 3
+      costControl: 1
+      type: mod
+      variant: bionic
+      attack: 3
+      shortDesc: Piercing 4
     - name: Neothermics
       costYen: 3
       type: asset
       variant: production
       defense: 2
-      shortDesc: Preprod 1, boost - 2 yen endofturn
+      shortDesc: 1 Preprod, Gain 2 Yen end of turn
       costMw: 0
-      abilities:
-        - boost
-        - preprod
       yen: 2
     - name: Algean Reactor
-      costYen: 3
+      costYen: 4
+      costDatab: 1
       type: asset
       variant: production
-      defense: 3
-      datab: 2
-      costDatab: 2
-      shortDesc: Boost 1 Datab - +2 Attack
-      abilities:
-        - renewable
+      datab: 1
+      shortDesc: 1 Datab Gain 2 Mw start of turn, Renewable
       yen: 2
-    - name: Regeneron
+    - name: Regenerative AI
       costYen: 1
       type: asset
-      variant: production
-      shortDesc: Boost 1 Mw target card.
-      abilities:
-        - boost
+      variant: AI
+      defense: 3
+      shortDesc: Renewable, Resilient 1
     - name: Sentient Colony
       costYen: 4
       type: asset
@@ -659,8 +567,6 @@ scali:
         - pierce
         - niche
         - camo
-
-
 
 neonclave:
   description: >
@@ -820,9 +726,7 @@ neonclave:
       type: install
       variant: program
       defense: 1
-      shortDesc: Analytics - 1 Datab
-      abilities:
-        - analytics
+      shortDesc: Analytics 1 Datab
     - name: Loitering Laser
       type: install
       variant: drone
@@ -830,20 +734,16 @@ neonclave:
       attack: 1
       defense: 1
       shortDesc: Pierce 4
-      abilities:
-        - pierce
     - name: Air Splint
       costYen: 1
       type: command
       variant: bolster
-      shortDesc: Boost 2 Defense
-      abilities:
-      - boost
+      shortDesc: Gain 2 Defense
     - name: Snap Decision
-      costYen: 4
+      costYen:
       type: command
       variant: bolster
-      costDatab: 2 
+      costDatab: 2
       shortDesc: Draw 2
       abilities:
         - draw
@@ -856,30 +756,18 @@ neonclave:
       abilities:
         - overkill
         - durable
-    - name: Buried Clause
-      costYen: 2
-      type: contract
-      variant: recall
-      variant: Hide
-      abilities:
-        - hide
     - name: Buried Claws
       type: asset
       variant: trap
       costYen: 3
-      shortDesc: Trap - Attack 3, Burn 
-      abilities:
-        - trap
+      shortDesc: Trap Attack 3+Burn
     - name: Floating Forum
       type: asset
       variant: datacenter
       costYen: 6
       attack: 1
       defense: 2
-      shortDesc: Boost 1 Datab Start of turn, Clout 1 - Program
-      abilities:
-       - boost
-       - clout
+      shortDesc: Gain 1 Datab Start of turn, Clout 1 Program
     - name: Chute 'em
       costYen: 5
       type: command
@@ -950,9 +838,8 @@ neonclave:
       variant: AI
       costYen: 6
       defense: 2
-      shortDesc: Camo, Durable, Boost 2 Yen End of Turn
+      shortDesc: Camo, Durable, Gain 2 Yen End of Turn
       abilities:
-        - boost
         - camo
         - durable
       yen: 4
@@ -962,10 +849,10 @@ neonclave:
       costYen: 4
       defense: 3
       costMw: 2
-      shortDesc: 1 Preprod, Boost 1 Yen End of Turn, Durable
+      shortDesc: 1 Preprod, Gain 1 Yen End of Turn, Durable
       abilities:
         - preprod
-        - boost
+
         - durable
       yen: 4
     - name: Silverian Silk
@@ -1009,7 +896,7 @@ neonclave:
       variant: wall
       costYen: 3
       defense: 6
-      shortDesc: Preprod 2, Durable
+      shortDesc: 2 Preprod, Durable
       abilities:
         - durable
         - preprod
@@ -1026,14 +913,14 @@ neonclave:
       type: asset
       variant: production
       costYen: 4
-      shortDesc: Camo, Boost 1 Mw, start of turn.
+      shortDesc: Camo, Gain 1 Mw, start of turn.
       abilities:
         - camo
-        - boost
+
     - name: Kozaic
       type: asset
       variant: AI
-      costYen: 5  
+      costYen: 5
       datab: 2
       shortDesc: Analytics, 1 Shield
       abilities:
@@ -1074,10 +961,10 @@ neonclave:
       type: contract
       variant: knowledge
       datab: 4
-      shortDesc: 4 Track, 2 Exploit 2 Defense
+      shortDesc: 4 Track, 2 Remove 2 Defense
       abilities:
         - track
-        - exploit
+        - remove
     - name: Remote Reset
       costYen: 1
       costControl: 1
@@ -1092,7 +979,7 @@ neonclave:
       type: contract
       variant: program
       shortDesc: Flash, Scan
-      abilities: 
+      abilities:
         - flash
         - scan
     - name: LuAg PP
@@ -1107,17 +994,13 @@ neonclave:
       variant: datacenter
       costYen: 4
       datab: 4
-      shortDesc: 1 Alert, Boost 2 Datab Start of Turn, Transfer 2 Datab to Database End of Turn
+      shortDesc: 1 Alert, Gain 2 Datab Start of Turn, Transfer 2 Datab to Database End of Turn
       yen: 4
-    - name: Vuln003-7
+    - name: Vuln 703
       costYen: 7
       type: command
       variant: knowledge
-      shortDesc: 0 Flash, 0 Hinder, Exploit 3 Datab
-      abilities:
-        - flash
-        - hinder
-        - exploit
+      shortDesc: 0 Flash, 0 Hinder, 0 Remove 3 Datab on Engage
     - name: Role Escalator
       type: operator
       variant: program
@@ -1134,16 +1017,15 @@ neonclave:
       variant: datacenter
       costYen: 2
       defense: 2
-      shortDesc: Boost 1 Datab Start of Turn, 1 Datab Transfer to Database End of Turn
+      shortDesc: Gain 1 Datab Start of Turn, 1 Datab Transfer to Database End of Turn
       yen: 2
     - name: Yacht
       type: asset
       variant: program
       costYen: 3
       defense: 5
-      shortDesc: 2 Yen Boost 1 Yen End of Turn, Parry 
-      abilities: 
-        - boost
+      shortDesc: 2 Yen Gain 1 Yen End of Turn, Parry
+      abilities:
         - parry
       yen: 1
     - name: Darwin's Bunker
@@ -1153,11 +1035,11 @@ neonclave:
       attack: 3
       defense: 3
       datab: 3
-      shortDesc: 1 Track, 1 Alert, 1 Datab Boost 1 Attack
+      shortDesc: 1 Track, 1 Alert, 1 Datab Gain 1 Attack
       abilities:
         - track
         - alert
-        - boost
+
     - name: Biotubule Plating
       type: mod
       variant: gear
@@ -1174,10 +1056,7 @@ neonclave:
       attack: 4
       defense: 2
       datab: 2
-      shortDesc: 2 Disarm, Exploit 2 Defense
-      abilities:
-        - disarm
-        - exploit
+      shortDesc: 2 Disarm, Remove 2 Defense on Engage
     - name: Etanya
       type: operator
       variant: human
@@ -1195,17 +1074,17 @@ neonclave:
     - name: Window Wiper
       costYen: 2
       type: command
-      shortDesc: Exploit 10 Datab on Target Card 
+      shortDesc: Remove 10 Datab on Engage
     - name: Dr. Taylor
       costYen: 3
       type: contract
-      shortDesc: Niche Bionic, Boost 1 Attack on all your Bionic mods. 
+      shortDesc: Niche Bionic, Gain 1 Attack on all your Bionic mods.
     - name: Obscura
       type: install
       variant: program
       costYen: 2
       attack: 3
-      shortDesc: Exploit 3 Datab, Parry 3
+      shortDesc: Remove 3 Datab, Parry 3
     - name: Paradime
       type: install
       variant: sensor
@@ -1238,7 +1117,7 @@ neonclave:
       costYen: 5
       attack: 6
       defense: 2
-      shortDesc: Intimidate 2, Analytics 1   
+      shortDesc: Intimidate 2, Analytics 1
     - name: Polyglot
       type: operator
       variant: program
@@ -1259,21 +1138,21 @@ neonclave:
       costYen: 4
       defense: 2
       datab: 2
-      shortDesc: Camo, Boost 2 Mw Start of Turn
+      shortDesc: Camo, Gain 2 Mw Start of Turn
       yen: 4
     - name: Solace Services
       type: asset
       variant: investment
       costYen: 3
       costMw: 0
-      shortDesc: Boost 1 Mw Start of Turn
+      shortDesc: Gain 1 Mw Start of Turn
       yen: 3
     - name: Fog Harvestesr
       type: asset
       variant: production
       costYen: 4
       defense: 2
-      shortDesc: Parry 2, Boost 2 Yen End of Turn
+      shortDesc: Parry 2, Gain 2 Yen End of Turn
       yen: 2
     - name: Cloudian
       type: install
@@ -1287,116 +1166,104 @@ neonclave:
       costYen: 2
       type: command
       variant: recall
-      shortDesc: Exploit 2 Datab 4 Attack
+      shortDesc: Remove 2 Datab 4 Attack
     - name: Vsports League
       type: asset
       variant: investment
       costYen: 6
       costMw: 2
       datab: 2
-      shortDesc: Boost 4 Yen end of turn
+      shortDesc: Gain 4 Yen end of turn
       yen: 4
+    - name: Nightingale Bridge
+      costYen: 4
+      type: install
+      variant: gateway
+      attack: 1
+      defense: 1
+      datab: 1
+      shortDesc: Camo, Crack 1 on Engage, Remove 2 Attack on Engage
     - name: Quantum Mic
       type: install
       variant: sensor
       costYen: 2
-      attack: 1
       defense: 1
-      shortDesc: Analytics - 1 Datab
-      abilities:
-        - analytics
-    - name: Solarscrew
-      type: contract
-      abilities:
-        - enhance
+      datab: 2
+      shortDesc: 2 Track
     - name: G.H.O.S.T.
-      type: asset
+      type: operator
       variant: program
-      costYen: 3
-      defense: 2
+      costYen: 6
+      costMw: 2
+      attack: 6
+      defense: 6
       flavor: "Great Horned Owl Security Technologies, Inc."
-      shortDesc: Track - 1 Datab
-      abilities:
-        - track
-      yen: 2
+      shortDesc: Camo, Overkill 2
     - name: Faraday Fence
       type: install
       variant: wall
       costYen: 2
-      attack: 1
-      defense: 1
-      abilities:
-        - durable
-    - name: Delphi
+      defense: 4
+      shortDesc: 0 Alert, Niche Program
+    - name: Delphit Radome
       type: install
       variant: sensor
-      costYen: 2
-      attack: 1
-      defense: 1
-      abilities:
-        - analytics
-    - name: Polymerite
+      costYen: 4
+      defense: 2
+      datab: 1
+      shortDesc: 0 Neosense, Analytics 2 Datab
+    - name: Polymeril Spray
       type: mod
       variant: substance
-      costYen: 1
-      abilities:
-        - enhance
-    - name: Fireflask
+      costYen: 3
+      shortDesc: 1 Skirt
+    - name: Laser Flask
       type: asset
       variant: datacenter
-      costYen: 2
-      attack: 1
+      costYen: 3
+      costMw: 0
       defense: 1
-      abilities:
-        - trap
-    - name: Moon tower
-      type: asset
-      variant: production
-      costYen: 2
-      attack: 1
-      defense: 1
-      abilities:
-        - trap
-    - name: Somascan
+      datab: 3
+      yen: 3
+      shortDesc: 1 Mw Draw 1 End of Turn
+    - name: Tsukimon
       type: install
-      variant: sensor
-      costYen: 2
-      attack: 1
-      defense: 1
-      abilities:
-        - analytics
+      variant: gateway
+      costYen: 7
+      attack: 7
+      defense: 7
+      shortDesc: Intimidate 3
+    - name: Somascavenge
+      type: command
+      variant: knowledge
+      costYen: 1
+      shortDesc: Draw 1, Renewable
     - name: Octobot
       type: operator
       variant: robot
       costYen: 6
       attack: 3
       defense: 3
-      abilities:
-        - durable
-    - name: Sequence Bank
+      shortDesc: Pierce 3, Steal
+    - name: Sequence Swarm
       type: asset
       variant: program
       costYen: 3
-      defense: 2
-      abilities:
-        - analytics
-      yen: 2
+      attack: 6
+      defense: 3
     - name: Autorail
       type: asset
       variant: production
-      costYen: 3
-      defense: 2
-      desc: monorail-like highwire delivery network
-      abilities:
-        - siphon
-      yen: 2
+      costYen: 4
+      defense: 4
+      datab: 4
+      yen: 4
+      shortDesc: 2 Preprod, Gain 1 Mw 1 Yen 1 Datab End of Turn
     - name: Gokul
       costYen: 7
       type: contract
       variant: knowledge
       shortDesc: Scan
-      abilities:
-        - scan
     - name: P-HEL
       costYen: 7
       type: mod
@@ -1404,12 +1271,30 @@ neonclave:
       attack: 5
       datab: 2
       shortDesc: 2 Track, Niche Vehicle
+    - name: Hotaru Swarm
+      costYen: 5
+      type: operator
+      variant: drone
+      attack: 4
+      defense: 2
+      shortDesc: Rapid, Disrupt 2
+    - name: Hayabusa
+      costYen: 6
+      type: operator
+      variant: animal
+      attack: 8
+      defense: 4
+      shortDesc: Rapid, Intimidate 3
+    - name: Hoversled
+      type: operator
+      variant: vehicle
+      costYen: 4
+      attack: 2
+      defense: 4
+      shortDesc: Rapid
       abilities:
-        - niche
-        - track
-
-
-
+        - rapid
+      cardCount: s
 
 later:
   description: >
@@ -1420,26 +1305,19 @@ later:
       type: mod
       variant: bionic
       costYen: 2
-      shortDesc: 2 Convert 1 - 2 Datab to Attack
-      abilities:
-        - Convert
+      shortDesc: 2 Datab Convert 2 Attack
     - name: Slammer
       costYen: 5
       type: operator
       variant: program
       attack: 3
       defense: 2
-      shortDesc: When you overcome a card, Crack 2
-      abilities:
-        - crack
+      shortDesc: Crack 2 on Overcome
     - name: Drone drop
       costYen: 2
       type: command
       variant: recall
-      shortDesc: Pierce 3, Exploit 1 Defense
-      abilities: 
-        - pierce
-        - exploit
+      shortDesc: Pierce 3, Remove 1 Defense on Engage
     - name: Repetera
       type: asset
       variant: datacenter
@@ -1448,14 +1326,26 @@ later:
       costMw: 0
       datab: 1
       shortDesc: Host, Shard - Blade
-      abilities:
-        - host
-        - shard
       yen: 2
     - name: Terablade
       costMw: 1
       type: mod
       variant: gear
-      shortDesc: Boost 1 Datab End of turn
-      abilities:
-        - boost
+      shortDesc: Gain 1 Datab End of turn
+    - name: Adapanel Array
+      costYen: 3
+      type: asset
+      variant: production
+      shortDesc: Gain 1 Mw end of turn
+      yen: 3
+    - name: Nanomatic Crucible
+      costYen: 2
+      type: asset
+      variant: production
+      shortDesc: 1 Preprod, 1 Yen Gain 1 Mw start of turn.
+      yen: 2
+    - name: Buried Clause
+      costYen: 2
+      type: contract
+      variant: recall
+      shortDesc: Hide

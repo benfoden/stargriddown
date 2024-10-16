@@ -167,7 +167,7 @@ export const CARDS: Record<CardTypeName, CardDetails> = {
       program: ["digital"],
       drone: ["digital", "physical"],
       sensor: ["digital", "physical"],
-      turret: ["physical", "digital"],
+      turret: ["digital", "physical"],
     },
     playsTo: ["installSlot"],
   },
@@ -313,8 +313,36 @@ export type StatusAbility = (typeof StatusAbilities)[number];
 
 // ---- v 0.1 Abilities
 export const ABILITIES = {
+  add: {
+    desc: "Add X points of Y type on target card (using Z points passively when active, or at T timing logic).",
+    abilityType: "active",
+    attack: 0,
+    defense: 0,
+    datab: 0,
+    control: 0,
+    costDatab: 0,
+    costMw: 0,
+    costYen: 0,
+    costLag: 0,
+    costControl: 0,
+    logic: "onEngage",
+  },
+  remove: {
+    desc: "Remove X points of Y type on target card (using Z points passively when active, or at T timing logic).",
+    abilityType: "active",
+    attack: 0,
+    defense: 0,
+    datab: 0,
+    control: 0,
+    costDatab: 0,
+    costMw: 0,
+    costYen: 0,
+    costLag: 0,
+    costControl: 0,
+    logic: "onEngage",
+  },
   neosense: {
-    desc: "Reveal slot. If it has a card, that card is now Up (ignore Camo). (Pay X datab)",
+    desc: "Reveal slot. If it has a card, that card is now Up. Or reveal card. (ignores Camo) (Pay X datab)",
     abilityType: "active",
     datab: 0,
     logic: "onEngage",
@@ -346,11 +374,6 @@ export const ABILITIES = {
     abilityType: "passive",
     logic: "afterFirstEngage",
   },
-  exploit: {
-    desc: "Card this Engages has -X of Y points.",
-    abilityType: "active",
-    logic: "onFirstEngage",
-  },
   parry: {
     desc: "The first instance of Attack damage that would be done to this card this turn is reduced by X.",
     abilityType: "passive",
@@ -364,7 +387,7 @@ export const ABILITIES = {
     logic: "onFirstEngage",
   },
   alert: {
-    desc: "This can't be targeted by opponent Contracts, Commands, or Actives. (It requires X Mw.)",
+    desc: "This can't be targeted by opponent Contracts or Commands. (It requires X Mw.)",
     abilityType: "passive",
     costMw: 0,
     logic: "alwaysReady",
@@ -383,19 +406,19 @@ export const ABILITIES = {
     logic: "onOvercome",
   },
   overkill: {
-    desc: "Remove X more Control with the next successful attack on the HQ this turn.",
+    desc: "Remove X more Control with a successful attack on the HQ this turn.",
     abilityType: "passive",
     control: 0,
     logic: "onSuccessfulAttack",
   },
   intimidate: {
-    desc: "When this Overcomes a card, the next card you Engage this turn has -X Attack.",
+    desc: "When this Overcomes a card, the next card this Engages this turn has -X Attack.",
     abilityType: "passive",
     attack: 0,
     logic: "onOvercome",
   },
   pierce: {
-    desc: "Deal X damage to the first Card this Engages each turn.",
+    desc: "Deal X damage to the first Card this Engages this turn.",
     abilityType: "passive",
     attack: 0,
     logic: "onFirstEngage",
@@ -428,36 +451,24 @@ export const ABILITIES = {
     logic: "onEngage",
   },
   analytics: {
-    desc: "For each time this Engaged this turn, gain 1 datab (or 1 yen) at end of turn.",
+    desc: "For each time this Engaged this turn, gain 1 datab (or 1 yen) at end of turn in your database.",
     abilityType: "passive",
     datab: 0,
     yen: 0,
     engages: 0,
     logic: "endOfTurn",
   },
-  boost: {
-    desc: "Add X points of Y type on target card (using Z points passively when active, or at T timing logic).",
+  brute: {
+    desc: "This card wins the next Race. (if you pay X datab)",
     abilityType: "active",
-    attack: 0,
-    defense: 0,
     datab: 0,
-    costDatab: 0,
-    costMw: 0,
-    costYen: 0,
-    costLag: 0,
     logic: "onEngage",
   },
-  brute: {
-    desc: "This card wins the next Race. (pay X datab)",
-    abilityType: "active",
-    datab: 0,
-    logic: "onRace",
-  },
   hinder: {
-    desc: "Target card loses the next Race. (pay X datab)",
+    desc: "Target card loses the next Race. (if you pay X datab)",
     abilityType: "active",
     datab: 0,
-    logic: "onRace",
+    logic: "onEngage",
   },
   discard: {
     desc: "Target card is Discarded immediately.",
@@ -465,7 +476,7 @@ export const ABILITIES = {
     logic: "onEngage",
   },
   draw: {
-    desc: "Draw X Cards (paying Y Yen or Datab) at T timing.",
+    desc: "Draw X Cards (paying Y Yen, Datab, or Mw) at T timing.",
     abilityType: "passive",
     cards: 0,
     yen: 0,
@@ -526,10 +537,28 @@ export const ABILITIES = {
     abilityType: "passive",
     logic: "onEngage",
   },
+  skirt: {
+    desc: "Bypass the first card Engaged this turn. (pay X mw",
+    abilityType: "passive",
+    costMw: 0,
+    logic: "onFirstApproach",
+  },
   transfer: {
     desc: "Move X points from one card to another at T timing.",
     abilityType: "passive",
     logic: "onEngage",
+  },
+  track: {
+    desc: "Pay X datab to track target card. If its Defense is 0 or loses a race this turn, it's discarded immediately.",
+    abilityType: "active",
+  },
+  tracked: {
+    desc: "If this card has its Defense reduced to 0 or loses a race this turn, it's discarded immediately.",
+    abilityType: "status",
+  },
+  gate: {
+    desc: "This card can't be Bypassed.",
+    abilityType: "status",
   },
   staged: {
     desc: "This card can't join an Attack.",
@@ -588,7 +617,7 @@ export const ABILITIES = {
     abilityType: "status",
   },
   shielded: {
-    desc: "Any opponent Contracts, Commands, or other card Abilities targeted at this card are ignored.",
+    desc: "Any opponent Contracts, Commands, or other card Abilities are ignored by this card.",
     abilityType: "status",
   },
   digital: {
@@ -608,6 +637,11 @@ export const ABILITIES = {
 // --- -1 UNRELEASEDABILITIES
 
 export const UNRELEASEDABILITIES = {
+  exploit: {
+    desc: "Do something cool",
+    abilityType: "active",
+    ruleSet: "-1",
+  },
   decoy: {
     desc: "When this Engages, the opposing card's abilities and effects are applied instantly but don't target this card.",
     abilityType: "passive",
@@ -719,16 +753,6 @@ export const UNRELEASEDABILITIES = {
     abilityType: "active",
     ruleSet: "-1",
     turns: 0,
-  },
-  track: {
-    desc: "Pay X datab to track target card. If its Defense is 0 or loses a race this turn, it's discarded immediately.",
-    abilityType: "active",
-    ruleset: "-1",
-  },
-  tracked: {
-    desc: "If this card has its Defense reduced to 0 or loses a race this turn, it's discarded immediately.",
-    abilityType: "status",
-    ruleset: "-1",
   },
   upgrade: {
     desc: "When this card is played, choose an upgrade from a set of options.",
