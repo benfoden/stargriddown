@@ -3,6 +3,17 @@ villedge:
     A deck focused on low-cost, rapid deployment with a focus on renewable 
     and rapid abilities.
   totalCount: 50
+
+wicket:
+  description: >
+    A deck with a focus on high-impact, strategic plays with a mix of traps and high-cost cards.
+
+
+scali:
+  description: >
+    A deck focused on producing and using bionics.
+
+ unsorted:
   cards:
     - name: J. Kim
       type: operator
@@ -11,16 +22,12 @@ villedge:
       attack: 5
       defense: 4
       shortDesc: Parry 2, Resilient 2
-      cardCount: 1
-
     - name: Momo
       type: operator
       variant: human
       costYen: 3
       attack: 4
       defense: 2
-      cardCount: 1
-
     - name: Takenoko
       type: operator
       variant: robot
@@ -28,22 +35,16 @@ villedge:
       attack: 2
       defense: 2
       shortDesc: Renewable
-      cardCount: 3
-
     - name: RAM Radio
       costYen: 2
       type: command
       variant: knowledge
       shortDesc: Target Code card can be accessed by non-Code cards this turn.
-      cardCount: 2
-
     - name: Pine Needle
       costYen: 1
       type: command
       variant: knowledge
       shortDesc: Remove 3 Datab on Engage
-      cardCount: 2
-
     - name: Ecoship
       costYen: 2
       costMw: 0
@@ -52,8 +53,6 @@ villedge:
       defense: 1
       shortDesc: Boost 1 yen end of turn.
       yen: 2
-      cardCount: 3
-
     - name: Microhydro
       costYen: 3
       type: asset
@@ -61,8 +60,6 @@ villedge:
       shortDesc: 1 Preprod, Gain 1 Mw start of turn.
       mw: 1
       yen: 2
-      cardCount: 3
-
     - name: Bicycle
       type: operator
       variant: vehicle
@@ -70,18 +67,12 @@ villedge:
       attack: 1
       defense: 1
       shortDesc: Rapid
-      cardCount: 2
-
     - name: Subdermal IC
       costYen: 1
       type: mod
       variant: bionic
       shortDesc: Unlock 1
       costDatab: 1
-      abilities:
-        - unlock
-      cardCount: 2
-
     - name: Mycofiber Router
       type: mod
       variant: substance
@@ -89,7 +80,6 @@ villedge:
       defense: 1
       shortDesc: Renewable
       cardCount: 2
-
     - name: Polytunnel
       costYen: 3
       type: asset
@@ -98,7 +88,6 @@ villedge:
       shortDesc: Renewable, Gain 1 yen end of turn
       yen: 2
       cardCount: 3
-
     - name: Adrianum Well
       costYen: 2
       type: asset
@@ -110,7 +99,6 @@ villedge:
       variant: sensor
       shortDesc: Alert 1, Track
       cardCount: 3
-
     - name: Stealth Skiff
       costYen: 3
       type: install
@@ -119,28 +107,24 @@ villedge:
       defense: 2
       shortDesc: camo
       cardCount: 3
-
     - name: NV Goggles
       type: mod
       variant: bionic
       costYen: 2
       shortDesc: Alert 1
       cardCount: 3
-
     - name: Cellsleeve
       type: mod
       variant: gear
       costYen: 6
       shortDesc: Rapid, Renewable
       cardCount: 1
-
     - name: Turbine Fleet
       costYen: 8
       type: asset
       variant: production
       shortDesc: Gain 3Mw start of turn
       yen: 4
-
     - name: Hiveline
       costYen: 4
       type: asset
@@ -153,9 +137,8 @@ villedge:
       type: asset
       variant: production
       defense: 2
-      shortDesc: 1 Preprod, Clout 2 Human, Boost 2 Yen End of turn
+      shortDesc: Clout 2 Human, Boost 2 Yen 2 Datab End of turn
       yen: 4
-
     - name: Beehive
       costYen: 3
       type: install
@@ -177,7 +160,6 @@ villedge:
       variant: wall
       attack: 1
       defense: 5
-
     - name: Living Wall
       costYen: 2
       type: install
@@ -185,7 +167,6 @@ villedge:
       attack: 1
       defense: 4
       shortDesc: Resilient 1
-
     - name: Pelletal
       costYen: 1
       type: install
@@ -193,7 +174,6 @@ villedge:
       attack: 2
       flavor: "Stings in 10 milliseconds, and every 10 milliseconds after that."
       shortDesc: 1 Preprod, Intimidate 1
-
     - name: Dogzilla
       type: operator
       variant: animal
@@ -201,18 +181,11 @@ villedge:
       attack: 3
       defense: 3
       shortDesc: Alert 1
-
     - name: Fire Drill
       costYen: 4
       type: command
       variant: recall
       shortDesc: Crack 2, Gain 2 Defense on Engage
-
-wicket:
-  description: >
-    A deck with a focus on high-impact, strategic plays with a mix of traps and high-cost cards.
-
-  cards:
     - name: Tactical EMP
       costYen: 4
       type: command
@@ -372,69 +345,53 @@ wicket:
       type: operator
       variant: vehicle
       shortDesc: Emergency, Lateral
-
     - name: Grey Goop
       costYen: 5
       type: mod
       variant: substance
       datab: 1
       shortDesc: Give target card Disarm 1.
-
     - name: Fan Jacket
       costYen: 1
       type: mod
       variant: gear
       defense: 1
       lag: -1
-
     - name: Spinal Battery
       costYen: 2
       type: mod
       variant: bionic
       costMw: -1
-
     - name: LoRadio
       type: mod
       variant: bionic
       costYen: 1
-      shortDesc: Link - 1 Datab.
-      abilities:
-        - Link
-
+      shortDesc: Link 1 Datab
     - name: Hyper Caps
       costYen: 2
       type: mod
       variant: upgrade
       flavor: "You'll get a kick out of this."
       costMw: -1
-
     - name: Signal Fuse
       type: mod
       variant: gear
       costYen: 3
       datab: 0
       defense: 0
-      shortDesc: Harvest 2 To Self, 2 Datab Boost 2 Defense
-
+      shortDesc: Harvest 2 Self, 2 Datab Boost 2 Defense
     - name: Synapteria
       type: mod
       variant: substance
       costYen: 3
       defense: 1
       shortDesc: 0 Disrupt
-
     - name: Forsworn
       type: mod
       variant: substance
       costYen: 2
       defense: 2
       shortDesc: Durable
-
-scali:
-  description: >
-    A deck focused on producing and using bionics.
-
-  cards:
     - name: Thermocomposter
       costYen: 6
       type: asset
