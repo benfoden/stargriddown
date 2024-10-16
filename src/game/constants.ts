@@ -257,7 +257,7 @@ export const PassiveAbilities = [
   "harvest",
   "overkill",
   "intimidate",
-  "piercing",
+  "pierce",
   "durable",
   "renewable",
   "steal",
@@ -314,24 +314,26 @@ export type StatusAbility = (typeof StatusAbilities)[number];
 // ---- v 0.1 Abilities
 export const ABILITIES = {
   neosense: {
-    desc: "Reveal target slot and if it has a card, that card is now Up (ignore Camo). (Pay X datab)",
+    desc: "Reveal slot. If it has a card, that card is now Up (ignore Camo). (Pay X datab)",
     abilityType: "active",
     datab: 0,
+    logic: "onEngage",
   },
   disorder: {
     desc: "The first card this Engages this turn stays Down, if Down already.",
     abilityType: "passive",
-    logic: "firstEngage",
+    logic: "onFirstEngage",
   },
   disrupt: {
-    desc: "Target card is Down this turn.",
+    desc: "The first card this Engages is Disabled this turn (Pay X Yen).",
+    yen: 0,
     abilityType: "active",
-    logic: "onTarget",
+    logic: "onFirstEngage",
   },
   lethal: {
     desc: "The first card this Engages this turn is Overcome immediately.",
     abilityType: "passive",
-    logic: "firstEngage",
+    logic: "onFirstEngage",
   },
   rapid: {
     desc: "This Operator is ready the same turn that it is played.",
@@ -340,26 +342,26 @@ export const ABILITIES = {
     logic: "onPlayed",
   },
   camo: {
-    desc: "Hidden until this Engages the first time this turn.",
+    desc: "Hidden until after this Engages the first time this turn, unless Neosensed.",
     abilityType: "passive",
-    logic: "firstEngage",
+    logic: "afterFirstEngage",
   },
   exploit: {
     desc: "Card this Engages has -X of Y points.",
     abilityType: "active",
-    logic: "onEngage",
+    logic: "onFirstEngage",
   },
   parry: {
     desc: "The first instance of Attack damage that would be done to this card this turn is reduced by X.",
     abilityType: "passive",
     attack: -1,
-    logic: "firstEngage",
+    logic: "onFirstEngage",
   },
   shield: {
-    desc: "Use X Mw to enable Shield when this is first Engaged this turn, if available.",
+    desc: "Use X Mw to enable Shielded when this is first Engaged this turn, if available.",
     abilityType: "passive",
     costMw: 1,
-    logic: "firstEngage",
+    logic: "onFirstEngage",
   },
   alert: {
     desc: "This can't be targeted by opponent Contracts, Commands, or Actives. (It requires X Mw.)",
@@ -368,7 +370,7 @@ export const ABILITIES = {
     logic: "alwaysReady",
   },
   siphon: {
-    desc: "Transfer X Yen from opponent's Account to your Account when this Overcomes an opponent Card.",
+    desc: "Transfer X Yen from opponent's Account to your Account when Logic T happens.",
     abilityType: "passive",
     yen: 0,
     logic: "onOvercome",
@@ -381,7 +383,7 @@ export const ABILITIES = {
     logic: "onOvercome",
   },
   overkill: {
-    desc: "Remove X more control with the next successful attack on the HQ this turn.",
+    desc: "Remove X more Control with the next successful attack on the HQ this turn.",
     abilityType: "passive",
     control: 0,
     logic: "onSuccessfulAttack",
@@ -392,33 +394,38 @@ export const ABILITIES = {
     attack: 0,
     logic: "onOvercome",
   },
-  piercing: {
+  pierce: {
     desc: "Deal X damage to the first Card this Engages each turn.",
     abilityType: "passive",
     attack: 0,
     logic: "onFirstEngage",
   },
   durable: {
-    desc: "This card can't be Disabled, Discarded, Removed, or Stolen by the opponent.",
+    desc: "This can't be Disabled, Discarded, Removed, or Stolen by the opponent.",
     abilityType: "passive",
+    logic: "onEngage",
   },
   renewable: {
     desc: "When this is Discarded, it moves to the bottom of its Owner's deck.",
     abilityType: "passive",
+    logic: "onDiscard",
   },
   steal: {
-    desc: "After this overcomes an Asset a Race is run and if you win then the Asset moves to your Discard pile.",
+    desc: "After this Overcomes an Asset a Race is run and if you win then the Asset moves to your Discard pile.",
     abilityType: "passive",
     targetType: "operator",
+    logic: "onOvercome",
   },
   trap: {
     desc: "If this isn't disarmed by using Points or Abilities then X of Y points change or Z effect is applied to target card.",
     abilityType: "passive",
+    logic: "onEngage",
   },
   disarm: {
-    desc: "Disrupt a Trap without triggering it. (By paying X datab)",
+    desc: "Disable a Trap ability without triggering it. (By paying X datab)",
     abilityType: "active",
     datab: 0,
+    logic: "onEngage",
   },
   analytics: {
     desc: "For each time this Engaged this turn, gain 1 datab (or 1 yen) at end of turn.",
@@ -444,11 +451,18 @@ export const ABILITIES = {
     desc: "This card wins the next Race. (pay X datab)",
     abilityType: "active",
     datab: 0,
+    logic: "onRace",
   },
   hinder: {
     desc: "Target card loses the next Race. (pay X datab)",
     abilityType: "active",
     datab: 0,
+    logic: "onRace",
+  },
+  discard: {
+    desc: "Target card is Discarded immediately.",
+    abilityType: "active",
+    logic: "onEngage",
   },
   draw: {
     desc: "Draw X Cards (paying Y Yen or Datab) at T timing.",
@@ -458,15 +472,64 @@ export const ABILITIES = {
     datab: 0,
     logic: "startOfTurn",
   },
+  convert: {
+    desc: "Convert X points into Y points.",
+    abilityType: "active",
+    logic: "onEngage",
+  },
   key: {
     desc: "Unlock target Locked card. (Paying X Datab)",
     abilityType: "active",
     costDatab: 0,
+    logic: "onEngage",
   },
   lock: {
     desc: "Lock target card. (By paying X Datab)",
     abilityType: "active",
     costDatab: 0,
+    logic: "onEngage",
+  },
+  preprod: {
+    desc: "This card is Disabled until X turns after it is played.",
+    abilityType: "passive",
+    turns: 0,
+    logic: "onPlayed",
+  },
+  flash: {
+    desc: "Remove all Statuses on target Card. (paying X datab)",
+    abilityType: "active",
+    datab: 0,
+    logic: "onEngage",
+  },
+  resilient: {
+    desc: "After Overcoming with 0 or more Defense, this card regains X Defense.",
+    abilityType: "passive",
+    defense: 0,
+    logic: "onOvercome",
+  },
+  kaizen: {
+    desc: "Upon Overcoming a card, this card gains X of Y points.",
+    abilityType: "passive",
+    attack: 0,
+    defense: 0,
+    datab: 0,
+    logic: "onOvercome",
+  },
+  crack: {
+    desc: "Target player must discard X Cards from their hand at the start of their next turn (based on T timing or event.)",
+    abilityType: "active",
+    cards: 0,
+    logic: "onOvercome",
+  },
+  niche: {
+    desc: "This card can only engage X Variant, Type, Player, or Card.",
+    abilityType: "passive",
+    logic: "onEngage",
+  },
+  transfer: {
+    desc: "Move X points from one card to another at T timing.",
+    abilityType: "passive",
+    logic: "onEngage",
   },
   staged: {
     desc: "This card can't join an Attack.",
@@ -496,8 +559,8 @@ export const ABILITIES = {
     desc: "This card is face down for the opponent (it may not Engage).",
     abilityType: "status",
   },
-  disrupted: {
-    desc: "This can't use abilities or points.",
+  disabled: {
+    desc: "This can't use any Abilities.",
     abilityType: "status",
   },
   locked: {
@@ -539,52 +602,6 @@ export const ABILITIES = {
   biological: {
     desc: "This can engage with other Biological cards.",
     abilityType: "status",
-  },
-  convert: {
-    desc: "Convert X points into Y points.",
-    abilityType: "active",
-  },
-  preprod: {
-    desc: "This card is Disrupted until X turns after it is played.",
-    abilityType: "passive",
-    turns: 0,
-  },
-  flash: {
-    desc: "Remove all Statuses on target Card. (paying X datab)",
-    abilityType: "active",
-    datab: 0,
-  },
-  resilient: {
-    desc: "After Overcoming with 0 or more Defense, this card regains X Defense.",
-    abilityType: "passive",
-    defense: 0,
-  },
-  kaizen: {
-    desc: "Upon Overcoming a card, this card gains X of Y points.",
-    abilityType: "passive",
-    attack: 0,
-    defense: 0,
-    datab: 0,
-    logic: "onOvercome",
-  },
-  crack: {
-    desc: "Target player must discard X Cards from their hand at the start of their next turn (based on T timing or event.)",
-    abilityType: "active",
-    cards: 0,
-    logic: "onOvercome",
-  },
-  discard: {
-    desc: "Target card is discarded immediately.",
-    abilityType: "active",
-  },
-  niche: {
-    desc: "This card can only engage X card variant, type, player, or specific card.",
-    abilityType: "passive",
-  },
-  transfer: {
-    desc: "Move X points from one card to another at T timing.",
-    abilityType: "passive",
-    logic: "onEngage",
   },
 };
 
@@ -659,12 +676,7 @@ export const UNRELEASEDABILITIES = {
     ruleSet: "-1",
   },
   erase: {
-    desc: "Permanently remove a card from the game.",
-    abilityType: "active",
-    ruleSet: "-1",
-  },
-  disrupt: {
-    desc: "Target card is down for the remainder of the turn.",
+    desc: "Permanently take target card out of the game.",
     abilityType: "active",
     ruleSet: "-1",
   },

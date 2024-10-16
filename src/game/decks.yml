@@ -535,17 +535,14 @@ wicket:
       variant: substance
       costYen: 3
       defense: 1
-      shortDesc: Disrupt
-      abilities:
-        - disrupt
+      shortDesc: 0 Disrupt
       ruleSet: "0.1"
-    - name: Forlorn
+    - name: Forsworn
       type: mod
       variant: substance
       costYen: 2
       defense: 2
-      abilities:
-        - durable
+      shortDesc: Durable
       ruleSet: "0.1"
 
 scali:
@@ -659,7 +656,7 @@ scali:
       costYen: 6
       shortDesc: Camo, Niche Sensor+Drone
       abilities:
-        - piercing
+        - pierce
         - niche
         - camo
 
@@ -715,10 +712,10 @@ neonclave:
       variant: drone
       attack: 2
       defense: 4
-      shortDesc: Alert, Piercing 2
+      shortDesc: Alert, Pierce 2
       abilities:
         - alert
-        - piercing
+        - pierce
     - name: Phishing Trawler
       costYen: 2
       type: asset
@@ -807,9 +804,9 @@ neonclave:
       variant: gear
       costYen: 4
       attack: 5
-      shortDesc: Piercing 2
+      shortDesc: Pierce 2
       abilities:
-        - piercing
+        - pierce
     - name: Smoke Screen
       type: install
       variant: wall
@@ -832,9 +829,9 @@ neonclave:
       costYen: 3
       attack: 1
       defense: 1
-      shortDesc: Piercing 4
+      shortDesc: Pierce 4
       abilities:
-        - piercing
+        - pierce
     - name: Air Splint
       costYen: 1
       type: command
@@ -897,10 +894,10 @@ neonclave:
       costYen: 8
       attack: 6
       defense: 2
-      shortDesc: Intimidate 2, Piercing 2
+      shortDesc: Intimidate 2, Pierce 2
       abilities:
         - intimidate
-        - piercing
+        - pierce
     - name: Schema Drifter
       type: operator
       variant: program
@@ -994,11 +991,11 @@ neonclave:
       costYen: 5
       attack: 4
       defense: 4
-      shortDesc: Rapid, Camo, Piercing 1
+      shortDesc: Rapid, Camo, Pierce 1
       abilities:
         - rapid
         - camo
-        - piercing
+        - pierce
     - name: Mist Bank
       type: install
       variant: wall
@@ -1102,9 +1099,9 @@ neonclave:
       type: mod
       variant: gear
       costYen: 2
-      shortDesc: Piercing 4
+      shortDesc: Pierce 4
       abilities:
-        - piercing
+        - pierce
     - name: Nodal Souls
       type: asset
       variant: datacenter
@@ -1187,142 +1184,118 @@ neonclave:
       costYen: 2
       attack: 2
       defense: 2
-      shortDesc: Piercing 2
+      shortDesc: Pierce 2
       abilities:
-        - piercing
+        - pierce
     - name: Visical
       type: program
       costYen: 3
       attack: 1
       defense: 2
-    - name: Hyper Viper
+    - name: Window Wiper
+      costYen: 2
       type: command
-      desc: removes all data
-      abilities:
-        - erase
-    - name: Deck Tailor
+      shortDesc: Exploit 10 Datab on Target Card 
+    - name: Dr. Taylor
+      costYen: 3
       type: contract
-      desc: customizes and optimizes decks for specific missions.
-      abilities:
-        - enhance
+      shortDesc: Niche Bionic, Boost 1 Attack on all your Bionic mods. 
     - name: Obscura
       type: install
       variant: program
       costYen: 2
-      attack: 1
-      defense: 1
-      desc: Stealth technology that conceals digital assets.
-      abilities:
-        - camo
+      attack: 3
+      shortDesc: Exploit 3 Datab, Parry 3
     - name: Paradime
       type: install
       variant: sensor
-      costYen: 2
-      attack: 1
+      costYen: 3
       defense: 1
-      desc: does something cool and dramatic
-      shortDesc: Analytics - 1 Datab
-      abilities:
-        - analytics
+      shortDesc: Camo, 0 Track
     - name: Netwell
+      costYen: 4
       type: asset
       variant: program
-      costYen: 3
       defense: 2
-      desc: Provides intrusion detection and generates data
-      shortDesc: Analytics - 2 Datab
-      abilities:
-        - analytics
+      shortDesc: Siphon 1 on Engage, Analytics 1 Datab
       yen: 2
     - name: Autotaxi
       type: operator
       variant: vehicle
       costYen: 5
-      attack: 3
-      defense: 2
-      abilities:
-        - rapid
-    - name: Minilounge
+      attack: 1
+      defense: 5
+      shortDesc: Rapid, Renewable
+    - name: Kei Van
       type: operator
       variant: vehicle
-      costYen: 5
-      attack: 3
+      costYen: 1
       defense: 2
-      desc: an autonomous minivan
-      abilities:
-        - rapid
-    - name: Conrad
+      shortDesc: Resilient 2
+    - name: Conrad Tyr
       type: operator
       variant: human
       costYen: 5
-      attack: 3
+      attack: 6
       defense: 2
-      abilities:
-        - rapid
+      shortDesc: Intimidate 2, Analytics 1   
     - name: Polyglot
       type: operator
       variant: program
       costYen: 5
-      attack: 3
-      defense: 2
-      abilities:
-        - siphon
-    - name: Corpion Assistant
+      attack: 4
+      defense: 4
+      shortDesc: Niche Sensor+Program+AI, Rapid
+    - name: Staff Corpion
       type: operator
       variant: robot
       costYen: 6
       attack: 3
       defense: 3
-      abilities:
-        - durable
+      shortDesc: Durable, Pierce 5
     - name: Geothermal Matrix
       type: asset
       variant: production
       costYen: 4
       defense: 2
-      abilities:
-        - renewable
-      yen: 2
+      datab: 2
+      shortDesc: Camo, Boost 2 Mw Start of Turn
+      yen: 4
     - name: Solace Services
       type: asset
       variant: investment
       costYen: 3
-      defense: 2
-      abilities:
-        - siphon
-      yen: 2
-    - name: Fog Harvester
+      costMw: 0
+      shortDesc: Boost 1 Mw Start of Turn
+      yen: 3
+    - name: Fog Harvestesr
       type: asset
       variant: production
       costYen: 4
       defense: 2
-      abilities:
-        - renewable
+      shortDesc: Parry 2, Boost 2 Yen End of Turn
       yen: 2
     - name: Cloudian
-      type: asset
-      variant: program
+      type: install
+      variant: gateway
       costYen: 6
       defense: 4
+      attack: 4
       datab: 2
-      desc: defends against Code contracts and commands, enables others
-      shortDesc: Analytics - 2 datab
-      abilities:
-        - analytics
-      yen: 2
+      shortDesc: Disrupt 1, 1 Alert
     - name: Reconfig
+      costYen: 2
       type: command
-      variant: program
-      abilities:
-        - decrypt
+      variant: recall
+      shortDesc: Exploit 2 Datab 4 Attack
     - name: Vsports League
       type: asset
       variant: investment
-      costYen: 3
-      defense: 2
-      abilities:
-        - siphon
-      yen: 2
+      costYen: 6
+      costMw: 2
+      datab: 2
+      shortDesc: Boost 4 Yen end of turn
+      yen: 4
     - name: Quantum Mic
       type: install
       variant: sensor
@@ -1463,9 +1436,9 @@ later:
       costYen: 2
       type: command
       variant: recall
-      shortDesc: Piercing 3, Exploit 1 Defense
+      shortDesc: Pierce 3, Exploit 1 Defense
       abilities: 
-        - piercing
+        - pierce
         - exploit
     - name: Repetera
       type: asset
