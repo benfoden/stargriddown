@@ -117,13 +117,11 @@ neonclave:
       variant: bionic
       costYen: 2
       shortDesc: Alert 1
-      cardCount: 3
     - name: Cellsleeve
       type: mod
       variant: gear
       costYen: 6
       shortDesc: Rapid, Renewable
-      cardCount: 1
     - name: Turbine Fleet
       costYen: 8
       type: asset
@@ -196,12 +194,10 @@ neonclave:
       type: command
       variant: delta
       shortDesc: Ravage 2, Drain 4 Datab
-
     - name: Metaphore
       costYen: 6
       type: contract
       shortDesc: 2 Datab Add 6 Yen, Renewable
-
     - name: Green Dragon Vase
       costYen: 8
       type: asset
@@ -217,13 +213,11 @@ neonclave:
       defense: 1
       shortDesc: Trap - Add 2 Attack
       costMw: 0
-
     - name: Clang Bang
       costYen: 2
       type: asset
       variant: trap
       shortDesc: Trap - Remove 2 Attack + 2 Defense
-
     - name: Empressfisher
       type: operator
       variant: animal
@@ -231,26 +225,22 @@ neonclave:
       attack: 6
       defense: 4
       shortDesc: Rapid, Siphon 1 on Overcome
-
     - name: DU Shovel
       type: mod
       variant: gear
       costYen: 4
       attack: 5
       shortDesc: Overkill 1
-
     - name: Halcyon Lightworks
       costYen: 2
       costMw: 1
       type: contract
       variant: code
       shortDesc: 1 Preprod, Draw 1 Card Start of Turn
-
     - name: Industrial Holography
       costYen: 5
       type: contract
       shortDesc: 1 Sneak
-
     - name: Solarbine Field
       costYen: 4
       type: asset
@@ -259,7 +249,6 @@ neonclave:
       yen: 2
       datab: 1
       shortDesc: Add 2 Mw - Start of turn.
-
     - name: Microtazer
       costYen: 4
       type: install
@@ -273,7 +262,6 @@ neonclave:
       attack: 5
       defense: 7
       shortDesc: Intimidate 3
-
     - name: Iza
       costYen: 3
       type: operator
@@ -281,7 +269,6 @@ neonclave:
       attack: 4
       defense: 2
       shortDesc: Rapid, Siphon 2 on Overcome
-
     - name: Rezzed Auroch
       type: operator
       variant: animal
@@ -290,34 +277,29 @@ neonclave:
       defense: 6
       shortDesc: Parry 3, Pierce 3
       flavor: Aurochs are hardy animals.
-
     - name: Static Sink
       costYen: 2
       type: asset
       variant: trap
       shortDesc: Trap - Defense 1 Harvest 1 Mw Grid
-
     - name: Quantum Fog
       costYen: 3
       type: contract
       variant: program
       attack: 3
       shortDesc: Camo, Disorder
-
     - name: Dronedar
       costYen: 4
       type: install
       variant: sensor
       defense: 6
       shortDesc: Niche Drone, 0 Track
-
     - name: Microthopter
       costYen: 2
       type: operator
       variant: drone
       attack: 3
       shortDesc: Camo
-
     - name: Arctic Fox
       type: operator
       variant: animal
@@ -325,7 +307,6 @@ neonclave:
       attack: 3
       defense: 3
       shortDesc: Camo
-
     - name: Amia
       costYen: 6
       type: operator
@@ -333,7 +314,6 @@ neonclave:
       attack: 6
       defense: 4
       shortDesc: Harvest 3 - Database
-
     - name: Crobar
       type: operator
       variant: robot
@@ -845,8 +825,6 @@ neonclave:
       attack: 2
       defense: 2
       shortDesc: Pierce 2
-      abilities:
-        - pierce
     - name: Visical
       type: program
       costYen: 3
@@ -1073,9 +1051,6 @@ neonclave:
       attack: 2
       defense: 4
       shortDesc: Rapid
-      abilities:
-        - rapid
-      cardCount: s
 
 later:
   description: >
