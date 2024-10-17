@@ -46,7 +46,7 @@ neonclave:
       costYen: 2
       type: command
       variant: knowledge
-      shortDesc: Target Code card can be accessed by non-Code cards this turn.
+      shortDesc: Target Code card can be accessed by non-Code cards this turn. # Ability not listed
     - name: Pine Needle
       costYen: 1
       type: command
@@ -58,7 +58,7 @@ neonclave:
       type: asset
       variant: production
       defense: 1
-      shortDesc: Add 1 yen end of turn.
+      shortDesc: Add 1 yen end of turn. # Ability not listed
       yen: 2
     - name: Microhydro
       costYen: 3
@@ -78,7 +78,7 @@ neonclave:
       costYen: 1
       type: mod
       variant: bionic
-      shortDesc: Unlock 1
+      shortDesc: Unlock 1 # Ability not listed
       costDatab: 1
     - name: Mycofiber Router
       type: mod
@@ -126,7 +126,7 @@ neonclave:
       costYen: 8
       type: asset
       variant: production
-      shortDesc: Add 3Mw start of turn
+      shortDesc: Add 3Mw start of turn # Ability not listed
       yen: 4
     - name: Hiveline
       costYen: 4
@@ -140,7 +140,7 @@ neonclave:
       type: asset
       variant: production
       defense: 2
-      shortDesc: Clout 2 Human, Add 2 Yen 2 Datab End of turn
+      shortDesc: Clout 2 Human, Add 2 Yen 2 Datab End of turn # Ability not listed
       yen: 4
     - name: Beehive
       costYen: 3
@@ -188,7 +188,7 @@ neonclave:
       costYen: 4
       type: command
       variant: recall
-      shortDesc: Crack 2, Add 2 Defense on Engage
+      shortDesc: Crack 2, Add 2 Defense on Engage # Ability not listed
     - name: Tactical EMP
       costYen: 4
       type: command
@@ -197,7 +197,8 @@ neonclave:
     - name: Metaphore
       costYen: 6
       type: contract
-      shortDesc: 2 Datab Add 6 Yen, Renewable
+      shortDesc: 2 Datab Add 6 Yen, Renewable # Ability not listed
+  
     - name: Green Dragon Vase
       costYen: 8
       type: asset
