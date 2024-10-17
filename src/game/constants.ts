@@ -543,6 +543,14 @@ export const ABILITIES = {
     costMw: 0,
     logic: "onFirstApproach",
   },
+  internal: {
+    desc: "Can only target you and/or your cards.",
+    abilityType: "passive",
+  },
+  external: {
+    desc: "Can only target your opponent and/or your opponent's cards.",
+    abilityType: "passive",
+  },
   transfer: {
     desc: "Move X points from one card to another at T timing.",
     abilityType: "passive",
