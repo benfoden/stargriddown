@@ -164,8 +164,8 @@ export const CARDS: Record<CardTypeName, CardDetails> = {
     variants: {
       gateway: ["physical", "digital"],
       wall: ["physical"],
+      firewall: ["digital"],
       program: ["digital"],
-      drone: ["digital", "physical"],
       sensor: ["digital", "physical"],
       turret: ["digital", "physical"],
     },
@@ -173,12 +173,12 @@ export const CARDS: Record<CardTypeName, CardDetails> = {
   },
   asset: {
     variants: {
-      production: ["physical", "digital"],
+      production: ["physical"],
       program: ["digital"],
       AI: ["digital", "agentic"],
       datacenter: ["digital", "physical"],
       investment: ["digital"],
-      trap: ["digital", "physical"],
+      trap: ["physical"],
     },
     playsTo: ["assetSlot"],
   },
@@ -342,7 +342,7 @@ export const ABILITIES = {
     logic: "onEngage",
   },
   neosense: {
-    desc: "Reveal slot. If it has a card, that card is now Up. Or reveal card. (ignores Camo) (Pay X datab)",
+    desc: "Reveal slot on Approach. If it has a card, that card is now Up. Or reveal card on Approach. (Reveals Camo) (Pay X datab)",
     abilityType: "active",
     datab: 0,
     logic: "onEngage",
@@ -495,7 +495,7 @@ export const ABILITIES = {
     logic: "onEngage",
   },
   lock: {
-    desc: "Lock target card. (By paying X Datab)",
+    desc: "Lock target card on T logic. (By paying X Datab)",
     abilityType: "active",
     costDatab: 0,
     logic: "onEngage",

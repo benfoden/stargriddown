@@ -86,34 +86,32 @@ neonclave:
       costYen: 4
       defense: 1
       shortDesc: Renewable
-      cardCount: 2
     - name: Polytunnel
       costYen: 3
-      type: asset
-      variant: production
+      type: install
+      variant: gateway
       costMw: 0
-      shortDesc: Renewable, Gain 1 yen end of turn
-      yen: 2
-      cardCount: 3
-    - name: Adrianum Well
-      costYen: 2
-      type: asset
-      variant: production
-      shortDesc: Gain 1 Datab end of turn
+      defense: 5
+      shortDesc: Harvest 1 Mw
+    - name: Atrianium
+      costYen: 7
+      type: install
+      variant: firewall
+      defense: 7
+      attack: 5
+      shortDesc: 0 Alert, Parry 3
     - name: Spydar
       costYen: 3
       type: install
       variant: sensor
       shortDesc: Alert 1, Track
-      cardCount: 3
     - name: Stealth Skiff
       costYen: 3
-      type: install
-      variant: drone
+      type: operator
+      variant: vehicle
       attack: 2
       defense: 2
-      shortDesc: camo
-      cardCount: 3
+      shortDesc: Camo
     - name: NV Goggles
       type: mod
       variant: bionic
@@ -149,7 +147,7 @@ neonclave:
     - name: Beehive
       costYen: 3
       type: install
-      variant: drone
+      variant: turret
       attack: 2
       defense: 1
       shortDesc: Shard 3 Bees
@@ -217,14 +215,14 @@ neonclave:
       variant: trap
       attack: 1
       defense: 1
-      shortDesc: Trap-Gain 2 Attack
+      shortDesc: Trap - Gain 2 Attack
       costMw: 0
 
     - name: Clang Bang
       costYen: 2
       type: asset
       variant: trap
-      shortDesc: Trap-Remove 2 Attack + 2 Defense
+      shortDesc: Trap - Remove 2 Attack + 2 Defense
 
     - name: Empressfisher
       type: operator
@@ -262,13 +260,12 @@ neonclave:
       datab: 1
       shortDesc: Gain 2 Mw - Start of turn.
 
-    - name: Microlace
+    - name: Microtazer
       costYen: 4
       type: install
-      variant: wall
+      variant: firewall
       defense: 3
       shortDesc: 1 Disrupt
-
     - name: The Barber
       costYen: 6
       type: operator
@@ -441,14 +438,12 @@ neonclave:
       variant: bionic
       attack: 3
       shortDesc: Piercing 4
-    - name: Neothermics
+    - name: Terminus
       costYen: 3
-      type: asset
-      variant: production
-      defense: 2
-      shortDesc: 1 Preprod, Gain 2 Yen end of turn
-      costMw: 0
-      yen: 2
+      type: install
+      variant: firewall
+      defense: 4
+      shortDesc: 1 Preprod, Parry 8
     - name: Algean Reactor
       costYen: 4
       costDatab: 1
@@ -457,12 +452,12 @@ neonclave:
       datab: 1
       shortDesc: 1 Datab Gain 2 Mw start of turn, Renewable
       yen: 2
-    - name: Regenerative AI
+    - name: Regenie
       costYen: 1
-      type: asset
-      variant: AI
+      type: install
+      variant: firewall
       defense: 3
-      shortDesc: Renewable, Resilient 1
+      shortDesc: Resilient 1
     - name: Sentient Colony
       costYen: 4
       type: asset
@@ -503,31 +498,33 @@ neonclave:
       defense: 2
       flavor: "One cool cat"
       shortDesc: Rapid, Pierce 1
-    - name: Audiophore
+    - name: Audiophoria
       costYen: 4
       type: install
-      variant: drone
+      variant: sensor
       attack: 3
       defense: 1
       shortDesc: Draw 1 card on First Engage.
     - name: NV Eagle
       costYen: 4
       type: install
-      variant: drone
+      variant: turret
       attack: 4
       defense: 2
       shortDesc: 0 Alert, Pierce 2
     - name: Phishing Trawler
       costYen: 2
-      type: asset
-      variant: trap
+      type: install
+      variant: firewall
       shortDesc: Trap - Attack 4 Harvest 2 to Database
-    - name: Quantum Keywallet
+    - name: Quantum One
       costYen: 8
-      type: mod
-      variant: program
-      datab: 3
-      shortDesc: Disarm 1, Key 1
+      type: install
+      variant: gateway
+      defense: 8
+      attack: 4
+      datab: 4
+      shortDesc: 4 Lock on Engage, Harvest 2 Self
     - name: Eavesdroplet
       costYen: 3
       type: install
@@ -550,12 +547,12 @@ neonclave:
       defense: 6
       shortDesc: 2 Shield, Parry 2
     - name: Code Poncho
-      type: Asset
-      variant: trap
+      type: install
+      variant: firewall
       costYen: 3
-      attack: 1
-      defense: 2
-      shortDesc: Camo, Trap - Attack 2 Defense 1
+      attack: 2
+      defense: 4
+      shortDesc: Camo
     - name: Inverse Injection
       costYen: 3
       type: contract
@@ -600,7 +597,7 @@ neonclave:
       shortDesc: Harvest 1 Datab to Database on Approach, Analytics 1 Yen
     - name: Loitering Laser
       type: install
-      variant: drone
+      variant: turret
       costYen: 3
       attack: 4
       defense: 2
@@ -626,7 +623,7 @@ neonclave:
       type: asset
       variant: trap
       costYen: 3
-      shortDesc: Trap Attack 3+Burn
+      shortDesc: Trap - Attack 3+Burn
     - name: Floating Forum
       type: asset
       variant: datacenter
@@ -639,9 +636,6 @@ neonclave:
       type: command
       variant: hit
       shortDesc: Burn, Discard 1
-      abilities:
-        - burn
-        - discard
     - name: C-Beam
       type: install
       variant: turret
@@ -649,9 +643,6 @@ neonclave:
       attack: 6
       defense: 2
       shortDesc: Intimidate 2, Pierce 2
-      abilities:
-        - intimidate
-        - pierce
     - name: Schema Drifter
       type: operator
       variant: program
@@ -659,26 +650,16 @@ neonclave:
       attack: 2
       defense: 4
       shortDesc: Rapid, Harvest 2 - Database
-      abilities:
-        - harvest
-        - rapid
     - name: Codecarver
       costYen: 4
       type: contract
       variant: knowledge
       shortDesc: Flash, Harvest 4 - Database, Niche Owner
-      abilities:
-        - flash
-        - harvest
-        - niche
     - name: Rock
       type: contract
       variant: gear
       costYen: 1
       shortDesc: Renewable, 0 Disarm
-      abilities:
-        - renewable
-        - disarm
     - name: Laser Pod
       type: install
       variant: turret
@@ -686,8 +667,6 @@ neonclave:
       attack: 4
       defense: 1
       shortDesc: Kaizen 1
-      abilities:
-        - kaizen
     - name: Thermite Queen
       type: operator
       variant: drone
@@ -696,76 +675,53 @@ neonclave:
       defense: 3
       datab: 3
       shortDesc: 3 Hinder, Steal
-      abilities:
-        - hinder
-        - steal
     - name: Yok.ai
       type: asset
       variant: AI
       costYen: 6
       defense: 2
       shortDesc: Camo, Durable, Gain 2 Yen End of Turn
-      abilities:
-        - camo
-        - durable
       yen: 4
     - name: Silveria Securities
       type: asset
       variant: investment
-      costYen: 4
+      costYen: 5
       defense: 3
       costMw: 2
-      shortDesc: 1 Preprod, Gain 1 Yen End of Turn, Durable
-      abilities:
-        - preprod
-
-        - durable
+      shortDesc: 1 Preprod, Gain 2 Yen End of Turn, Durable
       yen: 4
-    - name: Silverian Silk
+    - name: Silverian Whisper
       type: mod
       variant: training
       costYen: 3
       defense: 3
       costMw: 1
-      abilities:
-        - durable
     - name: Silverian Shuriken
       type: mod
       variant: gear
       costYen: 1
       attack: 2
       costMw: 1
-      shortDesc: brute
-      abilities:
-        - brute
+      shortDesc: Brute
     - name: Mist Raptor
       type: operator
       variant: drone
       costYen: 5
-      attack: 4
+      attack: 5
       defense: 4
-      shortDesc: Rapid, Camo, Pierce 1
-      abilities:
-        - rapid
-        - camo
-        - pierce
+      shortDesc: Rapid, Camo
     - name: Mist Bank
       type: install
       variant: wall
       costYen: 4
       defense: 4
       shortDesc: Parry 4
-      abilities:
-        - parry
     - name: Titanium Bollards
       type: install
       variant: wall
       costYen: 3
       defense: 6
       shortDesc: 2 Preprod, Durable
-      abilities:
-        - durable
-        - preprod
     - name: Shimem
       type: install
       variant: program
@@ -782,17 +738,13 @@ neonclave:
       shortDesc: Camo, Gain 1 Mw, start of turn.
       abilities:
         - camo
-
     - name: Kozaic
-      type: asset
-      variant: AI
+      type: wall
+      variant: firewall
       costYen: 5
+      defense: 5
       datab: 2
       shortDesc: Analytics, 1 Shield
-      abilities:
-        - analytics
-        - shield
-      yen: 2
     - name: Hemm 868
       type: mod
       variant: gear
@@ -891,20 +843,15 @@ neonclave:
       costYen: 3
       defense: 5
       shortDesc: 2 Yen Gain 1 Yen End of Turn, Parry
-      abilities:
-        - parry
       yen: 1
-    - name: Darwin's Bunker
+    - name: Darwin Gyro
       type: install
-      variant: drone
+      variant: sensor
       costYen: 3
       attack: 3
       defense: 3
       datab: 3
       shortDesc: 1 Track, 1 Alert, 1 Datab Gain 1 Attack
-      abilities:
-        - track
-        - alert
 
     - name: Biotubule Plating
       type: mod
@@ -959,11 +906,10 @@ neonclave:
       shortDesc: Camo, 0 Track
     - name: Netwell
       costYen: 4
-      type: asset
-      variant: program
-      defense: 2
+      type: install
+      variant: gateway
+      defense: 4
       shortDesc: Siphon 1 on Engage, Analytics 1 Datab
-      yen: 2
     - name: Autotaxi
       type: operator
       variant: vehicle
@@ -1067,10 +1013,10 @@ neonclave:
       shortDesc: Camo, Overkill 2
     - name: Faraday Fence
       type: install
-      variant: wall
+      variant: firewall
       costYen: 2
       defense: 4
-      shortDesc: 0 Alert, Niche Program
+      shortDesc: 0 Alert
     - name: Delphit Radome
       type: install
       variant: sensor
@@ -1111,12 +1057,13 @@ neonclave:
       attack: 3
       defense: 3
       shortDesc: Pierce 3, Steal
-    - name: Sequence Swarm
-      type: asset
-      variant: program
+    - name: Shaper Sense
+      type: install
+      variant: firewall
       costYen: 3
-      attack: 6
-      defense: 3
+      defense: 6
+      datab: 1
+      shortDesc: 1 Neosense
     - name: Autorail
       type: asset
       variant: production
