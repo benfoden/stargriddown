@@ -420,7 +420,7 @@ export const ABILITIES = {
     logic: "onFirstApproach",
   },
   disrupt: {
-    desc: "The first card this Engages is Disabled this turn (Pay X Yen).",
+    desc: "The first card this Engages is Disabled this turn (Pay X Yen or Datab).",
     yen: 0,
     abilityType: "active",
     logic: "onFirstEngage",
