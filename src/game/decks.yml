@@ -1,32 +1,162 @@
 villedge:
   description: >
-    A deck focused on low-cost, rapid deployment with a focus on renewable 
+    A deck focused on attack with renewable 
     and rapid abilities.
-  totalCount: 50
+  totalCardCount: 50
+  cards:
 
 wicket:
   description: >
-    A deck with a focus on high-impact, strategic plays with a mix of traps and high-cost cards.
+    A deck with a focus on traps and high-cost cards.
+  totalCardCount: 50
+  cards:
 
 scali:
   description: >
-    A deck focused on producing and using bionics.
+    A deck focused on production and bionics.
+  totalCardCount: 50
+  cards:
 
-neonclave:
+neoch:
   description: >
-    centralized, deep tech, neo-normative
-    focuses on advanced AI, nanotech, and quantum computing.
+    A deck focused on AI,and quantum computing.
+  totalCardCount: 50
+  cards:
 
  unsorted:
   decription: cards that need sorting into decks.
   cards:
-    - name: J. Kim
+    - name: Cesium Beam Tower
+      type: install
+      variant: turret
+      costYen: 8
+      attack: 10
+      defense: 6
+      shortDesc: 0 Disrupt, Scan on Engage
+    - name: Q-Torii
+      costYen: 8
+      type: install
+      variant: gateway
+      defense: 8
+      attack: 8
+      datab: 3
+      shortDesc: 3 Lock card on First Engage, Harvest 1 Datab
+    - name: Diamond Chip Cluster
+      costYen: 8
+      type: asset
+      variant: datacenter
+      defense: 8
+      shortDesc: Add 4 Datab End of Turn
+      yen: 4
+    - name: GX-8A
+      costYen: 8
+      type: operator
+      variant: robot
+      attack: 6
+      defense: 6
+      datab: 4
+      shortDesc: Durable, 1 Neosense, 2 Datab Disrupt
+    - name: Crown of Kingfishers
+      costYen: 8
+      type: operator
+      variant: animal
+      attack: 5
+      defense: 9
+      shortDesc: Rapid, Siphon 3 on Overcome
+    - name: JY Kim
       type: operator
       variant: human
-      costYen: 5
+      costYen: 8 
+      attack: 9
+      defense: 9
+      datab: 1
+      shortDesc: Resilient 3
+    - name: Windbine Fleet
+      costYen: 8
+      type: asset
+      variant: production
+      shortDesc: 0 Shield, Add 4Mw start of turn
+      yen: 4
+    - name: Green Dragon Vase
+      costYen: 8
+      type: asset
+      variant: investment
+      shortDesc: Siphon 4 on Overcome, Clout 4 Asset
+      yen: 6
+    - name: Floworm
+      type: operator
+      variant: program
+      costYen: 7
       attack: 5
-      defense: 4
-      shortDesc: Parry 2, Resilient 2
+      defense: 3
+      datab: 2
+      shortDesc: Disorder, 2 Brute
+    - name: Condor-Mk5
+      costYen: 7
+      type: operator
+      variant: drone  
+      attack: 7
+      defense: 8
+      datab: 4
+      shortDesc: 2 Disarm
+    - name: Tetranis
+      costYen: 7
+      type: install
+      variant: firewall
+      defense: 7
+      attack: 3
+      shortDesc: 0 Alert, Parry 8
+    - name: Thermite Queen
+      type: operator
+      variant: drone
+      costYen: 7
+      attack: 6
+      defense: 3
+      datab: 3
+      shortDesc: 3 Hinder, Steal
+    - name: Vuln 703
+      costYen: 7
+      type: command
+      variant: knowledge
+      shortDesc: 0 Flash, 0 Hinder, Remove 3 Datab on Engage
+    - name: Tsukimon
+      type: install
+      variant: gateway
+      costYen: 7
+      attack: 7
+      defense: 7
+      shortDesc: Intimidate 3 
+    - name: P-HEL
+      costYen: 7
+      type: mod
+      variant: gear
+      attack: 5
+      datab: 2
+      shortDesc: 2 Track, Niche Vehicle
+    - name: Benkei Barrier
+      costYen: 7
+      type: install
+      variant: wall
+      defense: 9
+      shortDesc: 0 Shield, 6 Parry
+    - name: Underground Relay
+      costYen: 7
+      type: install
+      variant: sensor
+      defense: 1
+      shortDesc: Add 3 Datab on Engage, Durable
+    - name: Neunerves
+      costYen: 7
+      type: mod
+      variant: bionic
+      defense: 6
+      shortDesc: Add 3 Attack on Engage
+    - name: Reparoids
+      costYen: 7
+      type: mod
+      variant: substance
+      defense: 3
+      shortDesc: Resilient 6
     - name: Momo
       type: operator
       variant: human
@@ -91,13 +221,7 @@ neonclave:
       costMw: 0
       defense: 5
       shortDesc: Harvest 1 Mw
-    - name: Atrianium
-      costYen: 7
-      type: install
-      variant: firewall
-      defense: 7
-      attack: 5
-      shortDesc: 0 Alert, Parry 3
+   
     - name: Spydar
       costYen: 3
       type: install
@@ -120,12 +244,6 @@ neonclave:
       variant: gear
       costYen: 6
       shortDesc: Rapid, Renewable
-    - name: Turbine Fleet
-      costYen: 8
-      type: asset
-      variant: production
-      shortDesc: Add 3Mw start of turn 
-      yen: 4
     - name: Emerald Tea Farm
       costYen: 5
       type: asset
@@ -174,13 +292,7 @@ neonclave:
       costYen: 6
       type: contract
       shortDesc: 2 Datab Add 6 Yen, Renewable
-    - name: Green Dragon Vase
-      costYen: 8
-      type: asset
-      variant: investment
-      costMw: 2
-      shortDesc: 1 Preprod, Clout 4 Asset
-      yen: 6
+    
     - name: Venus
       costYen: 1
       type: asset
@@ -194,13 +306,7 @@ neonclave:
       type: asset
       variant: trap
       shortDesc: Trap - Remove 2 Attack 2 Defense
-    - name: Empressfisher
-      type: operator
-      variant: animal
-      costYen: 8
-      attack: 6
-      defense: 4
-      shortDesc: Rapid, Siphon 1 on Overcome
+
     - name: DU Shovel
       type: mod
       variant: gear
@@ -467,14 +573,6 @@ neonclave:
       type: install
       variant: firewall
       shortDesc: Trap - Attack 4 Harvest 2 to Database
-    - name: Quantum One
-      costYen: 8
-      type: install
-      variant: gateway
-      defense: 8
-      attack: 4
-      datab: 4
-      shortDesc: 4 Lock card on Engage, Harvest 2 Self
     - name: Eavesdroplet
       costYen: 3
       type: install
@@ -514,14 +612,6 @@ neonclave:
       costYen: 4
       defense: 2
       shortDesc: Camo, Add 2 Datab on Approach
-    - name: Overflow Stator
-      type: operator
-      variant: program
-      costYen: 7
-      attack: 5
-      defense: 3
-      datab: 2
-      shortDesc: Disorder, 2 Brute
     - name: Carbon Fiberknit
       costYen: 2
       type: mod
@@ -586,13 +676,7 @@ neonclave:
       type: command
       variant: hit
       shortDesc: Burn, Discard 1
-    - name: C-Beam
-      type: install
-      variant: turret
-      costYen: 8
-      attack: 6
-      defense: 2
-      shortDesc: Intimidate 2, Pierce 2 
+
     - name: Schema Drifter
       type: operator
       variant: program
@@ -617,14 +701,6 @@ neonclave:
       attack: 4
       defense: 1
       shortDesc: Kaizen 1
-    - name: Thermite Queen
-      type: operator
-      variant: drone
-      costYen: 7
-      attack: 6
-      defense: 3
-      datab: 3
-      shortDesc: 3 Hinder, Steal
     - name: Yok.ai
       type: asset
       variant: AI
@@ -697,14 +773,6 @@ neonclave:
       attack: 2
       datab: 2
       shortDesc: 2 Neosense
-    - name: mala X8
-      type: operator
-      variant: robot
-      costYen: 8
-      attack: 6
-      defense: 4
-      datab: 4
-      shortDesc: 2 Neosense, 2 Disarm
     - name: Slimblade
       costYen: 5
       type: operator
@@ -741,11 +809,6 @@ neonclave:
       datab: 4
       shortDesc: 1 Alert, Add 2 Datab Start of Turn, Transfer 2 Datab to Database End of Turn
       yen: 4
-    - name: Vuln 703
-      costYen: 7
-      type: command
-      variant: knowledge
-      shortDesc: 0 Flash, 0 Hinder, Remove 3 Datab on Engage
     - name: Role Escalator
       type: operator
       variant: program
@@ -950,13 +1013,6 @@ neonclave:
       datab: 3
       yen: 3
       shortDesc: Pay 1 Mw Draw 1 End of Turn
-    - name: Tsukimon
-      type: install
-      variant: gateway
-      costYen: 7
-      attack: 7
-      defense: 7
-      shortDesc: Intimidate 3 
     - name: Somascavenge
       type: command
       variant: knowledge
@@ -989,13 +1045,6 @@ neonclave:
       type: contract
       variant: knowledge
       shortDesc: Scan, Renewable
-    - name: P-HEL
-      costYen: 7
-      type: mod
-      variant: gear
-      attack: 5
-      datab: 2
-      shortDesc: 2 Track, Niche Vehicle
     - name: Hotaru Swarm
       costYen: 5
       type: operator

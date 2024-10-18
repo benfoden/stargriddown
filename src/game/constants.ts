@@ -781,7 +781,7 @@ export const UNRELEASEDABILITIES = {
     ruleSet: "-1",
   },
   scan: {
-    desc: "At start of turn, look at the top 3 Cards in your deck. Add 1 to your hand and place the other 2 on the bottom.",
+    desc: "Look at the top 3 Cards in your deck. Add 1 to your hand and place the other 2 on the bottom. At T logic or timing.",
     abilityType: "active",
     cards: 3,
     logic: "startOfTurn",
