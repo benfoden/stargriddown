@@ -155,8 +155,141 @@ neoch:
       costYen: 7
       type: mod
       variant: substance
+      attack: 1
       defense: 3
-      shortDesc: Resilient 6
+      shortDesc: Resilient 5
+    - name: Cellsleeve
+      costYen: 6
+      type: mod
+      variant: gear
+      shortDesc: Rapid, Renewable
+    - name: Metaphore
+      costYen: 6
+      type: contract
+      shortDesc: Pay 2 Yen Add 4 Datab Start of Turn
+    - name: The Barber
+      costYen: 6
+      type: operator
+      variant: human
+      attack: 5
+      defense: 9
+      shortDesc: Intimidate 4
+    - name: Rezzed Auroch
+      costYen: 6
+      type: operator
+      variant: animal
+      attack: 6
+      defense: 6
+      shortDesc: Parry 3, Pierce 3
+      flavor: Aurochs are hardy animals.
+    - name: Ayumi
+      costYen: 6
+      type: operator
+      variant: human
+      attack: 6
+      defense: 6
+      shortDesc: Siphon 3 on Engage
+    - name: Thermocomposter
+      costYen: 6
+      type: asset
+      variant: production
+      defense: 2
+      shortDesc: 2 Preprod, Add 2 Yen start of turn
+      yen: 3
+    - name: Bioscraper
+      costYen: 6
+      type: asset
+      variant: sensor
+      defense: 3
+      datab: 3
+      shortDesc: Pay 3 Datab Disrupt on Engage, Harvest 3 Datab to Self on Overcome
+      yen: 3
+    - name: Nanitea
+      costYen: 6
+      type: mod
+      variant: substance
+      shortDesc: Camo, Piercing 3 
+    - name: Damocles Dome
+      costYen: 6
+      type: install
+      variant: wall
+      attack: 2
+      defense: 6
+      shortDesc: 2 Shield, Parry 2
+    - name: Floating Forum
+      costYen: 6
+      type: asset
+      variant: datacenter
+      attack: 1
+      defense: 2
+      shortDesc: Add 1 Datab Start of turn, Clout 1 Program
+    - name: Yok.ai
+      costYen: 6
+      type: asset
+      variant: AI
+      defense: 3
+      datab: 3
+      shortDesc: Camo, Add 3 Datab to Database on Approach
+      yen: 4
+    - name: Root Particle
+      costYen: 6
+      type: contract
+      variant: knowledge
+      datab: 4
+      shortDesc: 4 Track, Pay 2 Datab Remove 2 Defense from Target
+    - name: Role Escalator
+      type: operator
+      variant: program
+      costYen: 6
+      attack: 6
+      defense: 2
+      shortDesc: Kaizen 2 Defense, Resilient 2, Crack 2 on Overcome
+    - name: Staff Corpion
+      type: operator
+      variant: robot
+      costYen: 6
+      attack: 3
+      defense: 3
+      shortDesc: Durable, Pierce 5
+    - name: Cloudian
+      type: install
+      variant: gateway
+      costYen: 6
+      defense: 4
+      attack: 4
+      datab: 2
+      shortDesc: Disrupt 1, 1 Alert
+    - name: Vsports League
+      type: asset
+      variant: investment
+      costYen: 6
+      costMw: 2
+      datab: 2
+      shortDesc: Add 4 Yen end of turn
+      yen: 4
+   - name: G.H.O.S.T.
+      type: operator
+      variant: program
+      costYen: 6
+      costMw: 2
+      attack: 6
+      defense: 6
+      flavor: "Great Horned Owl Security Technologies, Inc."
+      shortDesc: Camo, Overkill 2
+   - name: Octobot
+      type: operator
+      variant: robot
+      costYen: 6
+      attack: 3
+      defense: 3
+      shortDesc: Pierce 3, Steal
+  - name: Crobar
+      costYen: 5
+      type: operator
+      variant: robot
+      attack: 7
+      defense: 4
+      shortDesc: Piercing 3, Resilient 1
     - name: Momo
       type: operator
       variant: human
@@ -239,11 +372,6 @@ neoch:
       variant: bionic
       costYen: 2
       shortDesc: Alert 1
-    - name: Cellsleeve
-      type: mod
-      variant: gear
-      costYen: 6
-      shortDesc: Rapid, Renewable
     - name: Emerald Tea Farm
       costYen: 5
       type: asset
@@ -288,10 +416,6 @@ neoch:
       type: command
       variant: delta
       shortDesc: 0 Disrupt, Remove 4 Datab
-    - name: Metaphore
-      costYen: 6
-      type: contract
-      shortDesc: 2 Datab Add 6 Yen, Renewable
     
     - name: Venus
       costYen: 1
@@ -337,13 +461,7 @@ neoch:
       variant: firewall
       defense: 3
       shortDesc: 1 Disrupt
-    - name: The Barber
-      costYen: 6
-      type: operator
-      variant: human
-      attack: 5
-      defense: 7
-      shortDesc: Intimidate 3
+   
     - name: Iza
       costYen: 3
       type: operator
@@ -351,14 +469,6 @@ neoch:
       attack: 4
       defense: 2
       shortDesc: Rapid, Siphon 2 on Overcome
-    - name: Rezzed Auroch
-      type: operator
-      variant: animal
-      costYen: 6
-      attack: 6
-      defense: 6
-      shortDesc: Parry 3, Pierce 3
-      flavor: Aurochs are hardy animals.
     - name: Static Sink
       costYen: 2
       type: asset
@@ -389,20 +499,6 @@ neoch:
       attack: 3
       defense: 3
       shortDesc: Camo
-    - name: Amia
-      costYen: 6
-      type: operator
-      variant: human
-      attack: 6
-      defense: 4
-      shortDesc: Harvest 3 to Database
-    - name: Crobar
-      type: operator
-      variant: robot
-      costYen: 6
-      attack: 8
-      defense: 4
-      shortDesc: Piercing 4, Resilient 2
     - name: Hyper Quad
       costYen: 4
       attack: 2
@@ -452,13 +548,7 @@ neoch:
       costYen: 2
       defense: 2
       shortDesc: Durable
-    - name: Thermocomposter
-      costYen: 6
-      type: asset
-      variant: production
-      defense: 2
-      shortDesc: 2 Preprod, Add 2 Yen start of turn
-      yen: 3
+    
     - name: Bio Mark
       costYen: 2
       type: command
@@ -470,14 +560,6 @@ neoch:
       variant: production
       defense: 2
       shortDesc: Add 1 Mw start of turn, Renewable
-      yen: 3
-    - name: Bioscraper
-      costYen: 6
-      type: asset
-      variant: production
-      defense: 3
-      datab: 3
-      shortDesc: Add 3 Datab end of turn
       yen: 3
     - name: Bionics Fab
       costYen: 3
@@ -527,11 +609,6 @@ neoch:
       costYen: 4
       defense: 1
       shortDesc: Renewable
-    - name: Nanitea
-      type: mod
-      variant: substance
-      costYen: 6
-      shortDesc: Camo, Piercing 3 
     - name: Lee Tecnich
       costYen: 4
       type: operator
@@ -587,13 +664,6 @@ neoch:
       defense: 1
       shortDesc: Analytics 2 Yen
       yen: 2
-    - name: Damocles Dome
-      type: install
-      variant: wall
-      costYen: 6
-      attack: 2
-      defense: 6
-      shortDesc: 2 Shield, Parry 2
     - name: Code Poncho
       type: install
       variant: firewall
@@ -664,13 +734,6 @@ neoch:
       variant: trap
       costYen: 3
       shortDesc: Trap - Attack 3 Burn
-    - name: Floating Forum
-      type: asset
-      variant: datacenter
-      costYen: 6
-      attack: 1
-      defense: 2
-      shortDesc: Add 1 Datab Start of turn, Clout 1 Program
     - name: Chute 'em
       costYen: 5
       type: command
@@ -701,13 +764,6 @@ neoch:
       attack: 4
       defense: 1
       shortDesc: Kaizen 1
-    - name: Yok.ai
-      type: asset
-      variant: AI
-      costYen: 6
-      defense: 2
-      shortDesc: Camo, Durable, Add 2 Yen End of Turn
-      yen: 4
     - name: Silveria Securities
       type: asset
       variant: investment
@@ -780,12 +836,7 @@ neoch:
       attack: 6
       defense: 4
       shortDesc: Rapid, Piercing 2
-    - name: Root Particle
-      costYen: 6
-      type: contract
-      variant: knowledge
-      datab: 4
-      shortDesc: 4 Track, Pay 2 Datab Remove 2 Defense from Target
+
     - name: Remote Reset
       costYen: 1
       costControl: 1
@@ -809,13 +860,6 @@ neoch:
       datab: 4
       shortDesc: 1 Alert, Add 2 Datab Start of Turn, Transfer 2 Datab to Database End of Turn
       yen: 4
-    - name: Role Escalator
-      type: operator
-      variant: program
-      costYen: 6
-      attack: 6
-      defense: 2
-      shortDesc: Kaizen 2 Defense, Resilient 2, Crack 2 on Overcome
     - name: Skyhook
       type: asset
       variant: datacenter
@@ -912,13 +956,6 @@ neoch:
       attack: 4
       defense: 4
       shortDesc: Rapid, Niche Sensor Program AI
-    - name: Staff Corpion
-      type: operator
-      variant: robot
-      costYen: 6
-      attack: 3
-      defense: 3
-      shortDesc: Durable, Pierce 5
     - name: Geothermal Matrix
       type: asset
       variant: production
@@ -941,27 +978,11 @@ neoch:
       defense: 2
       shortDesc: Parry 2, Add 2 Yen End of Turn
       yen: 2
-    - name: Cloudian
-      type: install
-      variant: gateway
-      costYen: 6
-      defense: 4
-      attack: 4
-      datab: 2
-      shortDesc: Disrupt 1, 1 Alert
     - name: Reconfig
       costYen: 2
       type: command
       variant: recall
       shortDesc: Remove 2 Datab 4 Attack
-    - name: Vsports League
-      type: asset
-      variant: investment
-      costYen: 6
-      costMw: 2
-      datab: 2
-      shortDesc: Add 4 Yen end of turn
-      yen: 4
     - name: Nightingale Bridge
       costYen: 4
       type: install
@@ -977,15 +998,6 @@ neoch:
       defense: 2
       datab: 2
       shortDesc: 2 Track
-    - name: G.H.O.S.T.
-      type: operator
-      variant: program
-      costYen: 6
-      costMw: 2
-      attack: 6
-      defense: 6
-      flavor: "Great Horned Owl Security Technologies, Inc."
-      shortDesc: Camo, Overkill 2
     - name: Faraday Fence
       type: install
       variant: firewall
@@ -1018,13 +1030,6 @@ neoch:
       variant: knowledge
       costYen: 1
       shortDesc: Draw 1, Renewable
-    - name: Octobot
-      type: operator
-      variant: robot
-      costYen: 6
-      attack: 3
-      defense: 3
-      shortDesc: Pierce 3, Steal
     - name: Shaper Sense
       type: install
       variant: firewall

@@ -420,7 +420,7 @@ export const ABILITIES = {
     logic: "onFirstApproach",
   },
   disrupt: {
-    desc: "The first card this Engages is Disabled this turn (Pay X Yen or Datab).",
+    desc: "Target card is Disabled this turn (Pay X Yen or Datab), based on T logic.",
     yen: 0,
     abilityType: "active",
     logic: "onFirstEngage",
@@ -466,7 +466,7 @@ export const ABILITIES = {
     logic: "onOvercome",
   },
   harvest: {
-    desc: "Transfer X Datab or Mw to this card, or to your Database, or to your Grid from an opponent Card with Datab after this Overcomes it, up to X as available.",
+    desc: "Transfer X Datab or Mw to this card, or to your Database, or to your Grid from an opponent Card with Datab, up to X as available when T happens.",
     abilityType: "passive",
     targetType: "self",
     datab: 0,
