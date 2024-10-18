@@ -707,6 +707,15 @@ export const ABILITIES = {
     desc: "This can engage with other Biological cards.",
     abilityType: "status",
   },
+  clout: {
+    desc: "Buy X card type from the shop for Y less Yen.",
+    abilityType: "passive",
+    yen: 0,
+  },
+  burn: {
+    desc: "Remove all Mods on target Card.",
+    abilityType: "active",
+  },
 };
 
 // --- -1 UNRELEASEDABILITIES
@@ -766,12 +775,6 @@ export const UNRELEASEDABILITIES = {
     abilityType: "passive",
     ruleSet: "-1",
   },
-  clout: {
-    desc: "Buy X card type from the shop for Y less Yen.",
-    abilityType: "passive",
-    yen: 0,
-    ruleSet: "-1",
-  },
   peek: {
     desc: "Pay X Datab or Yen and target Slot is Revealed and if it has a card, that card is now Up.",
     abilityType: "active",
@@ -804,11 +807,6 @@ export const UNRELEASEDABILITIES = {
     desc: "All cards in target Stack or Team lose X Datab.",
     abilityType: "active",
     datab: 1,
-    ruleSet: "-1",
-  },
-  burn: {
-    desc: "Remove all Mods on target Card.",
-    abilityType: "active",
     ruleSet: "-1",
   },
   hide: {
