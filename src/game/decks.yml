@@ -189,7 +189,12 @@ neoch:
       defense: 6
       shortDesc: Parry 3, Pierce 3
       flavor: Aurochs are hardy animals.
-    - name: Ayumi
+    - name: Spam Artist
+      costYen: 6
+      type: contract
+      variant: knowledge
+      shortDesc: 0 Track, Gain 3 Yen when you play this. Single Use.
+    - name: Gys
       costYen: 6
       type: operator
       variant: human
@@ -405,13 +410,30 @@ neoch:
       attack: 5
       defense: 4
       shortDesc: Crack 2 on Overcome
-      flavor: "Slam 'n Jam"
-    - name: Momo
+      flavor: "POG!"
+    - name: Fire Drill
+      costYen: 5
+      type: command
+      variant: recall
+      shortDesc: Crack 2, Add 1 Defense on Engage 
+    - name: Momo-chan
       type: operator
       variant: human
-      costYen: 3
-      attack: 4
-      defense: 2
+      costYen: 5
+      attack: 9
+      defense: 1
+      datab: 1
+      shortDesc: 1 Flash, 1 Key
+    - name: RAM Radio
+      costYen: 5
+      type: command
+      variant: knowledge
+      shortDesc: 0 Key, 0 Disrupt, 0 Disarm
+    - name: Thorium Drum
+      costYen: 5
+      type: asset
+      variant: production
+      shortDesc:  1 Preprod, Add 2 Mw start of turn.
     - name: Takenoko
       type: operator
       variant: robot
@@ -419,16 +441,25 @@ neoch:
       attack: 2
       defense: 2
       shortDesc: Renewable
-    - name: Swipe RAM Radio
-      costYen: 3
-      type: command
-      variant: knowledge
-      shortDesc: 1 Datab Disrupt
     - name: Pine Needle
       costYen: 1
       type: command
       variant: knowledge
       shortDesc: Remove 3 Datab on Engage
+    - name: Hunter
+      costYen: 1
+      type: operator
+      variant: human
+      attack: 2
+      shortDesc: Rapid
+    - name: Clerk
+      costYen: 1
+      type: operator
+      variant: human
+      attack: 1
+      defense: 1
+      datab: 1
+      shortDesc: 1 Brute
     - name: Ecoship
       costYen: 2
       costMw: 0
@@ -438,12 +469,40 @@ neoch:
       shortDesc: Add 1 yen end of turn. 
       yen: 2
     - name: Microhydro
-      costYen: 3
+      costYen: 2
       type: asset
       variant: production
-      shortDesc: 1 Preprod, Add 1 Mw start of turn.
-      mw: 1
-      yen: 2
+      costMw: 0
+      shortDesc: 2 Preprod, Add 2 Mw start of turn.
+      yen: 1
+    - name: Malamute
+      costYen: 1
+      type: operator
+      variant: animal
+      attack: 1
+      defense: 2
+      shortDesc: Parry 1
+    - name: Hidrone
+      costYen: 1
+      type: operator
+      variant: drone
+      attack: 1
+      defense: 1
+      shortDesc: 0 Alert
+    - name: RTG
+      costYen: 1
+      costMw: 0
+      type: asset
+      variant: production
+      shortDesc: 2 Preprod, Add 1 Mw start of turn.
+      yen: 3
+    - name: Ping
+      costYen: 1
+      type: operator
+      variant: program
+      defense: 1
+      attack: 1
+      shortDesc: 1 Neosense
     - name: Bicycle
       type: operator
       variant: vehicle
@@ -489,6 +548,12 @@ neoch:
       variant: bionic
       costYen: 2
       shortDesc: Alert 1
+    - name: Electrifence
+      costYen: 2
+      type: install
+      variant: wall
+      attack: 2
+      defense: 4
     - name: Overgrown Tetrapods
       costYen: 3
       costMw: 0
@@ -510,11 +575,6 @@ neoch:
       attack: 2
       flavor: "Stings in 10 milliseconds, and every 10 milliseconds after that."
       shortDesc: 1 Preprod, Intimidate 1
-    - name: Fire Drill
-      costYen: 5
-      type: command
-      variant: recall
-      shortDesc: Crack 2, Add 1 Defense on Engage 
     - name: Tactical EMP
       costYen: 4
       type: command
@@ -655,7 +715,7 @@ neoch:
       type: asset
       variant: production
       defense: 2
-      shortDesc: Add 1 Mw start of turn, Renewable
+      shortDesc: Add 2 Mw start of turn
       yen: 3
     - name: Bionics Fab
       costYen: 3
@@ -837,9 +897,9 @@ neoch:
       variant: knowledge
       shortDesc: Flash, Harvest 4 - Database, Niche Owner
     - name: Rock
+      costYen: 1
       type: contract
       variant: gear
-      costYen: 1
       shortDesc: Renewable, 0 Disarm
     - name: Laser Pod
       type: install
@@ -1079,6 +1139,19 @@ neoch:
       datab: 4
       yen: 4
       shortDesc: 2 Preprod, Add 1 Mw 1 Yen 1 Datab End of Turn
+
+    - name: Artificial Grove
+      costYen: 1
+      type: install
+      variant: wall
+      defense: 1
+      shortDesc: 0 Alert
+    - name: Dyke
+      costYen: 1
+      type: install
+      variant: wall
+      defense: 3
+    
 
     - name: Hoversled
       type: operator
