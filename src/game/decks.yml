@@ -158,6 +158,13 @@ neoch:
       attack: 1
       defense: 3
       shortDesc: Resilient 5
+    - name: Adaptapanel Array
+      costYen: 7
+      type: asset
+      variant: production
+      defense: 2
+      shortDesc: Add 3 Mw Start of Turn, Parry 2
+      yen: 4
     - name: Cellsleeve
       costYen: 6
       type: mod
@@ -267,7 +274,7 @@ neoch:
       datab: 2
       shortDesc: Add 4 Yen end of turn
       yen: 4
-   - name: G.H.O.S.T.
+    - name: G.H.O.S.T.
       type: operator
       variant: program
       costYen: 6
@@ -276,20 +283,129 @@ neoch:
       defense: 6
       flavor: "Great Horned Owl Security Technologies, Inc."
       shortDesc: Camo, Overkill 2
-   - name: Octobot
+    - name: Solarbine Field
+      costYen: 6
+      type: asset
+      variant: production
+      yen: 2
+      datab: 1
+      shortDesc: Add 2 Mw Start of turn 
+    - name: Octobot
       type: operator
       variant: robot
       costYen: 6
       attack: 3
       defense: 3
       shortDesc: Pierce 3, Steal
-  - name: Crobar
+    - name: Dogzilla
+      type: operator
+      variant: animal
+      costYen: 5
+      attack: 5
+      defense: 5
+      shortDesc: 0 Alert, Intimidate 2
+    - name: Korobo
       costYen: 5
       type: operator
       variant: robot
       attack: 7
-      defense: 4
+      defense: 3
       shortDesc: Piercing 3, Resilient 1
+    - name: Emerald Tea Farm
+      costYen: 5
+      type: asset
+      variant: production
+      shortDesc: Add 2 Yen End of turn, Analytics 1 Yen
+      yen: 3
+    - name: Scamspiracy
+      costYen: 5
+      type: contract
+      variant: tag
+      datab: 2
+      shortDesc: 2 Track, 2 Hinder
+    - name: Chute 'em
+      costYen: 5
+      type: command
+      variant: hit
+      shortDesc: Burn, Discard 1
+    - name: Silveria Securities
+      type: asset
+      variant: investment
+      costYen: 5
+      defense: 3
+      costMw: 2
+      shortDesc: 1 Preprod, Add 2 Yen End of Turn, Durable
+      yen: 4
+    - name: Mist Raptor
+      costYen: 5
+      type: operator
+      variant: drone
+      attack: 5
+      defense: 4
+      shortDesc: Rapid, Camo
+    - name: Kozaic
+      costYen: 5
+      type: wall
+      variant: firewall
+      defense: 5
+      datab: 2
+      shortDesc: Analytics, 1 Shield
+    - name: Slimblade
+      costYen: 5
+      type: operator
+      variant: drone
+      attack: 6
+      defense: 4
+      shortDesc: Rapid, Piercing 2
+    - name: Autotaxi
+      type: operator
+      variant: vehicle
+      costYen: 5
+      attack: 1
+      defense: 5
+      shortDesc: Rapid, Renewable
+    - name: Sam Tyr
+      type: operator
+      variant: human
+      costYen: 5
+      attack: 6
+      defense: 2
+      shortDesc: Intimidate 2, Analytics 1 Yen
+    - name: Polyglot
+      type: operator
+      variant: program
+      costYen: 5
+      attack: 4
+      defense: 4
+      shortDesc: Rapid, Niche Sensor Program AI
+    - name: Gokul Advisors
+      costYen: 5
+      type: contract
+      variant: knowledge
+      flavor: "Gokul Advisors, LLC. since 2024"
+      shortDesc: Scan, Renewable
+    - name: Hotaru Swarm
+      costYen: 5
+      type: operator
+      variant: drone
+      attack: 4
+      defense: 5
+      shortDesc: Rapid, 2 Yen Disrupt 
+    - name: Hayabusa
+      costYen: 5
+      type: operator
+      variant: animal
+      attack: 8
+      defense: 4
+      shortDesc: Intimidate 3
+    - name: Slammer
+      costYen: 5
+      type: operator
+      variant: program
+      attack: 5
+      defense: 4
+      shortDesc: Crack 2 on Overcome
+      flavor: "Slam 'n Jam"
     - name: Momo
       type: operator
       variant: human
@@ -341,7 +457,7 @@ neoch:
       variant: bionic
       shortDesc: Key 1
       costDatab: 1
-    - name: Mycofiber Router
+    - name: Mycofiber Cocktail
       type: mod
       variant: substance
       costYen: 4
@@ -352,8 +468,9 @@ neoch:
       type: install
       variant: gateway
       costMw: 0
-      defense: 5
-      shortDesc: Harvest 1 Mw
+      defense: 4
+      attack: 2
+      shortDesc: Harvest 1 Mw on Engage
    
     - name: Spydar
       costYen: 3
@@ -372,12 +489,6 @@ neoch:
       variant: bionic
       costYen: 2
       shortDesc: Alert 1
-    - name: Emerald Tea Farm
-      costYen: 5
-      type: asset
-      variant: production
-      shortDesc: Add 2 Yen End of turn, Analytics 1 Yen
-      yen: 3
     - name: Overgrown Tetrapods
       costYen: 3
       costMw: 0
@@ -399,18 +510,11 @@ neoch:
       attack: 2
       flavor: "Stings in 10 milliseconds, and every 10 milliseconds after that."
       shortDesc: 1 Preprod, Intimidate 1
-    - name: Dogzilla
-      type: operator
-      variant: animal
-      costYen: 4
-      attack: 3
-      defense: 3
-      shortDesc: Alert 1
     - name: Fire Drill
-      costYen: 4
+      costYen: 5
       type: command
       variant: recall
-      shortDesc: Crack 2, Add 2 Defense on Engage 
+      shortDesc: Crack 2, Add 1 Defense on Engage 
     - name: Tactical EMP
       costYen: 4
       type: command
@@ -447,14 +551,6 @@ neoch:
       costYen: 4
       type: contract
       shortDesc: 1 Sneak
-    - name: Solarbine Field
-      costYen: 4
-      type: asset
-      variant: production
-      defense: 2
-      yen: 2
-      datab: 1
-      shortDesc: Add 2 Mw Start of turn 
     - name: Microtazer
       costYen: 4
       type: install
@@ -617,12 +713,6 @@ neoch:
       defense: 2
       datab: 2
       shortDesc: Harvest 2 Datab to Self, 2 Disarm
-    - name: Scamspiracy
-      costYen: 5
-      type: contract
-      variant: tag
-      datab: 2
-      shortDesc: 2 Track, 2 Hinder
     - name: Serval
       costYen: 3
       type: operator
@@ -734,12 +824,6 @@ neoch:
       variant: trap
       costYen: 3
       shortDesc: Trap - Attack 3 Burn
-    - name: Chute 'em
-      costYen: 5
-      type: command
-      variant: hit
-      shortDesc: Burn, Discard 1
-
     - name: Schema Drifter
       type: operator
       variant: program
@@ -764,14 +848,6 @@ neoch:
       attack: 4
       defense: 1
       shortDesc: Kaizen 1
-    - name: Silveria Securities
-      type: asset
-      variant: investment
-      costYen: 5
-      defense: 3
-      costMw: 2
-      shortDesc: 1 Preprod, Add 2 Yen End of Turn, Durable
-      yen: 4
     - name: Silverian Whisper
       type: mod
       variant: training
@@ -785,13 +861,6 @@ neoch:
       attack: 2
       costMw: 1
       shortDesc: Brute
-    - name: Mist Raptor
-      type: operator
-      variant: drone
-      costYen: 5
-      attack: 5
-      defense: 4
-      shortDesc: Rapid, Camo
     - name: Mist Bank
       type: install
       variant: wall
@@ -815,13 +884,6 @@ neoch:
       variant: production
       costYen: 4
       shortDesc: Camo, Add 1 Mw start of turn
-    - name: Kozaic
-      type: wall
-      variant: firewall
-      costYen: 5
-      defense: 5
-      datab: 2
-      shortDesc: Analytics, 1 Shield
     - name: Hemm 868
       costYen: 3
       type: mod
@@ -829,13 +891,6 @@ neoch:
       attack: 2
       datab: 2
       shortDesc: 2 Neosense
-    - name: Slimblade
-      costYen: 5
-      type: operator
-      variant: drone
-      attack: 6
-      defense: 4
-      shortDesc: Rapid, Piercing 2
 
     - name: Remote Reset
       costYen: 1
@@ -929,33 +984,12 @@ neoch:
       variant: gateway
       defense: 4
       shortDesc: Siphon 1 on Engage, Analytics 1 Datab
-    - name: Autotaxi
-      type: operator
-      variant: vehicle
-      costYen: 5
-      attack: 1
-      defense: 5
-      shortDesc: Rapid, Renewable
     - name: Kei Van
       type: operator
       variant: vehicle
       costYen: 1
       defense: 2
       shortDesc: Resilient 2
-    - name: Conrad Tyr
-      type: operator
-      variant: human
-      costYen: 5
-      attack: 6
-      defense: 2
-      shortDesc: Intimidate 2, Analytics 1 Yen
-    - name: Polyglot
-      type: operator
-      variant: program
-      costYen: 5
-      attack: 4
-      defense: 4
-      shortDesc: Rapid, Niche Sensor Program AI
     - name: Geothermal Matrix
       type: asset
       variant: production
@@ -1045,25 +1079,7 @@ neoch:
       datab: 4
       yen: 4
       shortDesc: 2 Preprod, Add 1 Mw 1 Yen 1 Datab End of Turn
-    - name: Gokul Advisors
-      costYen: 5
-      type: contract
-      variant: knowledge
-      shortDesc: Scan, Renewable
-    - name: Hotaru Swarm
-      costYen: 5
-      type: operator
-      variant: drone
-      attack: 4
-      defense: 2
-      shortDesc: Rapid, Disrupt 2
-    - name: Hayabusa
-      costYen: 5
-      type: operator
-      variant: animal
-      attack: 8
-      defense: 4
-      shortDesc: Intimidate 3
+
     - name: Hoversled
       type: operator
       variant: vehicle
@@ -1078,87 +1094,3 @@ neoch:
       attack: 4
       defense: 2
       shortDesc: Rapid, Disrupt 2
-
-later:
-  description: >
-    A deck focused on the future of the game.
-
-  cards:
-    - name: XOculars
-      type: mod
-      variant: bionic
-      costYen: 2
-      shortDesc: 2 Datab Convert 2 Attack
-    - name: Slammer
-      costYen: 5
-      type: operator
-      variant: program
-      attack: 3
-      defense: 2
-      shortDesc: Crack 2 on Overcome
-    - name: Drone drop
-      costYen: 2
-      type: command
-      variant: recall
-      shortDesc: Pierce 3, Remove 1 Defense on Engage
-    - name: Repetera
-      type: asset
-      variant: datacenter
-      costYen: 4
-      defense: 2
-      costMw: 0
-      datab: 1
-      shortDesc: Host, Shard - Blade
-      yen: 2
-    - name: Terablade
-      costMw: 1
-      type: mod
-      variant: gear
-      shortDesc: Add 1 Datab End of turn
-    - name: Adapanel Array
-      costYen: 3
-      type: asset
-      variant: production
-      shortDesc: Add 1 Mw end of turn
-      yen: 3
-    - name: Nanomatic Crucible
-      costYen: 2
-      type: asset
-      variant: production
-      shortDesc: 1 Preprod, 1 Yen Add 1 Mw start of turn.
-      yen: 2
-    - name: Buried Clause
-      costYen: 2
-      type: contract
-      variant: recall
-      shortDesc: Hide
-    - name: Hiveline
-      costYen: 4
-      type: asset
-      variant: datacenter
-      defense: 2
-      shortDesc: Link 2 datab
-      yen: 2
-    - name: Beehive
-      costYen: 3
-      type: install
-      variant: turret
-      attack: 2
-      defense: 1
-      shortDesc: Shard 3 Bees
-    - name: Bee
-      costYen: 1
-      type: mod
-      variant: upgrade
-      attack: 2
-      defense: 1
-      shortDesc: Niche Beehive 
-    - name: LoRadio
-      type: mod
-      variant: bionic
-      costYen: 1
-      shortDesc: Link 1 Datab
-    - name: Dr. Taylor
-      costYen: 3
-      type: contract
-      shortDesc: Niche Bionic, Add 1 Attack on all your Bionic mods.

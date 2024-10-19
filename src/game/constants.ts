@@ -243,6 +243,7 @@ export const AllAbilities = [
   "unreleased",
   "singleUse",
   "add",
+  "erase",
   "remove",
   "neosense",
   "disorder",
@@ -354,6 +355,7 @@ export const ActiveAbilities = [
   "flash",
   "crack",
   "track",
+  "erase",
 ] as const;
 export type ActiveAbility = (typeof ActiveAbilities)[number];
 
@@ -375,6 +377,9 @@ export const StatusAbilities = [
   "exploited",
   "blocked",
   "shielded",
+  "erased",
+  "powered",
+  "unpowered",
 ] as const;
 export type StatusAbility = (typeof StatusAbilities)[number];
 
@@ -567,6 +572,12 @@ export const ABILITIES = {
     costDatab: 0,
     logic: "onEngage",
   },
+  erase: {
+    desc: "Permanently remove target card from the game (Pay X of Y units at T logic).",
+    abilityType: "active",
+    costControl: 0,
+    logic: "onFirstEngage",
+  },
   preprod: {
     desc: "This card is Disabled until X turns after it is played.",
     abilityType: "passive",
@@ -617,6 +628,22 @@ export const ABILITIES = {
   external: {
     desc: "Can only target your opponent and/or your opponent's cards.",
     abilityType: "passive",
+  },
+  singleUse: {
+    desc: "This card or ability can only be played once and then it is Erased.",
+    abilityType: "passive",
+  },
+  powered: {
+    desc: "This card or ability is powered (its Mw cost is paid this turn).",
+    abilityType: "status",
+  },
+  unpowered: {
+    desc: "This card or ability is not powered (its Mw cost is not paid this turn).",
+    abilityType: "status",
+  },
+  erased: {
+    desc: "This card or ability is permanently removed from the match.",
+    abilityType: "status",
   },
   transfer: {
     desc: "Move X points from one card to another at T timing.",

@@ -1,0 +1,71 @@
+later:
+  description: >
+    A deck focused on the future of the game.
+
+  cards:
+    - name: XOculars
+      type: mod
+      variant: bionic
+      costYen: 2
+      shortDesc: 2 Datab Convert 2 Attack
+    - name: Drone drop
+      costYen: 2
+      type: command
+      variant: recall
+      shortDesc: Pierce 3, Remove 1 Defense on Engage
+    - name: Repetera
+      type: asset
+      variant: datacenter
+      costYen: 4
+      defense: 2
+      costMw: 0
+      datab: 1
+      shortDesc: Host, Shard - Blade
+      yen: 2
+    - name: Terablade
+      costMw: 1
+      type: mod
+      variant: gear
+      shortDesc: Add 1 Datab End of turn
+
+    - name: Nanomatic Crucible
+      costYen: 2
+      type: asset
+      variant: production
+      shortDesc: 1 Preprod, 1 Yen Add 1 Mw start of turn.
+      yen: 2
+    - name: Buried Clause
+      costYen: 2
+      type: contract
+      variant: recall
+      shortDesc: Hide
+    - name: Hiveline
+      costYen: 4
+      type: asset
+      variant: datacenter
+      defense: 2
+      shortDesc: Link 2 datab
+      yen: 2
+    - name: Beehive
+      costYen: 3
+      type: install
+      variant: turret
+      attack: 2
+      defense: 1
+      shortDesc: Shard 3 Bees
+    - name: Bee
+      costYen: 1
+      type: mod
+      variant: upgrade
+      attack: 2
+      defense: 1
+      shortDesc: Niche Beehive
+    - name: LoRadio
+      type: mod
+      variant: bionic
+      costYen: 1
+      shortDesc: Link 1 Datab
+    - name: Dr. Taylor
+      costYen: 3
+      type: contract
+      shortDesc: Niche Bionic, Add 1 Attack on all your Bionic mods.
