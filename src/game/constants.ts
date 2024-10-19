@@ -43,7 +43,7 @@ export type OperatorVariant = (typeof OperatorVariants)[number];
 export const InstallVariants = [
   "gateway",
   "program",
-  "drone",
+  "firewall",
   "wall",
   "sensor",
   "turret",
@@ -424,6 +424,11 @@ export const ABILITIES = {
     abilityType: "passive",
     logic: "onFirstApproach",
   },
+  clout: {
+    desc: "Buy X card type from the shop for Y less Yen.",
+    abilityType: "passive",
+    yen: 0,
+  },
   disrupt: {
     desc: "Target card is Disabled this turn (Pay X Yen or Datab), based on T logic.",
     yen: 0,
@@ -733,11 +738,6 @@ export const ABILITIES = {
   biological: {
     desc: "This can engage with other Biological cards.",
     abilityType: "status",
-  },
-  clout: {
-    desc: "Buy X card type from the shop for Y less Yen.",
-    abilityType: "passive",
-    yen: 0,
   },
   burn: {
     desc: "Remove all Mods on target Card.",

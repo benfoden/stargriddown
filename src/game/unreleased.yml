@@ -10,16 +10,6 @@ later:
       attack: 6
       defense: 3
       shortDesc: Pierce 3, Parry 3
-    - name: XOculars
-      type: mod
-      variant: bionic
-      costYen: 2
-      shortDesc: 2 Datab Convert 2 Attack
-    - name: Drone drop
-      costYen: 2
-      type: command
-      variant: recall
-      shortDesc: Pierce 3, Remove 1 Defense on Engage
     - name: Repetera
       type: asset
       variant: datacenter

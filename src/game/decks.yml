@@ -4,14 +4,133 @@ villedge:
     and rapid abilities.
   totalCardCount: 50
 
-  8 8
+
+
+mod 33
+operator 46
+asset 37, trap 11
+install 45
+contract 20
+command 20
+
+8 8
 7 12
 6 20
-5 24
-4 32
-3 32
-2 28
-1 24
+5 24 + 4 more
+4 32 + 4 more
+3 32 + 4 more
+2 28 + 2 more
+1 24 + 2 more
+
+add 4 mods
+add 2 installs
+add 8 contracts
+add 6 commands
+
+4 mods - 2 2's 2 1's X
+8 contracts - 2 4's, 1 5, 3 3's X
+6 commands - 1 4, 2 5's, 1 3, X
+2 installs - 1 4, 1 5 X
+
+    - name: Sonic Shoulders
+      costYen: 1
+      type: mod
+      variant: gear
+      defense: 2
+      shortDesc: Parry 2
+    - name: Cutter
+      costYen: 1
+      type: mod
+      variant: gear
+      defense: 1
+      shortDesc: Pierce 3
+    - name: Diffuser Routine
+      costYen: 2
+      type: mod
+      variant: bionic
+      defense: 1
+      shortDesc: 0 Disarm Single Use
+    - name: Fluid Recycler
+      costYen: 2
+      type: mod
+      variant: bionic
+      defense: 2
+      shortDesc: Kaizen 2 Defense
+    - name: IR Gimbal
+      type: install
+      variant: sensor
+      costYen: 4
+      defense: 1
+      shortDesc: 0 Neosense, Harvest 1 Datab to Database
+    - name: Glint
+      costYen: 5
+      type: install
+      variant: firewall
+      defense: 4
+      attack: 4
+      shortDesc: Parry 4, Draw 1 on Engage Single Use
+    - name: Nano Hammer
+      costYen: 4
+      type: contract
+      variant: bolster
+      shortDesc: Add 4 Defense 2 Attack to Target Card, 0 Flash
+    - name: Gaman Saseru
+      costYen: 4
+      type: contract
+      variant: knowledge
+      shortDesc: Harvest 1 Mw 3 Datab from target card to your Database
+    - name: Record Lookup
+      costYen: 5
+      type: contract
+      variant: recall
+      shortDesc: 0 Flash, 0 Track
+    - name: Page Dr. Greenthumb
+      costYen: 3
+      type: contract
+      variant: hit
+      shortDesc: Gain 3 Yen, Renewable
+    - name: Upcycle
+      costYen: 3
+      variant: contract
+      type: bolster
+      shortDesc: Remove 3 damage, Add 3 defense and 6 Datab to Target Card.
+    - name: Spark Noise
+      costYen: 3
+      variant: contract
+      type: bolster
+      shortDesc: Remove 3 Attack, Disrupt on engage.
+    - name: Overload
+      costYen: 3
+      variant: command
+      type: bolster
+      shortDesc: Siphon 2 Datab from Target card to Database.
+    - name: Sensor Visor
+      type: mod
+      variant: bionic
+      costYen: 1
+      shortDesc: Pay 2 Datab Convert 2 Attack
+   - name: Drone drop
+      costYen: 2
+      type: command
+      variant: recall
+      shortDesc: Pierce 3, Remove 1 Defense on Engage
+    - name: Power Analysis
+      costYen: 5
+      type: contract
+      variant: delta
+      shortDesc: Add 2 Mw to your Grid this turn.
+    - name: Inspiring Speech
+      costYen: 4
+      type: contract
+      variant: bolster
+      shortDesc: Add 4 defense and 4 attack to target card this turn.
+    - name: Heat Signature
+      costYen: 4
+      type: contract
+      variant: hit
+      shortDesc: 0 Neosense, 0 Disrupt, Gain 4 Yen on Engage.
+
+
 
 180 /4 = 45
 
@@ -524,10 +643,10 @@ neoch:
       attack: 1
       defense: 2
       shortDesc: Parry 1
-    - name: Helmet HUD
+    - name: HUD Goggles
+      costYen: 1
       type: mod
       variant: gear
-      costYen: 1
       defense: 1
       attack: 1
       shortDesc: Parry 2, Niche Human
@@ -600,10 +719,10 @@ neoch:
       attack: 2
       defense: 2
       shortDesc: Camo
-    - name: NV Goggles
+    - name: NV Implants
       type: mod
-      variant: bionic
       costYen: 2
+      variant: bionic
       shortDesc: Alert 1
     - name: Electrifence
       costYen: 2
@@ -652,9 +771,9 @@ neoch:
       shortDesc: Trap - Remove 2 Attack 2 Defense
 
     - name: DU Shovel
+      costYen: 4
       type: mod
       variant: gear
-      costYen: 4
       attack: 5
       shortDesc: Overkill 1
     - name: Halcyon Lightworks
@@ -667,7 +786,7 @@ neoch:
       costYen: 4
       type: contract
       shortDesc: 1 Sneak
-    - name: Microtazer
+    - name: Microtaz
       costYen: 4
       type: install
       variant: firewall
@@ -1019,10 +1138,10 @@ neoch:
       type: contract
       variant: program
       shortDesc: Flash, Scan
-    - name: LuAg PP
+    - name: LuAG Handlaser
       type: mod
-      variant: gear
       costYen: 2
+      variant: gear 
       shortDesc: Pierce 4
     - name: Nodal Souls
       type: asset
@@ -1160,7 +1279,7 @@ neoch:
       costYen: 4
       defense: 2
       datab: 1
-      shortDesc: 0 Neosense, Analytics 2 Datab
+      shortDesc: 1 Neosense, Analytics 2 Datab
     - name: Polymeril Spray
       type: mod
       variant: substance
@@ -1181,9 +1300,9 @@ neoch:
       costYen: 1
       shortDesc: Draw 1, Renewable
     - name: Shaper Sense
+      costYen: 3
       type: install
       variant: firewall
-      costYen: 3
       defense: 6
       datab: 1
       shortDesc: 1 Neosense
