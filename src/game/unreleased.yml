@@ -3,6 +3,13 @@ later:
     A deck focused on the future of the game.
 
   cards:
+    - name: Thornbill
+      costYen: 5
+      type: operator
+      variant: drone
+      attack: 6
+      defense: 3
+      shortDesc: Pierce 3, Parry 3
     - name: XOculars
       type: mod
       variant: bionic

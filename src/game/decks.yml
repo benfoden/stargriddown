@@ -3,6 +3,19 @@ villedge:
     A deck focused on attack with renewable 
     and rapid abilities.
   totalCardCount: 50
+
+  8 8
+7 12
+6 20
+5 24
+4 32
+3 32
+2 28
+1 24
+
+180 /4 = 45
+
+20 more.
   cards:
 
 wicket:
@@ -429,11 +442,40 @@ neoch:
       type: command
       variant: knowledge
       shortDesc: 0 Key, 0 Disrupt, 0 Disarm
-    - name: Thorium Drum
+    - name: Nano TOKAMAK
       costYen: 5
       type: asset
+      costMw: 0
       variant: production
       shortDesc:  1 Preprod, Add 2 Mw start of turn.
+    - name: Grey Wolf
+      costYen: 5
+      type: operator
+      variant: animal
+      attack: 5
+      defense: 3
+      shortDesc: Rapid, Pierce 3
+    - name: Cyberian HE
+      costYen: 5
+      type: operator
+      variant: robot
+      attack: 3
+      defense: 6
+      datab: 4
+      shortDesc: 2 Datab Disrupt on Engage
+    - name: DMAX Pump
+      costYen: 5
+      type: mod
+      variant: bionic
+      attack: 5
+      defense: 1
+      shortDesc: Rapid, 0 Alert
+    - name: Azidoazide Mortar
+      costYen: 5
+      type: install
+      variant: turret
+      attack: 6
+      shortDesc: 1 Yen Disrupt on Engage, Remove 6 Attack on Engage
     - name: Takenoko
       type: operator
       variant: robot
@@ -595,7 +637,6 @@ neoch:
       type: command
       variant: delta
       shortDesc: 0 Disrupt, Remove 4 Datab
-    
     - name: Venus
       costYen: 1
       type: asset
