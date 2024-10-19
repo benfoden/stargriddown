@@ -482,6 +482,21 @@ neoch:
       attack: 1
       defense: 2
       shortDesc: Parry 1
+    - name: Helmet HUD
+      type: mod
+      variant: gear
+      costYen: 1
+      defense: 1
+      attack: 1
+      shortDesc: Parry 2, Niche Human
+    - name: Premium Boss
+      costYen: 1
+      type: asset
+      variant: AI
+      datab: 1
+      shortDesc: Scan on Start of Turn
+      yen: 2
+
     - name: Hidrone
       costYen: 1
       type: operator
