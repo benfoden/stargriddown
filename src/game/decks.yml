@@ -4,138 +4,9 @@ villedge:
     and rapid abilities.
   totalCardCount: 50
 
+    
 
 
-mod 33
-operator 46
-asset 37, trap 11
-install 45
-contract 20
-command 20
-
-8 8
-7 12
-6 20
-5 24 + 4 more
-4 32 + 4 more
-3 32 + 4 more
-2 28 + 2 more
-1 24 + 2 more
-
-add 4 mods
-add 2 installs
-add 8 contracts
-add 6 commands
-
-4 mods - 2 2's 2 1's X
-8 contracts - 2 4's, 1 5, 3 3's X
-6 commands - 1 4, 2 5's, 1 3, X
-2 installs - 1 4, 1 5 X
-
-    - name: Sonic Shoulders
-      costYen: 1
-      type: mod
-      variant: gear
-      defense: 2
-      shortDesc: Parry 2
-    - name: Cutter
-      costYen: 1
-      type: mod
-      variant: gear
-      defense: 1
-      shortDesc: Pierce 3
-    - name: Diffuser Routine
-      costYen: 2
-      type: mod
-      variant: bionic
-      defense: 1
-      shortDesc: 0 Disarm Single Use
-    - name: Fluid Recycler
-      costYen: 2
-      type: mod
-      variant: bionic
-      defense: 2
-      shortDesc: Kaizen 2 Defense
-    - name: IR Gimbal
-      type: install
-      variant: sensor
-      costYen: 4
-      defense: 1
-      shortDesc: 0 Neosense, Harvest 1 Datab to Database
-    - name: Glint
-      costYen: 5
-      type: install
-      variant: firewall
-      defense: 4
-      attack: 4
-      shortDesc: Parry 4, Draw 1 on Engage Single Use
-    - name: Nano Hammer
-      costYen: 4
-      type: contract
-      variant: bolster
-      shortDesc: Add 4 Defense 2 Attack to Target Card, 0 Flash
-    - name: Gaman Saseru
-      costYen: 4
-      type: contract
-      variant: knowledge
-      shortDesc: Harvest 1 Mw 3 Datab from target card to your Database
-    - name: Record Lookup
-      costYen: 5
-      type: contract
-      variant: recall
-      shortDesc: 0 Flash, 0 Track
-    - name: Page Dr. Greenthumb
-      costYen: 3
-      type: contract
-      variant: hit
-      shortDesc: Gain 3 Yen, Renewable
-    - name: Upcycle
-      costYen: 3
-      variant: contract
-      type: bolster
-      shortDesc: Remove 3 damage, Add 3 defense and 6 Datab to Target Card.
-    - name: Spark Noise
-      costYen: 3
-      variant: contract
-      type: bolster
-      shortDesc: Remove 3 Attack, Disrupt on engage.
-    - name: Overload
-      costYen: 3
-      variant: command
-      type: bolster
-      shortDesc: Siphon 2 Datab from Target card to Database.
-    - name: Sensor Visor
-      type: mod
-      variant: bionic
-      costYen: 1
-      shortDesc: Pay 2 Datab Convert 2 Attack
-   - name: Drone drop
-      costYen: 2
-      type: command
-      variant: recall
-      shortDesc: Pierce 3, Remove 1 Defense on Engage
-    - name: Power Analysis
-      costYen: 5
-      type: contract
-      variant: delta
-      shortDesc: Add 2 Mw to your Grid this turn.
-    - name: Inspiring Speech
-      costYen: 4
-      type: contract
-      variant: bolster
-      shortDesc: Add 4 defense and 4 attack to target card this turn.
-    - name: Heat Signature
-      costYen: 4
-      type: contract
-      variant: hit
-      shortDesc: 0 Neosense, 0 Disrupt, Gain 4 Yen on Engage.
-
-
-
-180 /4 = 45
-
-20 more.
-  cards:
 
 wicket:
   description: >
@@ -589,12 +460,125 @@ neoch:
       attack: 5
       defense: 1
       shortDesc: Rapid, 0 Alert
-    - name: Azidoazide Mortar
+    - name: Azidoazide Arbalest
       costYen: 5
       type: install
       variant: turret
       attack: 6
       shortDesc: 1 Yen Disrupt on Engage, Remove 6 Attack on Engage
+    - name: Harness
+      costYen: 1
+      type: mod
+      variant: gear
+      defense: 2
+      shortDesc: Parry 2
+    - name: Cutter
+      costYen: 1
+      type: mod
+      variant: gear
+      defense: 1
+      shortDesc: Pierce 3
+    - name: Disarm Routine
+      costYen: 1
+      type: mod
+      variant: bionic
+      datab: 1
+      shortDesc: 1 Disarm Single Use
+    - name: Fluid Recycler
+      costYen: 2
+      type: mod
+      variant: bionic
+      defense: 2
+      shortDesc: Kaizen 2 Defense
+    - name: IR Gimbal
+      type: install
+      variant: sensor
+      costYen: 4
+      defense: 1
+      shortDesc: 0 Neosense, Harvest 1 Datab to Database
+    - name: Glint
+      costYen: 5
+      type: install
+      variant: firewall
+      defense: 4
+      attack: 4
+      shortDesc: Parry 4, Draw 1 on Engage Single Use
+    - name: Nano Hammer
+      costYen: 4
+      type: contract
+      variant: bolster
+      shortDesc: Add 4 Defense 2 Attack to Target Card, 0 Flash
+    - name: Gaman Saseru
+      costYen: 4
+      type: contract
+      variant: knowledge
+      shortDesc: Harvest 1 Mw 3 Datab from target card to your Database
+    - name: Record Lookup
+      costYen: 5
+      type: contract
+      variant: recall
+      shortDesc: 0 Flash, 0 Track
+    - name: Page Dr. Greenthumb
+      costYen: 3
+      type: contract
+      variant: hit
+      shortDesc: Gain 3 Yen, Renewable
+    - name: Upcycle
+      costYen: 3
+      variant: contract
+      type: bolster
+      shortDesc: Remove 3 damage, Add 3 defense and 6 Datab to Target Card.
+    - name: Spark Noise
+      costYen: 3
+      variant: contract
+      type: bolster
+      shortDesc: Remove 3 Attack, Disrupt on engage.
+    - name: Overload
+      costYen: 3
+      variant: command
+      type: bolster
+      shortDesc: Siphon 2 Datab from Target card to Database.
+    - name: Sensor Visor
+      type: mod
+      variant: bionic
+      costYen: 1
+      shortDesc: Pay 2 Datab Convert 2 Attack
+   - name: Drop Drone
+      costYen: 2
+      type: operator
+      variant: drone
+      attack: 2
+      shortDesc: Pierce 3, Remove 1 Defense from Target card on Engage
+    - name: Power Analysis
+      costYen: 5
+      type: command
+      variant: delta
+      shortDesc: Add 2 Mw to your Grid this turn.
+    - name: Inspiring Speech
+      costYen: 4
+      type: contract
+      variant: bolster
+      shortDesc: Add 4 defense and 4 attack to target card this turn.
+    - name: Heat Ray
+      costYen: 5
+      type: install
+      variant: turret
+      attack: 5
+      defense: 1
+      shortDesc: 0 Disrupt on Engage
+    - name: Turnstile
+      costYen: 2
+      type: install
+      variant: gateway
+      defense: 2
+      attack: 2
+      shortDesc: Siphon 1 Yen on Engage
+    - name: Shatter Beam
+      costYen: 2
+      type: install
+      variant: sensor
+      defense: 4
+      shortDesc: Intimidate 2 on Engage
     - name: Takenoko
       type: operator
       variant: robot
@@ -703,14 +687,15 @@ neoch:
       type: install
       variant: gateway
       costMw: 0
-      defense: 4
-      attack: 2
+      defense: 3
+      attack: 3
       shortDesc: Harvest 1 Mw on Engage
    
     - name: Spydar
       costYen: 3
       type: install
       variant: sensor
+      defense: 3
       shortDesc: Alert 1, Track
     - name: Stealth Skiff
       costYen: 3
@@ -960,9 +945,8 @@ neoch:
       costYen: 4
       type: install
       variant: sensor
-      attack: 3
-      defense: 1
-      shortDesc: Draw 1 card on First Engage.
+      defense: 3
+      shortDesc: Draw 1 card on First Engage, 0 Alert
     - name: NV Eagle
       costYen: 4
       type: install
@@ -979,9 +963,8 @@ neoch:
       costYen: 3
       type: install
       variant: sensor
-      attack: 1
       defense: 3
-      shortDesc: Alert, Siphon 1
+      shortDesc: Alert, Siphon 1 on Approach
     - name: Help Desk
       type: asset
       variant: program
@@ -1164,10 +1147,9 @@ neoch:
       shortDesc: Pay 2 Yen Add 3 Yen End of Turn
       yen: 2
     - name: Darwin Gyro
+      costYen: 3
       type: install
       variant: sensor
-      costYen: 3
-      attack: 3
       defense: 3
       datab: 3
       shortDesc: 1 Track, 1 Alert, 1 Datab Add 1 Attack
@@ -1218,6 +1200,7 @@ neoch:
       type: install
       variant: gateway
       defense: 4
+      attack: 4
       shortDesc: Siphon 1 on Engage, Analytics 1 Datab
     - name: Kei Van
       type: operator

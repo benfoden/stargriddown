@@ -1,3 +1,29 @@
+// mod 33
+// operator 46
+// asset 37, trap 11
+// install 45
+// contract 20
+// command 20
+
+// 8 8
+// 7 12
+// 6 20
+// 5 28
+// 4 36
+// 3 36
+// 2 30
+// 1 28
+
+// add 4 mods
+// add 2 installs
+// add 8 contracts
+// add 6 commands
+
+// 4 mods - 2 2's 2 1's X
+// 8 contracts - 2 4's, 1 5, 3 3's X
+// 6 commands - 1 4, 2 5's, 1 3, X
+// 2 installs - 1 4, 1 5 X
+
 export const MATCHMODES = [
   "normal",
   "tournament",
