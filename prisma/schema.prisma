@@ -44,8 +44,8 @@ model Deck {
 model Card {
   id            String        @id @default(uuid())
   name          String
-  type          String        @default("operator")
-  variant       String        @default("digital")
+  type          String        @default("operator-1")
+  variant       String        @default("operator-variant-1")
   attributes    String?
   targetAttributes String?
   targetType       String?

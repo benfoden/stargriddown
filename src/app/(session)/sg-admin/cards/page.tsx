@@ -20,9 +20,9 @@ export default async function CardsPage({
 
   return (
     <div>
+      <FormMessage message={searchParams} />
       cards
       <div className="flex w-full flex-row items-start justify-center gap-4">
-        <FormMessage message={searchParams} />
         <aside className="flex flex-col gap-2">
           <details>
             <summary>Create Cards Json</summary>

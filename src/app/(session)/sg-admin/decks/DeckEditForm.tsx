@@ -2,7 +2,7 @@ import { type Deck } from "@prisma/client";
 import { Card } from "~/app/_components/Card";
 import FormButton from "~/app/_components/FormButton";
 import Input from "~/app/_components/Input";
-import { DECKTYPES } from "~/game/constants";
+import { DeckTypeNames } from "~/game/constants";
 import { api } from "~/trpc/server";
 import { encodedRedirect } from "~/utils/misc";
 
@@ -51,7 +51,7 @@ export default function DeckEditForm({ deck }: { deck?: Deck }) {
           required
         />
         <div className="flex flex-row gap-2">
-          {Object.values(DECKTYPES).map((deckType) => (
+          {Object.values(DeckTypeNames).map((deckType) => (
             <div key={deckType}>{deckType}</div>
           ))}
         </div>

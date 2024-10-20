@@ -1,10 +1,3 @@
-// mod 33
-// operator 46
-// asset 37, trap 11
-// install 45
-// contract 20
-// command 20
-
 // 8 8
 // 7 12
 // 6 20
@@ -13,16 +6,6 @@
 // 3 36
 // 2 32
 // 1 28
-
-// add 4 mods
-// add 2 installs
-// add 8 contracts
-// add 6 commands
-
-// 4 mods - 2 2's 2 1's X
-// 8 contracts - 2 4's, 1 5, 3 3's X
-// 6 commands - 1 4, 2 5's, 1 3, X
-// 2 installs - 1 4, 1 5 X
 
 export const MATCHMODES = [
   "normal",
@@ -40,6 +23,8 @@ export type MatchMode = (typeof MATCHMODES)[number];
 export type MatchRanking = (typeof MATCHRANKINGS)[number];
 
 export type MatchStatus = (typeof MATCHSTATUSES)[number];
+
+export const DeckTypeNames = ["market", "starting"] as const;
 
 export const CardTypeNames = [
   "operator",
@@ -165,100 +150,185 @@ export const CardSlots = [
 
 export type CardSlot = (typeof CardSlots)[number];
 
-export const CardAttributes = ["phyiscal", "digital", "agentic", "biological"];
+export const CardAttributes = [
+  "physical",
+  "digital",
+  "agentic",
+  "biological",
+] as const;
 
 export type CardAttribute = (typeof CardAttributes)[number];
 
 export type CardDetails = {
-  variants: Record<string, CardAttribute[]>;
+  name: string;
+  variants: { name: string; attributes: CardAttribute[] }[];
   playsTo?: string[];
 };
 
 export const CARDS: Record<CardTypeName, CardDetails> = {
   operator: {
-    variants: {
-      human: ["physical", "biological", "agentic"],
-      animal: ["physical", "biological"],
-      program: ["physical", "digital"],
-      robot: ["digital", "physical", "agentic"],
-      drone: ["digital", "physical"],
-      vehicle: ["digital", "physical"],
-    },
+    name: "operator",
     playsTo: ["stagingSlot"],
+    variants: [
+      {
+        name: "human",
+        attributes: ["physical", "biological", "agentic"],
+      },
+      {
+        name: "animal",
+        attributes: ["physical", "biological"],
+      },
+      {
+        name: "program",
+        attributes: ["physical", "digital"],
+      },
+      {
+        name: "robot",
+        attributes: ["digital", "physical", "agentic"],
+      },
+      {
+        name: "drone",
+        attributes: ["digital", "physical"],
+      },
+      {
+        name: "vehicle",
+        attributes: ["digital", "physical"],
+      },
+    ],
   },
   install: {
-    variants: {
-      gateway: ["physical", "digital"],
-      wall: ["physical"],
-      firewall: ["digital"],
-      program: ["digital"],
-      sensor: ["digital", "physical"],
-      turret: ["digital", "physical"],
-    },
+    name: "install",
     playsTo: ["installSlot"],
+    variants: [
+      {
+        name: "gateway",
+        attributes: ["physical", "digital"],
+      },
+      { name: "wall", attributes: ["physical"] },
+      { name: "firewall", attributes: ["digital"] },
+      { name: "program", attributes: ["digital"] },
+      {
+        name: "sensor",
+        attributes: ["digital", "physical"],
+      },
+      {
+        name: "turret",
+        attributes: ["digital", "physical"],
+      },
+    ],
   },
   asset: {
-    variants: {
-      production: ["physical"],
-      program: ["digital"],
-      AI: ["digital", "agentic"],
-      datacenter: ["digital", "physical"],
-      investment: ["digital"],
-      trap: ["physical"],
-    },
+    name: "asset",
     playsTo: ["assetSlot"],
+    variants: [
+      { name: "production", attributes: ["physical"] },
+      { name: "program", attributes: ["digital"] },
+      { name: "ai", attributes: ["digital", "agentic"] },
+      {
+        name: "datacenter",
+        attributes: ["digital", "physical"],
+      },
+      { name: "investment", attributes: ["digital"] },
+      { name: "trap", attributes: ["physical"] },
+    ],
   },
   cash: {
-    variants: {
-      "¥1": [],
-      "¥2": [],
-      "¥3": [],
-    },
+    name: "cash",
     playsTo: ["cashSlot"],
+    variants: [
+      { name: "¥1", attributes: [] },
+      { name: "¥2", attributes: [] },
+      { name: "¥3", attributes: [] },
+    ],
   },
   mod: {
-    variants: {
-      training: ["physical", "agentic", "biological"],
-      program: ["digital"],
-      upgrade: ["digital", "physical"],
-      gear: ["physical"],
-      bionic: ["biological"],
-      substance: ["biological", "physical"],
-    },
+    name: "mod",
     playsTo: ["operator"],
+    variants: [
+      {
+        name: "training",
+        attributes: ["physical", "agentic", "biological"],
+      },
+      { name: "program", attributes: ["digital"] },
+      {
+        name: "upgrade",
+        attributes: ["digital", "physical"],
+      },
+      { name: "gear", attributes: ["physical"] },
+      { name: "bionic", attributes: ["biological"] },
+      {
+        name: "substance",
+        attributes: ["biological", "physical"],
+      },
+    ],
   },
   contract: {
-    variants: {
-      hit: ["physical", "biological"],
-      tag: ["digital", "physical", "agentic"],
-      recall: ["physical", "digital"],
-      delta: ["digital"],
-      knowledge: ["digital", "agentic"],
-      bolster: ["physical"],
-    },
+    name: "contract",
+    variants: [
+      {
+        name: "hit",
+        attributes: ["physical", "biological"],
+      },
+      {
+        name: "tag",
+        attributes: ["digital", "physical", "agentic"],
+      },
+      {
+        name: "recall",
+        attributes: ["physical", "digital"],
+      },
+      { name: "delta", attributes: ["digital"] },
+      {
+        name: "knowledge",
+        attributes: ["digital", "agentic"],
+      },
+      { name: "bolster", attributes: ["physical"] },
+    ],
   },
   command: {
-    variants: {
-      hit: ["physical", "biological"],
-      tag: ["digital", "physical", "agentic"],
-      recall: ["physical", "digital"],
-      delta: ["digital"],
-      knowledge: ["digital", "agentic"],
-      bolster: ["physical"],
-    },
+    name: "command",
+    variants: [
+      {
+        name: "hit",
+        attributes: ["physical", "biological"],
+      },
+      {
+        name: "tag",
+        attributes: ["digital", "physical", "agentic"],
+      },
+      {
+        name: "recall",
+        attributes: ["physical", "digital"],
+      },
+      { name: "delta", attributes: ["digital"] },
+      {
+        name: "knowledge",
+        attributes: ["digital", "agentic"],
+      },
+      { name: "bolster", attributes: ["physical"] },
+    ],
   },
   leader: {
-    variants: {
-      human: ["biological"],
-    },
+    name: "leader",
+    variants: [{ name: "human", attributes: ["biological"] }],
   },
   hq: {
-    variants: {
-      tower: ["physical", "digital"],
-      camp: ["physical", "digital"],
-      bunker: ["physical", "digital"],
-      barge: ["physical", "digital"],
-    },
+    name: "hq",
+    variants: [
+      {
+        name: "tower",
+        attributes: ["physical", "digital"],
+      },
+      { name: "camp", attributes: ["physical", "digital"] },
+      {
+        name: "bunker",
+        attributes: ["physical", "digital"],
+      },
+      {
+        name: "barge",
+        attributes: ["physical", "digital"],
+      },
+    ],
   },
 };
 
