@@ -1,5 +1,1127 @@
 [
   {
+    "name": "Harness",
+    "costYen": 1,
+    "type": "mod",
+    "variant": "gear",
+    "defense": 2,
+    "shortDesc": "Parry 2"
+  },
+  {
+    "name": "Cutter",
+    "costYen": 1,
+    "type": "mod",
+    "variant": "gear",
+    "defense": 1,
+    "shortDesc": "Pierce 3"
+  },
+  {
+    "name": "Disarm Routine",
+    "costYen": 1,
+    "type": "mod",
+    "variant": "bionic",
+    "datab": 1,
+    "shortDesc": "1 Disarm Single Use"
+  },
+  {
+    "name": "Fluid Recycler",
+    "costYen": 2,
+    "type": "mod",
+    "variant": "bionic",
+    "defense": 2,
+    "shortDesc": "Kaizen 2 Defense"
+  },
+  {
+    "name": "IR Gimbal",
+    "type": "install",
+    "variant": "sensor",
+    "costYen": 4,
+    "defense": 1,
+    "shortDesc": "0 Neosense, Harvest 1 Datab to Database"
+  },
+  {
+    "name": "Glint",
+    "costYen": 5,
+    "type": "install",
+    "variant": "firewall",
+    "defense": 4,
+    "attack": 4,
+    "shortDesc": "Parry 4, Draw 1 on Engage Single Use"
+  },
+  {
+    "name": "Nano Hammer",
+    "costYen": 4,
+    "type": "contract",
+    "variant": "bolster",
+    "shortDesc": "Add 4 Defense 2 Attack to Target Card, 0 Flash"
+  },
+  {
+    "name": "Gaman Saseru",
+    "costYen": 4,
+    "type": "contract",
+    "variant": "knowledge",
+    "shortDesc": "Harvest 1 Mw 3 Datab from target card to your Database"
+  },
+  {
+    "name": "Record Lookup",
+    "costYen": 5,
+    "type": "contract",
+    "variant": "recall",
+    "shortDesc": "0 Flash, 0 Track"
+  },
+  {
+    "name": "Page Dr. Greenthumb",
+    "costYen": 3,
+    "type": "contract",
+    "variant": "hit",
+    "shortDesc": "Gain 3 Yen, Renewable"
+  },
+  {
+    "name": "Upcycle",
+    "costYen": 3,
+    "variant": "contract",
+    "type": "bolster",
+    "shortDesc": "Remove 3 damage, Add 3 defense and 6 Datab to Target Card."
+  },
+  {
+    "name": "Spark Noise",
+    "costYen": 3,
+    "variant": "contract",
+    "type": "bolster",
+    "shortDesc": "Remove 3 Attack, Disrupt on engage."
+  },
+  {
+    "name": "Overload",
+    "costYen": 3,
+    "variant": "command",
+    "type": "bolster",
+    "shortDesc": "Siphon 2 Datab from Target card to Database."
+  },
+  {
+    "name": "Sensor Visor",
+    "type": "mod",
+    "variant": "bionic",
+    "costYen": 1,
+    "shortDesc": "Pay 2 Datab Convert 2 Attack"
+  },
+  {
+    "name": "Drop Drone",
+    "costYen": 2,
+    "type": "operator",
+    "variant": "drone",
+    "attack": 2,
+    "shortDesc": "Pierce 3, Remove 1 Defense from Target card on Engage"
+  },
+  {
+    "name": "Power Analysis",
+    "costYen": 5,
+    "type": "command",
+    "variant": "delta",
+    "shortDesc": "Add 2 Mw to your Grid this turn."
+  },
+  {
+    "name": "Inspiring Speech",
+    "costYen": 4,
+    "type": "contract",
+    "variant": "bolster",
+    "shortDesc": "Add 4 defense and 4 attack to target card this turn."
+  },
+  {
+    "name": "Heat Ray",
+    "costYen": 5,
+    "type": "install",
+    "variant": "turret",
+    "attack": 5,
+    "defense": 1,
+    "shortDesc": "0 Disrupt on Engage"
+  },
+  {
+    "name": "Turnstile",
+    "costYen": 2,
+    "type": "install",
+    "variant": "gateway",
+    "defense": 2,
+    "attack": 2,
+    "shortDesc": "Siphon 1 Yen on Engage"
+  },
+  {
+    "name": "Shatter Beam",
+    "costYen": 2,
+    "type": "install",
+    "variant": "sensor",
+    "defense": 4,
+    "shortDesc": "Intimidate 2 on Engage"
+  },
+  {
+    "name": "Takenoko",
+    "type": "operator",
+    "variant": "robot",
+    "costYen": 2,
+    "attack": 2,
+    "defense": 2,
+    "shortDesc": "Renewable"
+  },
+  {
+    "name": "Pine Needle",
+    "costYen": 1,
+    "type": "command",
+    "variant": "knowledge",
+    "shortDesc": "Remove 3 Datab on Engage"
+  },
+  {
+    "name": "Hunter",
+    "costYen": 1,
+    "type": "operator",
+    "variant": "human",
+    "attack": 2,
+    "shortDesc": "Rapid"
+  },
+  {
+    "name": "Clerk",
+    "costYen": 1,
+    "type": "operator",
+    "variant": "human",
+    "attack": 1,
+    "defense": 1,
+    "datab": 1,
+    "shortDesc": "1 Brute"
+  },
+  {
+    "name": "Ecoship",
+    "costYen": 2,
+    "costMw": 0,
+    "type": "asset",
+    "variant": "production",
+    "defense": 1,
+    "shortDesc": "Add 1 yen end of turn.",
+    "yen": 2
+  },
+  {
+    "name": "Microhydro",
+    "costYen": 2,
+    "type": "asset",
+    "variant": "production",
+    "costMw": 0,
+    "shortDesc": "2 Preprod, Add 2 Mw start of turn.",
+    "yen": 1
+  },
+  {
+    "name": "Malamute",
+    "costYen": 1,
+    "type": "operator",
+    "variant": "animal",
+    "attack": 1,
+    "defense": 2,
+    "shortDesc": "Parry 1"
+  },
+  {
+    "name": "HUD Goggles",
+    "costYen": 1,
+    "type": "mod",
+    "variant": "gear",
+    "defense": 1,
+    "attack": 1,
+    "shortDesc": "Parry 2, Niche Human"
+  },
+  {
+    "name": "Premium Boss",
+    "costYen": 1,
+    "type": "asset",
+    "variant": "AI",
+    "datab": 1,
+    "shortDesc": "Scan on Start of Turn",
+    "yen": 2
+  },
+  {
+    "name": "Hidrone",
+    "costYen": 1,
+    "type": "operator",
+    "variant": "drone",
+    "attack": 1,
+    "defense": 1,
+    "shortDesc": "0 Alert"
+  },
+  {
+    "name": "RTG",
+    "costYen": 1,
+    "costMw": 0,
+    "type": "asset",
+    "variant": "production",
+    "shortDesc": "2 Preprod, Add 1 Mw start of turn.",
+    "yen": 3
+  },
+  {
+    "name": "Ping",
+    "costYen": 1,
+    "type": "operator",
+    "variant": "program",
+    "defense": 1,
+    "attack": 1,
+    "shortDesc": "1 Neosense"
+  },
+  {
+    "name": "Bicycle",
+    "type": "operator",
+    "variant": "vehicle",
+    "costYen": 1,
+    "attack": 1,
+    "defense": 1,
+    "shortDesc": "Rapid"
+  },
+  {
+    "name": "Subdermal IC",
+    "costYen": 1,
+    "type": "mod",
+    "variant": "bionic",
+    "shortDesc": "Key 1",
+    "costDatab": 1
+  },
+  {
+    "name": "Mycofiber Cocktail",
+    "type": "mod",
+    "variant": "substance",
+    "costYen": 4,
+    "defense": 1,
+    "shortDesc": "Renewable"
+  },
+  {
+    "name": "Polytunnel",
+    "costYen": 3,
+    "type": "install",
+    "variant": "gateway",
+    "costMw": 0,
+    "defense": 3,
+    "attack": 3,
+    "shortDesc": "Harvest 1 Mw on Engage"
+  },
+  {
+    "name": "Spydar",
+    "costYen": 3,
+    "type": "install",
+    "variant": "sensor",
+    "defense": 3,
+    "shortDesc": "Alert 1, Track"
+  },
+  {
+    "name": "Stealth Skiff",
+    "costYen": 3,
+    "type": "operator",
+    "variant": "vehicle",
+    "attack": 2,
+    "defense": 2,
+    "shortDesc": "Camo"
+  },
+  {
+    "name": "NV Implants",
+    "type": "mod",
+    "costYen": 2,
+    "variant": "bionic",
+    "shortDesc": "Alert 1"
+  },
+  {
+    "name": "Electrifence",
+    "costYen": 2,
+    "type": "install",
+    "variant": "wall",
+    "attack": 2,
+    "defense": 4
+  },
+  {
+    "name": "Overgrown Tetrapods",
+    "costYen": 3,
+    "costMw": 0,
+    "type": "install",
+    "variant": "wall",
+    "attack": 1,
+    "defense": 5
+  },
+  {
+    "name": "Living Wall",
+    "costYen": 2,
+    "type": "install",
+    "variant": "wall",
+    "attack": 1,
+    "defense": 4,
+    "shortDesc": "Resilient 1"
+  },
+  {
+    "name": "Pelletal",
+    "costYen": 1,
+    "type": "install",
+    "variant": "turret",
+    "attack": 2,
+    "flavor": "Stings in 10 milliseconds, and every 10 milliseconds after that.",
+    "shortDesc": "1 Preprod, Intimidate 1"
+  },
+  {
+    "name": "Tactical EMP",
+    "costYen": 4,
+    "type": "command",
+    "variant": "delta",
+    "shortDesc": "0 Disrupt, Remove 4 Datab"
+  },
+  {
+    "name": "Venus",
+    "costYen": 1,
+    "type": "asset",
+    "variant": "trap",
+    "attack": 1,
+    "defense": 1,
+    "shortDesc": "Trap - Add 2 Attack",
+    "costMw": 0
+  },
+  {
+    "name": "Clang Bang",
+    "costYen": 2,
+    "type": "asset",
+    "variant": "trap",
+    "shortDesc": "Trap - Remove 2 Attack 2 Defense"
+  },
+  {
+    "name": "DU Shovel",
+    "costYen": 4,
+    "type": "mod",
+    "variant": "gear",
+    "attack": 5,
+    "shortDesc": "Overkill 1"
+  },
+  {
+    "name": "Halcyon Lightworks",
+    "costYen": 2,
+    "costMw": 1,
+    "type": "contract",
+    "variant": "code",
+    "shortDesc": "1 Preprod, Draw 1 Start of Turn"
+  },
+  {
+    "name": "Industrial Holography",
+    "costYen": 4,
+    "type": "contract",
+    "shortDesc": "1 Sneak"
+  },
+  {
+    "name": "Microtaz",
+    "costYen": 4,
+    "type": "install",
+    "variant": "firewall",
+    "defense": 3,
+    "shortDesc": "1 Disrupt"
+  },
+  {
+    "name": "Iza",
+    "costYen": 3,
+    "type": "operator",
+    "variant": "human",
+    "attack": 4,
+    "defense": 2,
+    "shortDesc": "Rapid, Siphon 2 on Overcome"
+  },
+  {
+    "name": "Static Sink",
+    "costYen": 2,
+    "type": "asset",
+    "variant": "trap",
+    "shortDesc": "Trap - Defense 1 Harvest 1 Mw to Grid"
+  },
+  {
+    "name": "Quantum Fog",
+    "costYen": 3,
+    "type": "contract",
+    "variant": "program",
+    "attack": 3,
+    "shortDesc": "Camo, Disorder"
+  },
+  {
+    "name": "Dronedar",
+    "costYen": 4,
+    "type": "install",
+    "variant": "sensor",
+    "defense": 6,
+    "shortDesc": "Niche Drone, 0 Track"
+  },
+  {
+    "name": "Microthopter",
+    "costYen": 2,
+    "type": "operator",
+    "variant": "drone",
+    "attack": 3,
+    "shortDesc": "Camo"
+  },
+  {
+    "name": "Arctic Fox",
+    "type": "operator",
+    "variant": "animal",
+    "costYen": 3,
+    "attack": 3,
+    "defense": 3,
+    "shortDesc": "Camo"
+  },
+  {
+    "name": "Hyper Quad",
+    "costYen": 4,
+    "attack": 2,
+    "defense": 4,
+    "type": "operator",
+    "variant": "vehicle",
+    "shortDesc": "Emergency, Rapid"
+  },
+  {
+    "name": "Grey Goop",
+    "costYen": 4,
+    "type": "mod",
+    "variant": "substance",
+    "datab": 1,
+    "shortDesc": "Give target card Disarm 1"
+  },
+  {
+    "name": "Fan Jacket",
+    "costYen": 1,
+    "type": "mod",
+    "variant": "gear",
+    "defense": 1,
+    "lag": -1
+  },
+  {
+    "name": "Spinal Battery",
+    "costYen": 2,
+    "type": "mod",
+    "variant": "bionic",
+    "costMw": -1
+  },
+  {
+    "name": "Hyper Caps",
+    "costYen": 2,
+    "type": "mod",
+    "variant": "upgrade",
+    "flavor": "You'll get a kick out of this.",
+    "costMw": -1
+  },
+  {
+    "name": "Signal Fuse",
+    "type": "mod",
+    "variant": "gear",
+    "costYen": 3,
+    "datab": 0,
+    "defense": 0,
+    "shortDesc": "Harvest 2 Self, Pay 2 Datab Add 2 Defense"
+  },
+  {
+    "name": "Synapteria",
+    "type": "mod",
+    "variant": "substance",
+    "costYen": 3,
+    "defense": 1,
+    "shortDesc": "0 Disrupt"
+  },
+  {
+    "name": "Forsworn",
+    "type": "mod",
+    "variant": "substance",
+    "costYen": 2,
+    "defense": 2,
+    "shortDesc": "Durable"
+  },
+  {
+    "name": "Bio Mark",
+    "costYen": 2,
+    "type": "command",
+    "variant": "hit",
+    "shortDesc": "2 Track"
+  },
+  {
+    "name": "Nanomatic Turbine",
+    "costYen": 4,
+    "type": "asset",
+    "variant": "production",
+    "defense": 2,
+    "shortDesc": "Add 2 Mw start of turn",
+    "yen": 3
+  },
+  {
+    "name": "Bionics Fab",
+    "costYen": 3,
+    "type": "asset",
+    "variant": "production",
+    "defense": 1,
+    "shortDesc": "2 Preprod, Add 1 Yen end of turn",
+    "costMw": 3,
+    "yen": 3
+  },
+  {
+    "name": "Bleeding Edge",
+    "costYen": 3,
+    "costControl": 1,
+    "type": "mod",
+    "variant": "bionic",
+    "attack": 3,
+    "shortDesc": "Piercing 4"
+  },
+  {
+    "name": "Terminus",
+    "costYen": 3,
+    "type": "install",
+    "variant": "firewall",
+    "defense": 4,
+    "shortDesc": "1 Preprod, Parry 8"
+  },
+  {
+    "name": "Algean Reactor",
+    "costYen": 4,
+    "costDatab": 1,
+    "type": "asset",
+    "variant": "production",
+    "datab": 1,
+    "shortDesc": "Pay 1 Datab Add 2 Mw start of turn, Renewable",
+    "yen": 2
+  },
+  {
+    "name": "Regenie",
+    "costYen": 1,
+    "type": "install",
+    "variant": "firewall",
+    "defense": 3,
+    "shortDesc": "Resilient 1"
+  },
+  {
+    "name": "Sentient Colony",
+    "costYen": 4,
+    "type": "asset",
+    "variant": "AI",
+    "defense": 2,
+    "yen": 2,
+    "shortDesc": "Add 2 datab to target card"
+  },
+  {
+    "name": "Mycofiber",
+    "type": "mod",
+    "variant": "substance",
+    "costYen": 4,
+    "defense": 1,
+    "shortDesc": "Renewable"
+  },
+  {
+    "name": "Lee Tecnich",
+    "costYen": 4,
+    "type": "operator",
+    "variant": "human",
+    "attack": 4,
+    "defense": 2,
+    "datab": 2,
+    "shortDesc": "Harvest 2 Datab to Self, 2 Disarm"
+  },
+  {
+    "name": "Serval",
+    "costYen": 3,
+    "type": "operator",
+    "variant": "animal",
+    "attack": 3,
+    "defense": 2,
+    "flavor": "Catch you if I can",
+    "shortDesc": "Rapid, Pierce 1"
+  },
+  {
+    "name": "Audiophoria",
+    "costYen": 4,
+    "type": "install",
+    "variant": "sensor",
+    "defense": 3,
+    "shortDesc": "Draw 1 card on First Engage, 0 Alert"
+  },
+  {
+    "name": "NV Eagle",
+    "costYen": 4,
+    "type": "install",
+    "variant": "turret",
+    "attack": 4,
+    "defense": 2,
+    "shortDesc": "0 Alert, Pierce 2"
+  },
+  {
+    "name": "Phishing Trawler",
+    "costYen": 2,
+    "type": "install",
+    "variant": "firewall",
+    "shortDesc": "Trap - Attack 4 Harvest 2 to Database"
+  },
+  {
+    "name": "Eavesdroplet",
+    "costYen": 3,
+    "type": "install",
+    "variant": "sensor",
+    "defense": 3,
+    "shortDesc": "Alert, Siphon 1 on Approach"
+  },
+  {
+    "name": "Help Desk",
+    "type": "asset",
+    "variant": "program",
+    "costYen": 4,
+    "defense": 1,
+    "shortDesc": "Analytics 2 Yen",
+    "yen": 2
+  },
+  {
+    "name": "Code Poncho",
+    "type": "install",
+    "variant": "firewall",
+    "costYen": 3,
+    "attack": 2,
+    "defense": 4,
+    "shortDesc": "Camo"
+  },
+  {
+    "name": "Inverse Injection",
+    "costYen": 3,
+    "type": "contract",
+    "variant": "program",
+    "shortDesc": "Remove 2 Datab from opponent Database, Add 2 datab to your Database"
+  },
+  {
+    "name": "Phantom TB",
+    "type": "install",
+    "variant": "gateway",
+    "costYen": 4,
+    "defense": 2,
+    "shortDesc": "Camo, Add 2 Datab on Approach"
+  },
+  {
+    "name": "Carbon Fiberknit",
+    "costYen": 2,
+    "type": "mod",
+    "variant": "gear",
+    "defense": 3,
+    "shortDesc": "Durable",
+    "costYen": 4
+  },
+  {
+    "name": "Red Triangle",
+    "type": "mod",
+    "variant": "gear",
+    "attack": 4,
+    "shortDesc": "Lethal"
+  },
+  {
+    "name": "Smoke Screen",
+    "costYen": 1,
+    "type": "command",
+    "variant": "tag",
+    "defense": 1,
+    "shortDesc": "0 Flash"
+  },
+  {
+    "name": "Signal Snoop",
+    "costYen": 2,
+    "type": "install",
+    "variant": "program",
+    "shortDesc": "Harvest 1 Datab to Database on Approach, Analytics 1 Yen"
+  },
+  {
+    "name": "Loitering Laser",
+    "type": "install",
+    "variant": "turret",
+    "costYen": 3,
+    "attack": 4,
+    "defense": 2,
+    "shortDesc": "Pierce 3"
+  },
+  {
+    "name": "Air Splint",
+    "costYen": 1,
+    "type": "command",
+    "variant": "bolster",
+    "shortDesc": "Add 2 Defense"
+  },
+  {
+    "name": "Snap Decision",
+    "costYen": 3,
+    "costDatab": 3,
+    "type": "command",
+    "variant": "bolster",
+    "shortDesc": "Draw 3"
+  },
+  {
+    "name": "Suitcase Rifle",
+    "type": "mod",
+    "variant": "gear",
+    "costYen": 3,
+    "attack": 2,
+    "shortDesc": "Overkill 1, Durable"
+  },
+  {
+    "name": "Buried Claws",
+    "type": "asset",
+    "variant": "trap",
+    "costYen": 3,
+    "shortDesc": "Trap - Attack 3 Burn"
+  },
+  {
+    "name": "Schema Drifter",
+    "type": "operator",
+    "variant": "program",
+    "costYen": 4,
+    "attack": 2,
+    "defense": 4,
+    "shortDesc": "Rapid, Harvest 2 - Database"
+  },
+  {
+    "name": "Codecarver",
+    "costYen": 4,
+    "type": "contract",
+    "variant": "knowledge",
+    "shortDesc": "Flash, Harvest 4 - Database, Niche Owner"
+  },
+  {
+    "name": "Rock",
+    "costYen": 1,
+    "type": "contract",
+    "variant": "gear",
+    "shortDesc": "Renewable, 0 Disarm"
+  },
+  {
+    "name": "Laser Pod",
+    "type": "install",
+    "variant": "turret",
+    "costYen": 3,
+    "attack": 4,
+    "defense": 1,
+    "shortDesc": "Kaizen 1"
+  },
+  {
+    "name": "Silverian Whisper",
+    "type": "mod",
+    "variant": "training",
+    "costYen": 3,
+    "defense": 3,
+    "costMw": 1
+  },
+  {
+    "name": "Silverian Shuriken",
+    "type": "mod",
+    "variant": "gear",
+    "costYen": 1,
+    "attack": 2,
+    "costMw": 1,
+    "shortDesc": "Brute"
+  },
+  {
+    "name": "Mist Bank",
+    "type": "install",
+    "variant": "wall",
+    "costYen": 4,
+    "defense": 4,
+    "shortDesc": "Parry 4"
+  },
+  {
+    "name": "Titanium Bollards",
+    "type": "install",
+    "variant": "wall",
+    "costYen": 3,
+    "defense": 6,
+    "shortDesc": "2 Preprod, Durable"
+  },
+  {
+    "name": "Shimem",
+    "type": "install",
+    "variant": "program",
+    "costYen": 2,
+    "attack": 3,
+    "shortDesc": "Crack 1 on Engage"
+  },
+  {
+    "name": "Nanomesh Collector",
+    "type": "asset",
+    "variant": "production",
+    "costYen": 4,
+    "shortDesc": "Camo, Add 1 Mw start of turn"
+  },
+  {
+    "name": "Hemm 868",
+    "costYen": 3,
+    "type": "mod",
+    "variant": "gear",
+    "attack": 2,
+    "datab": 2,
+    "shortDesc": "2 Neosense"
+  },
+  {
+    "name": "Remote Reset",
+    "costYen": 1,
+    "costControl": 1,
+    "type": "command",
+    "variant": "knowledge",
+    "shortDesc": "0 Flash, Internal"
+  },
+  {
+    "name": "Introspector",
+    "costYen": 2,
+    "type": "contract",
+    "variant": "program",
+    "shortDesc": "Flash, Scan"
+  },
+  {
+    "name": "LuAG Handlaser",
+    "type": "mod",
+    "costYen": 2,
+    "variant": "gear",
+    "shortDesc": "Pierce 4"
+  },
+  {
+    "name": "Nodal Souls",
+    "type": "asset",
+    "variant": "datacenter",
+    "costYen": 4,
+    "datab": 4,
+    "shortDesc": "1 Alert, Add 2 Datab Start of Turn, Transfer 2 Datab to Database End of Turn",
+    "yen": 4
+  },
+  {
+    "name": "Skyhook",
+    "type": "asset",
+    "variant": "datacenter",
+    "costYen": 2,
+    "defense": 2,
+    "shortDesc": "Add 1 Datab Start of Turn, 1 Datab Transfer to Database End of Turn",
+    "yen": 2
+  },
+  {
+    "name": "Yacht Club",
+    "type": "asset",
+    "variant": "program",
+    "costYen": 3,
+    "shortDesc": "Pay 2 Yen Add 3 Yen End of Turn",
+    "yen": 2
+  },
+  {
+    "name": "Darwin Gyro",
+    "costYen": 3,
+    "type": "install",
+    "variant": "sensor",
+    "defense": 3,
+    "datab": 3,
+    "shortDesc": "1 Track, 1 Alert, 1 Datab Add 1 Attack"
+  },
+  {
+    "name": "Biotubule Plating",
+    "type": "mod",
+    "variant": "gear",
+    "costYen": 2,
+    "defense": 2,
+    "shortDesc": "Parry 2, Kaizen 1 Defense"
+  },
+  {
+    "name": "Laser Mole",
+    "type": "operator",
+    "variant": "drone",
+    "costYen": 4,
+    "attack": 4,
+    "defense": 2,
+    "datab": 2,
+    "shortDesc": "2 Disarm, Remove 2 Defense on Engage"
+  },
+  {
+    "name": "Etanya",
+    "type": "operator",
+    "variant": "human",
+    "costYen": 2,
+    "attack": 2,
+    "defense": 2,
+    "shortDesc": "Pierce 2"
+  },
+  {
+    "name": "Visical",
+    "type": "program",
+    "costYen": 3,
+    "attack": 1,
+    "defense": 2
+  },
+  {
+    "name": "Window Wiper",
+    "costYen": 2,
+    "type": "command",
+    "shortDesc": "Remove 9 Datab on Engage, Niche Asset Install"
+  },
+  {
+    "name": "Obscura",
+    "type": "install",
+    "variant": "program",
+    "costYen": 2,
+    "attack": 3,
+    "shortDesc": "Remove 3 Datab, Parry 3"
+  },
+  {
+    "name": "Paradime",
+    "type": "install",
+    "variant": "sensor",
+    "costYen": 3,
+    "defense": 1,
+    "shortDesc": "Camo, 0 Track"
+  },
+  {
+    "name": "Netwell",
+    "costYen": 4,
+    "type": "install",
+    "variant": "gateway",
+    "defense": 4,
+    "attack": 4,
+    "shortDesc": "Siphon 1 on Engage, Analytics 1 Datab"
+  },
+  {
+    "name": "Kei Van",
+    "type": "operator",
+    "variant": "vehicle",
+    "costYen": 1,
+    "defense": 2,
+    "shortDesc": "Resilient 2"
+  },
+  {
+    "name": "Geothermal Matrix",
+    "type": "asset",
+    "variant": "production",
+    "costYen": 4,
+    "defense": 2,
+    "datab": 2,
+    "shortDesc": "Camo, Add 2 Mw Start of Turn",
+    "yen": 4
+  },
+  {
+    "name": "Solace Services",
+    "type": "asset",
+    "variant": "investment",
+    "costYen": 3,
+    "costMw": 0,
+    "shortDesc": "Add 1 Mw Start of Turn",
+    "yen": 3
+  },
+  {
+    "name": "Fog Harvestesr",
+    "type": "asset",
+    "variant": "production",
+    "costYen": 4,
+    "defense": 2,
+    "shortDesc": "Parry 2, Add 2 Yen End of Turn",
+    "yen": 2
+  },
+  {
+    "name": "Reconfig",
+    "costYen": 2,
+    "type": "command",
+    "variant": "recall",
+    "shortDesc": "Remove 2 Datab 4 Attack"
+  },
+  {
+    "name": "Nightingale Bridge",
+    "costYen": 4,
+    "type": "install",
+    "variant": "gateway",
+    "attack": 1,
+    "defense": 1,
+    "datab": 1,
+    "shortDesc": "Camo, Crack 1 on Engage, Remove 2 Attack on Engage"
+  },
+  {
+    "name": "Quantum Mic",
+    "type": "install",
+    "variant": "sensor",
+    "costYen": 2,
+    "defense": 2,
+    "datab": 2,
+    "shortDesc": "2 Track"
+  },
+  {
+    "name": "Faraday Fence",
+    "type": "install",
+    "variant": "firewall",
+    "costYen": 2,
+    "defense": 4,
+    "shortDesc": "0 Alert"
+  },
+  {
+    "name": "Delphit Radome",
+    "type": "install",
+    "variant": "sensor",
+    "costYen": 4,
+    "defense": 2,
+    "datab": 1,
+    "shortDesc": "1 Neosense, Analytics 2 Datab"
+  },
+  {
+    "name": "Polymeril Spray",
+    "type": "mod",
+    "variant": "substance",
+    "costYen": 3,
+    "shortDesc": "1 Sneak"
+  },
+  {
+    "name": "Laser Flask",
+    "type": "asset",
+    "variant": "datacenter",
+    "costYen": 3,
+    "costMw": 0,
+    "defense": 1,
+    "datab": 3,
+    "yen": 3,
+    "shortDesc": "Pay 1 Mw Draw 1 End of Turn"
+  },
+  {
+    "name": "Somascavenge",
+    "type": "command",
+    "variant": "knowledge",
+    "costYen": 1,
+    "shortDesc": "Draw 1, Renewable"
+  },
+  {
+    "name": "Shaper Sense",
+    "costYen": 3,
+    "type": "install",
+    "variant": "firewall",
+    "defense": 6,
+    "datab": 1,
+    "shortDesc": "1 Neosense"
+  },
+  {
+    "name": "Autorail",
+    "type": "asset",
+    "variant": "production",
+    "costYen": 4,
+    "defense": 4,
+    "datab": 4,
+    "yen": 4,
+    "shortDesc": "2 Preprod, Add 1 Mw 1 Yen 1 Datab End of Turn"
+  },
+  {
+    "name": "Artificial Grove",
+    "costYen": 1,
+    "type": "install",
+    "variant": "wall",
+    "defense": 1,
+    "shortDesc": "0 Alert"
+  },
+  {
+    "name": "Dyke",
+    "costYen": 1,
+    "type": "install",
+    "variant": "wall",
+    "defense": 3
+  },
+  {
+    "name": "Hoversled",
+    "type": "operator",
+    "variant": "vehicle",
+    "costYen": 4,
+    "attack": 2,
+    "defense": 4,
+    "shortDesc": "Rapid"
+  },
+  {
+    "name": "Ibrahim",
+    "costYen": 4,
+    "type": "operator",
+    "variant": "human",
+    "attack": 4,
+    "defense": 2,
+    "shortDesc": "Rapid, Disrupt 2"
+  },
+  {
     "name": "Cellsleeve",
     "costYen": 6,
     "type": "mod",
