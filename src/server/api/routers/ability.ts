@@ -35,6 +35,32 @@ export const abilityRouter = createTRPCRouter({
         data: input,
       });
     }),
+  createInstance: publicProcedure
+    .input(
+      z.object({
+        abilityId: z.string(),
+        targetType: z.string().optional(),
+        desc: z.string().optional(),
+        attack: z.number().optional(),
+        defense: z.number().optional(),
+        yen: z.number().optional(),
+        lag: z.number().optional(),
+        datab: z.number().optional(),
+        mw: z.number().optional(),
+        control: z.number().optional(),
+        logic: z.string().optional(),
+        costYen: z.number().optional(),
+        costControl: z.number().optional(),
+        costDatab: z.number().optional(),
+        costMw: z.number().optional(),
+        costLag: z.number().optional(),
+      }),
+    )
+    .mutation(async ({ ctx, input }) => {
+      return ctx.db.abilityInstance.create({
+        data: input,
+      });
+    }),
   update: publicProcedure
     .input(
       z.object({
@@ -70,32 +96,7 @@ export const abilityRouter = createTRPCRouter({
         data,
       });
     }),
-  createInstance: publicProcedure
-    .input(
-      z.object({
-        abilityId: z.string(),
-        targetType: z.string().optional(),
-        desc: z.string().optional(),
-        attack: z.number().optional(),
-        defense: z.number().optional(),
-        yen: z.number().optional(),
-        lag: z.number().optional(),
-        datab: z.number().optional(),
-        mw: z.number().optional(),
-        control: z.number().optional(),
-        logic: z.string().optional(),
-        costYen: z.number().optional(),
-        costControl: z.number().optional(),
-        costDatab: z.number().optional(),
-        costMw: z.number().optional(),
-        costLag: z.number().optional(),
-      }),
-    )
-    .mutation(async ({ ctx, input }) => {
-      return ctx.db.abilityInstance.create({
-        data: input,
-      });
-    }),
+
   updateInstance: publicProcedure
     .input(
       z.object({
@@ -125,18 +126,18 @@ export const abilityRouter = createTRPCRouter({
         data,
       });
     }),
-  deleteInstance: publicProcedure
-    .input(z.object({ id: z.string() }))
-    .mutation(async ({ ctx, input }) => {
-      return ctx.db.abilityInstance.delete({
-        where: { id: input.id },
-      });
-    }),
 
   get: publicProcedure
     .input(z.object({ id: z.string() }))
     .query(async ({ ctx, input }) => {
       return ctx.db.ability.findUnique({
+        where: { id: input.id },
+      });
+    }),
+  getInstance: publicProcedure
+    .input(z.object({ id: z.string() }))
+    .query(async ({ ctx, input }) => {
+      return ctx.db.abilityInstance.findUnique({
         where: { id: input.id },
       });
     }),
@@ -149,6 +150,13 @@ export const abilityRouter = createTRPCRouter({
     .input(z.object({ id: z.string() }))
     .mutation(async ({ ctx, input }) => {
       return ctx.db.ability.delete({
+        where: { id: input.id },
+      });
+    }),
+  deleteInstance: publicProcedure
+    .input(z.object({ id: z.string() }))
+    .mutation(async ({ ctx, input }) => {
+      return ctx.db.abilityInstance.delete({
         where: { id: input.id },
       });
     }),
