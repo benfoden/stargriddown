@@ -8,7 +8,7 @@ export const abilityRouter = createTRPCRouter({
       z.object({
         name: z.string().min(1),
         shortName: z.string().optional(),
-        variant: z.string().min(1),
+        type: z.string().min(1),
         shortDesc: z.string().optional(),
         isUsable: z.boolean().optional(),
         targetType: z.string().optional(),
@@ -25,6 +25,7 @@ export const abilityRouter = createTRPCRouter({
         costMw: z.number().optional(),
         costLag: z.number().optional(),
         image: z.string().optional(),
+        ruleSet: z.string().optional(),
       }),
     )
     .mutation(async ({ ctx, input }) => {
@@ -50,7 +51,7 @@ export const abilityRouter = createTRPCRouter({
         id: z.string(),
         name: z.string().min(1).optional(),
         shortName: z.string().optional(),
-        variant: z.string().min(1).optional(),
+        type: z.string().min(1).optional(),
         shortDesc: z.string().optional(),
         isUsable: z.boolean().optional(),
         targetType: z.string().optional(),
@@ -67,6 +68,7 @@ export const abilityRouter = createTRPCRouter({
         costMw: z.number().optional(),
         costLag: z.number().optional(),
         image: z.string().optional(),
+        ruleSet: z.string().optional(),
       }),
     )
     .mutation(async ({ ctx, input }) => {

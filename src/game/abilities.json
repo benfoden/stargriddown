@@ -2,7 +2,7 @@
   {
     "name": "hidden",
     "shortName": "hidden",
-    "variant": "status",
+    "type": "status",
     "shortDesc": "This card can't be seen by the opponent.",
     "isUsable": false,
     "targetType": "self",
@@ -12,7 +12,7 @@
   {
     "name": "shielded",
     "shortName": "shielded",
-    "variant": "status",
+    "type": "status",
     "shortDesc": "This card can't be targeted.",
     "isUsable": false,
     "targetType": "self",
@@ -22,7 +22,7 @@
   {
     "name": "staged",
     "shortName": "staged",
-    "variant": "status",
+    "type": "status",
     "shortDesc": "This card can't join an Attack.",
     "isUsable": false,
     "targetType": "self",
@@ -32,7 +32,7 @@
   {
     "name": "boosted",
     "shortName": "boosted",
-    "variant": "status",
+    "type": "status",
     "shortDesc": "This card has +X of Y points.",
     "isUsable": false,
     "targetType": "self",
@@ -42,7 +42,7 @@
   {
     "name": "armed",
     "shortName": "armed",
-    "variant": "status",
+    "type": "status",
     "shortDesc": "This card's Trap ability is ready.",
     "isUsable": false,
     "targetType": "self",
@@ -52,7 +52,7 @@
   {
     "name": "disabled",
     "shortName": "disabled",
-    "variant": "status",
+    "type": "status",
     "shortDesc": "This card can't be activated.",
     "isUsable": false,
     "targetType": "self",
@@ -62,7 +62,7 @@
   {
     "name": "disrupted",
     "shortName": "disrupted",
-    "variant": "status",
+    "type": "status",
     "shortDesc": "This card can't use abilities or points.",
     "isUsable": false,
     "targetType": "self",
@@ -72,7 +72,7 @@
   {
     "name": "locked",
     "shortName": "locked",
-    "variant": "status",
+    "type": "status",
     "shortDesc": "This card can't be Engaged or Activated until a Key is used on it.",
     "isUsable": false,
     "targetType": "self",
@@ -82,7 +82,7 @@
   {
     "name": "engaged",
     "shortName": "engaged",
-    "variant": "status",
+    "type": "status",
     "shortDesc": "This card is engaged by another card or cards.",
     "isUsable": false,
     "targetType": "self",
@@ -90,19 +90,9 @@
     "logic": "passive"
   },
   {
-    "name": "digital",
-    "shortName": "digital",
-    "variant": "passive",
-    "shortDesc": "This can engage with and be engaged by other Digital cards.",
-    "isUsable": true,
-    "targetType": "self",
-    "desc": "This can engage with and be engaged by other Digital cards. (programs, AI, drones, etc.)",
-    "logic": "passive"
-  },
-  {
     "name": "lethal",
     "shortName": "lethal",
-    "variant": "passive",
+    "type": "passive",
     "shortDesc": "The next card this Engages is Disabled immediately.",
     "isUsable": true,
     "targetType": "opponent",
@@ -112,7 +102,7 @@
   {
     "name": "rapid",
     "shortName": "rapid",
-    "variant": "passive",
+    "type": "passive",
     "shortDesc": "This Operator is ready the same turn that it is played.",
     "isUsable": true,
     "targetType": "self",
@@ -122,92 +112,92 @@
   {
     "name": "camo",
     "shortName": "camo",
-    "variant": "passive",
-    "shortDesc": "Hidden until this Attacks, Defends, or uses an Active ability.",
+    "type": "passive",
+    "shortDesc": "Hidden until this Engages or uses an Active ability.",
     "isUsable": true,
     "targetType": "self",
-    "desc": "Hidden until this Attacks, Defends, or uses an Active ability.",
-    "logic": "passive"
+    "desc": "Hidden until this Engages or uses an Active ability.",
+    "logic": "onEngage"
   },
   {
     "name": "shielded",
     "shortName": "shielded",
-    "variant": "passive",
+    "type": "passive",
     "shortDesc": "The first instance of Attack damage that would be done to this card is negated.",
     "isUsable": true,
     "targetType": "self",
     "desc": "The first instance of Attack damage that would be done to this card is negated.",
-    "logic": "passive"
+    "logic": "onEngage"
   },
   {
     "name": "alert",
     "shortName": "alert",
-    "variant": "passive",
+    "type": "passive",
     "shortDesc": "This can't be targeted by opponent Contracts, Commands, or Actives.",
     "isUsable": true,
     "targetType": "self",
     "desc": "This can't be targeted by opponent Contracts, Commands, or Actives as long as you have more than 1 Mw available.",
-    "logic": "passive"
+    "logic": "onEngage"
   },
   {
     "name": "siphon",
     "shortName": "siphon",
-    "variant": "passive",
+    "type": "passive",
     "shortDesc": "Add X Yen to your Account when this Overcomes an opponent Card.",
     "isUsable": true,
     "targetType": "opponent",
     "yen": 0,
     "desc": "Add X Yen to your Account when this Overcomes an opponent Card.",
-    "logic": "passive"
+    "logic": "onOvercome"
   },
   {
     "name": "harvest",
     "shortName": "harvest",
-    "variant": "passive",
+    "type": "passive",
     "shortDesc": "Add X Datab to your Database when this Overcomes an opponent Card.",
     "isUsable": true,
     "targetType": "opponent",
     "datab": 0,
     "desc": "Add X Datab to your Database when this Overcomes an opponent Card with X Datab available.",
-    "logic": "passive"
+    "logic": "onOvercome"
   },
   {
     "name": "overkill",
     "shortName": "overkill",
-    "variant": "passive",
+    "type": "passive",
     "shortDesc": "Add X to the next instance of Control removed from the HQ this turn.",
     "isUsable": true,
     "targetType": "opponent",
     "control": 0,
     "desc": "Add X to the next instance of Control removed from the HQ this turn.",
-    "logic": "passive"
+    "logic": "onAttackSuccess"
   },
   {
     "name": "intimidate",
     "shortName": "intimidate",
-    "variant": "passive",
+    "type": "passive",
     "shortDesc": "When this Overcomes a card, the next card you Engage this turn has -X Attack.",
     "isUsable": true,
     "targetType": "opponent",
     "attack": 0,
     "desc": "When this Overcomes a card, the next card you Engage this turn has -X Attack.",
-    "logic": "passive"
+    "logic": "onOvercome"
   },
   {
     "name": "piercing",
     "shortName": "piercing",
-    "variant": "passive",
+    "type": "passive",
     "shortDesc": "Deal X attack when this Engages a card, once per turn.",
     "isUsable": true,
     "targetType": "opponent",
     "attack": 0,
     "desc": "Deal X attack when this Engages a card, once per turn.",
-    "logic": "passive"
+    "logic": "onEngage"
   },
   {
     "name": "durable",
     "shortName": "durable",
-    "variant": "passive",
+    "type": "passive",
     "shortDesc": "This card can't be Discarded, Erased, or Removed by the opponent.",
     "isUsable": true,
     "targetType": "self",
@@ -217,114 +207,123 @@
   {
     "name": "renewable",
     "shortName": "renewable",
-    "variant": "passive",
+    "type": "passive",
     "shortDesc": "When this is Discarded, it moves to the bottom of its Owner's deck.",
     "isUsable": true,
     "targetType": "self",
     "desc": "When this is Discarded, it moves to the bottom of its Owner's deck.",
-    "logic": "passive"
+    "logic": "onDiscard"
   },
   {
     "name": "steal",
     "shortName": "steal",
-    "variant": "passive",
+    "type": "passive",
     "shortDesc": "After this Operator overcomes an Asset, a Race is run, and if this player wins, then the Asset is stolen.",
     "isUsable": true,
     "targetType": "opponent",
     "desc": "After this Operator overcomes an Asset, a Race is run, and if this player wins, then the Asset is stolen.",
-    "logic": "passive"
+    "logic": "onOvercome"
+  },
+  {
+    "name": "singleUse",
+    "shortName": "singleUse",
+    "type": "passive",
+    "shortDesc": "This can only be played (card) or activated (ability) once this match.",
+    "isUsable": true,
+    "attack": 0,
+    "logic": "onPlayed"
   },
   {
     "name": "trap",
     "shortName": "trap",
-    "variant": "passive",
+    "type": "passive",
     "shortDesc": "If this isn't disarmed by using Points or Abilities then X of Y points change or Z effect is applied to target card.",
     "isUsable": true,
     "targetType": "opponent",
     "attack": 0,
     "desc": "If this isn't disarmed by using Points or Abilities then X of Y points change or Z effect is applied to target card.",
-    "logic": "passive"
+    "logic": "onEngage"
   },
   {
     "name": "link",
     "shortName": "link",
-    "variant": "passive",
+    "type": "passive",
     "shortDesc": "Gain X of Y points when you control two or more cards with Link.",
     "isUsable": true,
     "targetType": "self",
     "datab": 0,
     "desc": "Gain X of Y points when you control two or more cards with Link. When overcome, all Linked cards you control in the Arena are revealed.",
-    "logic": "passive"
+    "logic": "onStartTurn"
   },
   {
     "name": "analytics",
     "shortName": "analytics",
-    "variant": "passive",
+    "type": "passive",
     "shortDesc": "Gain X Datab at end of turn when you have gained 1 or more Yen that turn.",
     "isUsable": true,
     "targetType": "self",
     "datab": 0,
     "desc": "Gain X Datab at end of turn when you have gained 1 or more Yen that turn.",
-    "logic": "passive"
+    "logic": "onEndTurn"
   },
   {
     "name": "enhance",
     "shortName": "enhance",
-    "variant": "passive",
+    "type": "passive",
     "shortDesc": "When an opponent Install or Asset is revealed, reveal a card in their hand.",
     "isUsable": true,
     "targetType": "opponent",
     "desc": "When an opponent Install or Asset is revealed, reveal a card in their hand.",
-    "logic": "passive"
+    "logic": "onReveal"
   },
   {
     "name": "emergency",
     "shortName": "emergency",
-    "variant": "passive",
+    "type": "passive",
     "shortDesc": "Draw +X Cards if this is the first Card you drew this turn.",
     "isUsable": true,
     "targetType": "self",
     "cards": 0,
     "desc": "Draw +X Cards if this is the first Card you drew this turn.",
-    "logic": "passive"
+    "logic": "onDraw"
   },
   {
     "name": "preprod",
     "shortName": "preprod",
-    "variant": "passive",
+    "type": "passive",
     "shortDesc": "Enable this card's abilities X turns after it was played.",
     "isUsable": true,
     "targetType": "self",
     "turns": 0,
     "desc": "Enable this card's abilities X turns after it was played.",
-    "logic": "passive"
+    "logic": "onStartTurn"
   },
   {
     "name": "niche",
     "shortName": "niche",
-    "variant": "passive",
-    "shortDesc": "This card can only engage X card variant, type, or specific card.",
+    "type": "passive",
+    "shortDesc": "This card can only engage X card type, type, or specific card.",
     "isUsable": true,
     "targetType": "drone",
-    "desc": "This card can only engage X card variant, type, or specific card.",
+    "desc": "This card can only engage X card type, type, or specific card.",
     "logic": "passive"
   },
   {
     "name": "shard",
     "shortName": "shard",
-    "variant": "passive",
+    "type": "passive",
     "shortDesc": "Add card X to your hand at start of your next turn for Y turns or when you pay Y points.",
     "isUsable": true,
     "targetType": "self",
     "turns": 0,
     "costDatab": 0,
     "desc": "Add card X to your hand at start of your next turn for Y turns or when you pay Y points.",
-    "logic": "passive"
+    "logic": "onStartTurn"
   },
   {
     "name": "host",
     "shortName": "host",
-    "variant": "passive",
+    "type": "passive",
     "shortDesc": "This card can have mods of type X installed on it.",
     "isUsable": true,
     "targetType": "shard",
@@ -332,126 +331,116 @@
     "logic": "passive"
   },
   {
-    "name": "lateral",
-    "shortName": "lateral",
-    "variant": "passive",
-    "shortDesc": "This Operator may move to a neighboring stack after Overcoming a card.",
-    "isUsable": true,
-    "targetType": "self",
-    "desc": "This Operator may move to a neighboring stack after Overcoming a card.",
-    "logic": "passive"
-  },
-  {
     "name": "clout",
     "shortName": "clout",
-    "variant": "passive",
+    "type": "passive",
     "shortDesc": "Buy X card type from the shop for Y less Yen.",
     "isUsable": true,
     "targetType": "drone",
     "yen": 0,
     "desc": "Buy X card type from the shop for Y less Yen.",
-    "logic": "passive"
+    "logic": "onBuy"
   },
   {
     "name": "profit",
     "shortName": "profit",
-    "variant": "passive",
+    "type": "passive",
     "shortDesc": "Gain X Datab or Y Yen at end of turn.",
     "isUsable": true,
     "targetType": "self",
     "desc": "Gain X Datab or Y Yen at end of turn.",
     "datab": 0,
     "yen": 0,
-    "logic": "passive"
+    "logic": "onEndTurn"
   },
   {
     "name": "decoy",
     "shortName": "decoy",
-    "variant": "passive",
+    "type": "passive",
     "shortDesc": "When this Engages, the opposing card's abilities and effects are applied instantly but don't target this card.",
     "isUsable": true,
     "targetType": "opponent",
     "desc": "When this Engages, the opposing card's abilities and effects are applied instantly but don't target this card.",
-    "logic": "passive"
+    "logic": "onEngage"
   },
   {
     "name": "leak",
     "shortName": "leak",
-    "variant": "active",
+    "type": "active",
     "shortDesc": "Pay X Datab or Yen and target Asset or Install is revealed.",
     "isUsable": true,
     "targetType": "opponent",
     "desc": "Pay X Datab or Yen and target Asset or Install is revealed.",
     "costDatab": 0,
     "costYen": 0,
-    "logic": "active"
+    "logic": "onApproach"
   },
   {
     "name": "scan",
     "shortName": "scan",
-    "variant": "active",
+    "type": "active",
     "shortDesc": "Look at the top 3 Cards in your deck. Add 1 to your hand and place the other 2 on the bottom.",
     "isUsable": true,
     "targetType": "self",
     "desc": "Look at the top 3 Cards in your deck. Add 1 to your hand and place the other 2 on the bottom.",
-    "logic": "active"
+    "logic": "onStartTurn"
   },
   {
     "name": "crack",
     "shortName": "crack",
-    "variant": "active",
+    "type": "active",
     "shortDesc": "After your opponent draws their next hand, they must discard X cards.",
     "isUsable": true,
     "targetType": "opponent",
     "cards": 0,
     "desc": "After your opponent draws their next hand, they must discard X cards.",
-    "logic": "active"
+    "logic": "onDrawOpponent"
   },
   {
     "name": "erase",
     "shortName": "erase",
-    "variant": "active",
+    "type": "active",
     "shortDesc": "Permanently remove a card from the game.",
     "isUsable": true,
     "targetType": "opponent",
     "desc": "Permanently remove a card from the game.",
-    "logic": "active"
+    "logic": "onEngage"
   },
   {
     "name": "disarm",
     "shortName": "disarm",
-    "variant": "active",
+    "type": "active",
     "shortDesc": "Deactivate a Trap without triggering it.",
     "isUsable": true,
     "targetType": "opponent",
     "desc": "Deactivate a Trap without triggering it. (By paying X datab)",
-    "logic": "active"
+    "logic": "onEngage"
   },
   {
     "name": "disrupt",
     "shortName": "disrupt",
-    "variant": "active",
+    "type": "active",
     "shortDesc": "Target card is disabled for the remainder of the turn.",
     "isUsable": true,
     "targetType": "opponent",
     "desc": "Target card is disabled for the remainder of the turn.",
-    "logic": "active"
+    "logic": "onEngage"
   },
   {
     "name": "procedure",
     "shortName": "procedure",
-    "variant": "active",
+    "type": "active",
     "shortDesc": "Use X Datab in your Database to add Datab to target card.",
     "isUsable": true,
     "targetType": "self",
     "costDatab": 0,
     "desc": "Use X Datab in your Database to add Datab to target card.",
-    "logic": "active"
+    "logic": "onPlayed"
   },
   {
     "name": "boost",
     "shortName": "boost",
-    "variant": "active",
+    "type": "active",
     "shortDesc": "Add X points of Y type on target card.",
     "isUsable": true,
     "targetType": "self",
@@ -462,7 +451,7 @@
   {
     "name": "drain",
     "shortName": "drain",
-    "variant": "active",
+    "type": "active",
     "shortDesc": "Remove X points of Y type on target card.",
     "isUsable": true,
     "targetType": "opponent",
@@ -471,118 +460,133 @@
     "logic": "onEngage"
   },
   {
-    "name": "virus",
-    "shortName": "virus",
-    "variant": "active",
-    "shortDesc": "All cards in target Stack or Team loses X Datab.",
-    "isUsable": true,
-    "targetType": "opponent",
-    "datab": 1,
-    "desc": "All cards in target Stack or Team loses X Datab.",
-    "logic": "active"
-  },
-  {
     "name": "flash",
     "shortName": "flash",
-    "variant": "active",
+    "type": "active",
     "shortDesc": "Remove all Statuses and Digital Mods on target Card.",
     "isUsable": true,
     "targetType": "opponent",
     "desc": "Remove all Statuses and Digital Mods on target Card.",
-    "logic": "active"
+    "logic": "onEngage"
   },
   {
     "name": "burn",
     "shortName": "burn",
-    "variant": "active",
+    "type": "active",
     "shortDesc": "Remove all Mods on target Card.",
     "isUsable": true,
     "targetType": "opponent",
     "desc": "Remove all Mods on target Card.",
-    "logic": "active"
+    "logic": "onEngage"
   },
   {
     "name": "brute",
     "shortName": "brute",
-    "variant": "active",
+    "type": "active",
     "shortDesc": "Win the next Race.",
     "isUsable": true,
     "targetType": "self",
     "desc": "Win the next Race.",
-    "logic": "active"
-  },
-  {
-    "name": "message",
-    "shortName": "message",
-    "variant": "active",
-    "shortDesc": "Draw X Cards.",
-    "isUsable": true,
-    "targetType": "self",
-    "cards": 0,
-    "desc": "Draw X Cards.",
-    "logic": "active"
+    "logic": "onRaceFirst"
   },
   {
     "name": "key",
     "shortName": "key",
-    "variant": "active",
+    "type": "active",
     "shortDesc": "Unlock target Locked card.",
     "isUsable": true,
     "targetType": "opponent",
     "desc": "Unlock target Locked card. (By paying X Datab)",
-    "logic": "active"
+    "logic": "onEngage"
   },
   {
     "name": "lock",
     "shortName": "lock",
-    "variant": "active",
+    "type": "active",
     "shortDesc": "Lock target card.",
     "isUsable": true,
     "targetType": "opponent",
     "desc": "Lock target card. (By paying X Datab)",
     "costDatab": 0,
-    "logic": "active"
+    "logic": "onEngage"
+  },
+  {
+    "name": "discard",
+    "shortName": "discard",
+    "type": "active",
+    "shortDesc": "Target card is Discarded immediately.",
+    "isUsable": true,
+    "targetType": "opponent",
+    "desc": "Target card is Discarded immediately.",
+    "logic": "onEngage"
+  },
+  {
+    "name": "track",
+    "shortName": "track",
+    "type": "active",
+    "shortDesc": "If target card has its Defense reduced to 0 or loses a race this turn, it's discarded immediately.",
+    "isUsable": true,
+    "targetType": "opponent",
+    "desc": "If target card has its Defense reduced to 0 or loses a race this turn, it's discarded immediately.",
+    "logic": "onEngage"
+  },
+  {
+    "name": "lateral",
+    "shortName": "lateral",
+    "type": "passive",
+    "shortDesc": "This Operator may move to a neighboring stack after Overcoming a card.",
+    "isUsable": true,
+    "targetType": "self",
+    "desc": "This Operator may move to a neighboring stack after Overcoming a card.",
+    "logic": "passive",
+    "ruleSet": "-1"
+  },
+  {
+    "name": "virus",
+    "shortName": "virus",
+    "type": "active",
+    "shortDesc": "All cards in target Stack or Team loses X Datab.",
+    "isUsable": true,
+    "targetType": "opponent",
+    "datab": 1,
+    "desc": "All cards in target Stack or Team loses X Datab.",
+    "logic": "onEngage",
+    "ruleSet": "-1"
+  },
+  {
+    "name": "message",
+    "shortName": "message",
+    "type": "active",
+    "shortDesc": "Draw X Cards.",
+    "isUsable": true,
+    "targetType": "self",
+    "cards": 0,
+    "desc": "Draw X Cards.",
+    "logic": "onPlayed",
+    "ruleSet": "-1"
   },
   {
     "name": "hide",
     "shortName": "hide",
-    "variant": "active",
+    "type": "active",
     "shortDesc": "Hide target Card you control.",
     "isUsable": true,
     "targetType": "self",
     "desc": "Hide target Card you control.",
-    "logic": "active"
+    "logic": "active",
+    "ruleSet": "-1"
   },
   {
     "name": "reuse",
     "shortName": "reuse",
-    "variant": "active",
+    "type": "active",
     "shortDesc": "Pay X Yen or Y Datab to return this to your hand.",
     "isUsable": true,
     "targetType": "self",
     "costYen": 0,
     "costDatab": 0,
     "desc": "Pay X Yen or Y Datab to return this to your hand.",
-    "logic": "active"
-  },
-  {
-    "name": "discard",
-    "shortName": "discard",
-    "variant": "active",
-    "shortDesc": "Target card is Discarded immediately.",
-    "isUsable": true,
-    "targetType": "opponent",
-    "desc": "Target card is Discarded immediately.",
-    "logic": "active"
-  },
-  {
-    "name": "track",
-    "shortName": "track",
-    "variant": "active",
-    "shortDesc": "If target card has its Defense reduced to 0 or loses a race this turn, it's discarded immediately.",
-    "isUsable": true,
-    "targetType": "opponent",
-    "desc": "If target card has its Defense reduced to 0 or loses a race this turn, it's discarded immediately.",
-    "logic": "active"
+    "logic": "active",
+    "ruleSet": "-1"
   }
 ]

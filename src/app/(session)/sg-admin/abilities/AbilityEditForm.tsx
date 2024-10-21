@@ -14,10 +14,8 @@ export default function AbilityEditForm({ ability }: { ability?: Ability }) {
           "use server";
 
           const name = formData.get("name") as string;
-          const shortName = formData.get("shortName") as string | null;
-          const variant = formData.get("variant") as string;
+          const type = formData.get("type") as string;
           const shortDesc = formData.get("shortDesc") as string | null;
-          const isUsable = formData.get("isUsable") === "true";
           const targetType = formData.get("targetType") as string | null;
           const desc = formData.get("desc") as string | null;
           const attack = formData.get("attack")
@@ -52,13 +50,12 @@ export default function AbilityEditForm({ ability }: { ability?: Ability }) {
             ? parseFloat(formData.get("costLag") as string)
             : null;
           const image = formData.get("image") as string | null;
+          const ruleSet = formData.get("ruleSet") as string | null;
 
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           const abilityData = {
             name,
-            shortName: shortName ?? undefined,
-            variant,
-            isUsable,
+            type,
             targetType: targetType ?? undefined,
             shortDesc: shortDesc ?? undefined,
             desc: desc ?? undefined,
@@ -74,6 +71,7 @@ export default function AbilityEditForm({ ability }: { ability?: Ability }) {
             costMw: costMw ?? undefined,
             costLag: costLag ?? undefined,
             image: image ?? undefined,
+            ruleSet: ruleSet ?? undefined,
           };
 
           if (ability?.id) {
@@ -99,25 +97,11 @@ export default function AbilityEditForm({ ability }: { ability?: Ability }) {
         />
         <Input
           type="text"
-          id="shortName"
-          name="shortName"
-          label="Short Name:"
-          initialValue={ability?.shortName ?? ""}
-        />
-        <Input
-          type="text"
-          id="variant"
-          name="variant"
-          label="Variant (passive, active, beginningOfTurn, endOfTurn):"
-          initialValue={ability?.variant ?? ""}
+          id="type"
+          name="type"
+          label="Type (passive, active, status):"
+          initialValue={ability?.type ?? ""}
           required
-        />
-        <Input
-          type="checkbox"
-          id="isUsable"
-          name="isUsable"
-          label="Is Single Use (usable):"
-          initialValue={ability?.isUsable ?? false}
         />
         <Input
           type="text"
@@ -125,6 +109,14 @@ export default function AbilityEditForm({ ability }: { ability?: Ability }) {
           name="targetType"
           label="Target Type:"
           initialValue={ability?.targetType ?? ""}
+        />
+        <Input
+          type="text"
+          id="logic"
+          name="logic"
+          label="Logic:"
+          initialValue={ability?.logic ?? ""}
+          required
         />
         <Input
           type="text"
@@ -210,13 +202,7 @@ export default function AbilityEditForm({ ability }: { ability?: Ability }) {
           label="Cost Lag:"
           initialValue={ability?.costLag ?? 0}
         />
-        <Input
-          type="text"
-          id="logic"
-          name="logic"
-          label="Logic:"
-          initialValue={ability?.logic ?? ""}
-        />
+
         <Input
           type="text"
           id="image"
@@ -224,6 +210,14 @@ export default function AbilityEditForm({ ability }: { ability?: Ability }) {
           label="Image URL:"
           initialValue={ability?.image ?? ""}
         />
+        <Input
+          type="text"
+          id="ruleSet"
+          name="ruleSet"
+          label="Rule Set:"
+          initialValue={ability?.ruleSet ?? ""}
+        />
+
         <FormButton variant="submit">
           {ability?.id ? "Update" : "Create"} ability
         </FormButton>

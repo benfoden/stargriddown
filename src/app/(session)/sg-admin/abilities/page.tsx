@@ -37,10 +37,8 @@ export default async function AbilitiesPage({
                 for (const ability of abilities) {
                   const {
                     name,
-                    shortName,
-                    variant,
+                    type,
                     shortDesc,
-                    isUsable,
                     targetType,
                     desc,
                     attack,
@@ -55,14 +53,13 @@ export default async function AbilitiesPage({
                     costMw,
                     costLag,
                     image,
+                    ruleSet,
                   } = ability;
 
                   await api.ability.create({
                     name: name ?? undefined,
-                    shortName: shortName ?? undefined,
-                    variant: variant ?? undefined,
+                    type: type ?? undefined,
                     shortDesc: shortDesc ?? undefined,
-                    isUsable: isUsable ?? undefined,
                     targetType: targetType ?? undefined,
                     desc: desc ?? undefined,
                     attack: attack ?? undefined,
@@ -77,6 +74,7 @@ export default async function AbilitiesPage({
                     costMw: costMw ?? undefined,
                     costLag: costLag ?? undefined,
                     image: image ?? undefined,
+                    ruleSet: ruleSet ?? undefined,
                   });
                 }
               }}
@@ -128,7 +126,14 @@ export default async function AbilitiesPage({
           <div className="flex flex-col gap-2">
             {abilities.map((ability) => (
               <Link href={`/sg-admin/abilities/${ability.id}`} key={ability.id}>
-                <Button variant="listItem">{ability.name}</Button>
+                <Button variant="listItem">
+                  <div className="flex w-full justify-between">
+                    {ability.name}
+                    <span className="text-xs opacity-60">
+                      {ability.ruleSet ? "Ruleset" : ""} {ability.ruleSet}
+                    </span>
+                  </div>
+                </Button>
               </Link>
             ))}
           </div>
