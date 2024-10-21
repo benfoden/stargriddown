@@ -9,7 +9,13 @@
 
   html,
   body {
-    @apply bg-[#1C1C1E] text-white;
+    @apply bg-[#1C1C1E] font-medium text-blue-50;
+    ::selection {
+      background: #fbbe2480;
+    }
+    ::-moz-selection {
+      background: #fbbf2480;
+    }
   }
 
   h1,
@@ -88,6 +94,184 @@
   .text-link {
     @apply text-blue-300 hover:text-blue-500;
   }
+
+  .sharp-sm {
+    clip-path: polygon(
+      0 8px,
+      8px 0,
+      100% 0,
+      100% calc(100% - 8px),
+      calc(100% - 8px) 100%,
+      0 100%
+    );
+  }
+
+  .sharp-md {
+    clip-path: polygon(
+      0 16px,
+      16px 0,
+      100% 0,
+      100% calc(100% - 16px),
+      calc(100% - 16px) 100%,
+      0 100%
+    );
+  }
+
+  .sharp-lg {
+    clip-path: polygon(
+      0 32px,
+      32px 0,
+      100% 0,
+      100% calc(100% - 32px),
+      calc(100% - 32px) 100%,
+      0 100%
+    );
+  }
+
+  .sharp-xl {
+    clip-path: polygon(
+      0 64px,
+      64px 0,
+      100% 0,
+      100% calc(100% - 64px),
+      calc(100% - 64px) 100%,
+      0 100%
+    );
+  }
+
+  .b-sharp-sm {
+    .box {
+      position: relative;
+    }
+    .box:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(253, 224, 71, 0.1);
+      clip-path: polygon(
+        0 8px,
+        8px 0,
+        100% 0,
+        100% calc(100% - 8px),
+        calc(100% - 8px) 100%,
+        0 100%,
+        0 8px,
+        2px calc(8px + 0.83px),
+        2px calc(100% - 2px),
+        calc(100% - 8px - 0.83px) calc(100% - 2px),
+        calc(100% - 2px) calc(100% - 8px - 0.83px),
+        calc(100% - 2px) 2px,
+        calc(8px + 0.83px) 2px,
+        2px calc(8px + 0.83px)
+      );
+    }
+  }
+
+  .b-sharp-md {
+    .box {
+      position: relative;
+    }
+    .box:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: transparent;
+      clip-path: polygon(
+        0 16px,
+        16px 0,
+        100% 0,
+        100% calc(100% - 16px),
+        calc(100% - 16px) 100%,
+        0 100%,
+        0 16px,
+        4px calc(16px + 3.31px),
+        4px calc(100% - 4px),
+        calc(100% - 16px - 3.31px) calc(100% - 4px),
+        calc(100% - 4px) calc(100% - 16px - 3.31px),
+        calc(100% - 4px) 4px,
+        calc(16px + 3.31px) 4px,
+        4px calc(16px + 3.31px)
+      );
+    }
+  }
+
+  .b-sharp-lg {
+    .box {
+      position: relative;
+    }
+    .box:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      clip-path: polygon(
+        0 32px,
+        32px 0,
+        100% 0,
+        100% calc(100% - 32px),
+        calc(100% - 32px) 100%,
+        0 100%,
+        0 32px,
+        8px calc(32px + 6.63px),
+        8px calc(100% - 8px),
+        calc(100% - 32px - 6.63px) calc(100% - 8px),
+        calc(100% - 8px) calc(100% - 32px - 6.63px),
+        calc(100% - 8px) 8px,
+        calc(32px + 6.63px) 8px,
+        8px calc(32px + 6.63px)
+      );
+    }
+  }
+
+  .b-sharp-xl {
+    .box {
+      position: relative;
+    }
+    .box:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      clip-path: polygon(
+        0 64px,
+        64px 0,
+        100% 0,
+        100% calc(100% - 64px),
+        calc(100% - 64px) 100%,
+        0 100%,
+        0 64px,
+        16px calc(64px + 6.63px),
+        16px calc(100% - 16px),
+        calc(100% - 64px - 6.63px) calc(100% - 16px),
+        calc(100% - 16px) calc(100% - 64px - 6.63px),
+        calc(100% - 16px) 16px,
+        calc(64px + 6.63px) 16px,
+        16px calc(64px + 6.63px)
+      );
+    }
+  }
+
+  .pulsating-glow {
+    animation: pulsate 1s infinite;
+  }
+
+  @keyframes pulsate {
+    0%,
+    100% {
+      text-shadow:
+        0 0 10px rgba(253, 224, 71, 0.5),
+        0 0 20px rgba(253, 224, 71, 0.3),
+        0 0 30px rgba(253, 224, 71, 0.2);
+    }
+    50% {
+      text-shadow:
+        0 0 20px rgba(253, 224, 71, 0.7),
+        0 0 30px rgba(253, 224, 71, 0.5),
+        0 0 40px rgba(253, 224, 71, 0.3);
+    }
+  }
+
+  /*
+https://tailwindcss.com/docs/customizing-colors#color-object-syntax 
+*/
 
   /* a:not(:has(*)) {
     @apply text-blue-300 hover:text-blue-500;

@@ -6,8 +6,9 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 model User {
@@ -31,6 +32,8 @@ model Deck {
   image                String?
   createdAt            DateTime @default(now())
   updatedAt            DateTime @default(now())
+  ruleSet              String?
+  type                 String?
   cards                Card[]
   player1StartMatches  Match[]  @relation("Player1StartDeck")
   player2StartMatches  Match[]  @relation("Player2StartDeck")
@@ -39,69 +42,85 @@ model Deck {
 }
 
 model Card {
-  id        String  @id @default(uuid())
-  name      String
-  desc      String?
-  shortDesc String?
-  flavor    String?
-  yen       Int?
-  attack    Int?
-  datab     Int?
-  defense   Int?
-  mw        Int?
-  lag       Int?
-  costYen   Int?
-  costDatab Int?
-  costMw    Int?
-  costLag   Int?
-
+  id            String        @id @default(uuid())
+  name          String
+  type          String        @default("operator-1")
+  variant       String        @default("operator-variant-1")
+  attributes    String?
+  targetAttributes String?
+  targetType       String?
+  targetVariants   String?
+  desc          String?
+  shortDesc     String?
+  flavor        String?
+  yen           Int?
+  attack        Int?
+  datab         Int?
+  defense       Int?
+  mw            Int?
+  lag           Int?
+  control       Int?
+  costYen       Int?
+  costDatab     Int?
+  costMw        Int?
+  costLag       Int?
+  costControl   Int?
+  turns         Int?
+  logic         String?
+  rarity        String?
   deckId        String?
   image         String?
+  ruleSet       String?
   createdAt     DateTime      @default(now())
   updatedAt     DateTime      @default(now())
-  abilities     Json?
   deck          Deck?         @relation(fields: [deckId], references: [id], onDelete: Cascade)
   cardAbilities CardAbility[]
 }
 
 model Ability {
-  id            String        @id @default(uuid())
-  name          String
-  variant       String
-  shortDesc     String?
-  isUsable      Boolean?
-  desc          String?
-  attack        Int?
-  defense       Int?
-  yen           Int?
-  lag           Int?
-  datab         Int?
-  mw            Int?
-  logic         String?
-  costYen       Int?
-  costDatab     Int?
-  costMw        Int?
-  costLag       Int?
-  image         String?
-  createdAt     DateTime      @default(now())
-  updatedAt     DateTime      @default(now())
-  cardAbilities CardAbility[]
+  id               String        @id @default(uuid())
+  name             String
+  type             String
+  shortDesc        String?
+  targetAttributes String?
+  targetType       String?
+  targetVariants   String?
+  desc             String?
+  attack           Int?
+  defense          Int?
+  yen              Int?
+  lag              Int?
+  datab            Int?
+  mw               Int?
+  control          Int?
+  cardCount        Int?
+  turns            Int?
+  engages          Int?
+  logic            String?
+  costYen          Int?
+  costControl      Int?
+  costDatab        Int?
+  costMw           Int?
+  costLag          Int?
+  ruleSet          String?
+  image            String?
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @default(now())
+  cardAbilities    CardAbility[]
 }
 
 model CardAbility {
   id        String   @id @default(uuid())
   cardId    String
   abilityId String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @default(now())
   card      Card     @relation(fields: [cardId], references: [id], onDelete: Cascade)
   ability   Ability  @relation(fields: [abilityId], references: [id], onDelete: Cascade)
-
-  @@index([cardId, abilityId])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
 }
 
 model Match {
-  id                  String       @id @default(uuid())
+  id                  String    @id @default(uuid())
   player1Id           String?
   player2Id           String?
   player1StartDeckId  String?
@@ -111,14 +130,14 @@ model Match {
   gameMode            String?
   gameType            String?
   statuses            String
-  createdAt           DateTime     @default(now())
-  updatedAt           DateTime     @default(now())
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @default(now())
   winnerId            String?
   rounds              Int?
   matchState          Json?
-  matchStates         MatchState[] // Add this line to create the opposite relation field
   startedAt           DateTime?
   endedAt             DateTime?
+  ruleSet             String?
 
   player1           User? @relation("Player1Matches", fields: [player1Id], references: [id])
   player2           User? @relation("Player2Matches", fields: [player2Id], references: [id])
@@ -127,11 +146,6 @@ model Match {
   player1MarketDeck Deck? @relation("Player1MarketDeck", fields: [player1MarketDeckId], references: [id])
   player2MarketDeck Deck? @relation("Player2MarketDeck", fields: [player2MarketDeckId], references: [id])
   winner            User? @relation("WinnerMatches", fields: [winnerId], references: [id])
-}
 
-model MatchState {
-  id      String @id @default(uuid())
-  state   Json
-  matchId String
-  match   Match  @relation(fields: [matchId], references: [id])
+  @@index([id])
 }

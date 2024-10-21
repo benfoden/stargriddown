@@ -1,7 +1,7 @@
 "use client";
 import { useFormStatus } from "react-dom";
 import Button from "./Button";
-import ButtonSpinner from "./ButtonSpinner";
+import Spinner from "./Spinner";
 
 export default function FormButton({
   variant = "primary",
@@ -11,7 +11,14 @@ export default function FormButton({
   onClick,
   isSpecial,
 }: {
-  variant?: "primary" | "menuElement" | "cta" | "chip" | "text" | "submit";
+  variant?:
+    | "primary"
+    | "menuElement"
+    | "cta"
+    | "chip"
+    | "text"
+    | "submit"
+    | "action";
   isDisabled?: boolean;
   children: React.ReactNode;
   props?: React.ButtonHTMLAttributes<HTMLButtonElement>;
@@ -28,7 +35,9 @@ export default function FormButton({
       isSpecial={isSpecial}
       {...props}
     >
-      {pending ? <ButtonSpinner /> : children}
+      <div className="flex w-full flex-row justify-center">
+        {pending ? <Spinner size="sm" /> : children}
+      </div>
     </Button>
   );
 }

@@ -1,0 +1,559 @@
+
+
+
+## Overview & How to Win
+
+In up to three Channels in the Arena, each player builds a Stack with Defense and Assets. 
+
+Defend your HQ's Control while assets turn a profit of Yen in your bank or Datab in your Dataase.
+
+Send Teams to attack opponent Stacks, stealing their Yen or Datab for yourself and ultimately removing all Control from their HQ.  
+
+Watch out for surprises when cards in the arena are revealed or played in reaction to your attacks.
+
+Win the game by reducing the other player’s control to 0 or less.
+
+Devise efficient strategies, play mind games, or get lucky!
+
+  
+
+## Rules
+
+### Arena Layout
+
+Each player’s HQ is on their side of the arena.  
+
+The arena has three channels between HQs, with spaces for Installs and Assets for each player, these are called Stacks.
+
+You may play Installs or Assets into open spaces in your stacks on your turn.
+  
+At the back of each Stack and before your HQ is a Holding, where you may play Assets.
+
+The middle channel opens automatically after each player has had one turn.
+
+A side channel on the left and right may be opened by either player, for both players, by playing at least one Asset or Install there.
+
+A Staging Area for Teams is adjacent to the HQ.
+
+See visibility, Stacks, and Teams sections for more details.
+
+### New Match Setup
+
+- Each player picks a Starting Deck and a Market Deck.
+    
+- Each Starting Deck has 10 playable cards, 1 Leader card, and 1 HQ card.
+    
+- Each Market Deck has up to 60 cards. 
+    
+- Each player has a Shop with 5 cards face up at one time, drawn from their Market.
+    
+- Each player starts with 30 Control in their HQ, 1 Yen in their Bank, 1 Datab in their Dataase, and 1 MW in their Grid by default, unless modified by their Leader or HQ cards.
+
+- The player who takes the first turn is decided randomly.
+    
+- When the game begins, the first player draws 4 cards, the second player draws 5 cards. 
+    
+
+### Drawing, Shuffling, Discarding
+
+- Players may have a maximum of 10 cards in their hand.
+    
+- When a Player’s hand is full, any additional cards that may be added to their hand are discarded.
+    
+- Players may keep unused cards in their hand between turns, reducing the amount of new cards that they can draw the next turn.
+    
+- Single-use cards move to a player’s discard pile after being used, or at the end of the turn in the case of Operators.
+    
+- When a player runs out of cards in their deck, they shuffle their discard and it becomes their new deck
+    
+- When new cards are bought from the shop they are placed on top of the player’s discard pile.
+    
+
+### Visibility
+
+- Player Control, Bank, Dataase, HQ card, and hand size are invisible to the other player unless their HQ is accessed by the other player, or special abilities are used that reveal these values (then they are only visible for the duration of the turn).
+    
+- Stacks are invisible until approached by a Team or revealed by a card ability. When approached, only the first Install or Asset is visible.
+    
+- All Installs and Assets are face down in the arena until accessed. (Their passive effects are active in this state).
+    
+- After a card is accessed, if it is activated by its owner, then it remains face-up and visible until hidden, discarded, or removed from play.
+    
+- Empty spaces in a stack do not regain invisibility after they have been approached or revealed.
+    
+
+### Channels and Stacks
+
+- Installs may be played on a player’s turn in any open space in their stack in an open channel.
+    
+- Assets may be played in any space in a stack, but the last three spaces make up a Holding, where only Assets may be played.
+    
+- When a channel is open, it is open for both players.
+    
+- Each stack has a limit of 5 Installs and 3 Assets. 
+    
+- Installs and Assets are ordered in a Stack sequentially from the center of the arena to the player’s HQ.
+    
+- If a space in a stack is empty, it is automatically bypassed by attacks. Empty spaces still increase Team Lag by 1, except for a Holding.
+    
+- A player may reorder cards in their stacks during the initial phase of their turn.
+    
+- Once played, cards can not be moved between stacks unless a special ability is used.
+
+- Lag increases by 1 for a Team after each space it moves away from the center of the arena.
+    
+- The Holding does not increase Lag after being accessed or bypassed.
+
+### Teams
+
+- May be formed by the current player by playing Operators into their Staging Area.
+    
+- When in Staging, Teams can’t attack and its Operators can’t use their active abilities until the next turn. 
+    
+- One turn after Staging, Operators become Active, unless they are Rapid.
+    
+- Only one Team may be Active on your turn.
+    
+- Operators can be staged in parallel with an Active Team.
+    
+- The player may play Mods, Contracts, and Commands on Operators while they are in Staging.
+    
+- Operators and Mods can’t be added to a Team after it starts an Attack.
+    
+- Teams can only Attack one Stack at a time. 
+    
+- A Team in Staging isn’t visible to the opponent.
+    
+- In an Attack, Installs in a stack are approached, then accessed and either overcome or bypassed in order.
+    
+- If a Team does not attack, or if it is unsuccessful then all cards it contains are Discarded immediately..
+
+- The Damage and Abilities of the team may be allocated in the stack as the attacking player chooses.
+    
+
+  
+  
+
+## Taking turns
+
+### Beginning of Turn
+
+- Any passive Beginning of Turn card effects are applied for both players, such as those on Assets, Installs, Leaders, or HQ cards.
+    
+- The current player draws from their deck until they have 5 cards, otherwise they draw 1 card.
+    
+- If there aren’t enough cards remaining in their Library, they shuffle their Discard pile to form a new Library.
+    
+- Cards can be sold from your hand to the Market. 
+    
+
+- If a card has a purchase price of 2 or more, it sells for 1 Yen, otherwise the sale value is 0. 
+    
+- Cards sold in this way are placed on the bottom of the Market.
+    
+
+  
+  
+
+### Initial Phase
+
+- Play cards with value to increase Yen in your account.
+    
+- Use Yen in your account to buy cards from your Shop. 
+    
+
+- When you buy a Card it is sent to your discard pile and a new card is drawn from your Market to replenish the Shop.
+    
+
+- Play cards into the Arena:
+    
+- Operators can be played in Staging
+    
+- Mods can be applied
+    
+- Installs and Assets can be deployed in Stacks, rearranged, or discarded.
+    
+- Contracts or Commands can be used or stored in the HQ.
+    
+- If a player starts a stack in a new channel, that channel is (invisibly) opened. And may be used by either player to attack from the next turn.
+    
+
+-  **The next player may only play or use Command cards during the initial phase.**
+    
+
+### Action Phase
+
+- The current player can play Contracts and Commands or use any they have stored in their HQ.
+    
+- Any modifiers or passive effects of the Operators in an Active Team are applied.
+    
+- The current player may start an Attack on a Stack with a Team if they have Active Operators.
+    
+
+- If an attack succeeds and accesses the HQ then the same Team may continue immediately to attack a different stack, for a maximum of three attacks per turn.
+    
+
+- When a player starts an attack on a Stack for the first time, the first card approached becomes visible (although it may still be face down.)
+    
+- The current player may end an Attack when they approach an Install or Asset, immediately discarding all Operators.
+    
+- The defending player may play Commands from their hand at any time and use reactive abilities on their Installs as they are accessed.
+    
+- If the defending player has defense or counter-attack abilities on their Character or HQ cards, they may also be used when an Install or Asset is being accessed.
+    
+
+  
+
+### End of Turn
+
+- The current player may discard any unused cards in their hand or keep them for the next turn.
+    
+- Any passive End of Turn effects are applied for both players.
+    
+
+  
+
+### Attacking (detailed)
+
+- Teams progress linearly through a stack, approaching and accessing or bypassing all Installs and Assets in the order the Defending player selected previously.
+    
+- When a Team accesses and overcomes an Install or Asset, the Operators in the Team attacks in order from left to right.
+- The Operator's attack points are subtracted from the Target's defense, after applying any effects or modifiers.
+
+- When accessed, an Install must be Overcome (defense reduced to zero) before the attack can proceed. Even if an Install has 0 Defense, any effects and Traps are still applied.
+
+- Damage points on Installs and Assets are dealt to the current Operator's Defense points. 
+
+- If a Team has less Attack points than the card it is accessing, the attack fails. If the Team would have exactly 0 Attack points after accessing the card, a race is run to determine if the card is overcome.
+    
+- If a Team has 0 Attack Points when it reaches the HQ, a race is run again to determine if the attack is successful.
+    
+- If a Team takes more Attack damage from Installs and Assets than its total remaining Defense points, then a Counter Strike is successful and the attacking player loses 1 Control. The Team may proceed its attack despite this, but an additional loss of 1 control is applied each time there is another Counter Strike.
+    
+
+- A defending player can choose to activate an Install when it is approached by a Team, otherwise it is bypassed by the Team without being revealed or accessed. 
+    
+
+- When an Installation is face down when accessed, the defending player may need to pay any activation costs, and any effects or abilities may then be applied.
+    
+
+- Assets are always accessible when approached, and immediately turned over if face down.
+    
+
+- When assets are overcome, the attacking player gains any stated value (depends on the card). 
+    
+- After being overcome, If the Team has an Operator with the Thief ability then the Asset may be stolen, in which case it goes to the attacking player’s discard pile.
+    
+
+- Installs remain in the arena unless discarded or trashed, even when overcome.
+    
+- When there is a successful attack, 6 Control is removed from the player that was attacked.
+    
+
+- For each successful attack after the first, an additional 1 Control is removed.
+    
+- If there are Contracts or Commands stored in the HQ, these are revealed to the attacker.
+    
+- If a Team accesses three or more cards in a row without a Counter Strike, then they may choose to remove 3 Control without Accessing the opponent HQ, and the Team is immediately discarded.
+    
+
+  
+  
+
+## [[Card types]]
+
+### Operators
+
+These can be played into the arena to attack the opponent as part of a Team. Operators are in Staging the turn they are played which means they can’t attack or use abilities until the following turn. They are discarded at the end of the turn the Team attacks, unless they are destroyed, or subject to special effects.
+
+  
+
+Operators variants are Human, Animal, Program, AI, Drone, or Vehicle.
+
+  
+
+### Installs
+
+Defense cards that focus on blocking, absorbing damage, and counter-attacking. They typically have more defense than attack and may have other effects or abilities. Installs can be played in a player's stacks and start in the arena inactive (face down). They stay in the arena until destroyed or discarded. Activated Installs remain activated until their owner pays 1 Yen to deactivate them (on the owner’s turn). Passive effects work even when a card is inactive.
+
+  
+
+Installs variants are Infrastructure, Program, AI, Drone, Wall, or Turret.
+
+  
+
+### Assets
+
+Assets generate Yen, Databs, or provide various beneficial effects. They can also have Mods installed to enhance their abilities. When overcome, their value is transferred to the attacking player and then they are discarded. Assets are inactive when played in the arena and stay in the arena until destroyed, discarded, or stolen. Activated assets remain activated until their owner pays 1 Yen to deactivate them (on the owner’s turn). Passive effects work even when inactive.
+
+  
+
+Assets variants are infrastructure, programs, AI, decoys, and investments.
+
+  
+
+### Mods
+
+Mods are attachments that provide bonuses to Operators, Assets, or Installs. They can increase attack, defense, or add special abilities. After being attached, they remain in effect until the card is junked or exiled.
+
+
+Mods may be training, programs, AI, drones, gear, and bionics.
+
+  
+
+### Contracts
+
+Can be played during the current player’s turn in the initial or active phase for immediate effect, and are discarded after having that effect. They may only be played during the current player’s turn. They may be stored at the HQ for later use.
+
+
+### Commands
+
+Can be played during either player’s turn in the Initial or Active Phase for immediate effect, and are discarded after having that effect. They may be stored at the HQ for later use.
+
+  
+
+### Cash
+
+Typically found in starting decks, these cards may be played in the initial phase to add Yen to the player’s account. Their values range between 1 and 3 Yen.
+
+  
+
+### HQ
+
+Each starting deck includes one HQ. It may have special effects and/or passive effects.
+
+  
+
+### Leader
+
+Each starting deck includes one unique Leader. It may have special effects and/or passive effects.
+
+
+
+
+## Resources 
+
+### Yen
+
+The primary currency to buy cards and take certain actions. Players generate and spend Yen to acquire new cards from their pool. Some cards also increase Yen generation, allowing faster deck upgrades.
+
+
+### Attack
+
+These points are the offensive power of cards, used to overcome Defense points.
+
+
+### Defense
+
+These points are the defensive strength of cards, negating Attack points.
+
+  
+### Datab
+
+These points represent a resource to perform actions or activate card abilities. 
+
+  
+### Lag
+
+In a Race, both players' Lag values are compared to determine the winner of a contested action. The formula is: (Player B's Lag + 1) / (Player A's Lag + Player B's Lag + 2) where player A is the player initiating the Race.
+
+
+### Control
+
+Health points for each HQ / player. The first player whose HQ loses all Control loses the game.
+
+
+### Energy
+
+Certain Cards have a MW (energy) cost, limiting the number a player can deploy at once. Other cards may modify MW.
+
+
+
+## Card types and variants
+
+
+{
+  operator: {
+    name: "operator",
+    variants: ["human", "animal", "program", "robot", "drone", "vehicle"],
+  },
+  install: {
+    name: "install",
+    variants: ["infrastructure", "program", "drone", "wall", "sensor", "turret"],
+  },
+  asset: {
+    name: "asset",
+    variants: [
+      "infrastructure",
+      "program",
+      "AI",
+      "decoy",
+      "investment",
+      "trap",
+    ],
+  },
+  cash: {
+    name: "cash",
+    variants: ["¥1", "¥2", "¥3"],
+  },
+  mod: {
+    name: "mod",
+    variants: ["training", "program", "drone", "gear", "bionic", "substance"],
+  },
+  contract: {
+    name: "contract",
+    variants: ["code", "],
+  },
+  command: {
+    name: "command",
+    variants: ["code"],
+  },
+  leader: {
+    name: "leader",
+    variants: ["human"],
+  },
+  hq: {
+    name: "hq",
+    variants: ["tower", "camp", "bunker", "barge"],
+  },
+}
+
+
+## Card statuses and abilities
+
+
+statuses:
+  - name: hidden
+    desc: This card can't be seen by the opponent.
+  - name: shielded
+    desc: This card can't be targeted.
+  - name: staged
+    desc: This card can't join an Attack.
+  - name: boosted
+    desc: This card has +X of Y points.
+  - name: armed
+    desc: This card's Trap ability is ready.
+  - name: disabled
+    desc: This card can't be activated.
+  - name: disrupted
+    desc: This card can't use abilities or points.
+  - name: locked
+    desc: This card can't be Engaged or Activated until a Key is used on it.
+  - name: engaged
+    desc: This card is engaged by another card or cards.
+
+
+
+Passive
+- code: This can engage with and be engaged by other Code cards. (programs, AI, etc.)
+- lethal: The next card this Approaches is Disabled immediately.
+- rapid: This is ready the same turn that it is played.
+- camo: Hidden until this Attacks, Defends, or uses an Active ability. 
+- alert: The first instance of Damage done to this card by an Active ability is negated.
+- shielding: This can’t be targeted by opponent abilities as long as you have Datab.
+- siphon: Add +X Yen to your Account when this Overcomes an opponent Card.
+- harvest: Add +X Datab to your Database when this Overcomes an opponent Card.
+- overkill: Add +X to the next instance of Damage to the HQ this turn.
+- intimidate: When this Overcomes a card, the next card you Engage this turn has -X Attack.
+- piercing: Deal +X damage when this attacks a target.
+- durable: This card can't be Discarded or Erased by the opponent.
+- renewable: When this is Discarded, it moves to the bottom of its Owner’s deck.
+- steal: After this overcomes an Asset, a Race is run, and if this player wins, then the Asset is stolen.
+- trap: If this isn’t disarmed by using Points or Abilities a negative effect is activated.
+- link: Gain X of Y points when you control two or more cards with Link. When overcome, all Linked cards you control in the Arena are revealed.
+- analytics: Gain X Datab per turn.
+- enhance: When an opponent Install or Asset is revealed, reveal a card in their hand.
+- emergency: Draw +X Cards if this is the first Card you drew.
+
+Active (Actives may Costs W points of Z resource to use)
+- scan: Look at the top 3 Cards in your deck. Add 1 to your hand and place the other 2 on the bottom. 
+- hack: Send the top X Cards of your opponent’s deck to their Discard pile.
+- erase: Permanently remove a card from the game.
+- disarm: Deactivate a Trap without triggering it.
+- disrupt: Target card is disabled for the remainder of the turn.
+- procedure: Use X Datab in your Database to add Datab to target card.
+- boost: Modify X points of Y type on target card.
+- virus: All cards in target Stack or Team lose 1 Datab.
+- decrypt: Remove all Statuses and Mods on target Card.
+- brute: Win the next Race.
+- message: Draw +X Cards.
+- key: Unlock target Locked card.
+- lock: Lock target card.
+- hide: Make target card Hidden.
+- reuse: Pay X Yen or Y Datab to return this to your hand.
+
+
+Maybe later (disregard for now)
+  - Upgrade: When this card is played, choose an upgrade from a set of options.
+  - Meme: Your next Datab generating effect triggers twice.
+  - Clone: When played, a copy of this card is played at the same target.
+  - strike: This deals Damage before cards without Strike.
+  - aerial: This can only be defended or attacked by other Aerial cards or those with Anti-Air.
+  - anti-air: This can defend or attack Aerial cards.
+  - underground: This can't be Engaged by Aerial cards.
+  - jack: This Operator, Install, or Asset may be powered (Attack, Datab, or Defense). Lose equivalent Control if it is Overcome.
+  - airgap: This can only target or be targeted while Engaged. Only for Code cards.
+
+
+
+
+# Easy to Implement
+# message: Drawing cards is usually a straightforward operation.
+# boosted: Adding points to a card is generally simple.
+# 3. hidden: Making a card invisible to the opponent can be a simple flag.
+# locked: Preventing a card from being engaged or activated is often a simple state change.
+# 5. disabled: Disabling a card's activation is similar to locking.
+# 6. staged: Preventing a card from joining an attack is a simple rule check.
+# armed: Ready a trap ability is a state change.
+# camo: Hiding a card until it acts is a conditional visibility change.
+# 9. shielded: Negating damage once is a simple conditional check.
+# alert: Conditional targeting based on resources is a straightforward rule.
+# durable: Preventing discard or erase is a simple rule check.
+# 12. renewable: Moving a card to the bottom of a deck is a simple operation.
+# track: Discarding a card based on defense or race is a conditional check.
+# 14. piercing: Adding damage is a simple calculation.
+# intimidate: Reducing attack is a simple calculation.
+# overkill: Adding damage to HQ is a simple calculation.
+# siphon: Adding currency is a straightforward operation.
+# harvest: Adding resources is similar to siphon.
+# lethal: Disabling a card is a simple state change.
+# rapid: Making a card ready immediately is a state change.
+# brute: Winning a race is a simple rule override.
+# antiair: Allowing interaction with specific cards is a rule check.
+# underground: Preventing engagement by specific cards is a rule check.
+# aerial: Restricting engagement to specific cards is a rule check.
+# strike: Adjusting damage timing is a simple rule change.
+# Medium Complexity
+# link: Managing linked cards involves tracking multiple states.
+# trap: Conditional effects based on disarm status require more logic.
+# enhance: Revealing opponent cards involves interaction with opponent's state.
+# clout: Modifying shop prices involves economic system integration.
+# 30. lateral: Moving cards between stacks requires additional state management.
+# host: Allowing specific mods requires checking compatibility.
+# shard: Adding cards over turns involves turn tracking.
+# niche: Restricting engagement to specific types requires type checking.
+# 34. preprod: Delaying ability activation involves turn tracking.
+# emergency: Conditional card draw based on draw order involves draw tracking.
+# analytics: Conditional resource gain involves tracking multiple conditions.
+# procedure: Using resources to modify cards involves resource management.
+# 38. drain: Removing points involves state modification.
+# 39. flash: Removing statuses and mods involves state cleanup.
+# virus: Affecting multiple cards involves area of effect logic.
+# disrupt: Disabling cards involves state changes and interaction logic.
+# disarm: Deactivating traps involves interaction with opponent's state.
+# 43. erase: Permanently removing cards involves state and game logic changes.
+# hack: Sending cards to discard involves deck manipulation.
+# scan: Manipulating deck order involves deck state management.
+# leak: Revealing cards involves interaction with opponent's state.
+# 47. reuse: Returning cards involves hand and deck state management.
+# ravage: Discarding cards involves interaction with opponent's state.
+# 49. hide: Making cards hidden involves visibility state management.
+# key: Unlocking cards involves interaction with locked state.
+# Hard to Implement
+# jack: Powering cards involves complex state and resource management.
+# 52. airgap: Restricting targeting to engaged state involves complex interaction logic.
+# 53. decrypt: Removing all statuses involves comprehensive state cleanup.
+# 54. Upgrade: Choosing upgrades involves dynamic state changes and options.
+# 55. Meme: Doubling effects involves tracking and modifying multiple states.
+# Clone: Copying cards involves duplicating state and interactions.
+# This order is a general guideline and may vary based on your game's specific architecture and mechanics.

@@ -47,7 +47,7 @@ export default function Input({
   const [isActive, setIsActive] = useState(false);
   const [valueLength, setValueLength] = useState<number | null>(null);
   const [isChecked, setIsChecked] = useState(defaultChecked ?? false);
-  const [radioChoices, setRadioChoices] = useState<
+  const [radioChoices] = useState<
     { id: string; label: string; value: string | number; checked?: boolean }[]
   >(radioOptions ?? []);
   const [showPassword, setShowPassword] = useState(false);
@@ -114,7 +114,7 @@ export default function Input({
         >
           <span>
             {props.required && label?.length && (
-              <span className="text-blue-600 dark:text-blue-400">∗</span>
+              <span className="text-red-500">∗</span>
             )}{" "}
             <span>{label}</span>
           </span>
@@ -153,7 +153,7 @@ export default function Input({
               type={type}
               {...props}
               value={inputValue}
-              className={`w-full rounded-md px-5 py-3 text-base outline-none transition placeholder:text-sm placeholder:font-light placeholder:text-black/60 placeholder:dark:text-white/80 ${isActive && "bg-white/80 transition dark:bg-white/[.18]"} bg-primary ${props.disabled && "opacity-60"}`}
+              className={`w-full rounded-md px-5 py-3 text-base outline-none transition placeholder:text-sm placeholder:font-light placeholder:text-white/60 ${isActive && "bg-amber-500/80 transition dark:bg-amber-500/[.18]"} bg-primary ${props.disabled && "opacity-60"}`}
               ref={ref as React.RefObject<HTMLInputElement>}
               onFocus={handleFocus}
               onChange={(e) => {
@@ -171,7 +171,7 @@ export default function Input({
             type={showPassword ? "text" : "password"}
             {...props}
             value={inputValue}
-            className={`w-full rounded-md px-5 py-3 text-base outline-none transition placeholder:text-sm placeholder:font-light placeholder:text-black/60 placeholder:dark:text-white/80 ${isActive && "bg-white/80 transition dark:bg-white/[.18]"} bg-primary`}
+            className={`w-full rounded-md px-5 py-3 text-base outline-none transition placeholder:text-sm placeholder:font-light placeholder:text-white/60 ${isActive && "bg-amber-500/80 transition dark:bg-amber-500/[.18]"} bg-primary`}
             ref={ref as React.RefObject<HTMLInputElement>}
             onFocus={handleFocus}
             onChange={(e) => {
@@ -198,22 +198,44 @@ export default function Input({
       )}
       {type === "radio" && (
         <fieldset className="flex w-full flex-col">
-          <legend
-            className={`text-secondary flex w-full flex-row items-center gap-2 px-5 py-1 text-sm`}
-          >
-            <span>
-              {props.required && label?.length && (
-                <span className="text-blue-600 dark:text-blue-400">∗</span>
-              )}{" "}
-              <span>{label}</span>
-            </span>
+          <legend className="text-secondary flex w-full flex-row items-center gap-2 px-5 py-1 text-sm">
+            {props.required && label && <span className="text-red-500">∗</span>}
+            <span>{label}</span>
           </legend>
           <div className="flex flex-row flex-wrap gap-2 text-sm">
-            {radioChoices?.map((option, index) => (
+            {radioChoices?.map((option) => (
+              <label
+                key={option.id}
+                className="bg-primary flex w-full flex-row items-center gap-2 rounded-md border-2 border-transparent px-4 py-2 text-center transition-opacity duration-200 ease-in-out hover:border-amber-500/80 hover:opacity-100"
+              >
+                <input
+                  type="radio"
+                  id={option.id}
+                  {...props}
+                  ref={ref as React.RefObject<HTMLInputElement>}
+                  onFocus={handleFocus}
+                  value={option.value}
+                  checked={
+                    option.value === inputValue || option.value === initialValue
+                  }
+                  onChange={(e) => {
+                    if (props.onChange) {
+                      props.onChange(e);
+                    }
+                    handleChange(e);
+                  }}
+                />
+                {option.label}
+              </label>
+            ))}
+          </div>
+        </fieldset>
+      )}
+      {/* {radioChoices?.map((option, index) => (
               <label
                 key={index}
                 htmlFor={option.id}
-                className={`w-full cursor-pointer rounded-md px-4 py-2 text-center transition-opacity duration-200 ease-in-out hover:bg-white/80 hover:opacity-100 dark:bg-white/10 dark:hover:bg-white/30 ${!option.checked ? "opacity-60" : "bg-white/80 dark:bg-white/30"}`}
+                className={`w-full cursor-pointer rounded-md bg-amber-500/10 px-4 py-2 text-center transition-opacity duration-200 ease-in-out hover:bg-amber-500/30 hover:opacity-100 ${!option.checked ? "opacity-60" : "bg-amber-500/60"}`}
               >
                 <input
                   type="radio"
@@ -234,19 +256,14 @@ export default function Input({
                     );
                   }}
                 />
-                <span className="text-black dark:text-white">
-                  {option.label}
-                </span>
+                <span className="text-white">{option.label}</span>
               </label>
-            ))}
-          </div>
-        </fieldset>
-      )}
+            ))} */}
       {type === "textarea" && (
         <>
           <textarea
             {...(props as React.TextareaHTMLAttributes<HTMLTextAreaElement>)}
-            className={`w-full rounded-md py-4 pl-5 pr-10 outline-none transition placeholder:text-sm placeholder:font-light ${isActive && "bg-white/80 dark:bg-white/[.18]"} bg-primary`}
+            className={`w-full rounded-md py-4 pl-5 pr-10 outline-none transition placeholder:text-sm placeholder:font-light ${isActive && "bg-amber-500/[.18]"} bg-primary`}
             ref={ref as React.RefObject<HTMLTextAreaElement>}
             onFocus={handleFocus}
             onChange={handleChange}
@@ -272,7 +289,7 @@ export default function Input({
         />
       )}
       {type === "file" && (
-        <label className="bg-primary w-full cursor-pointer rounded-md bg-white/60 py-4 pl-5 pr-10 text-center text-sm outline-none transition placeholder:text-sm placeholder:font-light hover:bg-white/90 dark:bg-white/20 dark:hover:bg-white/30">
+        <label className="bg-primary w-full cursor-pointer rounded-md bg-amber-500/60 py-4 pl-5 pr-10 text-center text-sm outline-none transition placeholder:text-sm placeholder:font-light hover:bg-amber-500/90 dark:bg-amber-500/20 dark:hover:bg-amber-500/30">
           <input
             type="file"
             {...props}

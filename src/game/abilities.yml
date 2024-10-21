@@ -1,0 +1,159 @@
+
+# Card statuses (represented as abilities in code, but actually distinct in the ame)
+status:
+  - name: hidden
+    desc: This card can't be seen by the opponent.
+  - name: shielded
+    desc: This card can't be targeted.
+  - name: staged
+    desc: This card can't join an Attack.
+  - name: boosted
+    desc: This card has +X of Y points.
+  - name: armed
+    desc: This card's Trap ability is ready.
+  - name: disabled
+    desc: This card can't be activated.
+  - name: disrupted
+    desc: This card can't use abilities or points.
+  - name: locked
+    desc: This card can't be Engaged or Activated until a Key is used on it.
+  - name: engaged
+    desc: This card is engaged by another card or cards.
+
+
+# Ability timing types (represented as values of an ability)
+timing:
+- name: beginning
+  desc: An effect that happens at the beginning of the card owner's turn.
+- name: end
+  desc: An effect that happens at the end of the opponent's turn.
+- name: reactive
+  desc: An effect that happens reactively, based on some condition.
+- name: active
+  desc: A specific effect that happens when a card is played or a card is triggered (such as in an Engagement or Bypass)
+
+
+# Passive abilities. May be beginning, end, or reactive timing
+passive:
+  - name: digital
+    desc: This can engage with and be engaged by other Digital cards. (programs, AI, drones, etc.)
+  - name: lethal
+    desc: The next card this Engages is Disabled immediately.
+  - name: rapid
+    desc: This Operator is ready the same turn that it is played.
+  - name: camo
+    desc: Hidden until this Attacks, Defends, or uses an Active ability.
+  - name: shielded
+    desc: The first instance of Attack damage that would be done to this card is negated.
+  - name: alert
+    desc: This can't be targeted by opponent Contracts, Commands, or Actives as long as you have more than 1 Mw available.
+  - name: siphon
+    desc: Add +X Yen to your Account when this Overcomes an opponent Card.
+  - name: harvest
+    desc: Add +X Datab to your Database when this Overcomes an opponent Card with X Datab available.
+  - name: overkill
+    desc: Add +X to the next instance of Damage to the HQ this turn.
+  - name: intimidate
+    desc: When this Overcomes a card, the next card you Engage this turn has -X Attack.
+  - name: piercing
+    desc: Deal +X damage when this Engages a card, once per turn.
+  - name: durable
+    desc: This card can't be Discarded, Erased, or Removed by the opponent.
+  - name: renewable
+    desc: When this is Discarded, it moves to the bottom of its Owner's deck.
+  - name: steal
+    desc: After this Operator overcomes an Asset, a Race is run, and if this player wins, then the Asset is stolen.
+  - name: trap
+    desc: If this isn't disarmed by using Points or Abilities then X of Y points change or Z effect is applied to target card.
+  - name: link
+    desc: Gain X of Y points when you control two or more cards with Link. When overcome, all Linked cards you control in the Arena are revealed.
+  - name: analytics
+    desc: Gain X Datab at end of turn when you have gained 1 or more Yen that turn.
+  - name: enhance
+    desc: When an opponent Install or Asset is revealed, reveal a card in their hand.
+  - name: emergency
+    desc: Draw +X Cards if this is the first Card you drew this turn.
+  - name: preprod
+    desc: Enable this card's abilities X turns after it was played.
+  - name: niche
+    desc: This card can only engage X card variant, type, or specific card.
+  - name: shard
+    desc: Add card X to your hand at start of your next turn for Y turns or when you pay Y points.
+  - name: host
+    desc: This card can have mods of type X installed on it.
+  - name: lateral
+    desc: This Operator may move to a neighboring stack after Overcoming a card.
+  - name: clout
+    desc: Buy X card type from the shop for Y less Yen.
+  - name: profit
+    desc: Gain X Datab or Y Yen at end of turn.
+  - name: decoy
+    desc: When this Engages, the opposing card's abilities and effects are applied instantly but don't target this card.
+
+# Active abilities. Only happen when player does the action to trigger them.
+Active:
+  - name: leak
+    desc: Pay X Datab or Yen and target Asset or Install is revealed.
+  - name: scan
+    desc: Look at the top 3 Cards in your deck. Add 1 to your hand and place the other 2 on the bottom.
+  - name: crack
+    desc: After your opponent draws their next hand, they must discard X cards.
+  - name: erase
+    desc: Permanently remove a card from the game.
+  - name: disarm
+    desc: Deactivate a Trap without triggering it. (By paying X datab)
+  - name: disrupt
+    desc: Target card is disabled for the remainder of the turn.
+  - name: procedure
+    desc: Use X Datab in your Database to add Datab to target card.
+  - name: boost
+    desc: Add X points of Y type on target card (using Z points, or passively at T timing).
+  - name: drain
+    desc: Remove X points of Y type on target card.
+  - name: virus
+    desc: All cards in target Stack or Team loses 1 Datab.
+  - name: flash
+    desc: Remove all Statuses and Digital Mods on target Card.
+  - name: burn
+    desc: Remove all Mods on target Card.
+  - name: brute
+    desc: Win the next Race.
+  - name: message
+    desc: Draw +X Cards.
+  - name: key
+    desc: Unlock target Locked card. (By paying X Datab)
+  - name: lock
+    desc: Lock target card. (By paying X Datab)
+  - name: hide
+    desc: Hide target Card you control.
+  - name: reuse
+    desc: Pay X Yen or Y Datab to return this to your hand.
+  - name: discard
+    desc: Target card is Discarded immediately.
+  - name: track
+    desc: If target card has its Defense reduced to 0 or loses a race this turn, it's discarded immediately.
+
+# Note: disregard this list, it is only for here as a scratchpad
+unreleased:
+  - name: Upgrade
+    desc: When this card is played, choose an upgrade from a set of options.
+  - name: Meme
+    desc: Your next Datab generating effect triggers twice.
+  - name: Clone
+    desc: When played, a copy of this card is played at the same target.
+  - name: strike
+    desc: This deals Damage before cards without Strike.
+  - name: aerial
+    desc: This can only be defended or attacked by other Aerial cards or those with Anti-Air.
+  - name: anti-air
+    desc: This can defend or attack Aerial cards.
+  - name: underground
+    desc: This can't be Engaged by Aerial cards.
+  - name: jack
+    desc: This Operator, Install, or Asset may be powered (Attack, Datab, or Defense). Lose equivalent Control if it is Overcome.
+  - name: airgap
+    desc: This can only target or be targeted while Engaged. Only for digital cards.
+ - name: decrypt
+    desc: Remove all Statuses on target Card.
+
+

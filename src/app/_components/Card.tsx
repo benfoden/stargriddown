@@ -8,9 +8,10 @@ export const cardColors = (
     | "hero"
     | "comment"
     | "transparent"
-    | "prompt",
+    | "prompt"
+    | "play",
 ) =>
-  ` bg-white/30 dark:bg-white/10 ${variant === "form" ? "shadow-xl dark:shadow-black" : ""}`;
+  ` bg-amber-500/10 ${variant === "form" ? "shadow-xl dark:shadow-black" : ""}`;
 export function Card({
   children,
   isButton = true,
@@ -27,7 +28,8 @@ export function Card({
     | "hero"
     | "comment"
     | "transparent"
-    | "prompt";
+    | "prompt"
+    | "play";
 }) {
   if (variant === "form") isButton = false;
 
@@ -37,7 +39,7 @@ export function Card({
   const DefaultCard = () => (
     <div
       className={
-        ` w-full min-w-64 rounded-xl px-8 py-6 ${isButton ? sharedHover : ""} ` +
+        `w-full min-w-64 rounded-xl px-8 py-6 ${isButton ? sharedHover : ""} ` +
         cardColors(variant)
       }
     >
@@ -80,7 +82,7 @@ export function Card({
       return (
         <div
           className={
-            `flex w-full flex-col gap-2 rounded-xl bg-white/50 px-8 py-6 shadow-lg dark:bg-white/10 ${isButton && sharedHover} ` +
+            `flex h-fit w-fit flex-col gap-2 rounded-md px-2 py-8 md:px-8 md:py-8 ${isButton && sharedHover} border border-b-black/20 border-l-amber-500/20 border-r-black/20 border-t-amber-500/20 shadow-black backdrop-blur-sm ` +
             cardColors(variant)
           }
         >
@@ -104,9 +106,9 @@ export function Card({
     case "hero":
       return (
         <div
-          className={`flex h-fit w-fit flex-col gap-2 rounded-full bg-white/30 px-6 py-4 dark:bg-white/10 ${isButton && sharedHover} shadow-xl dark:shadow-black `}
+          className={`flex h-fit w-fit flex-col gap-2 rounded-lg bg-amber-500/10 px-2 py-8 md:px-6 md:py-4 ${isButton && sharedHover} border border-b-black/20 border-l-amber-500/20 border-r-black/20 border-t-amber-500/20 shadow-black backdrop-blur-sm`}
         >
-          <div className="flex flex-col items-start justify-between gap-2 px-16 py-8">
+          <div className="flex flex-col items-center justify-center gap-2 px-4 py-8 md:px-16">
             {children}
           </div>
         </div>
@@ -134,6 +136,15 @@ export function Card({
       return (
         <div
           className={`flex w-full flex-col items-start justify-between gap-2 rounded-full bg-white/30 px-3 py-1 dark:bg-white/10 ${isButton && sharedHover} `}
+        >
+          {children}
+        </div>
+      );
+
+    case "play":
+      return (
+        <div
+          className={`flex h-fit w-fit flex-col items-center justify-center gap-2 rounded-xl bg-white/5 ${isButton && "hover:cursor-pointer hover:bg-white/10"} border border-b-black/10 border-l-white/10 border-r-black/10 border-t-white/10 drop-shadow-sm backdrop-blur-sm transition duration-300 ease-in-out hover:scale-105`}
         >
           {children}
         </div>
