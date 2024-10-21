@@ -23,22 +23,22 @@ export const cardRouter = createTRPCRouter({
         costMw: z.number().optional(),
         costLag: z.number().optional(),
         image: z.string().optional(),
-        abilityIds: z.array(z.string()).optional(), // Expecting an array of ability IDs
+        abilityInstanceIds: z.array(z.string()).optional(), // Expecting an array of ability instance IDs
         rarity: z.string().optional(),
         deckId: z.string().optional(),
         control: z.number().optional(),
       }),
     )
     .mutation(async ({ ctx, input }) => {
-      const { abilityIds, ...cardData } = input;
+      const { abilityInstanceIds, ...cardData } = input;
 
       const createdCard = await ctx.db.card.create({
         data: {
           ...cardData,
           cardAbilities: {
-            create: abilityIds?.map((abilityId) => ({
-              ability: {
-                connect: { id: abilityId },
+            create: abilityInstanceIds?.map((abilityInstanceId) => ({
+              abilityInstance: {
+                connect: { id: abilityInstanceId },
               },
             })),
           },
@@ -55,7 +55,7 @@ export const cardRouter = createTRPCRouter({
         include: {
           cardAbilities: {
             include: {
-              ability: true,
+              abilityInstance: true,
             },
           },
         },
@@ -67,7 +67,7 @@ export const cardRouter = createTRPCRouter({
       include: {
         cardAbilities: {
           include: {
-            ability: true,
+            abilityInstance: true,
           },
         },
       },
@@ -82,7 +82,7 @@ export const cardRouter = createTRPCRouter({
         include: {
           cardAbilities: {
             include: {
-              ability: true,
+              abilityInstance: true,
             },
           },
         },
@@ -110,27 +110,27 @@ export const cardRouter = createTRPCRouter({
         costMw: z.number().optional(),
         costLag: z.number().optional(),
         image: z.string().optional(),
-        abilityIds: z.array(z.string()).optional(),
+        abilityInstanceIds: z.array(z.string()).optional(), // Expecting an array of ability instance IDs
         rarity: z.string().optional(),
         deckId: z.string().optional(),
         control: z.number().optional(),
       }),
     )
     .mutation(async ({ ctx, input }) => {
-      const { id, abilityIds, ...data } = input;
+      const { id, abilityInstanceIds, ...data } = input;
 
       const updatedCard = await ctx.db.card.update({
         where: { id },
         data,
       });
 
-      if (abilityIds) {
+      if (abilityInstanceIds) {
         await ctx.db.cardAbility.deleteMany({
           where: { cardId: id },
         });
 
         await ctx.db.cardAbility.createMany({
-          data: abilityIds.map((abilityId) => ({
+          data: abilityInstanceIds.map((abilityId) => ({
             cardId: id,
             abilityId,
           })),

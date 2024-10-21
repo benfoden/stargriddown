@@ -36,6 +36,9 @@ export default function AbilityEditForm({ ability }: { ability?: Ability }) {
           const mw = formData.get("mw")
             ? parseFloat(formData.get("mw") as string)
             : null;
+          const control = formData.get("control")
+            ? parseFloat(formData.get("control") as string)
+            : null;
           const logic = formData.get("logic") as string | null;
           const costYen = formData.get("costYen")
             ? parseFloat(formData.get("costYen") as string)
@@ -48,6 +51,9 @@ export default function AbilityEditForm({ ability }: { ability?: Ability }) {
             : null;
           const costLag = formData.get("costLag")
             ? parseFloat(formData.get("costLag") as string)
+            : null;
+          const costControl = formData.get("costControl")
+            ? parseFloat(formData.get("costControl") as string)
             : null;
           const image = formData.get("image") as string | null;
           const ruleSet = formData.get("ruleSet") as string | null;
@@ -65,11 +71,13 @@ export default function AbilityEditForm({ ability }: { ability?: Ability }) {
             lag: lag ?? undefined,
             datab: datab ?? undefined,
             mw: mw ?? undefined,
+            control: control ?? undefined,
             logic: logic ?? undefined,
             costYen: costYen ?? undefined,
             costDatab: costDatab ?? undefined,
             costMw: costMw ?? undefined,
             costLag: costLag ?? undefined,
+            costControl: costControl ?? undefined,
             image: image ?? undefined,
             ruleSet: ruleSet ?? undefined,
           };
