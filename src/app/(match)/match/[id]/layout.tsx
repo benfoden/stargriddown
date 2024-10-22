@@ -22,6 +22,7 @@ export default async function MatchLayout({
   searchParams: { message: string }; // Changed message type to string
 }) {
   const user = await getUser();
+  const decks = await api.deck.getAll();
 
   const { id } = params;
   const match = await api.match.get({ id });
@@ -53,6 +54,7 @@ export default async function MatchLayout({
       <div className="flex w-full flex-1 flex-col items-center justify-center gap-12">
         <MatchPage
           initialMatch={match}
+          initialDecks={decks}
           user={user ?? undefined}
           searchParams={searchParams}
         />

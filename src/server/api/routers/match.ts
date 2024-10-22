@@ -10,6 +10,7 @@ export const matchRouter = createTRPCRouter({
       gameType: "unranked",
       statuses: '["created", "active"]',
       rounds: 0,
+      ruleSet: "0.1",
     };
 
     return await ctx.db.match.create({

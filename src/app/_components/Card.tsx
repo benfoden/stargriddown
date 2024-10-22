@@ -15,6 +15,7 @@ export const cardColors = (
 export function Card({
   children,
   isButton = true,
+  status = null,
   variant = "default",
 }: {
   children: React.ReactNode;
@@ -30,8 +31,24 @@ export function Card({
     | "transparent"
     | "prompt"
     | "play";
+  status?: "active" | "inactive" | null;
 }) {
   if (variant === "form") isButton = false;
+
+  let statusClass = "";
+
+  switch (status) {
+    case "active":
+      statusClass =
+        "border-4 border-cyan-500/60 shadow-lg shadow-indigo-500/30";
+      break;
+    case "inactive":
+      statusClass = "shadow-lg shadow-gray-500";
+      break;
+    case null:
+      statusClass = "";
+      break;
+  }
 
   const sharedHover =
     " cursor-pointer transition hover:bg-white/60 hover:dark:bg-white/20 ";
@@ -39,7 +56,7 @@ export function Card({
   const DefaultCard = () => (
     <div
       className={
-        `w-full min-w-64 rounded-xl px-8 py-6 ${isButton ? sharedHover : ""} ` +
+        `w-full min-w-64 rounded-xl px-8 py-6 ${isButton ? sharedHover : ""} ${statusClass} ` +
         cardColors(variant)
       }
     >
@@ -57,7 +74,7 @@ export function Card({
       return (
         <div
           className={
-            `w-64 rounded-xl px-4 py-2 ${isButton ? sharedHover : ""} ` +
+            `w-64 rounded-xl px-4 py-2 ${isButton ? sharedHover : ""} ${statusClass} ` +
             cardColors(variant)
           }
         >
@@ -68,7 +85,7 @@ export function Card({
       return (
         <div
           className={
-            `w-full min-w-[512px] rounded-xl px-8 py-2 ${isButton ? sharedHover : ""} ` +
+            `w-full min-w-[512px] rounded-xl px-8 py-2 ${isButton ? sharedHover : ""} ${statusClass} ` +
             cardColors(variant)
           }
         >
@@ -82,7 +99,7 @@ export function Card({
       return (
         <div
           className={
-            `flex h-fit w-fit flex-col gap-2 rounded-md px-2 py-8 md:px-8 md:py-8 ${isButton && sharedHover} border border-b-black/20 border-l-amber-500/20 border-r-black/20 border-t-amber-500/20 shadow-black backdrop-blur-sm ` +
+            `flex h-fit w-fit flex-col gap-2 rounded-md px-2 py-8 md:px-8 md:py-8 ${isButton && sharedHover} border border-b-black/20 border-l-amber-500/20 border-r-black/20 border-t-amber-500/20 shadow-black backdrop-blur-sm ${statusClass} ` +
             cardColors(variant)
           }
         >
@@ -95,7 +112,7 @@ export function Card({
     case "textBlock":
       return (
         <div
-          className={`flex w-full flex-col gap-2 rounded-xl bg-white/30 px-6 py-4 dark:bg-white/10 ${isButton && sharedHover} `}
+          className={`flex w-full flex-col gap-2 rounded-xl bg-white/30 px-6 py-4 dark:bg-white/10 ${isButton && sharedHover} ${statusClass} `}
         >
           <div className="flex w-fit flex-col items-start justify-between gap-2">
             {children}
@@ -106,7 +123,7 @@ export function Card({
     case "hero":
       return (
         <div
-          className={`flex h-fit w-fit flex-col gap-2 rounded-lg bg-amber-500/10 px-2 py-8 md:px-6 md:py-4 ${isButton && sharedHover} border border-b-black/20 border-l-amber-500/20 border-r-black/20 border-t-amber-500/20 shadow-black backdrop-blur-sm`}
+          className={`flex h-fit w-fit flex-col gap-2 rounded-lg bg-amber-500/10 px-2 py-8 md:px-6 md:py-4 ${isButton && sharedHover} border border-b-black/20 border-l-amber-500/20 border-r-black/20 border-t-amber-500/20 shadow-black backdrop-blur-sm ${statusClass} `}
         >
           <div className="flex flex-col items-center justify-center gap-2 px-4 py-8 md:px-16">
             {children}
@@ -117,7 +134,7 @@ export function Card({
     case "transparent":
       return (
         <div
-          className={`px-22 flex w-fit flex-col items-start justify-between gap-2 rounded-full bg-transparent py-12 dark:bg-transparent ${isButton && sharedHover}`}
+          className={`px-22 flex w-fit flex-col items-start justify-between gap-2 rounded-full bg-transparent py-12 dark:bg-transparent ${isButton && sharedHover} ${statusClass} `}
         >
           {children}
         </div>
@@ -126,7 +143,7 @@ export function Card({
     case "comment":
       return (
         <div
-          className={`flex w-fit flex-col items-start justify-between gap-2 rounded-xl bg-white/30 px-6 py-4 dark:bg-white/10 ${isButton && sharedHover} `}
+          className={`flex w-fit flex-col items-start justify-between gap-2 rounded-xl bg-white/30 px-6 py-4 dark:bg-white/10 ${isButton && sharedHover} ${statusClass} `}
         >
           {children}
         </div>
@@ -135,7 +152,7 @@ export function Card({
     case "prompt":
       return (
         <div
-          className={`flex w-full flex-col items-start justify-between gap-2 rounded-full bg-white/30 px-3 py-1 dark:bg-white/10 ${isButton && sharedHover} `}
+          className={`flex w-full flex-col items-start justify-between gap-2 rounded-full bg-white/30 px-3 py-1 dark:bg-white/10 ${isButton && sharedHover} ${statusClass} `}
         >
           {children}
         </div>
@@ -144,7 +161,7 @@ export function Card({
     case "play":
       return (
         <div
-          className={`flex h-fit w-fit flex-col items-center justify-center gap-2 rounded-xl bg-white/5 ${isButton && "hover:cursor-pointer hover:bg-white/10"} border border-b-black/10 border-l-white/10 border-r-black/10 border-t-white/10 drop-shadow-sm backdrop-blur-sm transition duration-300 ease-in-out hover:scale-105`}
+          className={`flex h-fit w-fit flex-col items-center justify-center gap-2 rounded-xl bg-white/5 ${isButton && "hover:cursor-pointer hover:bg-white/10"} border border-b-black/10 border-l-white/10 border-r-black/10 border-t-white/10 drop-shadow-sm backdrop-blur-sm transition duration-300 ease-in-out hover:scale-105 ${statusClass} `}
         >
           {children}
         </div>
