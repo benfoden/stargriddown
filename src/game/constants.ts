@@ -7,6 +7,8 @@
 // 2 32
 // 1 28
 
+import { type AbilityInstance, type Card } from "@prisma/client";
+
 export const MATCHMODES = [
   "normal",
   "tournament",
@@ -25,6 +27,38 @@ export type MatchRanking = (typeof MATCHRANKINGS)[number];
 export type MatchStatus = (typeof MATCHSTATUSES)[number];
 
 export const DeckTypeNames = ["market", "starting"] as const;
+
+export const InitialMatchState = {
+  arena: {
+    cards: [],
+  },
+  player1: {
+    control: 30,
+    mw: 1,
+    datab: 0,
+    startDeck: [] as CardWithAbilityInstances[],
+    marketDeck: [] as CardWithAbilityInstances[],
+    cards: [],
+    AFKCount: 0,
+  },
+  player2: {
+    control: 30,
+    mw: 1,
+    datab: 0,
+    startDeck: [] as CardWithAbilityInstances[],
+    marketDeck: [] as CardWithAbilityInstances[],
+    cards: [],
+    AFKCount: 0,
+  },
+};
+
+export type MatchStateType = typeof InitialMatchState;
+
+export type CardWithAbilityInstances = Card & {
+  cardAbilities: {
+    abilityInstance: AbilityInstance;
+  }[];
+};
 
 export const CardTypeNames = [
   "operator",

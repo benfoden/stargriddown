@@ -11,7 +11,7 @@ export const cardColors = (
     | "prompt"
     | "play",
 ) =>
-  ` bg-amber-500/10 ${variant === "form" ? "shadow-xl dark:shadow-black" : ""}`;
+  ` bg-amber-500/20 ${variant === "form" ? "shadow-xl dark:shadow-black" : ""}`;
 export function Card({
   children,
   isButton = true,
@@ -40,7 +40,7 @@ export function Card({
   switch (status) {
     case "active":
       statusClass =
-        "border-4 border-cyan-500/60 shadow-lg shadow-indigo-500/30";
+        "border-4 border-emerald-500/60 shadow-lg shadow-emerald-500/30";
       break;
     case "inactive":
       statusClass = "shadow-lg shadow-gray-500";
@@ -50,8 +50,7 @@ export function Card({
       break;
   }
 
-  const sharedHover =
-    " cursor-pointer transition hover:bg-white/60 hover:dark:bg-white/20 ";
+  const sharedHover = " cursor-pointer transition ";
 
   const DefaultCard = () => (
     <div
@@ -123,7 +122,7 @@ export function Card({
     case "hero":
       return (
         <div
-          className={`flex h-fit w-fit flex-col gap-2 rounded-lg bg-amber-500/10 px-2 py-8 md:px-6 md:py-4 ${isButton && sharedHover} border border-b-black/20 border-l-amber-500/20 border-r-black/20 border-t-amber-500/20 shadow-black backdrop-blur-sm ${statusClass} `}
+          className={`flex h-fit w-fit flex-col gap-2 rounded-lg bg-amber-500/20 px-2 py-8 md:px-6 md:py-4 ${isButton && sharedHover} border border-b-black/20 border-l-amber-500/20 border-r-black/20 border-t-amber-500/20 shadow-black backdrop-blur-sm ${statusClass} `}
         >
           <div className="flex flex-col items-center justify-center gap-2 px-4 py-8 md:px-16">
             {children}
