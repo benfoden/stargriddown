@@ -7,8 +7,6 @@ export const dynamic = "force-dynamic";
 export async function POST(req: Request) {
   const {
     id,
-    player1Id,
-    player2Id,
     player1StartDeckId,
     player2StartDeckId,
     player1MarketDeckId,
@@ -17,9 +15,12 @@ export async function POST(req: Request) {
   const match = await api.match.get({ id });
 
   if (!match) {
-    return new Response(JSON.stringify({ error: "no match found" }), {
-      status: 404,
-    });
+    return new Response(
+      JSON.stringify({ error: "no match found for given id" }),
+      {
+        status: 404,
+      },
+    );
   }
   if (
     !player1StartDeckId ||
@@ -31,18 +32,18 @@ export async function POST(req: Request) {
       status: 400,
     });
   }
-  const player1StartDeck = await api.card.getByDeckId({
-    deckId: player1StartDeckId,
-  });
-  const player2StartDeck = await api.card.getByDeckId({
-    deckId: player2StartDeckId,
-  });
-  const player1MarketDeck = await api.card.getByDeckId({
-    deckId: player1MarketDeckId,
-  });
-  const player2MarketDeck = await api.card.getByDeckId({
-    deckId: player2MarketDeckId,
-  });
+
+  const [
+    player1StartDeck,
+    player2StartDeck,
+    player1MarketDeck,
+    player2MarketDeck,
+  ] = await Promise.all([
+    api.card.getByDeckId({ deckId: player1StartDeckId }),
+    api.card.getByDeckId({ deckId: player2StartDeckId }),
+    api.card.getByDeckId({ deckId: player1MarketDeckId }),
+    api.card.getByDeckId({ deckId: player2MarketDeckId }),
+  ]);
 
   if (
     !player1StartDeck ||

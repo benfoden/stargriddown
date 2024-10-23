@@ -22,6 +22,7 @@ model User {
   player1Matches Match[]  @relation("Player1Matches")
   player2Matches Match[]  @relation("Player2Matches")
   winnerMatches  Match[]  @relation("WinnerMatches")
+  isAdmin        Boolean  @default(false)
 }
 
 model Deck {

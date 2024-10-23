@@ -35,12 +35,7 @@ export default function MatchPage({
   const [present, setPresent] = useState<string[]>([]);
 
   const isPlayer1 = initialMatch.player1Id === user?.id;
-  // const isPlayer2 = initialMatch.player2Id === user?.id;
-
-  const [player, setPlayer] = useState({
-    startDeckConfirmed: false,
-    marketDeckConfirmed: false,
-  });
+  const isPlayer2 = initialMatch.player2Id === user?.id;
 
   useEffect(() => {
     if (!channel.current) {
@@ -86,9 +81,13 @@ export default function MatchPage({
         },
         (payload) => {
           const updatedState = payload.new as Match;
-          if (updatedState?.matchState) {
+          if (updatedState) {
             setState((prev) => ({
               ...prev,
+              player1StartDeckId: updatedState.player1StartDeckId,
+              player2StartDeckId: updatedState.player2StartDeckId,
+              player1MarketDeckId: updatedState.player1MarketDeckId,
+              player2MarketDeckId: updatedState.player2MarketDeckId,
               statuses: updatedState.statuses,
               matchState: updatedState.matchState,
             }));
@@ -147,24 +146,40 @@ export default function MatchPage({
           ...prev,
           player1StartDeckId: deckId,
         }));
+        update.mutate({
+          id: initialMatch.id,
+          player1StartDeckId: deckId,
+        });
       } else if (deckType === "market") {
         setState((prev) => ({
           ...prev,
           player1MarketDeckId: deckId,
         }));
+        update.mutate({
+          id: initialMatch.id,
+          player1MarketDeckId: deckId,
+        });
       }
     }
-    if (!isPlayer1) {
+    if (isPlayer2) {
       if (deckType === "starting") {
         setState((prev) => ({
           ...prev,
           player2StartDeckId: deckId,
         }));
+        update.mutate({
+          id: initialMatch.id,
+          player2StartDeckId: deckId,
+        });
       } else if (deckType === "market") {
         setState((prev) => ({
           ...prev,
           player2MarketDeckId: deckId,
         }));
+        update.mutate({
+          id: initialMatch.id,
+          player2MarketDeckId: deckId,
+        });
       }
     }
   }
@@ -221,18 +236,20 @@ export default function MatchPage({
       <div className="container mx-auto flex w-full flex-1 flex-col items-center gap-12">
         <FormMessage message={searchParams} />
 
-        <div className="flex flex-col gap-4">
-          {present.length === 1 && (
-            <div className="flex flex-col items-center justify-center gap-2">
-              <p>Waiting for opponent</p>
-              <Spinner size="md" />
+        {state?.statuses?.includes("started") ? (
+          <div>match</div>
+        ) : (
+          <>
+            <div className="flex flex-col gap-4">
+              {present.length === 1 && (
+                <div className="flex flex-col items-center justify-center gap-2">
+                  <p>Waiting for opponent</p>
+                  <Spinner size="md" />
+                </div>
+              )}
+              {present.length < 2 && <ButtonCopyLink />}
             </div>
-          )}
-          {present.length < 2 && <ButtonCopyLink />}
-        </div>
-        <div className="flex w-full flex-col items-center justify-center gap-4 md:max-w-3xl">
-          {!player.startDeckConfirmed ? (
-            <>
+            <div className="flex w-full flex-col items-center justify-center gap-4 md:max-w-3xl">
               <h2 className="text-2xl">Select a starting deck</h2>
               <ul className="flex w-full flex-row flex-wrap items-center justify-center gap-4">
                 {initialDecks
@@ -240,13 +257,26 @@ export default function MatchPage({
                   .map((deck) => (
                     <button
                       key={deck.id}
-                      onClick={() =>
+                      onClick={() => {
+                        // todo: confirm this on server to avoid abuse / bugs
+                        if (
+                          isPlayer1 &&
+                          state.statuses.includes("player1Ready")
+                        ) {
+                          return;
+                        }
+                        if (
+                          isPlayer2 &&
+                          state.statuses.includes("player2Ready")
+                        ) {
+                          return;
+                        }
                         handleLobby({
                           isPlayer1,
                           deckType: "starting",
                           deckId: deck.id,
-                        })
-                      }
+                        });
+                      }}
                     >
                       <Card
                         variant="narrow"
@@ -268,44 +298,6 @@ export default function MatchPage({
                     </button>
                   ))}
               </ul>
-              <Button
-                variant="cta"
-                disabled={
-                  isPlayer1
-                    ? !state.player1StartDeckId
-                    : !state.player2StartDeckId
-                }
-                onClick={() =>
-                  setPlayer((prev) => ({
-                    ...prev,
-                    startDeckConfirmed: true,
-                  }))
-                }
-              >
-                Lock in
-              </Button>
-            </>
-          ) : (
-            <div>
-              Starting deck
-              {initialDecks
-                .filter((deck) =>
-                  isPlayer1
-                    ? deck.id === state.player1StartDeckId
-                    : deck.id === state.player2StartDeckId,
-                )
-                .map((deck) => (
-                  <Card variant="narrow" isButton={false} key={deck.id}>
-                    {deck.name}
-                    <span className="font-white capitalize-none text-sm">
-                      {deck.desc}
-                    </span>
-                  </Card>
-                ))}
-            </div>
-          )}
-          {player.startDeckConfirmed && !player.marketDeckConfirmed ? (
-            <>
               <h2 className="text-2xl">Select a market deck</h2>
               <ul className="flex w-full flex-row flex-wrap items-center justify-center gap-4">
                 {initialDecks
@@ -313,13 +305,25 @@ export default function MatchPage({
                   .map((deck) => (
                     <button
                       key={deck.id}
-                      onClick={() =>
+                      onClick={() => {
+                        if (
+                          isPlayer1 &&
+                          state.statuses.includes("player1Ready")
+                        ) {
+                          return;
+                        }
+                        if (
+                          isPlayer2 &&
+                          state.statuses.includes("player2Ready")
+                        ) {
+                          return;
+                        }
                         handleLobby({
                           isPlayer1,
                           deckType: "market",
                           deckId: deck.id,
-                        })
-                      }
+                        });
+                      }}
                     >
                       <Card
                         variant="narrow"
@@ -341,98 +345,84 @@ export default function MatchPage({
                     </button>
                   ))}
               </ul>
-              <Button
-                variant="cta"
-                disabled={
-                  isPlayer1
-                    ? !state.player1MarketDeckId
-                    : !state.player2MarketDeckId
-                }
-                onClick={() =>
-                  setPlayer((prev) => ({
-                    ...prev,
-                    marketDeckConfirmed: true,
-                  }))
-                }
-              >
-                Lock in
-              </Button>
-            </>
-          ) : (
-            <div>
-              {initialDecks
-                .filter((deck) =>
-                  isPlayer1
-                    ? deck.id === state.player1MarketDeckId
-                    : deck.id === state.player2MarketDeckId,
-                )
-                .map((deck) => (
-                  <>
-                    Market deck
-                    <Card variant="narrow" isButton={false} key={deck.id}>
-                      {deck.name}{" "}
-                      <span className="font-white capitalize-none text-sm">
-                        {deck.desc}
-                      </span>
-                    </Card>
-                  </>
-                ))}
+              {((isPlayer1 &&
+                state.player1StartDeckId &&
+                state.player1MarketDeckId &&
+                !state.statuses.includes("player1Ready")) ??
+                (isPlayer2 &&
+                  state.player2StartDeckId &&
+                  state.player2MarketDeckId &&
+                  !state.statuses.includes("player2Ready"))) && (
+                <>
+                  <Button
+                    variant="cta"
+                    onClick={() =>
+                      handleReadyUp({
+                        isPlayer1,
+                        isPlayerReady: true,
+                      })
+                    }
+                  >
+                    Ready Up
+                  </Button>
+                </>
+              )}
+              {state.statuses.includes("player1Ready") &&
+                state.statuses.includes("player2Ready") && (
+                  <Button
+                    onClick={async () => {
+                      const response = await fetch("/api/begin-match", {
+                        method: "POST",
+                        headers: {
+                          "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(state),
+                      });
+                      if (!response.ok) {
+                        // Handle error if necessary
+                        console.error("Failed to start match");
+                      }
+                    }}
+                  >
+                    Start Match
+                  </Button>
+                )}
+              Status:
+              <div className="flex flex-row gap-4">
+                {state.statuses.includes("player1Ready") ? (
+                  <p className="text-lg font-black">Player 1 Ready</p>
+                ) : (
+                  <p className="text-lg font-black">Waiting for Player 1</p>
+                )}
+                {state.statuses.includes("player2Ready") ? (
+                  <p className="text-lg font-black">Player 2 Ready</p>
+                ) : (
+                  <p className="text-lg font-black">Waiting for Player 2</p>
+                )}
+              </div>
             </div>
-          )}
-          {player.startDeckConfirmed && player.marketDeckConfirmed && (
-            <>
-              <Button
-                variant="cta"
-                onClick={() =>
-                  handleReadyUp({
-                    isPlayer1,
-                    isPlayerReady: true,
-                  })
-                }
-              >
-                Ready Up
-              </Button>
-            </>
-          )}
-          {state.statuses.includes("player1Ready") &&
-            state.statuses.includes("player2Ready") && (
-              <Button
-                onClick={async () => {
-                  const response = await fetch("/api/begin-match", {
-                    method: "POST",
-                    headers: {
-                      "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(state),
-                  });
-                  if (!response.ok) {
-                    // Handle error if necessary
-                    console.error("Failed to start match");
-                  }
-                }}
-              >
-                Start Match
-              </Button>
-            )}
-          Status:
-          <pre>{state.statuses}</pre>
-        </div>
-        <Button
-          onClick={async () => {
-            update.mutate({
-              id: initialMatch.id,
-              matchState: { hello: `${Math.random()}` },
-            });
-          }}
-        >
-          Change State
-        </Button>
-        <div>
-          Match state:
-          <pre>{JSON.stringify(state.matchState, null, 2)}</pre>
-          Player state:
-          <pre>{JSON.stringify(player, null, 2)}</pre>
-        </div>
+          </>
+        )}
+
+        {user.email === "ben.foden+sgadmin@gmail.com" && (
+          <details className="rounded-md bg-black p-2">
+            <summary>Debug</summary>
+            <Button
+              onClick={async () => {
+                update.mutate({
+                  id: initialMatch.id,
+                  matchState: { hello: `${Math.random()}` },
+                });
+              }}
+            >
+              Change State
+            </Button>
+            <div>
+              Match state:
+              <pre>{JSON.stringify(state, null, 2)}</pre>
+            </div>
+          </details>
+        )}
       </div>
     </>
   );
